@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../../modules/home-manager/git.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "martin";
@@ -76,14 +80,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = "Martin";
-    userEmail = "martinjonsson01@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "master";
-    };
-  };
 }
