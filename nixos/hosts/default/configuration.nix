@@ -135,6 +135,7 @@
     gnomeExtensions.tiling-shell
     alejandra
     libnotify
+    tree
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
