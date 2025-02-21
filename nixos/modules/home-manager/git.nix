@@ -17,5 +17,9 @@
         init.defaultBranch = "master";
       };
     };
+
+    programs.lazygit = {
+      enable = true;
+    };
   };
 }
