@@ -136,16 +136,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.martin = {
-    isNormalUser = true;
-    description = "Martin";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      # vscode
-    ];
-  };
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
