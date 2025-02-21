@@ -7,6 +7,13 @@
     ../../modules/home-manager/default.nix
   ];
 
+  ######## GNOME APP ISSUE ########
+  # https://github.com/nix-community/home-manager/issues/1439
+  targets.genericLinux.enable = true;
+  xdg.mime.enable = true;
+  xdg.systemDirs.data = ["${config.home.homeDirectory}/.nix-profile/share/applications"];
+  ################################
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "martin";
