@@ -41,14 +41,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     git
-    # Make discord run faster
-    (pkgs.writeShellScriptBin "discord" ''
-      ${pkgs.discord}/bin/discord \
-          --ignore-gpu-blocklist \
-          --use-gl=desktop \
-          --enable-gpu-rasterization \
-          --enable-zero-copy
-    '')
+    discord
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
