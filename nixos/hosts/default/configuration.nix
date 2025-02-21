@@ -130,7 +130,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vscode
     wget
     google-chrome
     gnomeExtensions.tiling-shell
@@ -143,9 +142,7 @@
     isNormalUser = true;
     description = "Martin";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      # vscode
-    ];
+    packages = with pkgs; [];
   };
 
   home-manager = {

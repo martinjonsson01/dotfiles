@@ -14,7 +14,11 @@
       userName = "Martin";
       userEmail = "martinjonsson01@gmail.com";
       extraConfig = {
+        pull.rebase = true;
         init.defaultBranch = "master";
+        rerere.enabled = true;
+        column.ui = "auto";
+        branch.sort = "committerdate";
       };
     };
 
