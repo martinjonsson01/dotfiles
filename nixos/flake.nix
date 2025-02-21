@@ -20,7 +20,6 @@
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
-        ./modules/nixos/nvidia.nix
       ];
     };
   };
