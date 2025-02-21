@@ -26,12 +26,20 @@
         ];
       userSettings = {
         "nix.formatterPath" = "alejandra";
-        "editor.formatOnSave" = true;
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nil";
+
         "security.workspace.trust.untrustedFiles" = "open";
+
+        "editor.formatOnSave" = true;
         "editor.tabSize" = 2;
+
         "explorer.confirmDelete" = false;
+
         "git.openRepositoryInParentFolders" = "always";
+
         "explorer.confirmDragAndDrop" = false;
+
         "workbench.colorTheme" = "Syntax Material Dark";
       };
     };
