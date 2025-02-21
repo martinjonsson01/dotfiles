@@ -152,13 +152,6 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "martin" = import ./home.nix;
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -172,6 +165,23 @@
     alejandra
     libnotify
   ];
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.martin = {
+    isNormalUser = true;
+    description = "Martin";
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
+      # vscode
+    ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "martin" = import ./home.nix;
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
