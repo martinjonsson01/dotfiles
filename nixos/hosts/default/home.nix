@@ -49,6 +49,7 @@
     # '')
     discord
     slack
+    nil # LSP for Nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -91,4 +92,5 @@
 
   # Enable modules.
   git.enable = true;
+  vscode.enable = true;
 }
