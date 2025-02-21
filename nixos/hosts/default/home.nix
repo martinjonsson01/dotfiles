@@ -47,8 +47,7 @@
           --ignore-gpu-blocklist \
           --use-gl=desktop \
           --enable-gpu-rasterization \
-          --enable-zero-copy \
-          --no-sandbox
+          --enable-zero-copy
     '')
   ];
 
