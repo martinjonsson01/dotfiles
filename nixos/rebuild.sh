@@ -5,9 +5,6 @@
 # A rebuild script that commits on a successful build
 set -e
 
-# Edit your config
-$EDITOR ~/dotfiles/nixos/configuration.nix
-
 # cd to your config dir
 pushd ~/dotfiles/nixos/
 
@@ -28,7 +25,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo nixos-rebuild switch --flake /home/martin/dotfiles/nixos#default &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
