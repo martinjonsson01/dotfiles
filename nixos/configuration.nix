@@ -10,7 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -152,6 +152,13 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "martin" = import ./home.nix;
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -164,7 +171,6 @@
     gnomeExtensions.tiling-shell
     alejandra
     libnotify
-    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
