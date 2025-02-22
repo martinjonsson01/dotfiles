@@ -10,8 +10,8 @@
   rbwConfig = {
     email = "martinjonsson01@gmail.com"; # Required
     sso_id = ""; # Optional, leave empty if not using SSO
-    base_url = "https://vault.${config.sops.secrets."domain"}/"; # Optional, default is set
-    ui_url = "https://vault.${config.sops.secrets."domain"}/"; # Optional
+    # Set using secret: base_url = "https://vault.xilain.dev/"; # Optional, default is set
+    # Set using secret: ui_url = "https://vault.xilain.dev/"; # Optional
     lock_timeout = "32400"; # Optional, default is 3600 seconds (1 hour), 32400 seconds (9 hours)
     sync_interval = "3600"; # Optional, default is 3600 seconds (1 hour)
     # pinentry = "${pkgs.pinentry-gnome3}/bin/pinentry-gnome3"; # Optional, default is pinentry
@@ -42,6 +42,11 @@ in {
       rbw
       setupRbwConfigScript
     ];
+
+    sops.secrets.rbw-setup = {
+      sopsFile = ./../../../secrets/rbw-setup.sh;
+      format = "binary";
+    };
 
     # Ensure the script is executed to apply the configuration
     systemd.user.services.rbw-config = {

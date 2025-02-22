@@ -1,10 +1,12 @@
 {
+  inputs,
   config,
   pkgs,
   ...
 }: {
   imports = [
     ../../modules/home-manager/default.nix
+    inputs.sops-nix.homeManagerModule
   ];
 
   ######## GNOME APP ISSUE ########
@@ -13,6 +15,15 @@
   xdg.mime.enable = true;
   xdg.systemDirs.data = ["${config.home.homeDirectory}/.nix-profile/share/applications"];
   ################################
+
+  # Secrets management
+  sops = {
+    defaultSopsFile = ./../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    # This will automatically import SSH keys as age keys
+    age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
+  };
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -106,4 +117,6 @@
   git.enable = true;
   vscode.enable = true;
   gnome.enable = true;
+  rbw.enable = true;
+  rofi.enable = true;
 }

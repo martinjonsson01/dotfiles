@@ -56,11 +56,8 @@
     defaultSopsFile = ./../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
 
-    age.keyFile = "/home/martin/.config/sops/age/keys.txt";
-
-    secrets = {
-      "domain".owner = "martin";
-    };
+    # This will automatically import SSH keys as age keys
+    age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
   };
 
   # Use nvidia drivers
