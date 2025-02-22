@@ -143,7 +143,9 @@
     isNormalUser = true;
     description = "Martin";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      hexchat
+    ];
   };
 
   home-manager = {
