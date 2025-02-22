@@ -20,9 +20,9 @@ function fish_prompt --description 'Write out the prompt'
         echo -n '⚡ '
     end
 
-  if test -n "$IN_NIX_SHELL"
-    echo -n "<nix-shell> "
-  end
+    if test -n "$IN_NIX_SHELL"
+        echo -n "<nix-shell> "
+    end
 
     set_color normal
 end
