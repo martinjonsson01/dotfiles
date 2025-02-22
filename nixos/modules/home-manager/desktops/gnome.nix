@@ -16,6 +16,7 @@
       gnomeExtensions.appindicator
       gnomeExtensions.runcat
       gnomeExtensions.super-key
+      gnomeExtensions.pano
     ];
 
     dconf.settings = {
@@ -61,15 +62,69 @@
         overlay-key = "Super_R";
       };
 
-      "org/gnome/shell".enabled-extensions = [
-        "system-monitor@gnome-shell-extensions.gcampax.github.com"
-        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
-        "tilingshell@ferrarodomenico.com"
-        "runcat@kolesnikov.se"
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "super-key@tommimon.github.com"
-        # "advanced-alt-tab@G-dH.github.com"
-      ];
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          "system-monitor@gnome-shell-extensions.gcampax.github.com"
+          "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+          "tilingshell@ferrarodomenico.com"
+          "runcat@kolesnikov.se"
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "super-key@tommimon.github.com"
+          "pano@elhan.io"
+          # "advanced-alt-tab@G-dH.github.com"
+        ];
+      };
+
+      "org/gnome/shell/extensions/pano" = {
+        active-item-border-color = "rgb(236,94,94)";
+        global-shortcut = ["<Super>v"];
+        incognito-shortcut = ["<Shift><Super>v"];
+        is-in-incognito = false;
+        item-size = 200;
+        link-previews = false;
+        play-audio-on-copy = false;
+        send-notification-on-copy = false;
+        session-only-mode = true;
+      };
+
+      "org/gnome/shell/extensions/pano/code-item" = {
+        body-bg-color = "rgb(154,153,150)";
+        header-bg-color = "rgb(26,95,180)";
+      };
+
+      "org/gnome/shell/extensions/pano/color-item" = {
+        header-bg-color = "rgb(26,95,180)";
+      };
+
+      "org/gnome/shell/extensions/pano/emoji-item" = {
+        body-bg-color = "rgb(154,153,150)";
+        header-bg-color = "rgb(26,95,180)";
+      };
+
+      "org/gnome/shell/extensions/pano/file-item" = {
+        body-bg-color = "rgb(154,153,150)";
+        header-bg-color = "rgb(26,95,180)";
+      };
+
+      "org/gnome/shell/extensions/pano/image-item" = {
+        body-bg-color = "rgb(154,153,150)";
+        header-bg-color = "rgb(26,95,180)";
+      };
+
+      "org/gnome/shell/extensions/pano/link-item" = {
+        body-bg-color = "rgb(154,153,150)";
+        header-bg-color = "rgb(26,95,180)";
+        header-color = "rgb(255,255,255)";
+      };
+
+      "org/gnome/shell/extensions/pano/text-item" = {
+        body-bg-color = "rgb(154,153,150)";
+      };
+
+      "org/gnome/shell/extensions/super-key" = {
+        overlay-key-action = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
+      };
 
       # "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
       #   app-switcher-popup-fav-apps = false;
