@@ -99,6 +99,7 @@
         play-audio-on-copy = false;
         send-notification-on-copy = false;
         session-only-mode = true;
+        history-length = 100;
       };
 
       "org/gnome/shell/extensions/pano/code-item" = {

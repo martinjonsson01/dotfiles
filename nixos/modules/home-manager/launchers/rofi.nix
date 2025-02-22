@@ -42,6 +42,8 @@
 
         sort = true;
         sorting-method = "fzf";
+
+        kb-cancel = "Escape,MouseMiddle";
       };
 
       theme = "${pkgs.fetchurl {
