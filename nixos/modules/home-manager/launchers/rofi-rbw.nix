@@ -1,3 +1,6 @@
+#
+# A rofi frontend for Bitwarden
+#
 {
   pkgs,
   lib,
@@ -32,7 +35,6 @@ in {
       rbw
       rofi-rbw
       wl-clipboard
-      ydotool
     ];
 
     # Write the rofi-rbw configuration file

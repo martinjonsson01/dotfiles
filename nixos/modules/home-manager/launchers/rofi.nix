@@ -33,7 +33,6 @@ in {
   config = lib.mkIf config.rofi.enable {
     home.packages = with pkgs; [
       wl-clipboard # Wayland clipboard utilities
-      ydotool # xdotool type for wayland
     ];
 
     # Write the rofi-rbw configuration file

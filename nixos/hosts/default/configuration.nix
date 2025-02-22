@@ -64,6 +64,7 @@
   # Use nvidia drivers
   nvidia.enable = true;
   custom-style.enable = true;
+  ydotool.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
