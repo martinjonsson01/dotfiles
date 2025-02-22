@@ -32,7 +32,7 @@ in {
       rbw
       rofi-rbw
       wl-clipboard
-      wtype
+      ydotool
     ];
 
     # Write the rofi-rbw configuration file
