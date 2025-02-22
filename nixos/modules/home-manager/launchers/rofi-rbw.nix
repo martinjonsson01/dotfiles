@@ -34,7 +34,7 @@ in {
   config = lib.mkIf config.rofi-rbw.enable {
     home.packages = with pkgs; [
       rbw
-      rofi-rbw-x11
+      rofi-rbw-wayland
       wl-clipboard
     ];
 
