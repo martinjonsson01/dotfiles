@@ -70,8 +70,6 @@ in {
 
         sort = true;
         sorting-method = "fzf";
-
-        calc-command = "echo -n '{result}' | wl-copy";
       };
 
       theme = "${pkgs.fetchurl {
