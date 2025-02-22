@@ -71,9 +71,8 @@
       #   name = "Rofi drun";
       # };
 
-      # Rebind overlay so that Super_L can be rebound to rofi.
       "org/gnome/mutter" = {
-        overlay-key = "Super_R";
+        overlay-key = "Super_L";
       };
 
       "org/gnome/shell" = {
