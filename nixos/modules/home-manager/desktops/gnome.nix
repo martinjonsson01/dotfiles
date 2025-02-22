@@ -52,8 +52,8 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "Super_L";
-        command = "rofi -show run";
-        name = "Rofi run";
+        command = "rofi -show drun -matching fuzzy -show-icons";
+        name = "Rofi drun";
       };
 
       # Rebind overlay so that Super_L can be rebound to rofi.

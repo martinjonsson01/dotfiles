@@ -50,7 +50,7 @@ in {
         ];
       };
       extraConfig = {
-        modi = "run,window,emoji,calc,top";
+        modi = "drun,window,emoji,calc,top";
         font = "mono 20";
         auto-select = true;
       };
