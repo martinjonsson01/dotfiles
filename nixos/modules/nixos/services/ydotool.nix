@@ -16,6 +16,21 @@
       ydotool
     ];
 
+    # https://github.com/NixOS/nixpkgs/issues/70471
+    # Chown&chmod /dev/uinput to owner:root group:input mode:0660
+    boot.kernelModules = ["uinput"];
+    services.udev.extraRules = ''
+      SUBSYSTEM=="misc", KERNEL=="uinput", TAG+="uaccess", OPTIONS+="static_node=uinput", GROUP="input", MODE="0660"
+    '';
+
+    users.users.libinput = {
+      group = config.users.groups.input.name;
+      description = "libinput user";
+      createHome = false;
+      isSystemUser = true;
+      inherit (config.users.users.nobody) home;
+    };
+
     systemd.services.ydotoold = lib.mkIf config.ydotool.enable {
       description = "Ydotoold virtual input device";
 
@@ -36,6 +51,8 @@
         KillMode = "process";
         TimeoutSec = 100;
         Restart = "on-failure";
+        User = config.users.users.libinput.name;
+        Group = config.users.users.libinput.group;
 
         ProtectHome = "read-only";
         PrivateTmp = false;
