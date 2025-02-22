@@ -44,6 +44,17 @@
         sorting-method = "fzf";
 
         kb-cancel = "Escape,MouseMiddle";
+
+        kb-select-1 = "Ctrl+1";
+        kb-select-2 = "Ctrl+2";
+        kb-select-3 = "Ctrl+3";
+        kb-select-4 = "Ctrl+4";
+        kb-select-5 = "Ctrl+5";
+        kb-select-6 = "Ctrl+6";
+        kb-select-7 = "Ctrl+7";
+        kb-select-8 = "Ctrl+8";
+        kb-select-9 = "Ctrl+9";
+        kb-select-10 = "Ctrl+0";
       };
 
       theme = "${pkgs.fetchurl {
