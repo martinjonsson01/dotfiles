@@ -19,8 +19,8 @@
     systemd.user.services.ydotoold = {
       Unit = {
         Description = "Autostart for ydotoold";
-        After = ["graphical-session.target"];
-        PartOf = ["graphical-session.target"];
+        After = ["network-online.target"];
+        Wants = ["network-online.target"];
       };
 
       Install = {
