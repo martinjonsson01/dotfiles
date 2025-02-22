@@ -12,7 +12,7 @@
     home.packages = with pkgs; [
       gnome.gnome-tweaks
       gnomeExtensions.tiling-shell
-      gnomeExtensions.advanced-alttab-window-switcher
+      # gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.appindicator
       gnomeExtensions.runcat
       gnomeExtensions.super-key
@@ -52,7 +52,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "Super_L";
-        command = "rofi -show drun -matching fuzzy -show-icons";
+        command = "rofi -show drun,window";
         name = "Rofi drun";
       };
 
@@ -66,26 +66,27 @@
         "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
         "tilingshell@ferrarodomenico.com"
         "runcat@kolesnikov.se"
+        "appindicatorsupport@rgcjonas.gmail.com"
         # "advanced-alt-tab@G-dH.github.com"
       ];
 
-      "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
-        app-switcher-popup-fav-apps = false;
-        app-switcher-popup-filter = 2;
-        app-switcher-popup-include-show-apps-icon = false;
-        app-switcher-popup-search-pref-running = true;
-        enable-super = false;
-        hot-edge-position = 0;
-        super-double-press-action = 3;
-        super-key-mode = 3;
-        switcher-popup-hot-keys = false;
-        switcher-popup-interactive-indicators = true;
-        switcher-popup-position = 3;
-        switcher-popup-timeout = 0;
-        switcher-ws-thumbnails = 2;
-        win-switcher-popup-filter = 2;
-        win-switcher-popup-order = 1;
-      };
+      # "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
+      #   app-switcher-popup-fav-apps = false;
+      #   app-switcher-popup-filter = 2;
+      #   app-switcher-popup-include-show-apps-icon = false;
+      #   app-switcher-popup-search-pref-running = true;
+      #   enable-super = false;
+      #   hot-edge-position = 0;
+      #   super-double-press-action = 3;
+      #   super-key-mode = 3;
+      #   switcher-popup-hot-keys = false;
+      #   switcher-popup-interactive-indicators = true;
+      #   switcher-popup-position = 3;
+      #   switcher-popup-timeout = 0;
+      #   switcher-ws-thumbnails = 2;
+      #   win-switcher-popup-filter = 2;
+      #   win-switcher-popup-order = 1;
+      # };
 
       "org/gnome/shell/extensions/gtktitlebar" = {
         hide-window-titlebars = "always";

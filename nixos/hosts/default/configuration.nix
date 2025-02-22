@@ -60,6 +60,11 @@
     age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
   };
 
+  stylix = {
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    image = /run/current-system/sw/share/backgrounds/gnome/blobs-l.svg;
+  };
+
   # Use nvidia drivers
   nvidia.enable = true;
 

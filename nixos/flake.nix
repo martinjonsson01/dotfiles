@@ -14,6 +14,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Universal styling
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -26,6 +32,7 @@
       modules = [
         ./hosts/default/configuration.nix
         ./modules/nixos/default.nix
+        inputs.stylix.nixosModules.stylix
       ];
     };
   };
