@@ -50,7 +50,7 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "Super_L";
+        binding = "<Super>";
         command = "rofi -show run";
         name = "Rofi run";
       };
