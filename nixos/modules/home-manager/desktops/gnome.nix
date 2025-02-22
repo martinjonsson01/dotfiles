@@ -55,9 +55,9 @@
         name = "Rofi run";
       };
 
-      # Rebind overlay so that <Super> can be rebound to rofi.
+      # Rebind overlay so that Super_L can be rebound to rofi.
       "org/gnome/mutter" = {
-        overlay-key = ["Super_R"];
+        overlay-key = "Super_R";
       };
 
       "org/gnome/shell".enabled-extensions = [
