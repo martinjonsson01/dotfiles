@@ -55,7 +55,7 @@ in {
       };
       extraConfig = {
         modi = "drun,window,filebrowser,emoji,calc,top";
-        combi-modes = "drun,window,filebrowser";
+        combi-modes = "window,drun,filebrowser";
 
         font = "mono 20";
         show-icons = true;
@@ -72,6 +72,9 @@ in {
         drun-show-actions = true;
 
         matching = "fuzzy";
+
+        # Fix for rofi being slow. https://github.com/davatorium/rofi/issues/908
+        run-list-command = "";
 
         window-thumbnail = true;
 
