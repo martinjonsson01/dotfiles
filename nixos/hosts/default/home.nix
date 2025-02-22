@@ -68,7 +68,7 @@
     sops # Secrets management
 
     # CLI
-    fzf
+    fzf # Fuzzy search
 
     # Utility
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
