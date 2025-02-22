@@ -7,10 +7,6 @@
   config,
   ...
 }: let
-  inherit (lib) mkForce;
-  inherit (config.lib.formats.rasi) mkLiteral;
-  inherit (config.lib.stylix.colors.withHashtag) base00 base05;
-
   # Configuration options for rofi-rbw
   rofiRbwConfig = {
     action = ["type"]; # default, copy, print

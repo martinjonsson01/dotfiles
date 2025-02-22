@@ -125,4 +125,5 @@
   gnome.enable = true;
   rbw.enable = true;
   rofi.enable = true;
+  rofi-rbw.enable = true;
 }
