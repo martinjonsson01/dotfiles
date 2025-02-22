@@ -15,13 +15,13 @@ function fish_prompt --description 'Write out the prompt'
     set_color $fish_color_cwd
     echo -n (prompt_pwd)" "
 
+    if test -n "$IN_NIX_SHELL"
+        echo -n "<nix-shell> "
+    end
+
     if test (id -u) -eq 0
         set_color brwhite
         echo -n '⚡ '
-    end
-
-    if test -n "$IN_NIX_SHELL"
-        echo -n "<nix-shell> "
     end
 
     set_color normal

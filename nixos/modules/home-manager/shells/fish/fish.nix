@@ -9,6 +9,10 @@
   };
 
   config = lib.mkIf config.fish.enable {
+    home.packages = with pkgs; [
+      grc # Generic text colouriser
+    ];
+
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
