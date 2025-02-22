@@ -104,6 +104,7 @@
 
       "org/gnome/shell/extensions/pano/code-item" = {
         body-bg-color = "rgb(33, 33, 33)";
+        body-color = "rgb(234, 234, 234)";
         header-bg-color = "rgb(26,95,180)";
       };
 
@@ -113,16 +114,19 @@
 
       "org/gnome/shell/extensions/pano/emoji-item" = {
         body-bg-color = "rgb(33, 33, 33)";
+        body-color = "rgb(234, 234, 234)";
         header-bg-color = "rgb(26,95,180)";
       };
 
       "org/gnome/shell/extensions/pano/file-item" = {
         body-bg-color = "rgb(33, 33, 33)";
+        body-color = "rgb(234, 234, 234)";
         header-bg-color = "rgb(26,95,180)";
       };
 
       "org/gnome/shell/extensions/pano/image-item" = {
         body-bg-color = "rgb(33, 33, 33)";
+        body-color = "rgb(234, 234, 234)";
         header-bg-color = "rgb(26,95,180)";
       };
 
@@ -134,6 +138,7 @@
 
       "org/gnome/shell/extensions/pano/text-item" = {
         body-bg-color = "rgb(33, 33, 33)";
+        body-color = "rgb(234, 234, 234)";
       };
 
       "org/gnome/shell/extensions/super-key" = {
