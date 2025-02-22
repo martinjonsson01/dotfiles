@@ -9,7 +9,6 @@
 }: let
   rbwConfig = {
     email = "martinjonsson01@gmail.com"; # Required
-    sso_id = ""; # Optional, leave empty if not using SSO
     # Set using secret: base_url = "https://vault.xilain.dev/"; # Optional, default is set
     # Set using secret: ui_url = "https://vault.xilain.dev/"; # Optional
     lock_timeout = "32400"; # Optional, default is 3600 seconds (1 hour), 32400 seconds (9 hours)
