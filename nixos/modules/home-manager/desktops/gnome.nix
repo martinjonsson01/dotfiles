@@ -52,7 +52,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "Super_L";
-        command = "rofi -show drun,window";
+        command = "rofi -show combi";
         name = "Rofi drun";
       };
 
