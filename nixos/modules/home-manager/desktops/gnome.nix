@@ -52,7 +52,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "Super_L";
-        command = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\"";
+        command = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
         name = "Rofi drun";
       };
 
