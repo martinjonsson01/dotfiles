@@ -39,13 +39,13 @@
       wantedBy = ["graphical.target"];
 
       serviceConfig = {
-        ExecStartPre = pkgs.writeShellScript "delete-ydotool-socket" ''
-          ${pkgs.coreutils}/bin/rm /tmp/.ydotool_socket || true
-        '';
+        #ExecStartPre = pkgs.writeShellScript "delete-ydotool-socket" ''
+        #  ${pkgs.coreutils}/bin/rm /tmp/.ydotool_socket || true
+        #'';
         ExecStart = "${pkgs.ydotool}/bin/ydotoold";
-        ExecStopPost = pkgs.writeShellScript "delete-ydotool-socket" ''
-          ${pkgs.coreutils}/bin/rm /tmp/.ydotool_socket || true
-        '';
+        #ExecStopPost = pkgs.writeShellScript "delete-ydotool-socket" ''
+        #  ${pkgs.coreutils}/bin/rm /tmp/.ydotool_socket || true
+        #'';
         ExecReload = "systemctl kill --signal=HUP $MAINPID";
         KillMode = "process";
         TimeoutSec = 100;
