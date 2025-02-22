@@ -12,7 +12,6 @@
     home.packages = with pkgs; [
       gnome.gnome-tweaks
       gnomeExtensions.tiling-shell
-      # gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.appindicator
       gnomeExtensions.runcat
       gnomeExtensions.super-key
@@ -65,12 +64,6 @@
         night-light-schedule-to = 5.0;
       };
 
-      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      #   binding = "Super_L";
-      #   command = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
-      #   name = "Rofi drun";
-      # };
-
       "org/gnome/mutter" = {
         overlay-key = "Super_L";
       };
@@ -85,7 +78,6 @@
           "appindicatorsupport@rgcjonas.gmail.com"
           "super-key@tommimon.github.com"
           "pano@elhan.io"
-          # "advanced-alt-tab@G-dH.github.com"
         ];
       };
 
@@ -144,24 +136,6 @@
       "org/gnome/shell/extensions/super-key" = {
         overlay-key-action = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
       };
-
-      # "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
-      #   app-switcher-popup-fav-apps = false;
-      #   app-switcher-popup-filter = 2;
-      #   app-switcher-popup-include-show-apps-icon = false;
-      #   app-switcher-popup-search-pref-running = true;
-      #   enable-super = false;
-      #   hot-edge-position = 0;
-      #   super-double-press-action = 3;
-      #   super-key-mode = 3;
-      #   switcher-popup-hot-keys = false;
-      #   switcher-popup-interactive-indicators = true;
-      #   switcher-popup-position = 3;
-      #   switcher-popup-timeout = 0;
-      #   switcher-ws-thumbnails = 2;
-      #   win-switcher-popup-filter = 2;
-      #   win-switcher-popup-order = 1;
-      # };
 
       "org/gnome/shell/extensions/gtktitlebar" = {
         hide-window-titlebars = "always";
