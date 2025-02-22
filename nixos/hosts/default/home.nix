@@ -123,11 +123,8 @@
   git.enable = true;
   vscode.enable = true;
   gnome.enable = true;
+  autostart.enable = true;
   rbw.enable = true;
   rofi.enable = true;
   rofi-rbw.enable = true;
-
-  # Startup programs
-  home.file.".config/autostart/discord.desktop".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/applications/discord.desktop";
 }
