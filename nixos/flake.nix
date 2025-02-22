@@ -31,7 +31,6 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/default/configuration.nix
-        ./modules/nixos/default.nix
         inputs.stylix.nixosModules.stylix
       ];
     };

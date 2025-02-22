@@ -11,6 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./../../modules/nixos/default.nix
     inputs.home-manager.nixosModules.default
     inputs.sops-nix.nixosModules.sops
   ];
@@ -60,50 +61,9 @@
     age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
   };
 
-  # https://stylix.danth.me/options/nixos.html
-  stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    image = /run/current-system/sw/share/backgrounds/gnome/blobs-l.svg;
-
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-    };
-
-    fonts = {
-      monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-        name = "JetBrainsMono Nerd Font Mono";
-      };
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
-      };
-    };
-
-    fonts.sizes = {
-      applications = 12;
-      terminal = 15;
-      desktop = 10;
-      popups = 10;
-    };
-
-    opacity = {
-      applications = 1.0;
-      terminal = 1.0;
-      desktop = 1.0;
-      popups = 1.0;
-    };
-
-    polarity = "dark";
-  };
-
   # Use nvidia drivers
   nvidia.enable = true;
+  custom-style.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
