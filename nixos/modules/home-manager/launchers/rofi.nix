@@ -61,8 +61,6 @@ in {
         show-icons = true;
         icon-theme = "Fluent-dark";
 
-        auto-select = true; # Auto select when only one thing matches
-
         drun-match-fields = "name,generic,categories";
         drun-show-actions = true;
 
