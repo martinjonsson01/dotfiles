@@ -43,6 +43,18 @@
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
       "org/gnome/desktop/screensaver".lock-enabled = false;
 
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>o";
+        command = "rofi -show combi";
+        name = "Rofi";
+      };
+
       "org/gnome/shell".enabled-extensions = [
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
