@@ -55,6 +55,11 @@
         name = "Rofi";
       };
 
+      # Disable overlay so that <Super> can be rebound to rofi.
+      "org/gnome/mutter" = {
+        overlay-key = [""];
+      };
+
       "org/gnome/shell".enabled-extensions = [
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
