@@ -52,7 +52,11 @@ in {
       extraConfig = {
         modi = "drun,window,emoji,calc,top";
         font = "mono 20";
+        show-icons = true;
+        icon-theme = "Fluent-dark";
         auto-select = true;
+        drun-match-fields = "name,generic,categories";
+        drun-show-actions = true;
       };
     };
   };
