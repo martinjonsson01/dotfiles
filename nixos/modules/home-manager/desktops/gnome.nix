@@ -50,11 +50,11 @@
         ];
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "Super_L";
-        command = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
-        name = "Rofi drun";
-      };
+      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      #   binding = "Super_L";
+      #   command = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
+      #   name = "Rofi drun";
+      # };
 
       # Rebind overlay so that Super_L can be rebound to rofi.
       "org/gnome/mutter" = {
@@ -67,6 +67,7 @@
         "tilingshell@ferrarodomenico.com"
         "runcat@kolesnikov.se"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "super-key@tommimon.github.com"
         # "advanced-alt-tab@G-dH.github.com"
       ];
 
