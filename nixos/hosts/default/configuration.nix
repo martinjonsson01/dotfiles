@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    inputs.sops-nix.nixosModules.sops
   ];
 
   # Allow unfree packages
@@ -48,6 +49,18 @@
     ];
     dates = "02:00";
     randomizedDelaySec = "45min";
+  };
+
+  # Secrets management
+  sops = {
+    defaultSopsFile = ./../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age.keyFile = "/home/martin/.config/sops/age/keys.txt";
+
+    secrets = {
+      "domain".owner = "martin";
+    };
   };
 
   # Use nvidia drivers

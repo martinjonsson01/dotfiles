@@ -9,7 +9,7 @@ set -e
 pushd ~/dotfiles/nixos/
 
 # Early return if no changes were detected (thanks @singiamtel!)
-if git diff --quiet '*.nix'; then
+if git diff HEAD --quiet '*.nix'; then
     echo "No changes detected, exiting."
     popd
     exit 0
