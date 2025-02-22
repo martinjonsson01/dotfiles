@@ -26,13 +26,27 @@
       "org/gnome/desktop/calendar".show-weekdate = true;
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        font-antialiasing = "grayscale";
-        font-hinting = "slight";
+        font-antialiasing = "rgba";
+        font-hinting = "full";
 
         # Older GTK apps don't use the above color-scheme setting. For those set
         # the legacy theme to a dark one
-        gtk-theme = "Adwaita-dark";
+        gtk-theme = "Adwaita";
+        gtk-enable-primary-paste = false;
       };
+
+      "org/gnome/desktop/wm/preferences" = {
+        action-middle-click-titlebar = "toggle-maximize-vertically";
+        button-layout = "appmenu:minimize,close";
+      };
+
+      "org/gnome/shell".enabled-extensions = [
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+        "tilingshell@ferrarodomenico.com"
+        "runcat@kolesnikov.se"
+        "advanced-alt-tab@G-dH.github.com"
+      ];
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
         app-switcher-popup-fav-apps = false;
