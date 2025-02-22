@@ -14,7 +14,7 @@
     # Set using secret: ui_url = "https://vault.xilain.dev/"; # Optional
     lock_timeout = "32400"; # Optional, default is 3600 seconds (1 hour), 32400 seconds (9 hours)
     sync_interval = "3600"; # Optional, default is 3600 seconds (1 hour)
-    # pinentry = "${pkgs.pinentry-gnome3}/bin/pinentry-gnome3"; # Optional, default is pinentry
+    pinentry = "${pkgs.pinentry-gnome3}/bin/pinentry-gnome3"; # Optional, default is pinentry
   };
 
   # Convert the configuration to the format expected by rbw
@@ -40,6 +40,7 @@ in {
 
   config = lib.mkIf config.rbw.enable {
     home.packages = with pkgs; [
+      pinentry-gnome3 # For passphrase input
       rbw
       setupRbwConfigScript
     ];
