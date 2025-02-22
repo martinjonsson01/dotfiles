@@ -12,8 +12,8 @@
     dconf.settings = {
       # Duration of inactivity (seconds) until screen turns off.
       "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 900;
-      # Never automatically suspend ('suspend' when true, 'nothing' if false).
-      "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-type = false;
+      # Never automatically suspend.
+      "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-type = "nothing";
     };
   };
 }
