@@ -43,7 +43,7 @@
         sort = true;
         sorting-method = "fzf";
 
-        kb-cancel = "Escape,MouseMiddle";
+        kb-cancel = "Escape,MouseMiddle,Control+c,Super,Alt+tab";
       };
 
       theme = "${pkgs.fetchurl {
