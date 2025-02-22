@@ -7,5 +7,6 @@
     ./desktops/autostart.nix
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
+    ./shells/fish/fish.nix
   ];
 }
