@@ -54,6 +54,7 @@
 
     # Dev
     nil # LSP for Nix
+    sops # Secrets management
 
     # Media
     plexamp
