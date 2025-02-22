@@ -67,6 +67,9 @@
     nil # LSP for Nix
     sops # Secrets management
 
+    # Utility
+    fsearch
+
     # Media
     plexamp
     plex-desktop
