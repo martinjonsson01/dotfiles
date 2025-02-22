@@ -55,7 +55,7 @@ in {
       };
       extraConfig = {
         modi = "drun,window,filebrowser,emoji,calc,top";
-        combi-modes = "window,drun";
+        combi-modes = "drun,filebrowser";
 
         font = "mono 20";
         show-icons = true;
