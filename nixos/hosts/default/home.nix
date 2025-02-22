@@ -67,8 +67,11 @@
     nil # LSP for Nix
     sops # Secrets management
 
+    # CLI
+    fzf
+
     # Utility
-    fsearch
+    fsearch # Like Void Tools Everything but on linux (i.e. file search)
 
     # Media
     plexamp
