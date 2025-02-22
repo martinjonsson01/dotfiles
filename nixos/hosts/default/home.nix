@@ -126,5 +126,4 @@
   rbw.enable = true;
   rofi.enable = true;
   rofi-rbw.enable = true;
-  ydotool.enable = true;
 }

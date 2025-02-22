@@ -6,6 +6,5 @@
     ./desktops/gnome.nix
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
-    ./services/ydotool.nix
   ];
 }
