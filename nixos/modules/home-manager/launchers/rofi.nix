@@ -45,7 +45,6 @@ in {
         plugins = with pkgs; [
           rofi-calc # Uses `qalc` to do natural language calculations
           rofi-emoji # Emoji selector
-          rofi-rbw # Bitwarden plugin
           rofi-top # Interactive process viewer
         ];
       };
