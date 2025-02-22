@@ -12,10 +12,10 @@ with lib; let
   socket = "/run/ydotoold/socket";
 in {
   options = {
-    ydotool.enable = lib.mkEnableOption "Enables ydotool";
+    ydotool.enable = mkEnableOption "Enables ydotool";
   };
 
-  config = lib.mkIf config.ydotool.enable {
+  config = mkIf config.ydotool.enable {
     environment.variables.YDOTOOL_SOCKET = socket;
 
     users.groups.ydotool = {};
