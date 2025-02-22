@@ -15,6 +15,7 @@
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.appindicator
       gnomeExtensions.runcat
+      gnomeExtensions.super-key
     ];
 
     dconf.settings = {
@@ -50,7 +51,7 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>";
+        binding = "Super_L";
         command = "rofi -show run";
         name = "Rofi run";
       };
