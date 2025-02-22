@@ -93,4 +93,5 @@
   # Enable modules.
   git.enable = true;
   vscode.enable = true;
+  gnome.enable = true;
 }

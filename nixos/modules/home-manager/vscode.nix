@@ -8,7 +8,7 @@
     vscode.enable = lib.mkEnableOption "Enables Visual Studio Code";
   };
 
-  config = {
+  config = lib.mkIf config.vscode.enable {
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions;
