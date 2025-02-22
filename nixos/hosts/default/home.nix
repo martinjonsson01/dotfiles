@@ -50,6 +50,7 @@
     discord
     slack
     nil # LSP for Nix
+    plexamp
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
