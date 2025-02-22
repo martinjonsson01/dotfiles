@@ -50,8 +50,7 @@ in {
         ];
       };
       extraConfig = {
-        modi = "window,run,emoji,calc,top,combi";
-        combi-modi = "run,emoji,calc";
+        modi = "run,window,emoji,calc,top";
         font = "mono 20";
       };
     };

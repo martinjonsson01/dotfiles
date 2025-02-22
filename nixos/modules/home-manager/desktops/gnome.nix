@@ -50,9 +50,14 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>space";
-        command = "rofi -show combi";
-        name = "Rofi";
+        binding = "Super_L";
+        command = "rofi -show run";
+        name = "Rofi run";
+      };
+
+      # Rebind overlay so that <Super> can be rebound to rofi.
+      "org/gnome/mutter" = {
+        overlay-key = ["Super_R"];
       };
 
       "org/gnome/shell".enabled-extensions = [
