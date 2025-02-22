@@ -164,7 +164,6 @@
   environment.systemPackages = with pkgs; [
     wget
     google-chrome
-    gnomeExtensions.tiling-shell
     alejandra
     libnotify
     tree

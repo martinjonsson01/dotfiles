@@ -47,9 +47,15 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Social
     discord
     slack
+
+    # Dev
     nil # LSP for Nix
+
+    # Media
     plexamp
     plex-desktop
   ];
