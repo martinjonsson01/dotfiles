@@ -66,7 +66,6 @@
     # Dev
     nil # LSP for Nix
     sops # Secrets management
-    xclip # Clipboard management
 
     # Media
     plexamp
