@@ -72,6 +72,7 @@
     fd # Simple, fast and user-friendly alternative to find
     bat # Cat(1) clone with syntax highlighting and Git integration
     dust # Disk usage utility written in Rust
+    thefuck # Fixes last run command
 
     # Utility
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
