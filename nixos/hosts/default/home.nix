@@ -69,6 +69,9 @@
 
     # CLI
     fzf # Fuzzy search
+    fd # Simple, fast and user-friendly alternative to find
+    bat # Cat(1) clone with syntax highlighting and Git integration
+    dust # Disk usage utility written in Rust
 
     # Utility
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
