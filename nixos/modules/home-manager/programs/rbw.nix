@@ -31,6 +31,7 @@
   setupRbwConfigScript = pkgs.writeShellScriptBin "setup-rbw-config" ''
     #!/usr/bin/env bash
     ${rbwConfigText}
+    source ${config.sops.secrets."rbw-setup".path}
   '';
 in {
   options = {
@@ -43,7 +44,7 @@ in {
       setupRbwConfigScript
     ];
 
-    sops.secrets.rbw-setup = {
+    sops.secrets."rbw-setup" = {
       sopsFile = ./../../../secrets/rbw-setup.sh;
       format = "binary";
     };
