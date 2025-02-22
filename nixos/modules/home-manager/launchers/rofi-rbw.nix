@@ -14,7 +14,7 @@
     prompt = ["Bitwarden"]; # Custom prompt text
     clear-after = ["15"]; # Clear the clipboard after 15 seconds
     # keybindings = ["Alt+1:type:username:enter:delay:password:enter"]; # Custom keybindings
-    typer = ["${pkgs.xdotool}"]; # Type the characters using this application
+    typer = ["${pkgs.dotool}"]; # Type the characters using this application
   };
 
   # Convert the configuration to a format suitable for the rofi-rbw.rc file
