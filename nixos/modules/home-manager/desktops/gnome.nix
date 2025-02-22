@@ -50,7 +50,7 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>o";
+        binding = "<Super>";
         command = "rofi -show combi";
         name = "Rofi";
       };
@@ -60,7 +60,7 @@
         "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
         "tilingshell@ferrarodomenico.com"
         "runcat@kolesnikov.se"
-        "advanced-alt-tab@G-dH.github.com"
+        # "advanced-alt-tab@G-dH.github.com"
       ];
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
