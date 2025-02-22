@@ -112,28 +112,28 @@
       };
 
       "org/gnome/shell/extensions/pano/emoji-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
         header-bg-color = "rgb(26,95,180)";
       };
 
       "org/gnome/shell/extensions/pano/file-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
         header-bg-color = "rgb(26,95,180)";
       };
 
       "org/gnome/shell/extensions/pano/image-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
         header-bg-color = "rgb(26,95,180)";
       };
 
       "org/gnome/shell/extensions/pano/link-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
         header-bg-color = "rgb(26,95,180)";
         header-color = "rgb(255,255,255)";
       };
 
       "org/gnome/shell/extensions/pano/text-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
       };
 
       "org/gnome/shell/extensions/super-key" = {
