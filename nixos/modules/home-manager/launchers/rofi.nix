@@ -55,18 +55,13 @@ in {
       };
       extraConfig = {
         modi = "drun,window,filebrowser,emoji,calc,top";
-        combi-modes = "drun,filebrowser";
+        combi-modes = "drun,calc,filebrowser";
 
         font = "mono 20";
         show-icons = true;
         icon-theme = "Fluent-dark";
 
         auto-select = true; # Auto select when only one thing matches
-
-        # Hide "run ... / window ..." prefixes
-        display-drun = "";
-        display-window = "";
-        display-combi = "";
 
         drun-match-fields = "name,generic,categories";
         drun-show-actions = true;
