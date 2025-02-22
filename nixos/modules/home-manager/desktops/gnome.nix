@@ -95,7 +95,7 @@
         incognito-shortcut = ["<Shift><Super>v"];
         is-in-incognito = false;
         item-size = 200;
-        link-previews = false;
+        link-previews = true;
         play-audio-on-copy = false;
         send-notification-on-copy = false;
         session-only-mode = true;
@@ -103,7 +103,7 @@
       };
 
       "org/gnome/shell/extensions/pano/code-item" = {
-        body-bg-color = "rgb(154,153,150)";
+        body-bg-color = "rgb(33, 33, 33)";
         header-bg-color = "rgb(26,95,180)";
       };
 
