@@ -12,6 +12,7 @@
     home.packages = with pkgs; [
       grc # Generic text colouriser
       zoxide # A smarter cd command, inspired by z and autojump.
+      babelfish # Translate bash scripts to fish.
     ];
 
     home.file = {
