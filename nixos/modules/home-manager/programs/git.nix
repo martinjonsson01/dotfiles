@@ -19,6 +19,16 @@
         rerere.enabled = true;
         column.ui = "auto";
         branch.sort = "committerdate";
+        push = {
+          default = "current";
+          autoSetupRemote = true;
+        };
+        merge = {
+          conflictstyle = "diff3";
+        };
+        diff = {
+          colorMoved = "default";
+        };
       };
     };
 

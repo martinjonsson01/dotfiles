@@ -68,12 +68,31 @@
           name = "grc";
           src = pkgs.fishPlugins.grc.src;
         }
+        # Auto-complete matching pairs in the Fish command line
+        {
+          name = "autopair";
+          src = pkgs.fishPlugins.autopair;
+        }
+        # Automatically receive notifications when long processes finish
+        {
+          name = "done";
+          src = pkgs.fishPlugins.done;
+        }
+        # Keeps your fish shell history clean from typos,
+        # incorrectly used commands
+        # and everything you don't want to store due to privacy reasons
+        {
+          name = "sponge";
+          src = pkgs.fishPlugins.sponge;
+        }
       ];
 
       interactiveShellInit = ''
         set -g fish_greeting ""
 
+        ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
         ${pkgs.thefuck}/bin/thefuck --alias | source
+
         set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
         set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
         set -gx FZF_ALT_C_COMMAND 'fd --type d .'
