@@ -17,6 +17,7 @@
           jnoortheen.nix-ide # LSP integration for nix
           kamadorueda.alejandra # Nix formatter
           bmalehorn.vscode-fish # Fish syntax + formatting
+          eamodio.gitlens # Better Git support
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
