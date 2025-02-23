@@ -17,6 +17,51 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  myHardware = {
+    cpu = "amd";
+    gpuDriver = "nvidia";
+    monitors = [
+      # Acer 144hz 27" monitor. card1-DP-5     2560x1440
+      {
+        name = "card1-DP-5";
+        width = 2560;
+        height = 1440;
+        wallpaper = ./wallpapers/todo.png;
+        workspaces = [
+          1
+          4
+          7
+        ];
+      }
+      # Samsung ultrawide 49" monitor. card1-DP-6     5120x1440
+      {
+        name = "card1-DP-6";
+        width = 5120;
+        height = 1440;
+        primary = true;
+        x = 5120;
+        wallpaper = ./wallpapers/todo.png;
+        workspaces = [
+          2
+          5
+          8
+        ];
+      }
+      # Samsung 24" monitor. card1-HDMI-A-2 1920x1080
+      {
+        name = "card1-HDMI-A-2";
+        width = 1920;
+        height = 1080;
+        wallpaper = ./wallpapers/todo.png;
+        workspaces = [
+          3
+          6
+          9
+        ];
+      }
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -198,16 +243,6 @@
     packages = with pkgs; [
       hexchat # IRC Client
     ];
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs pkgs-unstable;};
-    users = {
-      "martin" = import ./home.nix;
-    };
-    # Extension to put on backup files.
-    backupFileExtension = "hm-backup";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

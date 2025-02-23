@@ -131,8 +131,7 @@
   git.enable = true;
   vscode.enable = true;
   gnome.enable = true;
-  hyprland.enable = true;
-  hyprland.nvidia.enable = true;
+  # TODO: hyprland.enable = true;
   autostart.enable = true;
   rbw.enable = true;
   rofi.enable = true;

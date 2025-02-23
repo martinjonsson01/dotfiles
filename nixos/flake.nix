@@ -27,6 +27,8 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    home-manager,
+    stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -36,7 +38,21 @@
       specialArgs = {inherit inputs pkgs-unstable;};
       modules = [
         ./hosts/default/configuration.nix
-        inputs.stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            extraSpecialArgs = {inherit inputs pkgs-unstable;};
+            users."martin" = {
+              imports = [
+                ./hosts/default/home.nix
+              ];
+            };
+            # Extension to put on backup files.
+            backupFileExtension = "hm-backup";
+          };
+        }
       ];
     };
   };
