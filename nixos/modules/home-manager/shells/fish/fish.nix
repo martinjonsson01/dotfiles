@@ -107,6 +107,7 @@
       du = "${du-dust}/bin/dust";
       g = "${gitAndTools.git}/bin/git";
       lg = "${lazygit}/bin/lazygit";
+      ls = "${lsd}/bin/lsd";
     };
   };
 }
