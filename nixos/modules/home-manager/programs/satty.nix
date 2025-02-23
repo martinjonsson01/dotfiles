@@ -30,7 +30,10 @@ in {
   };
 
   config = lib.mkIf config.satty.enable {
-    home.packages = [pkgs.satty];
+    home.packages = [
+      pkgs.satty
+    ];
+
     xdg.configFile."satty/config.toml".source = pkgs.writers.writeTOML "satty-config.toml" settings;
   };
 }

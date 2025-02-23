@@ -33,6 +33,7 @@
         # Older GTK apps don't use the above color-scheme setting. For those set
         # the legacy theme to a dark one
         gtk-theme = "Adwaita";
+
         gtk-enable-primary-paste = false;
       };
 
