@@ -50,6 +50,12 @@
         ];
       };
 
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>period";
+        command = "rofimoji";
+        name = "term";
+      };
+
       "org/gnome/shell/keybindings" = {
         focus-active-notification = ["<Shift><Super>n"];
         show-screen-recording-ui = ["<Control>Print"];

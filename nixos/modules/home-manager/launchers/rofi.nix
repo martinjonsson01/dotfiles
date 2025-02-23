@@ -21,13 +21,14 @@
       package = pkgs.rofi.override {
         plugins = with pkgs; [
           rofi-calc # Uses `qalc` to do natural language calculations
-          rofi-emoji # Emoji selector
+          # rofi-emoji # Emoji selector
+          rofimoji # Emoji selector
           rofi-top # Interactive process viewer
         ];
       };
       extraConfig = {
         modi = "calc,filebrowser,emoji,top,drun,window";
-        combi-modes = "drun,window,filebrowser";
+        combi-modes = "window,drun,filebrowser";
 
         font = "mono 20";
         show-icons = true;
