@@ -194,7 +194,7 @@
     description = "Martin";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      hexchat
+      hexchat # IRC Client
     ];
   };
 

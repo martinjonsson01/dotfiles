@@ -68,12 +68,10 @@
     sops # Secrets management
 
     # CLI
-    fzf # Fuzzy search
     fd # Simple, fast and user-friendly alternative to find
     bat # Cat(1) clone with syntax highlighting and Git integration
     dust # Disk usage utility written in Rust
     thefuck # Fixes last run command
-    broot # Directory navigation.
     comma # Place a , in front of a command to run software without installing it.
 
     # Utility

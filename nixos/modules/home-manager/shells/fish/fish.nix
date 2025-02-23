@@ -11,7 +11,6 @@
   config = lib.mkIf config.fish.enable {
     home.packages = with pkgs; [
       grc # Generic text colouriser
-      zoxide # A smarter cd command, inspired by z and autojump.
       babelfish # Translate bash scripts to fish.
     ];
 
@@ -34,10 +33,29 @@
       };
     };
 
-    # Creates programs.sqlite database for command-not-found.
-    programs.nix-index = {
-      enable = true;
-      enableFishIntegration = true;
+    #
+    # Commands with fish integration.
+    #
+    programs = {
+      # Command-line fuzzy finder written in Go
+      fzf.enable = true;
+      fzf.enableFishIntegration = true;
+      # Next gen ls command
+      lsd.enable = true;
+      lsd.enableAliases = true;
+      # Fast cd command that learns your habits
+      zoxide.enable = true;
+      zoxide.enableFishIntegration = true;
+      zoxide.options = ["--cmd cd"];
+      # Interactive directory tree view.
+      broot.enable = true;
+      broot.enableFishIntegration = true;
+      # Shell extension that manages your environment
+      direnv.enable = true;
+      direnv.nix-direnv.enable = true;
+      # Creates programs.sqlite database for command-not-found.
+      nix-index.enable = true;
+      nix-index.enableFishIntegration = true;
     };
 
     programs.fish = {
@@ -58,8 +76,6 @@
         set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
         set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
         set -gx FZF_ALT_C_COMMAND 'fd --type d .'
-
-        zoxide init fish | source
 
         # Set Fish colors that aren't dependant the `$term_background`.
         set -g fish_color_quote        cyan      # color of commands
@@ -90,7 +106,6 @@
       cat = "${bat}/bin/bat";
       du = "${du-dust}/bin/dust";
       g = "${gitAndTools.git}/bin/git";
-      la = "ll -a";
       lg = "${lazygit}/bin/lazygit";
     };
   };
