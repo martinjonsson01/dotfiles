@@ -27,7 +27,7 @@
         ];
       };
       extraConfig = {
-        modi = "calc,filebrowser,emoji,top,drun,window";
+        modi = "calc,filebrowser,top,drun,window";
         combi-modes = "window,drun,filebrowser";
 
         font = "mono 20";

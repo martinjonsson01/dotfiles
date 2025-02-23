@@ -53,7 +53,7 @@
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Super>period";
         command = "rofimoji";
-        name = "term";
+        name = "Rofimoji";
       };
 
       "org/gnome/shell/keybindings" = {
