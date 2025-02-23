@@ -28,5 +28,27 @@
         fi
       '';
     };
+
+    # The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+    programs.starship = {
+      enable = true;
+
+      settings = {
+        aws.disabled = true;
+        gcloud.disabled = true;
+        kubernetes.disabled = false;
+        python.disabled = true;
+        ruby.disabled = true;
+
+        git_branch.style = "242";
+
+        directory.style = "blue";
+        directory.truncate_to_repo = false;
+        directory.truncation_length = 8;
+
+        hostname.ssh_only = false;
+        hostname.style = "bold green";
+      };
+    };
   };
 }
