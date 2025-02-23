@@ -11,6 +11,7 @@
   config = lib.mkIf config.vscode.enable {
     programs.vscode = {
       enable = true;
+
       extensions = with pkgs.vscode-extensions;
         [
           jnoortheen.nix-ide # LSP integration for nix
@@ -25,6 +26,7 @@
             sha256 = "0arsy8jmwnzrhcnyia958flvpiwzy0ngrcmivab7cxwm6dzlw6gw";
           }
         ];
+
       userSettings = {
         "nix.formatterPath" = "alejandra";
         "nix.enableLanguageServer" = true;
@@ -43,6 +45,44 @@
 
         "workbench.colorTheme" = "Syntax Material Dark";
       };
+
+      keybindings = [
+        # Ctrl + Ö terminal
+        {
+          "key" = "ctrl+[Semicolon]";
+          "command" = "workbench.action.terminal.toggleTerminal";
+          "when" = "terminal.active";
+        }
+        {
+          "key" = "ctrl+shift+[Equal]";
+          "command" = "-workbench.action.terminal.toggleTerminal";
+          "when" = "terminal.active";
+        }
+
+        # Format document
+        {
+          "key" = "ctrl+k ctrl+d";
+          "command" = "editor.action.formatDocument";
+          "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
+        }
+        {
+          "key" = "ctrl+shift+i";
+          "command" = "-editor.action.formatDocument";
+          "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
+        }
+
+        # Delete line
+        {
+          "key" = "ctrl+shift+l";
+          "command" = "editor.action.deleteLines";
+          "when" = "textInputFocus && !editorReadonly";
+        }
+        {
+          "key" = "ctrl+shift+k";
+          "command" = "-editor.action.deleteLines";
+          "when" = "textInputFocus && !editorReadonly";
+        }
+      ];
     };
   };
 }
