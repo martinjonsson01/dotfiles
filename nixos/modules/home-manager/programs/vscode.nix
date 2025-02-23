@@ -38,7 +38,7 @@
         "editor.formatOnSave" = true;
         "editor.tabSize" = 2;
         "editor.fontFamily" = "'${config.stylix.fonts.monospace.name}', 'Droid Sans Mono', 'monospace', monospace";
-        "editor.fontSize" = config.stylix.fonts.sizes.applications;
+        "editor.fontSize" = config.stylix.fonts.sizes.applications + 3;
 
         "explorer.confirmDelete" = false;
 
@@ -48,7 +48,7 @@
 
         "workbench.colorTheme" = "Syntax Material Dark";
 
-        "terminal.integrated.fontSize" = config.stylix.fonts.sizes.terminal;
+        "terminal.integrated.fontSize" = config.stylix.fonts.sizes.terminal + 3;
       };
 
       keybindings = [
