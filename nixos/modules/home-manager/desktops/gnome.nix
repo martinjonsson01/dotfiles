@@ -52,7 +52,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Super>period";
-        command = "rofimoji --action copy --clipboarder wl-copy";
+        command = "rofimoji --action copy";
         name = "Rofimoji";
       };
 
