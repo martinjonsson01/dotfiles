@@ -85,6 +85,11 @@
           name = "sponge";
           src = pkgs.fishPlugins.sponge;
         }
+        # Adds color to man pages
+        {
+          name = "colored-man-pages";
+          src = pkgs.fishPlugins.colored-man-pages;
+        }
       ];
 
       interactiveShellInit = ''
