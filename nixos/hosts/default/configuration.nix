@@ -203,6 +203,8 @@
     users = {
       "martin" = import ./home.nix;
     };
+    # Extension to put on backup files.
+    backupFileExtension = "hm-backup";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
