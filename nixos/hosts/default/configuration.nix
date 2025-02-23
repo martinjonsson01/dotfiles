@@ -61,7 +61,6 @@
     age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
   };
 
-  # Use nvidia drivers
   nvidia.enable = true;
   custom-style.enable = true;
   fish.enable = true;
@@ -185,7 +184,7 @@
 
     # System
     libnotify # For notifications
-    font-awesome # Icon font
+    nerdfonts # Iconic font aggregator, collection, and patcher
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
