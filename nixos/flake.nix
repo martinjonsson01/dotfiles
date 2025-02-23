@@ -37,7 +37,10 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs pkgs-unstable;};
       modules = [
+        ./modules/nixos/default.nix
+        ./hosts/default/hardware-configuration.nix
         ./hosts/default/configuration.nix
+        inputs.sops-nix.nixosModules.sops
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {

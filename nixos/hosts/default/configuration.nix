@@ -4,19 +4,10 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   inputs,
   lib,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./../../modules/nixos/default.nix
-    inputs.home-manager.nixosModules.default
-    inputs.sops-nix.nixosModules.sops
-  ];
-
   myHardware = {
     cpu = "amd";
     gpuDriver = "nvidia";
