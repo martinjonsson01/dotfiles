@@ -30,7 +30,13 @@
 
       interactiveShellInit = ''
         set -g fish_greeting ""
+
         ${pkgs.thefuck}/bin/thefuck --alias | source
+        set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
+        set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+        set -gx FZF_ALT_C_COMMAND 'fd --type d .'
+
+        zoxide init fish | source
 
         # Set Fish colors that aren't dependant the `$term_background`.
         set -g fish_color_quote        cyan      # color of commands
