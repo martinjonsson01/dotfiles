@@ -107,7 +107,7 @@
       cat = "${bat}/bin/bat";
       du = "${du-dust}/bin/dust";
       g = "${gitAndTools.git}/bin/git";
-      lg = "${pkgs-unstable.lazygit}/bin/lazygit";
+      # lg = "${lazygit}/bin/lazygit";
       ls = "${lsd}/bin/lsd";
     };
   };
