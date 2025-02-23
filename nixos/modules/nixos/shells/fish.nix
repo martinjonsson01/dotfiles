@@ -14,7 +14,7 @@
 
   config = lib.mkIf config.fish.enable {
     # Enable vendor fish completions provided by Nixpkgs
-    programs.fish.enable = true;
+    # programs.fish.enable = true;
 
     # Since fish isn't POSIX compliant, we can't use it as a
     # login shell. Instead, launch it from within bash.
