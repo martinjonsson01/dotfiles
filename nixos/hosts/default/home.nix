@@ -133,4 +133,5 @@
   rofi.enable = true;
   rofi-rbw.enable = true;
   fish.enable = true;
+  satty.enable = true;
 }

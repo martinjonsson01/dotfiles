@@ -3,6 +3,7 @@
     ./programs/git.nix
     ./programs/rbw.nix
     ./programs/vscode.nix
+    ./programs/satty.nix
     ./desktops/gnome.nix
     ./desktops/autostart.nix
     ./launchers/rofi.nix
