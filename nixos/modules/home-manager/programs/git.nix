@@ -1,5 +1,5 @@
 {
-  pkgs,
+  #nixpkgs-unstable,
   lib,
   config,
   ...
@@ -24,6 +24,7 @@
 
     programs.lazygit = {
       enable = true;
+      # package = nixpkgs-unstable.lazygit;
     };
   };
 }
