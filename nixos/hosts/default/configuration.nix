@@ -175,11 +175,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    google-chrome
-    alejandra
-    libnotify
-    tree
+    # Programs
+    google-chrome # Web browser
+
+    # CLI
+    wget # For downloading
+    alejandra # Nix formatter
+    tree # Shows directory structures
+
+    # System
+    libnotify # For notifications
+    font-awesome # Icon font
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
