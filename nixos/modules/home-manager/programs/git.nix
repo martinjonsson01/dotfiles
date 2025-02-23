@@ -1,5 +1,5 @@
 {
-  pkgsUnstable,
+  pkgs-unstable,
   lib,
   config,
   ...
@@ -24,7 +24,7 @@
 
     programs.lazygit = {
       enable = true;
-      package = pkgsUnstable.lazygit;
+      package = pkgs-unstable.lazygit;
     };
   };
 }

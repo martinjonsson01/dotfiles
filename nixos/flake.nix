@@ -26,10 +26,14 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+  in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs pkgs-unstable;};
       modules = [
         ./hosts/default/configuration.nix
         inputs.stylix.nixosModules.stylix
