@@ -33,6 +33,7 @@
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
     };
+
     gc = {
       automatic = true;
       dates = "weekly";
@@ -65,6 +66,8 @@
   nvidia.enable = true;
   custom-style.enable = true;
   fish.enable = true;
+
+  hyprland.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -159,7 +162,7 @@
   # services.xserver.libinput.enable = true;
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld.libraries = [
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages.
   ];
