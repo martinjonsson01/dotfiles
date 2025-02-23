@@ -71,24 +71,24 @@
         # Auto-complete matching pairs in the Fish command line
         {
           name = "autopair";
-          src = pkgs.fishPlugins.autopair;
+          src = pkgs.fishPlugins.autopair.src;
         }
         # Automatically receive notifications when long processes finish
         {
           name = "done";
-          src = pkgs.fishPlugins.done;
+          src = pkgs.fishPlugins.done.src;
         }
         # Keeps your fish shell history clean from typos,
         # incorrectly used commands
         # and everything you don't want to store due to privacy reasons
         {
           name = "sponge";
-          src = pkgs.fishPlugins.sponge;
+          src = pkgs.fishPlugins.sponge.src;
         }
         # Adds color to man pages
         {
           name = "colored-man-pages";
-          src = pkgs.fishPlugins.colored-man-pages;
+          src = pkgs.fishPlugins.colored-man-pages.src;
         }
       ];
 
