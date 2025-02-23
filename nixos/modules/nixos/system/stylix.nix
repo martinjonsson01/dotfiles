@@ -38,7 +38,7 @@
         applications = 13;
         terminal = 13;
         desktop = 13;
-        popups = 13;
+        popups = 16;
       };
 
       opacity = {
