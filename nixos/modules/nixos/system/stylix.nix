@@ -35,10 +35,10 @@
       };
 
       fonts.sizes = {
-        applications = 12;
-        terminal = 15;
-        desktop = 10;
-        popups = 10;
+        applications = 13;
+        terminal = 13;
+        desktop = 13;
+        popups = 13;
       };
 
       opacity = {
