@@ -7,7 +7,13 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  # Makes it possible to access `pkgsUnstable` anywhere in the config.
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -198,7 +204,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs pkgsUnstable;};
     users = {
       "martin" = import ./home.nix;
     };
