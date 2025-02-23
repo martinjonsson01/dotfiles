@@ -1,5 +1,5 @@
 {...}: {
-  home-manager.users."martin".wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
     bind =
