@@ -27,10 +27,20 @@
         enable = true;
 
         settings = {
-          env = lib.optionals (config.nvidia.enable) [
-            "LIBVA_DRIVER_NAME,nvidia"
-            "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-          ];
+          env =
+            lib.optionals (config.nvidia.enable) [
+              "LIBVA_DRIVER_NAME,nvidia"
+              "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+            ]
+            ++ [
+              "XDG_SESSION_TYPE,wayland"
+              "NIXOS_OZONE_WL,1"
+              "MOZ_ENABLE_WAYLAND,1"
+              "_JAVA_AWT_WM_NONREPARENTING,1"
+              "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+              "QT_QPA_PLATFORM,wayland"
+              "GDK_BACKEND,wayland"
+            ];
         };
       };
     };
