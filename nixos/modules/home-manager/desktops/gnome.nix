@@ -87,6 +87,10 @@
         ];
       };
 
+      "org/gnome/shell/extensions/tilingshell" = {
+        active-screen-edges = false;
+      };
+
       "org/gnome/shell/extensions/pano" = {
         active-item-border-color = "rgb(236,94,94)";
         global-shortcut = ["<Super>v"];
