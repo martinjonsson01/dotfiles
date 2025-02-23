@@ -29,7 +29,7 @@
         modi = "calc,filebrowser,top,drun,window";
         combi-modes = "window,drun,filebrowser";
 
-        font = "mono 20";
+        font = "${config.stylix.fonts.monospace.name} 20";
         show-icons = true;
         icon-theme = "Fluent-dark";
 

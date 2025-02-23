@@ -79,7 +79,7 @@
     rofimoji # Emoji selector
 
     # Style
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
+    (nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
 
     # Media
     plexamp
