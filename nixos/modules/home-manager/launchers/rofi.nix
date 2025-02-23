@@ -22,7 +22,6 @@
         plugins = with pkgs; [
           rofi-calc # Uses `qalc` to do natural language calculations
           # rofi-emoji # Emoji selector
-          rofimoji # Emoji selector
           rofi-top # Interactive process viewer
         ];
       };
