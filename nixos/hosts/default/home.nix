@@ -76,7 +76,6 @@
 
     # Utility
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
-    xdotool # Automatic typing/interaction
     rofimoji # Emoji selector
 
     # Media

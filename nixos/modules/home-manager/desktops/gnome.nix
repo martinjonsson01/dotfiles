@@ -52,7 +52,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Super>period";
-        command = "rofimoji --typer xdotool";
+        command = "rofimoji --typer wtype";
         name = "Rofimoji";
       };
 
