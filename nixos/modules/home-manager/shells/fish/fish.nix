@@ -14,8 +14,30 @@
       zoxide # A smarter cd command, inspired by z and autojump.
     ];
 
-    # Fish files
-    home.file.".config/fish/functions/fish_prompt.fish".source = ./functions/fish_prompt.fish;
+    home.file = {
+      # Fish files
+      ".config/fish/functions" = {
+        source = ./functions;
+        recursive = true;
+      };
+
+      # Necessary for command-not-found function.
+      "bin/nix-command-not-found" = {
+        text = ''
+          #!/usr/bin/env bash
+          source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+          command_not_found_handle "$@"
+        '';
+
+        executable = true;
+      };
+    };
+
+    # Creates programs.sqlite database for command-not-found.
+    programs.nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
 
     programs.fish = {
       enable = true;
