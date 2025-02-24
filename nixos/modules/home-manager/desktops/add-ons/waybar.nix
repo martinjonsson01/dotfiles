@@ -76,7 +76,7 @@ in {
               output = monitor.name;
               layer = "top";
               position = "top";
-              margin = "10 10 -5 10";
+              margin = "5 20 -5 20";
 
               modules-left = leftModules;
               modules-center = centerModules;
