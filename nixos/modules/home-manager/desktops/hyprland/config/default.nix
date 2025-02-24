@@ -65,7 +65,7 @@ in {
       ];
     }
     // (import ./keybindings.nix {inherit config resizeMode pkgs;})
-    // (import ./ws-outputs.nix {inherit config;})
+    // (import ./ws-outputs.nix {inherit osConfig;})
     // (import ./window-rules.nix)
     // (import ./appearances.nix);
 }

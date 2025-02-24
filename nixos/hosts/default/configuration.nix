@@ -17,7 +17,7 @@
         name = "card1-DP-5";
         width = 2560;
         height = 1440;
-        wallpaper = ./wallpapers/todo.png;
+        wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
           1
           4
@@ -31,7 +31,7 @@
         height = 1440;
         primary = true;
         x = 5120;
-        wallpaper = ./wallpapers/todo.png;
+        wallpaper = ./wallpapers/skull2.png;
         workspaces = [
           2
           5
@@ -43,7 +43,7 @@
         name = "card1-HDMI-A-2";
         width = 1920;
         height = 1080;
-        wallpaper = ./wallpapers/todo.png;
+        wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
           3
           6

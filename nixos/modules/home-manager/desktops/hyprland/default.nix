@@ -1,5 +1,6 @@
 {
   config,
+  osConfig,
   lib,
   pkgs,
   ...
@@ -18,6 +19,6 @@
       {
         enable = true;
       }
-      // (import ./config {inherit config lib pkgs;});
+      // (import ./config {inherit config lib pkgs osConfig;});
   };
 }

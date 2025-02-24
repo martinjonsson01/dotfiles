@@ -46,7 +46,9 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            extraSpecialArgs = {inherit inputs pkgs-unstable;};
+            extraSpecialArgs = {
+              inherit inputs pkgs-unstable;
+            };
             users."martin" = {
               imports = [
                 ./hosts/default/home.nix

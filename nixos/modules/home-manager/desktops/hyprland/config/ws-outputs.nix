@@ -1,4 +1,4 @@
-{config}: let
+{osConfig}: let
   strBool = b:
     if b
     then "true"
@@ -14,5 +14,5 @@
     monitors;
 in {
   # [ "<ws>, monitor:<name>, default:<bool>" "..." ]
-  workspace = mkWorkspaces config.myHardware.monitors;
+  workspace = mkWorkspaces osConfig.myHardware.monitors;
 }
