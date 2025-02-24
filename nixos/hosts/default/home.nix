@@ -146,4 +146,5 @@
   nwg-bar.enable = true;
   nm-applet.enable = true;
   pasystray.enable = true;
+  swayidle.enable = true;
 }

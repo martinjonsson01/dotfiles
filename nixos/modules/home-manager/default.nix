@@ -16,6 +16,7 @@
     ./desktops/add-ons/nwg-bar.nix
     ./desktops/add-ons/nm-applet.nix
     ./desktops/add-ons/pasystray.nix
+    ./desktops/add-ons/swayidle.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
