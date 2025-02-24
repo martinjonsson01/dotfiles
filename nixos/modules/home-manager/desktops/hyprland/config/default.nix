@@ -53,7 +53,7 @@ in {
 
         # Mouse config
         accel_profile = "flat"; # Disable mouse acceleration
-        sensitivity = 0.9;
+        sensitivity = 1.0; # Value is clamped to the range -1.0 to 1.0.
         scroll_method = "on_button_down"; # Middle mouse scroll
         scroll_button = 274; # Middle mouse scroll
       };
