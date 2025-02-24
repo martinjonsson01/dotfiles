@@ -49,6 +49,7 @@ in {
       input = {
         numlock_by_default = true;
         follow_mouse = 1;
+        kb_layout = "se";
       };
       misc = {
         # Display Power Management Signaling

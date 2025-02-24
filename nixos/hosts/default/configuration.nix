@@ -14,7 +14,7 @@
     monitors = [
       # Acer 144hz 27" monitor. card1-DP-5     2560x1440
       {
-        name = "card1-DP-5";
+        name = "DP-5";
         width = 2560;
         height = 1440;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
@@ -26,11 +26,11 @@
       }
       # Samsung ultrawide 49" monitor. card1-DP-6     5120x1440
       {
-        name = "card1-DP-6";
+        name = "DP-6";
         width = 5120;
         height = 1440;
         primary = true;
-        x = 5120;
+        x = 0;
         wallpaper = ./wallpapers/skull2.png;
         workspaces = [
           2
@@ -40,7 +40,7 @@
       }
       # Samsung 24" monitor. card1-HDMI-A-2 1920x1080
       {
-        name = "card1-HDMI-A-2";
+        name = "HDMI-A-2";
         width = 1920;
         height = 1080;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
