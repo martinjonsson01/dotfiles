@@ -50,6 +50,7 @@ in {
         numlock_by_default = true;
         follow_mouse = 1;
         kb_layout = "se";
+        accel_profile = "flat"; # Disable mouse acceleration
       };
       misc = {
         # Display Power Management Signaling
