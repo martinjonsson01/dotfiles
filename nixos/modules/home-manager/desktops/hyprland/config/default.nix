@@ -32,7 +32,7 @@ in {
       # [ "<name>,<width>x<height>,<x>x<y>,1" ... ]
       monitor =
         builtins.map (
-          m: "${m.name},${toString m.width}x${toString m.height},${toString m.x}x${toString m.y},1"
+          m: "${m.name},${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz,${toString m.x}x${toString m.y},1"
         )
         myHardware.monitors;
 

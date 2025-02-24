@@ -59,6 +59,10 @@ in {
                 type = types.int;
                 default = 1080;
               };
+              refreshRate = mkOption {
+                type = types.float;
+                default = 60.0;
+              };
               x = mkOption {
                 type = types.int;
                 default = 0;

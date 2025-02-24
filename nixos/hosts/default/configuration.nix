@@ -17,6 +17,7 @@
         name = "DP-5";
         width = 2560;
         height = 1440;
+        refreshRate = 144.0;
         x = 5120;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
@@ -30,6 +31,7 @@
         name = "DP-6";
         width = 5120;
         height = 1440;
+        refreshRate = 120.0;
         primary = true;
         x = 0;
         wallpaper = ./wallpapers/skull2.png;
