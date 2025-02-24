@@ -10,6 +10,11 @@
           ws:
             "${toString ws},"
             + "monitor:${mon.name},"
+            + "layoutopt:orientation:${
+              if mon.rotation == 0
+              then "center"
+              else "top"
+            },"
             + "default:${strBool (ws == builtins.head mon.workspaces)}"
         )
         mon.workspaces
