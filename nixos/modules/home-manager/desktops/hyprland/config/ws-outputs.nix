@@ -15,6 +15,11 @@
               then "center"
               else "top"
             },"
+            + "layoutopt:allow_small_split:${
+              if mon.rotation == 0
+              then "false"
+              else "true"
+            },"
             + "default:${strBool (ws == builtins.head mon.workspaces)}"
         )
         mon.workspaces
