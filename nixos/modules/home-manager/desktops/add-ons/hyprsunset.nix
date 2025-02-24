@@ -9,7 +9,7 @@
 }: let
   startTime = "19:00:00";
   endTime = "05:00:00";
-  temperature = 3600;
+  temperature = 3000;
 in {
   options = {
     hyprsunset.enable = lib.mkEnableOption "Enables hyprsunset";
