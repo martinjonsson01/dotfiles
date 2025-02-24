@@ -148,4 +148,5 @@
   pasystray.enable = true;
   swayidle.enable = true;
   waybar.enable = true;
+  hyprsunset.enable = true;
 }
