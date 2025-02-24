@@ -17,6 +17,7 @@
     ./desktops/add-ons/nm-applet.nix
     ./desktops/add-ons/pasystray.nix
     ./desktops/add-ons/swayidle.nix
+    ./desktops/add-ons/waybar.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

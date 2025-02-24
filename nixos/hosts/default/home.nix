@@ -147,4 +147,5 @@
   nm-applet.enable = true;
   pasystray.enable = true;
   swayidle.enable = true;
+  waybar.enable = true;
 }
