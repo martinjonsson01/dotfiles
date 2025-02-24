@@ -7,7 +7,11 @@
     builtins.concatMap (
       mon:
         builtins.map (
-          ws: "${toString ws}, monitor:${mon.name}, default:${strBool (ws == builtins.head mon.workspaces)}"
+          ws: (
+            "${toString ws},"
+            + "monitor:${mon.name},"
+            + "default:${strBool (ws == builtins.head mon.workspaces)}"
+          )
         )
         mon.workspaces
     )
