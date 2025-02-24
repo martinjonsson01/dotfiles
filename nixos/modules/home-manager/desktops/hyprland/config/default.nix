@@ -52,7 +52,8 @@ in {
         kb_layout = "se";
 
         # Mouse config
-        accel_profile = "flat"; # Disable mouse acceleration
+        accel_profile = "custom";
+        scroll_points = "0.17156 0.000 0.369 0.738 1.292 1.847 2.402 3.006 3.849 4.692 5.535 6.378 7.221 8.064 8.907 9.750 10.593 11.436 12.279 13.122 14.864";
         sensitivity = 1.0; # Value is clamped to the range -1.0 to 1.0.
         scroll_method = "on_button_down"; # Middle mouse scroll
         scroll_button = 274; # Middle mouse scroll
