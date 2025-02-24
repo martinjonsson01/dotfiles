@@ -54,7 +54,8 @@ in {
         # Mouse config
         accel_profile = "flat"; # Disable mouse acceleration
         sensitivity = 0.9;
-        scroll_button = 274; # Middle mouse scroll
+        scroll_method = "on_button_down"; # Middle mouse scroll
+        scroll_button = "mouse:274"; # Middle mouse scroll
       };
       misc = {
         # Display Power Management Signaling
