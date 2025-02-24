@@ -11,7 +11,7 @@
   bind =
     [
       # Kill focused window
-      "SUPER, F4, killactive,"
+      "SUPER, W, killactive,"
 
       # Change focus around
       "SUPER, h, movefocus, l"
