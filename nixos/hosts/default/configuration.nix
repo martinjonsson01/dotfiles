@@ -107,6 +107,7 @@
   nvidia.enable = true;
   custom-style.enable = true;
   fish.enable = true;
+  polkit-gnome.enable = true;
 
   hyprland.enable = true;
 
