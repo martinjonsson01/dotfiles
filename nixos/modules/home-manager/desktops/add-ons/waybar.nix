@@ -37,7 +37,7 @@
     };
 
     clock = {
-      format = "{:%A, %d %b %I:%M%p}";
+      format = "{:%A, %d %b %R - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
       tooltip = false;
