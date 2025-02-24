@@ -17,6 +17,7 @@
         name = "DP-5";
         width = 2560;
         height = 1440;
+        x = 5120;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
           1
@@ -43,6 +44,7 @@
         name = "HDMI-A-2";
         width = 1920;
         height = 1080;
+        x = -1920;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
           3
