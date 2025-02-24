@@ -111,7 +111,7 @@ in {
         }
 
         window#waybar {
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.7);
             color: #C0CAF5;
             transition-property: background-color;
             transition-duration: .5s;
