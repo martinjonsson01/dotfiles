@@ -11,6 +11,7 @@
 
     ./desktops/add-ons/dunst.nix
     ./desktops/add-ons/blueman-applet.nix
+    ./desktops/add-ons/gtk-theme.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

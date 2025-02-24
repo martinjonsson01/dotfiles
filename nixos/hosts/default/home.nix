@@ -142,4 +142,5 @@
   # Desktop add-ons
   dunst.enable = true;
   blueman-applet.enable = true;
+  gtk-theme.enable = true;
 }
