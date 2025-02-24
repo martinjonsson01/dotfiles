@@ -4,11 +4,16 @@
     ./programs/rbw.nix
     ./programs/vscode.nix
     ./programs/satty.nix
+
     ./desktops/gnome.nix
     ./desktops/hyprland/default.nix
     ./desktops/autostart.nix
+
+    ./desktops/add-ons/dunst.nix
+
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
+
     ./shells/fish/fish.nix
   ];
 }

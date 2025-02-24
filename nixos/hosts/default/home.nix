@@ -138,4 +138,7 @@
   rofi-rbw.enable = true;
   fish.enable = true;
   satty.enable = true;
+
+  # Desktop add-ons
+  dunst.enable = true;
 }
