@@ -15,6 +15,7 @@
     ./desktops/add-ons/swaylock
     ./desktops/add-ons/nwg-bar.nix
     ./desktops/add-ons/nm-applet.nix
+    ./desktops/add-ons/pasystray.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

@@ -145,4 +145,5 @@
   gtk-theme.enable = true;
   nwg-bar.enable = true;
   nm-applet.enable = true;
+  pasystray.enable = true;
 }
