@@ -144,4 +144,5 @@
   blueman-applet.enable = true;
   gtk-theme.enable = true;
   nwg-bar.enable = true;
+  nm-applet.enable = true;
 }

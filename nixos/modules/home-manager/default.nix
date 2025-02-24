@@ -14,6 +14,7 @@
     ./desktops/add-ons/gtk-theme.nix
     ./desktops/add-ons/swaylock
     ./desktops/add-ons/nwg-bar.nix
+    ./desktops/add-ons/nm-applet.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
