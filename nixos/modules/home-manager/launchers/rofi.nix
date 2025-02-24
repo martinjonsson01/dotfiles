@@ -18,7 +18,7 @@
 
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi.override {
+      package = pkgs.rofi-wayland.override {
         plugins = with pkgs; [
           rofi-calc # Uses `qalc` to do natural language calculations
           # rofi-emoji # Emoji selector
