@@ -59,7 +59,7 @@
       "SUPER, f, exec, thunar" # use system provided thunar package
 
       # Rofi as dmenu replacement
-      "SUPER, grave, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+      "SUPER, section, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
       "SUPER, Escape, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
       # Modes
