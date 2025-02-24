@@ -10,6 +10,7 @@
     ./desktops/autostart.nix
 
     ./desktops/add-ons/dunst.nix
+    ./desktops/add-ons/blueman-applet.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
