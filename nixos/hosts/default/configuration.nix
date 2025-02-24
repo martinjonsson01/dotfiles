@@ -18,6 +18,7 @@
         width = 2560;
         height = 1440;
         refreshRate = 144.0;
+        rotation = 3;
         x = 5120;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
