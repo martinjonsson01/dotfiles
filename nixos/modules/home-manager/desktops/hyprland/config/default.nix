@@ -53,7 +53,7 @@ in {
 
         # Mouse config
         accel_profile = "flat"; # Disable mouse acceleration
-        sensitivity = 0.7;
+        sensitivity = 0.9;
       };
       misc = {
         # Display Power Management Signaling
