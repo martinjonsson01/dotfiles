@@ -49,8 +49,8 @@
       "SUPER ALT, right, movetoworkspace, e+1"
       "SUPER ALT, left, movetoworkspace, e-1"
 
-      "SUPER, a, addmaster,"
-      "SUPER, a, removemaster,"
+      "SUPER, a, layoutmsg, addmaster"
+      "SUPER, s, layoutmsg, removemaster"
 
       # Toggle fullscreen mode
       "SUPER SHIFT, f, fullscreen, 1"
