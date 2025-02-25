@@ -22,13 +22,7 @@
         x = 5120;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
-          1
-          2
-          3
-          4
-          5
-          6
-          7
+          8
         ];
       }
       # Samsung ultrawide 49" monitor. card1-DP-6     5120x1440
@@ -41,7 +35,13 @@
         x = 0;
         wallpaper = ./wallpapers/skull2.png;
         workspaces = [
-          8
+          1
+          2
+          3
+          4
+          5
+          6
+          7
         ];
       }
       # Samsung 24" monitor. card1-HDMI-A-2 1920x1080

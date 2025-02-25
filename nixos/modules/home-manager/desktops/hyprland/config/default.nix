@@ -44,7 +44,7 @@ in {
         )
         ++ [
           # To trigger waybar on boot
-          "exec-once = systemctl --user import-environment \{,WAYLAND_\}DISPLAY HYPRLAND_INSTANCE_SIGNATURE; systemctl --user start hm-graphical-session.target"
+          "systemctl --user import-environment \{,WAYLAND_\}DISPLAY HYPRLAND_INSTANCE_SIGNATURE; systemctl --user start hm-graphical-session.target"
         ];
 
       # General settings
