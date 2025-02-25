@@ -38,9 +38,14 @@ in {
 
       # Wallpaper
       # [ "swaybg -o <name> -i <path>" ... ]
-      exec-once = builtins.map (m: "${pkgs.swaybg}/bin/swaybg -o ${m.name} -i ${m.wallpaper}") (
-        builtins.filter (m: m.wallpaper != null) myHardware.monitors
-      );
+      exec-once =
+        builtins.map (m: "${pkgs.swaybg}/bin/swaybg -o ${m.name} -i ${m.wallpaper}") (
+          builtins.filter (m: m.wallpaper != null) myHardware.monitors
+        )
+        ++ [
+          # To trigger waybar on boot
+          "exec-once = systemctl --user import-environment \{,WAYLAND_\}DISPLAY HYPRLAND_INSTANCE_SIGNATURE; systemctl --user start hm-graphical-session.target"
+        ];
 
       # General settings
       general = {

@@ -22,7 +22,7 @@
     gtk = {
       enable = true;
       font = {
-        name = config.stylix.fonts.monospace.name;
+        name = config.stylix.fonts.sansSerif.name;
         size = config.stylix.fonts.sizes.desktop;
       };
       theme = {
