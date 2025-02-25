@@ -42,8 +42,8 @@
       "SUPERSHIFT,tab,changegroupactive,b"
 
       # Next/previous workspace
-      "SUPER, tab, workspace, e+1"
-      "SUPER SHIFT, tab, workspace, e-1"
+      # "SUPER, tab, workspace, e+1"
+      # "SUPER SHIFT, tab, workspace, e-1"
 
       # Toggle fullscreen mode
       "SUPER SHIFT, f, fullscreen, 1"
@@ -62,10 +62,10 @@
 
       # Most used applications
       "SUPER, t, exec, ${pkgs.kitty}/bin/kitty" # kitty the terminal emulator
-      "SUPER, f, exec, thunar" # use system provided thunar package
+      "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar" # file explorer
 
       # Rofi as dmenu replacement
-      "SUPER, section, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+      "SUPER, Space, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
       "SUPER, Escape, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
 
       # Modes
