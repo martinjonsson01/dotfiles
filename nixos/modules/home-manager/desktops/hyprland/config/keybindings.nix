@@ -35,6 +35,12 @@
       "SUPER SHIFT, up, movewindow, u"
       "SUPER SHIFT, right, movewindow, r"
 
+      # Group management
+      "SUPER,g,togglegroup"
+      "SUPER,t,lockactivegroup,toggle"
+      "SUPER,tab,changegroupactive,f"
+      "SUPERSHIFT,tab,changegroupactive,b"
+
       # Next/previous workspace
       "SUPER, tab, workspace, e+1"
       "SUPER SHIFT, tab, workspace, e-1"
