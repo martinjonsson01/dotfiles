@@ -46,8 +46,8 @@
       "SUPER ALT, left, workspace, e-1"
 
       # Move the currently focused window to next/previous workspace
-      "SUPER SHIFT, right, movetoworkspace, e+1"
-      "SUPER SHIFT, left, movetoworkspace, e-1"
+      "ALT SHIFT, right, movetoworkspace, e+1"
+      "ALT SHIFT, left, movetoworkspace, e-1"
 
       # Toggle fullscreen mode
       "SUPER SHIFT, f, fullscreen, 1"
