@@ -43,8 +43,7 @@ in {
           builtins.filter (m: m.wallpaper != null) myHardware.monitors
         )
         ++ [
-          # To trigger waybar on boot
-          "systemctl --user import-environment \{,WAYLAND_\}DISPLAY HYPRLAND_INSTANCE_SIGNATURE; systemctl --user start hm-graphical-session.target"
+          "${pkgs.waybar}/bin/waybar"
         ];
 
       # General settings
