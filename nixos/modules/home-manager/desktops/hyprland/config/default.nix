@@ -60,13 +60,14 @@ in {
         sensitivity = 1.0; # Value is clamped to the range -1.0 to 1.0.
         scroll_method = "on_button_down"; # Middle mouse scroll
         scroll_button = 274; # Middle mouse scroll
-        middle_click_paste = false; # Disable middle click paste
       };
       misc = {
         # Display Power Management Signaling
         # aka turn on when I move mouse / press key
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
+
+        middle_click_paste = false; # Disable middle click paste
       };
       env = lib.mkIf (myHardware.gpuDriver == "nvidia") [
         "LIBVA_DRIVER_NAME,nvidia"
