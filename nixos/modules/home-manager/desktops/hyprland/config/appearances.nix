@@ -18,7 +18,6 @@
       noise = 0.008;
       contrast = 0.8916;
       brightness = 0.8;
-      input_methods = "yes";
     };
 
     shadow = {
