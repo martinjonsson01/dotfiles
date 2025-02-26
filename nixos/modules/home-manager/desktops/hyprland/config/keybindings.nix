@@ -42,12 +42,12 @@
       "SUPERSHIFT,tab,changegroupactive,b"
 
       # Next/previous workspace
-      "SUPER ALT, right, workspace, e+1"
-      "SUPER ALT, left, workspace, e-1"
+      "SUPER ALT, right, workspace, m+1"
+      "SUPER ALT, left, workspace, m-1"
 
       # Move the currently focused window to next/previous workspace
-      "ALT SHIFT, right, movetoworkspace, e+1"
-      "ALT SHIFT, left, movetoworkspace, e-1"
+      "ALT SHIFT, right, movetoworkspace, r+1"
+      "ALT SHIFT, left, movetoworkspace, r-1"
 
       # Toggle fullscreen mode
       "SUPER SHIFT, f, fullscreen, 1"
