@@ -37,10 +37,10 @@
       "SUPER, W, killactive,"
 
       # Move focus to only visible nodes, not hidden tabs
-      "SUPER, left, hy3:movefocus, l, visible, nowarp"
-      "SUPER, down, hy3:movefocus, d, visible, nowarp"
-      "SUPER, up, hy3:movefocus, u, visible, nowarp"
-      "SUPER, right, hy3:movefocus, r, visible, nowarp"
+      "SUPER, left, hy3:movefocus, l, visible"
+      "SUPER, down, hy3:movefocus, d, visible"
+      "SUPER, up, hy3:movefocus, u, visible"
+      "SUPER, right, hy3:movefocus, r, visible"
 
       # Move focus between tabs
       "SUPER+CTRL, left, hy3:focustab, l, prioritize_hovered"
