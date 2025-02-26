@@ -93,7 +93,7 @@
 
       # Most used applications
       "SUPER, t, exec, ${pkgs.kitty}/bin/kitty" # kitty the terminal emulator
-      "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar" # file explorer
+      # "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar" # file explorer
 
       # Rofi as dmenu replacement
       "SUPER, Space, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
