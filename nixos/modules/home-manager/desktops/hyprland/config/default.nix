@@ -12,15 +12,10 @@ in {
   extraConfig = ''
     # Resize window
     submap = ${resizeMode}
-    binde = , h, resizeactive, -10 0
-    binde = , j, resizeactive, 0 10
-    binde = , k, resizeactive, 0 -10
-    binde = , l, resizeactive, 10 0
-    # Or use arrow keys
-    binde = , left, resizeactive, -10 0
-    binde = , down, resizeactive, 0 10
-    binde = , up, resizeactive, 0 -10
-    binde = , right, resizeactive, 10 0
+    binde = , left, resizeactive, -30 0
+    binde = , down, resizeactive, 0 30
+    binde = , up, resizeactive, 0 -30
+    binde = , right, resizeactive, 30 0
     # Return to normal mode
     bind = , escape, submap, reset
     submap = reset
