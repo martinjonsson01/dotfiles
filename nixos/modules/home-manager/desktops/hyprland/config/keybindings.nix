@@ -6,7 +6,7 @@
   # [m] for binds that rely on mouse movement.
   bindm = [
     # Super+mouse to drag/resize floating windows
-    "SUPER, mouse:272, hy3:movewindow"
+    "SUPER, mouse:272, movewindow"
     "SUPER, mouse:273, resizewindow"
   ];
 
@@ -42,14 +42,14 @@
       "SUPER+CONTROL, up, hy3:movefocus, u, visible, nowarp"
       "SUPER+CONTROL, right, hy3:movefocus, r, visible, nowarp"
 
-      # Move focus only directly to neighboring group,
+      # Move window only directly to neighboring group,
       # without moving into any of its subgroups
       "SUPER+SHIFT, left, hy3:movewindow, l, once"
       "SUPER+SHIFT, down, hy3:movewindow, d, once"
       "SUPER+SHIFT, up, hy3:movewindow, u, once"
       "SUPER+SHIFT, right, hy3:movewindow, r, once"
 
-      # Combination of the two above
+      # Move window only to neighboring, only to visible
       "SUPER+CONTROL+SHIFT, left, hy3:movewindow, l, once, visible"
       "SUPER+CONTROL+SHIFT, down, hy3:movewindow, d, once, visible"
       "SUPER+CONTROL+SHIFT, up, hy3:movewindow, u, once, visible"
