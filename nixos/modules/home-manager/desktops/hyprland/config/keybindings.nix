@@ -37,10 +37,10 @@
       "SUPER, W, killactive,"
 
       # Move focus to only visible nodes, not hidden tabs
-      "SUPER+CONTROL, left, hy3:movefocus, l, visible, nowarp"
-      "SUPER+CONTROL, down, hy3:movefocus, d, visible, nowarp"
-      "SUPER+CONTROL, up, hy3:movefocus, u, visible, nowarp"
-      "SUPER+CONTROL, right, hy3:movefocus, r, visible, nowarp"
+      "SUPER, left, hy3:movefocus, l, visible, nowarp"
+      "SUPER, down, hy3:movefocus, d, visible, nowarp"
+      "SUPER, up, hy3:movefocus, u, visible, nowarp"
+      "SUPER, right, hy3:movefocus, r, visible, nowarp"
 
       # Move window only directly to neighboring group,
       # without moving into any of its subgroups

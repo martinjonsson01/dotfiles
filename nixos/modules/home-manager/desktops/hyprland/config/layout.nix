@@ -13,6 +13,14 @@
 
   plugin = {
     hy3 = {
+      tabs = {
+        border_width = 1;
+        col.active = "rgba(33ccff20)";
+        col.border.active = "rgba(33ccffee)";
+        col.text.active = "rgba(ffffffff)";
+        col.inactive = "rgba(30303020)";
+        col.border.inactive = "rgba(595959aa)";
+      };
       autotile = {
         enable = true;
         trigger_width = 800;
