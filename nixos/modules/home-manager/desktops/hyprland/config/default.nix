@@ -21,6 +21,10 @@ in {
     submap = reset
   '';
 
+  plugins = with pkgs.hyprlandPlugins; [
+    hy3
+  ];
+
   settings =
     {
       # Monitor placement
@@ -74,5 +78,6 @@ in {
     // (import ./keybindings.nix {inherit config resizeMode pkgs;})
     // (import ./ws-outputs.nix {inherit osConfig;})
     // (import ./window-rules.nix)
-    // (import ./appearances.nix);
+    // (import ./appearances.nix)
+    // (import ./layout.nix);
 }

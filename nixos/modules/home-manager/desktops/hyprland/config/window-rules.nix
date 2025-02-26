@@ -14,6 +14,11 @@
     "pin, title:^(Lxappearance)$"
     "idleinhibit focus, fullscreen:1"
 
+    # Make context menus opaque
+    "opaque,class:(),title:()"
+    "noshadow,class:(),title:()"
+    "noblur,class:(),title:()"
+
     # Window placement
     "workspace silent special, title:^(updater)$, class:^(kitty)$"
     "workspace 5, class:^(rhythmbox)$"

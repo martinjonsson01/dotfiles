@@ -5,7 +5,7 @@
 }: {
   bindm = [
     # Super+mouse to drag/resize floating windows
-    "SUPER, mouse:272, movewindow"
+    "SUPER, mouse:272, hy3:movewindow"
     "SUPER, mouse:273, resizewindow"
   ];
   bind =
@@ -14,16 +14,16 @@
       "SUPER, W, killactive,"
 
       # Change focus around
-      "SUPER, left, movefocus, l"
-      "SUPER, down, movefocus, d"
-      "SUPER, up, movefocus, u"
-      "SUPER, right, movefocus, r"
+      "SUPER, left, hy3:movefocus, l"
+      "SUPER, down, hy3:movefocus, d"
+      "SUPER, up, hy3:movefocus, u"
+      "SUPER, right, hy3:movefocus, r"
 
       # Move the focused window with the same, but add Shift
-      "SUPER SHIFT, left, movewindow, l"
-      "SUPER SHIFT, down, movewindow, d"
-      "SUPER SHIFT, up, movewindow, u"
-      "SUPER SHIFT, right, movewindow, r"
+      "SUPER SHIFT, left, hy3:movewindow, l"
+      "SUPER SHIFT, down, hy3:movewindow, d"
+      "SUPER SHIFT, up, hy3:movewindow, u"
+      "SUPER SHIFT, right, hy3:movewindow, r"
 
       # Move into/out of groups with the same, but add Alt
       "SUPER ALT, left, movewindoworgroup, l"
