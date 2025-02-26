@@ -41,9 +41,9 @@
       "SUPER,tab,changegroupactive,f"
       "SUPERSHIFT,tab,changegroupactive,b"
 
-      # Next/previous workspace
-      "SUPER ALT, right, workspace, m+1"
-      "SUPER ALT, left, workspace, m-1"
+      # Next/previous (nonempty) workspace
+      "ALT CTRL, right, workspace, m+1"
+      "ALT CTRL, left, workspace, m-1"
 
       # Move the currently focused window to next/previous workspace
       "ALT SHIFT, right, movetoworkspace, r+1"
