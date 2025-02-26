@@ -52,6 +52,17 @@
       on-click = "activate";
       on-scroll-up = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1";
       on-scroll-down = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1";
+      persistent-workspaces = {
+        "1" = [];
+        "2" = [];
+        "3" = [];
+        "4" = [];
+        "5" = [];
+        "6" = [];
+        "7" = [];
+        "8" = [];
+        "9" = [];
+      };
     };
     "hyprland/submap" = {
       format = "󰔡 {}";
