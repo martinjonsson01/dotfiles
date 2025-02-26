@@ -2,8 +2,8 @@
   general = {
     gaps_in = 5;
     gaps_out = 20;
-    "col.inactive_border" = "rgb(A9B1D6)";
-    "col.active_border" = "rgb(A9B1D6)";
+    "col.inactive_border" = "rgba(595959aa)";
+    "col.active_border" = "rgba(33ccffee)";
   };
 
   decoration = {
@@ -11,6 +11,7 @@
     inactive_opacity = 0.7;
     dim_inactive = true;
     dim_strength = 0.3;
+
     blur = {
       enabled = true;
       size = 7;
