@@ -43,7 +43,7 @@
         sort = true;
         sorting-method = "fzf";
 
-        kb-cancel = "Escape,MouseMiddle,Super+Space";
+        kb-cancel = "Escape,MouseMiddle";
 
         kb-select-1 = "Ctrl+1";
         kb-select-2 = "Ctrl+2";
