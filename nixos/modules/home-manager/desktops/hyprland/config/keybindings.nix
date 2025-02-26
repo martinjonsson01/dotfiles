@@ -42,6 +42,10 @@
       "SUPER, up, hy3:movefocus, u, visible, nowarp"
       "SUPER, right, hy3:movefocus, r, visible, nowarp"
 
+      # Move focus between tabs
+      "SUPER+CTRL, left, hy3:focustab, l, prioritize_hovered"
+      "SUPER+CTRL, right, hy3:focustab, r, prioritize_hovered"
+
       # Move window only directly to neighboring group,
       # without moving into any of its subgroups
       "SUPER+SHIFT, left, hy3:movewindow, l, once"
