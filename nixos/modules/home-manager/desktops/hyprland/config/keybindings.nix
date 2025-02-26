@@ -97,7 +97,7 @@
 
       # Rofi as dmenu replacement
       "SUPER, Space, exec, pkill rofi || ${config.programs.rofi.package}/bin/rofi -show drun"
-      "SUPER, Escape, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
+      "SUPER, Tab, exec, ${config.programs.rofi.package}/bin/rofi -show windows"
 
       # Modes
       "SUPER SHIFT, r, submap, ${resizeMode}"
