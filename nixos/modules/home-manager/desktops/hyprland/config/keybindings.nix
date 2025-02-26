@@ -29,7 +29,7 @@
       "SUPER, g, togglegroup"
       "SUPER, t, lockactivegroup, toggle"
       "SUPER, tab, changegroupactive, f"
-      "SUPERS HIFT, tab, changegroupactive, b"
+      "SUPER SHIFT, tab, changegroupactive, b"
 
       # Next/previous (nonempty) workspace
       "ALT CTRL, right, workspace, m+1"
@@ -55,7 +55,7 @@
       "SUPER SHIFT, c, execr, hyprctl reload"
 
       # Reload rendering
-      "SUPER SHIFT, r, forcerendererreload,"
+      "SUPER SHIFT, b, forcerendererreload,"
 
       # Most used applications
       "SUPER, t, exec, ${pkgs.kitty}/bin/kitty" # kitty the terminal emulator
