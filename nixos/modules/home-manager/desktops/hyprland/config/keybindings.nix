@@ -20,10 +20,10 @@
       "SUPER, right, movefocus, r"
 
       # Move the focused window with the same, but add Shift
-      "SUPER SHIFT, left, swapwindow, l"
-      "SUPER SHIFT, down, swapwindow, d"
-      "SUPER SHIFT, up, swapwindow, u"
-      "SUPER SHIFT, right, swapwindow, r"
+      "SUPER SHIFT, left, movewindoworgroup, l"
+      "SUPER SHIFT, down, movewindoworgroup, d"
+      "SUPER SHIFT, up, movewindoworgroup, u"
+      "SUPER SHIFT, right, movewindoworgroup, r"
 
       # Group management
       "SUPER, g, togglegroup"
