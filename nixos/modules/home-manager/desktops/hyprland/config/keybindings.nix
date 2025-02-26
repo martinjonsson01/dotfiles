@@ -24,6 +24,14 @@
     "SUPER, o, exec, hyprctl keyword plugin:hy3:tabs:render_text false"
   ];
 
+  # [e] repeat, will repeat when held.
+  binde = [
+    "SUPER+<, left, resizeactive, -30 0"
+    "SUPER+<, down, resizeactive, 0 30"
+    "SUPER+<, up, resizeactive, 0 -30"
+    "SUPER+<, right, resizeactive, 30 0"
+  ];
+
   bind =
     [
       # Show tab titles
