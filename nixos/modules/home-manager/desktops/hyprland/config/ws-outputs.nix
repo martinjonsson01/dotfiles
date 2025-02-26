@@ -16,6 +16,7 @@
               else "center"
             },"
             + "default:${strBool (ws == builtins.head mon.workspaces)}"
+            + "persistent:true"
         )
         mon.workspaces
     )
