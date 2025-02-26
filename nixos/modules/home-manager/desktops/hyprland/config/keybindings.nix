@@ -14,32 +14,22 @@
       "SUPER, W, killactive,"
 
       # Change focus around
-      "SUPER, h, movefocus, l"
-      "SUPER, j, movefocus, d"
-      "SUPER, k, movefocus, u"
-      "SUPER, l, movefocus, r"
-      # Or use arrow keys
       "SUPER, left, movefocus, l"
       "SUPER, down, movefocus, d"
       "SUPER, up, movefocus, u"
       "SUPER, right, movefocus, r"
 
       # Move the focused window with the same, but add Shift
-      "SUPER SHIFT, h, movewindow, l"
-      "SUPER SHIFT, j, movewindow, d"
-      "SUPER SHIFT, k, movewindow, u"
-      "SUPER SHIFT, l, movewindow, r"
-      # Or use arrow keys
-      "SUPER SHIFT, left, movewindow, l"
-      "SUPER SHIFT, down, movewindow, d"
-      "SUPER SHIFT, up, movewindow, u"
-      "SUPER SHIFT, right, movewindow, r"
+      "SUPER SHIFT, left, swapwindow, l"
+      "SUPER SHIFT, down, swapwindow, d"
+      "SUPER SHIFT, up, swapwindow, u"
+      "SUPER SHIFT, right, swapwindow, r"
 
       # Group management
-      "SUPER,g,togglegroup"
-      "SUPER,t,lockactivegroup,toggle"
-      "SUPER,tab,changegroupactive,f"
-      "SUPERSHIFT,tab,changegroupactive,b"
+      "SUPER, g, togglegroup"
+      "SUPER, t, lockactivegroup, toggle"
+      "SUPER, tab, changegroupactive, f"
+      "SUPERS HIFT, tab, changegroupactive, b"
 
       # Next/previous (nonempty) workspace
       "ALT CTRL, right, workspace, m+1"
@@ -63,6 +53,9 @@
 
       # Reload the configuration file
       "SUPER SHIFT, c, execr, hyprctl reload"
+
+      # Reload rendering
+      "SUPER SHIFT, r, forcerendererreload,"
 
       # Most used applications
       "SUPER, t, exec, ${pkgs.kitty}/bin/kitty" # kitty the terminal emulator
