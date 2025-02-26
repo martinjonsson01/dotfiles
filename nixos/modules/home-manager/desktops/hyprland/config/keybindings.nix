@@ -26,10 +26,10 @@
 
   # [e] repeat, will repeat when held.
   binde = [
-    "SUPER, less+left, resizeactive, -30 0"
-    "SUPER, less+down, resizeactive, 0 30"
-    "SUPER, less+up, resizeactive, 0 -30"
-    "SUPER, less+right, resizeactive, 30 0"
+    "SUPER+ALT, left, resizeactive, -30 0"
+    "SUPER+ALT, down, resizeactive, 0 30"
+    "SUPER+ALT, up, resizeactive, 0 -30"
+    "SUPER+ALT, right, resizeactive, 30 0"
   ];
 
   bind =
