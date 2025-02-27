@@ -31,15 +31,21 @@ in {
           text_font=Work Sans Bold
           early_exit=true
         '';
+
+        # Script for screenshots that get saved to file and clipboard.
+        "${config.xdg.configHome}/screenshot.sh" = {
+          source = ./screenshot.sh;
+          executable = true;
+        };
       };
     };
     wayland.windowManager.hyprland = {
       settings = {
         bind = [
-          ", Print, exec, ${lib.getExe pkgs.grimblast} save screen - | ${lib.getExe pkgs.swappy} -f -"
-          "SHIFT, Print, exec, ${lib.getExe pkgs.grimblast} save area - | ${lib.getExe pkgs.swappy} -f -"
-          "CTRL ALT, Print, exec, ${lib.getExe pkgs.grimblast} save active - | ${lib.getExe pkgs.swappy} -f -"
-          "CTRL, Print, exec, ${lib.getExe pkgs.grimblast} save output - | ${lib.getExe pkgs.swappy} -f -"
+          ", Print, exec, ${config.xdg.configHome}/screenshot.sh screen"
+          "SHIFT, Print, exec, ${config.xdg.configHome}/screenshot.sh area"
+          "CTRL ALT, Print, exec,  ${config.xdg.configHome}/screenshot.sh active"
+          "CTRL, Print, exec,  ${config.xdg.configHome}/screenshot.sh output"
         ];
       };
     };
