@@ -12,6 +12,11 @@
   config = lib.mkIf config.hyprland.enable {
     programs.kitty.enable = true; # required for the default Hyprland config
 
+    home.packages = with pkgs; [
+      socat # Dependency for movewindow script
+      jaq # Dependency for movewindow script
+    ];
+
     # Script for moving windows across monitors.
     home.file."${config.xdg.configHome}/movewindow.sh" = {
       source = ./movewindow.sh;
