@@ -149,5 +149,5 @@
   swayidle.enable = true;
   waybar.enable = true;
   hyprsunset.enable = true;
-  flameshot.enable = true;
+  grimblast.enable = true;
 }

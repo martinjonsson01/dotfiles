@@ -19,7 +19,7 @@
     ./desktops/add-ons/swayidle.nix
     ./desktops/add-ons/waybar.nix
     ./desktops/add-ons/hyprsunset.nix
-    ./desktops/add-ons/flameshot.nix
+    ./desktops/add-ons/grimblast.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
