@@ -44,9 +44,9 @@ in {
       settings = {
         bind = [
           ", Print, exec, ${config.xdg.configHome}/screenshot.sh screen"
-          "SHIFT, Print, exec, ${config.xdg.configHome}/screenshot.sh area"
+          "CTRL, Print, exec, ${config.xdg.configHome}/screenshot.sh area"
           "CTRL ALT, Print, exec,  ${config.xdg.configHome}/screenshot.sh active"
-          "CTRL, Print, exec,  ${config.xdg.configHome}/screenshot.sh output"
+          "SHIFT, Print, exec,  ${config.xdg.configHome}/screenshot.sh output"
         ];
       };
     };
