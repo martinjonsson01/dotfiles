@@ -26,6 +26,10 @@ in {
   };
 
   config = lib.mkIf config.flameshot.enable {
+    home.packages = with pkgs; [
+      grim # Grab images from a Wayland compositor
+    ];
+
     services.flameshot = {
       enable = true;
       package = flameshotGrim;
