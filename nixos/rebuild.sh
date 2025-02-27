@@ -9,7 +9,7 @@ set -e
 pushd ~/dotfiles/nixos/
 
 # Early return if no changes were detected (thanks @singiamtel!)
-if git --no-pager diff HEAD --quiet '*.nix' '*.fish'; then
+if git --no-pager diff HEAD --quiet '*.nix' '*.fish' '*.sh'; then
     echo "No changes detected, exiting."
     popd
     exit 0
@@ -20,7 +20,7 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git --no-pager diff --unified=0 '*.nix' '*.fish'
+git --no-pager diff --unified=0 '*.nix' '*.fish' '*.sh'
 
 echo "NixOS Rebuilding..."
 
