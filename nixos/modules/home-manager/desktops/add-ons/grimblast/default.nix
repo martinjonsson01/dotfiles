@@ -20,6 +20,7 @@ in {
       packages = with pkgs; [
         grimblast
         swappy
+        wl-clipboard
       ];
 
       file = {
