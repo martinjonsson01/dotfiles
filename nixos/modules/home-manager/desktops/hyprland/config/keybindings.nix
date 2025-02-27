@@ -77,9 +77,9 @@
       "SUPER+SHIFT, e, hy3:expand, base"
       "SUPER, r, hy3:changegroup, opposite"
 
-      # Next/previous (nonempty) workspace
-      "ALT CTRL, right, workspace, m+1"
-      "ALT CTRL, left, workspace, m-1"
+      # Next/previous workspace
+      "ALT CTRL, right, workspace, r+1"
+      "ALT CTRL, left, workspace, r-1"
 
       # Move the currently focused window to next/previous workspace
       "ALT SHIFT, right, movetoworkspace, r+1"
