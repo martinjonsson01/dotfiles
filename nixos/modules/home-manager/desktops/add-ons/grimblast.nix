@@ -6,7 +6,9 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  screenshotDir = "${config.home.homeDirectory}/Pictures/Screenshots/$(date +%Y)/$(date +%b)";
+in {
   options = {
     grimblast.enable = lib.mkEnableOption "Enables grimblast";
   };
@@ -17,6 +19,7 @@
     home = {
       packages = with pkgs; [
         grimblast
+        swappy
       ];
 
       file = {
