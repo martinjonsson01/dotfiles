@@ -15,6 +15,10 @@
     # grimblast is a screenshot grabber and swappy is a screenshot editor
     # This config provides comprehensive screenshot functionality for hyprland
     home = {
+      packages = with pkgs; [
+        grimblast
+      ];
+
       file = {
         "${config.xdg.configHome}/swappy/config".text = ''
           [Default]
