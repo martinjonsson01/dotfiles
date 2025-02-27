@@ -111,6 +111,9 @@
       "SUPER, Space, exec, pkill rofi || ${config.programs.rofi.package}/bin/rofi -show drun"
       "SUPER, Tab, exec, ${config.programs.rofi.package}/bin/rofi -show window"
 
+      # Screenshots
+      #", Print, exec, ${config.programs.rofi.package}/bin/rofi -show window"
+
       # Modes
       "SUPER SHIFT, r, submap, ${resizeMode}"
 
