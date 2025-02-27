@@ -12,6 +12,12 @@
   config = lib.mkIf config.hyprland.enable {
     programs.kitty.enable = true; # required for the default Hyprland config
 
+    # Script for moving windows across monitors.
+    home.file."${config.xdg.configHome}" = {
+      source = ./movewindow.sh;
+      executable = true;
+    };
+
     # Hint Electron apps to use Wayland.
     home.sessionVariables.NIXOS_OZONE_WL = "1";
 

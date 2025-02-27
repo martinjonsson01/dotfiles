@@ -62,10 +62,10 @@
       "SUPER+SHIFT, right, hy3:movewindow, r, once"
 
       # Move window only to neighboring, only to visible
-      "SUPER+CONTROL+SHIFT, left, hy3:movewindow, l, once, visible"
+      "SUPER+CONTROL+SHIFT, left, exec, ${config.xdg.configHome}/movewindow.sh l"
       "SUPER+CONTROL+SHIFT, down, hy3:movewindow, d, once, visible"
       "SUPER+CONTROL+SHIFT, up, hy3:movewindow, u, once, visible"
-      "SUPER+CONTROL+SHIFT, right, hy3:movewindow, r, once, visible"
+      "SUPER+CONTROL+SHIFT, right, exec, ${config.xdg.configHome}/movewindow.sh r"
 
       # Group management
       "SUPER, d, hy3:makegroup, h"
