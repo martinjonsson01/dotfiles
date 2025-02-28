@@ -43,6 +43,7 @@ in {
         )
         ++ [
           "${pkgs.waybar}/bin/waybar"
+          "wl-paste -t text -w xclip -selection clipboard"
         ];
 
       # General settings

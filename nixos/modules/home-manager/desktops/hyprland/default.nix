@@ -15,6 +15,7 @@
     home.packages = with pkgs; [
       socat # Dependency for movewindow script
       jaq # Dependency for movewindow script
+      xclip # Needed to fix clipboard in exec-once (see config/default.nix)
     ];
 
     # Script for moving windows across monitors.
