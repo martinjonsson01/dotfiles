@@ -47,8 +47,8 @@
       "org/gnome/desktop/screensaver".lock-enabled = false;
 
       "org/gnome/desktop/wm/keybindings" = {
-        switch-applications = ["<alt>Space"];
-        switch-applications-backward = ["<alt><shift>Space"];
+        switch-applications = ["<Super>Space"];
+        switch-applications-backward = ["<Super><shift>Space"];
 
         switch-windows = ["<alt>Tab"];
         switch-windows-backward = ["<alt><shift>Tab"];
