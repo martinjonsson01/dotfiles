@@ -78,12 +78,12 @@
       "SUPER, r, hy3:changegroup, opposite"
 
       # Next/previous workspace
-      "ALT CTRL, right, workspace, r+1"
-      "ALT CTRL, left, workspace, r-1"
+      "CTRL ALT, right, workspace, r+1"
+      "CTRL ALT, left, workspace, r-1"
 
       # Move the currently focused window to next/previous workspace
-      "ALT SHIFT, right, movetoworkspace, r+1"
-      "ALT SHIFT, left, movetoworkspace, r-1"
+      "CTRL ALT SHIFT, right, movetoworkspace, r+1"
+      "CTRL ALT SHIFT, left, movetoworkspace, r-1"
 
       # Toggle fullscreen mode
       "SUPER SHIFT, f, fullscreen, 1"
