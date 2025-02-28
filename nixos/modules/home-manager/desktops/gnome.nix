@@ -45,6 +45,11 @@
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
       "org/gnome/desktop/screensaver".lock-enabled = false;
 
+      "org/gnome/desktop/wm/keybindings" = {
+        switch-applications = "";
+        switch-applications-backward = "";
+      };
+
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
