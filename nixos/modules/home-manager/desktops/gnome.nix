@@ -16,6 +16,7 @@
       gnomeExtensions.runcat
       gnomeExtensions.super-key
       gnomeExtensions.pano
+      gnomeExtensions.advanced-alttab-window-switcher
     ];
 
     dconf.settings = {
@@ -103,6 +104,7 @@
           "runcat@kolesnikov.se"
           "appindicatorsupport@rgcjonas.gmail.com"
           "pano@elhan.io"
+          "advanced-alt-tab@G-dH.github.com"
         ];
       };
 
