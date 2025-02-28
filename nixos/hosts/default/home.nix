@@ -146,8 +146,8 @@
   nwg-bar.enable = true;
   nm-applet.enable = true;
   pasystray.enable = true;
-  swayidle.enable = true;
   waybar.enable = true;
   hyprsunset.enable = true;
   grimblast.enable = true;
+  hypridle.enable = true;
 }

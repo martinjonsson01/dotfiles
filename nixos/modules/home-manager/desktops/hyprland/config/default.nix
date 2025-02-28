@@ -42,8 +42,7 @@ in {
           builtins.filter (m: m.wallpaper != null) myHardware.monitors
         )
         ++ [
-          "${pkgs.waybar}/bin/waybar"
-          "wl-paste -t text -w xclip -selection clipboard" # taken from https://github.com/hyprwm/Hyprland/issues/2319#issuecomment-1650958363
+          "pidof ${pkgs.waybar}/bin/waybar || ${pkgs.waybar}/bin/waybar"
         ];
 
       # General settings

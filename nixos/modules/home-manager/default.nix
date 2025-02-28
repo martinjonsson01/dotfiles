@@ -20,6 +20,7 @@
     ./desktops/add-ons/waybar.nix
     ./desktops/add-ons/hyprsunset.nix
     ./desktops/add-ons/grimblast
+    ./desktops/add-ons/hypridle.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
