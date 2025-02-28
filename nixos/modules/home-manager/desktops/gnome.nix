@@ -74,28 +74,61 @@
         toggle-quick-settings = [];
       };
 
+      # "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
+      #   app-switcher-popup-hide-win-counter-for-single-window = true;
+      #   app-switcher-popup-icon-size = 96;
+      #   app-switcher-popup-titles = false;
+      #   enable-super = false;
+      #   hot-edge-mode = 0;
+      #   hot-edge-monitor = 1;
+      #   super-double-press-action = 3;
+      #   super-key-mode = 1;
+      #   switcher-popup-start-search = true;
+      #   switcher-popup-hover-select = false;
+      #   switcher-popup-interactive-indicators = false;
+      #   switcher-popup-monitor = 3;
+      #   switcher-popup-position = 2;
+      #   switcher-popup-preview-selected = 2;
+      #   switcher-popup-theme = 0;
+      #   switcher-ws-thumbnails = 1;
+      #   win-switch-include-modals = true;
+      #   win-switcher-popup-filter = 1;
+      #   win-switcher-popup-icon-size = 64;
+      #   win-switcher-popup-order = 1;
+      #   win-switcher-popup-sorting = 1;
+      # };
+
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
+        animation-time-factor = 100;
+        app-switcher-popup-fav-apps = false;
+        app-switcher-popup-filter = 3;
         app-switcher-popup-hide-win-counter-for-single-window = true;
-        app-switcher-popup-icon-size = 96;
-        app-switcher-popup-titles = false;
+        app-switcher-popup-include-show-apps-icon = false;
+        app-switcher-popup-search-pref-running = true;
+        app-switcher-popup-titles = true;
+        app-switcher-popup-win-counter = true;
         enable-super = false;
-        hot-edge-mode = 0;
-        hot-edge-monitor = 1;
-        super-double-press-action = 3;
+        hot-edge-fullscreen = false;
         super-key-mode = 1;
-        switcher-popup-start-search = true;
         switcher-popup-hover-select = false;
-        switcher-popup-interactive-indicators = false;
-        switcher-popup-monitor = 3;
-        switcher-popup-position = 2;
-        switcher-popup-preview-selected = 2;
-        switcher-popup-theme = 0;
-        switcher-ws-thumbnails = 1;
-        win-switch-include-modals = true;
+        switcher-popup-interactive-indicators = true;
+        switcher-popup-preview-selected = 1;
+        switcher-popup-start-search = false;
+        switcher-popup-timeout = 0;
+        switcher-popup-tooltip-label-scale = 100;
+        switcher-popup-tooltip-title = 1;
+        switcher-popup-wrap = true;
+        switcher-ws-thumbnails = 0;
+        win-switch-mark-minimized = false;
+        win-switch-minimized-to-end = false;
+        win-switch-skip-minimized = false;
         win-switcher-popup-filter = 1;
-        win-switcher-popup-icon-size = 64;
-        win-switcher-popup-order = 1;
-        win-switcher-popup-sorting = 1;
+        win-switcher-popup-icon-size = 32;
+        win-switcher-popup-order = 2;
+        win-switcher-popup-preview-size = 160;
+        win-switcher-popup-titles = 1;
+        win-switcher-popup-ws-indexes = false;
+        win-switcher-single-prev-size = 192;
       };
 
       "org/gnome/settings-daemon/plugins/color" = {
