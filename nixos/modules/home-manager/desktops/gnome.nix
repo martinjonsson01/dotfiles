@@ -75,27 +75,8 @@
       };
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
-        app-switcher-popup-fav-apps = false;
-        app-switcher-popup-filter = 3;
-        app-switcher-popup-include-show-apps-icon = false;
-        app-switcher-popup-win-counter = false;
-        enable-super = false;
-        hot-edge-fullscreen = false;
-        hot-edge-mode = 1;
-        hot-edge-position = 0;
-        show-dash = 2;
-        super-double-press-action = 2;
-        super-key-mode = 1;
-        switcher-popup-hover-select = false;
-        switcher-popup-interactive-indicators = false;
-        switcher-popup-monitor = 3;
-        switcher-popup-position = 3;
-        switcher-popup-preview-selected = 3;
-        switcher-popup-start-search = false;
-        switcher-popup-timeout = 0;
-        switcher-popup-up-down-action = 1;
-        win-switch-include-modals = true;
-        win-switch-mark-minimized = false;
+        switcher-popup-monitor = lib.gvariant.mkInt32 3;
+        win-switcher-popup-ws-indexes = false;
       };
 
       "org/gnome/settings-daemon/plugins/color" = {
