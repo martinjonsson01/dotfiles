@@ -123,7 +123,7 @@
       };
 
       "org/gnome/mutter" = {
-        overlay-key = "Super_R";
+        overlay-key = "Super";
       };
 
       "org/gnome/shell" = {
