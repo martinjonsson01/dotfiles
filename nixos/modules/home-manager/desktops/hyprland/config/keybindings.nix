@@ -108,7 +108,7 @@
       # "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar" # file explorer
 
       # Rofi as dmenu replacement
-      "SUPER, Space, exec, pkill rofi || ${config.programs.rofi.package}/bin/rofi -show drun"
+      "SUPER, Space, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
       "SUPER, Tab, exec, ${config.programs.rofi.package}/bin/rofi -show window"
 
       # Modes
