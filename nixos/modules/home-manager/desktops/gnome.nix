@@ -109,8 +109,9 @@
         "switcher-popup-timeout" = 10;
         "switcher-popup-tooltip-label-scale" = 150;
         "win-switcher-popup-start-search" = true;
-        "win-switcher-popup-filter" = 3;
+        "win-switcher-popup-filter" = 1;
         "win-switcher-popup-preview-size" = 296;
+        "win-switcher-popup-search-apps" = true;
         "win-switcher-popup-ws-indexes" = false;
         "win-switcher-single-prev-size" = 224;
         "win-switch-include-modals" = true;
