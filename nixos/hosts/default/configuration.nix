@@ -109,8 +109,6 @@
   fish.enable = true;
   polkit-gnome.enable = true;
 
-  hyprland.enable = true;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

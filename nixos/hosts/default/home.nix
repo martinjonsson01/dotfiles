@@ -131,7 +131,6 @@
   git.enable = true;
   vscode.enable = true;
   gnome.enable = true;
-  hyprland.enable = true;
   autostart.enable = true;
   rbw.enable = true;
   rofi.enable = true;
@@ -140,14 +139,6 @@
   satty.enable = true;
 
   # Desktop add-ons
-  dunst.enable = true;
-  blueman-applet.enable = true;
   gtk-theme.enable = true;
-  nwg-bar.enable = true;
-  nm-applet.enable = true;
-  pasystray.enable = true;
-  waybar.enable = true;
-  hyprsunset.enable = true;
   grimblast.enable = true;
-  hypridle.enable = true;
 }
