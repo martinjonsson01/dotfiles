@@ -105,9 +105,10 @@
         "hot-edge-position" = 0;
         "switcher-popup-monitor" = 3;
         "switcher-popup-position" = 2;
-        "switcher-popup-start-search" = false;
+        "switcher-popup-start-search" = true;
         "switcher-popup-timeout" = 10;
         "switcher-popup-tooltip-label-scale" = 150;
+        "win-switcher-popup-start-search" = true;
         "win-switcher-popup-filter" = 1;
         "win-switcher-popup-preview-size" = 296;
         "win-switcher-popup-ws-indexes" = false;
