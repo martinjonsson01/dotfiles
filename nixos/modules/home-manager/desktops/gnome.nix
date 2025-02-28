@@ -66,7 +66,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         binding = "<Super>space";
-        command = "pkill rofi || ${config.programs.rofi.package}/bin/rofi -show drun";
+        command = "${config.programs.rofi.package}/bin/rofi -show drun";
         name = "Rofi drun";
       };
 
