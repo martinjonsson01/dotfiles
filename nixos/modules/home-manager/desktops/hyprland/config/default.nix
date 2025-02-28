@@ -43,7 +43,7 @@ in {
         )
         ++ [
           "${pkgs.waybar}/bin/waybar"
-          "wl-paste -t text -w xclip -selection clipboard"
+          "wl-paste -t text -w xclip -selection clipboard" # taken from https://github.com/hyprwm/Hyprland/issues/2319#issuecomment-1650958363
         ];
 
       # General settings

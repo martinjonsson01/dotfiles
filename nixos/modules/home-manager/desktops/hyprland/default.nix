@@ -24,8 +24,11 @@
       executable = true;
     };
 
-    # Hint Electron apps to use Wayland.
-    home.sessionVariables.NIXOS_OZONE_WL = "1";
+    home.sessionVariables = {
+      # Hint Electron apps to use Wayland.
+      NIXOS_OZONE_WL = "1";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    };
 
     wayland.windowManager.hyprland =
       {
