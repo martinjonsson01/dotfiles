@@ -47,8 +47,8 @@
       "org/gnome/desktop/screensaver".lock-enabled = false;
 
       "org/gnome/desktop/wm/keybindings" = {
-        switch-applications = [];
-        switch-applications-backward = [];
+        switch-applications = ["<alt>Space"];
+        switch-applications-backward = ["<alt><shift>Space"];
 
         switch-windows = ["<alt>Tab"];
         switch-windows-backward = ["<alt><shift>Tab"];
@@ -96,6 +96,7 @@
       #   win-switcher-popup-icon-size = 64;
       #   win-switcher-popup-order = 1;
       #   win-switcher-popup-sorting = 1;
+      #  win-switcher-popup-preview-size = 296;
       # };
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
