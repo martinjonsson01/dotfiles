@@ -101,6 +101,7 @@
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
         "enable-super" = true;
+        "super-key-mode" = 3;
         "hot-edge-position" = 0;
         "switcher-popup-monitor" = 3;
         "switcher-popup-position" = 2;
@@ -121,7 +122,7 @@
       };
 
       "org/gnome/mutter" = {
-        overlay-key = "Super_L";
+        overlay-key = "Super_R";
       };
 
       "org/gnome/shell" = {
