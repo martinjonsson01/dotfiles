@@ -83,6 +83,7 @@
         hot-edge-monitor = 1;
         super-double-press-action = 3;
         super-key-mode = 1;
+        switcher-popup-start-search = true;
         switcher-popup-hover-select = false;
         switcher-popup-interactive-indicators = false;
         switcher-popup-monitor = 3;
