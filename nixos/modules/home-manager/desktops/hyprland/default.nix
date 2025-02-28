@@ -18,6 +18,12 @@
       xclip # Needed to fix clipboard in exec-once (see config/default.nix)
     ];
 
+    # Use wayland for electron apps. e.g. for slack, signal, etc
+    xdg.configFile."electron-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+
     # Script for moving windows across monitors.
     home.file."${config.xdg.configHome}/movewindow.sh" = {
       source = ./movewindow.sh;
