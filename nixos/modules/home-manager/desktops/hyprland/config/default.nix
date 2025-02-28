@@ -65,8 +65,8 @@ in {
       misc = {
         # Display Power Management Signaling
         # aka turn on when I move mouse / press key
-        #mouse_move_enables_dpms = true;
-        #key_press_enables_dpms = true;
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
 
         middle_click_paste = false; # Disable middle click paste
       };
