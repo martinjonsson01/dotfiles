@@ -26,7 +26,7 @@
           before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
           after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
           ignore_dbus_inhibit = true;
-          lock_cmd = "pidof ${pkgs.hyprlock}/bin/hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+          lock_cmd = "pidof ${config.programs.swaylock.package}/bin/swaylock || ${config.programs.swaylock.package}/bin/swaylock";
         };
         # listener = [
         #   {
