@@ -86,7 +86,7 @@
       };
 
       "org/gnome/mutter" = {
-        overlay-key = "Super_L";
+        overlay-key = "Super";
       };
 
       "org/gnome/shell" = {
@@ -97,7 +97,6 @@
           "tilingshell@ferrarodomenico.com"
           "runcat@kolesnikov.se"
           "appindicatorsupport@rgcjonas.gmail.com"
-          "super-key@tommimon.github.com"
           "pano@elhan.io"
         ];
       };
@@ -156,10 +155,6 @@
       "org/gnome/shell/extensions/pano/text-item" = {
         body-bg-color = "rgb(33, 33, 33)";
         body-color = "rgb(234, 234, 234)";
-      };
-
-      "org/gnome/shell/extensions/super-key" = {
-        overlay-key-action = "rofi -show combi -calc-command \"echo -n '{result}' | wl-copy\" -calc-command-history";
       };
 
       "org/gnome/shell/extensions/gtktitlebar" = {
