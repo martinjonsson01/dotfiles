@@ -48,6 +48,8 @@
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
       };
 
@@ -55,6 +57,18 @@
         binding = "<Super>period";
         command = "rofimoji --action copy";
         name = "Rofimoji";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>space";
+        command = "pkill rofi || ${config.programs.rofi.package}/bin/rofi -show drun";
+        name = "Rofi drun";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        binding = "<Super>tab";
+        command = "${config.programs.rofi.package}/bin/rofi -show window";
+        name = "Rofi window";
       };
 
       "org/gnome/shell/keybindings" = {
