@@ -115,21 +115,21 @@
       # };
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
-        "enable-super" = true;
-        "super-key-mode" = 3;
-        "hot-edge-position" = 0;
-        "switcher-popup-monitor" = 3;
-        "switcher-popup-position" = 2;
-        "switcher-popup-start-search" = true;
-        "switcher-popup-timeout" = 10;
-        "switcher-popup-tooltip-label-scale" = 150;
-        "win-switcher-popup-start-search" = true;
-        "win-switcher-popup-filter" = 1;
-        "win-switcher-popup-preview-size" = 296;
-        "win-switcher-popup-search-apps" = true;
-        "win-switcher-popup-ws-indexes" = false;
-        "win-switcher-single-prev-size" = 224;
-        "win-switch-include-modals" = true;
+        enable-super = true;
+        super-key-mode = 3;
+        hot-edge-position = 0;
+        switcher-popup-monitor = 3;
+        switcher-popup-position = 2;
+        switcher-popup-start-search = true;
+        switcher-popup-timeout = 10;
+        switcher-popup-tooltip-label-scale = 150;
+        win-switcher-popup-start-search = true;
+        win-switcher-popup-filter = 1;
+        win-switcher-popup-preview-size = 296;
+        win-switcher-popup-search-apps = true;
+        win-switcher-popup-ws-indexes = false;
+        win-switcher-single-prev-size = 224;
+        win-switch-include-modals = true;
       };
 
       "org/gnome/settings-daemon/plugins/color" = {
@@ -212,6 +212,22 @@
 
       "org/gnome/GWeather" = {
         temperature-unit = "centigrade";
+      };
+
+      "org/gnome/shell/extensions/smart-auto-move" = {
+        activate-workspace = true;
+        debug-logging = false;
+        freeze-saves = false;
+        ignore-position = false;
+        ignore-workspace = false;
+        match-threshold = 0.7;
+        overrides = ''
+          {}
+        '';
+        save-frequency = 1000;
+        startup-delay = 2500;
+        sync-frequency = 100;
+        sync-mode = "RESTORE";
       };
     };
   };
