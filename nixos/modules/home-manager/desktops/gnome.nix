@@ -17,6 +17,7 @@
       gnomeExtensions.super-key
       gnomeExtensions.pano
       gnomeExtensions.advanced-alttab-window-switcher
+      gnomeExtensions.smart-auto-move
     ];
 
     dconf.settings = {
@@ -142,6 +143,8 @@
 
       "org/gnome/shell/extensions/tilingshell" = {
         active-screen-edges = false;
+        resize-complementing-windows = false;
+        enable-autotiling = true;
       };
 
       "org/gnome/shell/extensions/pano" = {
