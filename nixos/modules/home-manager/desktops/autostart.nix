@@ -53,7 +53,7 @@ in {
         type = "Application";
         startupNotify = true;
         settings = {
-          StartupWMClass = "discord";
+          StartupWMClass = "Slack";
         };
       };
     };
