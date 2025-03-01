@@ -29,8 +29,16 @@ in {
     # Modify desktop entries to launch application minimized/in tray.
     xdg.desktopEntries = {
       discord = {
-        name = "Discord";
+        categories = ["Network" "InstantMessaging"];
         exec = "Discord --start-minimized";
+        genericName = "All-in-one cross-platform voice and text chat for gamers";
+        icon = "discord";
+        mimeType = ["x-scheme-handler/discord"];
+        name = "Discord";
+        type = "Application";
+        settings = {
+          StartupWMClass = "discord";
+        };
       };
     };
   };
