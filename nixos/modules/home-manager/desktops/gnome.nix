@@ -89,31 +89,6 @@
         toggle-quick-settings = [];
       };
 
-      # "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
-      #   app-switcher-popup-hide-win-counter-for-single-window = true;
-      #   app-switcher-popup-icon-size = 96;
-      #   app-switcher-popup-titles = false;
-      #   enable-super = false;
-      #   hot-edge-mode = 0;
-      #   hot-edge-monitor = 1;
-      #   super-double-press-action = 3;
-      #   super-key-mode = 1;
-      #   switcher-popup-start-search = true;
-      #   switcher-popup-hover-select = false;
-      #   switcher-popup-interactive-indicators = false;
-      #   switcher-popup-monitor = 3;
-      #   switcher-popup-position = 2;
-      #   switcher-popup-preview-selected = 2;
-      #   switcher-popup-theme = 0;
-      #   switcher-ws-thumbnails = 1;
-      #   win-switch-include-modals = true;
-      #   win-switcher-popup-filter = 1;
-      #   win-switcher-popup-icon-size = 64;
-      #   win-switcher-popup-order = 1;
-      #   win-switcher-popup-sorting = 1;
-      #  win-switcher-popup-preview-size = 296;
-      # };
-
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
         enable-super = true;
         super-key-mode = 3;
@@ -124,7 +99,7 @@
         switcher-popup-timeout = 10;
         switcher-popup-tooltip-label-scale = 150;
         win-switcher-popup-start-search = true;
-        win-switcher-popup-filter = 1;
+        win-switcher-popup-filter = 3;
         win-switcher-popup-preview-size = 296;
         win-switcher-popup-search-apps = true;
         win-switcher-popup-ws-indexes = false;
