@@ -55,6 +55,11 @@
         gtk-enable-primary-paste = false;
       };
 
+      "org/gnome/TextEditor" = {
+        use-system-font = false;
+        custom-font = "${config.stylix.fonts.monospace.name} ${toString config.stylix.fonts.sizes.applications}";
+      };
+
       "org/gnome/desktop/wm/preferences" = {
         action-middle-click-titlebar = "toggle-maximize-vertically";
         button-layout = "appmenu:minimize,close";

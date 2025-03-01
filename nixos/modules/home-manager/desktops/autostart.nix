@@ -45,7 +45,7 @@ in {
       slack = {
         name = "Slack";
         categories = ["GNOME" "GTK" "Network" "InstantMessaging"];
-        exec = "${pkgs.slack}/bin/slack -s %U -u";
+        exec = "${pkgs.slack}/bin/slack -s %U -u"; # -u makes it start in tray
         genericName = "Slack Client for Linux";
         comment = "Slack Desktop";
         icon = "slack";
