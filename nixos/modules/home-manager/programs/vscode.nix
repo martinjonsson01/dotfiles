@@ -18,6 +18,11 @@
           kamadorueda.alejandra # Nix formatter
           bmalehorn.vscode-fish # Fish syntax + formatting
           eamodio.gitlens # Better Git support
+          mikestead.dotenv # .env syntax highlighting
+          signageos.signageos-vscode-sops # Editing of encrypted files
+          editorconfig.editorconfig # Override user settings with .editorconfig
+          pkief.material-icon-theme # Icon theme
+          gruntfuggly.todo-tree # Show todo items in a tree view
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -25,6 +30,27 @@
             publisher = "peaceshi";
             version = "0.0.15";
             sha256 = "0arsy8jmwnzrhcnyia958flvpiwzy0ngrcmivab7cxwm6dzlw6gw";
+          }
+          # Tab out of quotes, brackets, etc
+          {
+            name = "TabOut";
+            publisher = "albert";
+            version = "0.2.2";
+            sha256 = "s306AHMkUFPaG7ISIr0RscK/k6OVtniIG1CQprBx+cY=";
+          }
+          # A (not so) simple markdown plugin to format tables and other table related features.
+          {
+            name = "markdown-table-formatter";
+            publisher = "fcrespo82";
+            version = "3.0.0";
+            sha256 = "rUxKfr6mAyHzRtbbozZGYJ8itky3gICSnvnvb3b3PYU=";
+          }
+          # Allows you to quickly convert one or more selections of text to and from various formats.
+          {
+            name = "ecdc";
+            publisher = "mitchdenny";
+            version = "1.8.0";
+            sha256 = "W2WlngFC5pAAjkj4lQNR5yPJZiedkjqGZHldjx8m7IU=";
           }
         ];
 

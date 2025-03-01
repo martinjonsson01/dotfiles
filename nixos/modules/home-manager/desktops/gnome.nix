@@ -116,7 +116,7 @@
 
       "org/gnome/settings-daemon/plugins/color" = {
         night-light-enabled = true;
-        night-light-schedule-from = 19.5;
+        night-light-schedule-from = 19.5; # It seems to trigger half an hour early, idk why
         night-light-schedule-to = 5.0;
       };
 
