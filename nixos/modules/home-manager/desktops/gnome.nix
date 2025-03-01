@@ -18,6 +18,7 @@
       gnomeExtensions.pano
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.smart-auto-move
+      gnomeExtensions.dash-to-panel
     ];
 
     dconf.settings."org/gnome/shell" = {
@@ -31,6 +32,7 @@
         pano.extensionUuid
         advanced-alttab-window-switcher.extensionUuid
         smart-auto-move.extensionUuid
+        dash-to-panel.extensionUuid
       ];
     };
 
