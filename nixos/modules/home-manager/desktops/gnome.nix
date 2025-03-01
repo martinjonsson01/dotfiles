@@ -122,7 +122,6 @@
       "org/gnome/shell/extensions/tilingshell" = {
         active-screen-edges = false;
         resize-complementing-windows = false;
-        enable-autotiling = true;
       };
 
       "org/gnome/shell/extensions/pano" = {
