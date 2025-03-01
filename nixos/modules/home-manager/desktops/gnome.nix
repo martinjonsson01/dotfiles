@@ -20,6 +20,20 @@
       gnomeExtensions.smart-auto-move
     ];
 
+    dconf.settings."org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = with pkgs.gnomeExtensions; [
+        system-monitor.extensionUuid
+        workspace-indicator.extensionUuid
+        tiling-shell.extensionUuid
+        runcat.extensionUuid
+        appindicator.extensionUuid
+        pano.extensionUuid
+        advanced-alttab-window-switcher.extensionUuid
+        smart-auto-move.extensionUuid
+      ];
+    };
+
     dconf.settings = {
       # Duration of inactivity (seconds) until screen turns off.
       "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 3600;
@@ -126,19 +140,6 @@
 
       "org/gnome/mutter" = {
         overlay-key = "Super";
-      };
-
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          system-monitor.extensionUuid
-          workspace-indicator.extensionUuid
-          tiling-shell.extensionUuid
-          runcat.extensionUuid
-          appindicator.extensionUuid
-          pano.extensionUuid
-          advanced-alttab-window-switcher.extensionUuid
-        ];
       };
 
       "org/gnome/shell/extensions/tilingshell" = {
