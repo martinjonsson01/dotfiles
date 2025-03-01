@@ -66,6 +66,7 @@
     # Dev
     nil # LSP for Nix
     sops # Secrets management
+    pre-commit # Hooks that run before committing
 
     # CLI
     fd # Simple, fast and user-friendly alternative to find
