@@ -130,14 +130,14 @@
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [
-          "system-monitor@gnome-shell-extensions.gcampax.github.com"
-          "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
-          "tilingshell@ferrarodomenico.com"
-          "runcat@kolesnikov.se"
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "pano@elhan.io"
-          "advanced-alt-tab@G-dH.github.com"
+        enabled-extensions = with pkgs.gnomeExtensions; [
+          system-monitor.extensionUuid
+          workspace-indicator.extensionUuid
+          tiling-shell.extensionUuid
+          runcat.extensionUuid
+          appindicator.extensionUuid
+          pano.extensionUuid
+          advanced-alttab-window-switcher.extensionUuid
         ];
       };
 
