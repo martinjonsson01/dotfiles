@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   mkAutostart = appDesktopNames:
@@ -29,13 +30,28 @@ in {
     # Modify desktop entries to launch application minimized/in tray.
     xdg.desktopEntries = {
       discord = {
+        name = "Discord";
         categories = ["Network" "InstantMessaging"];
         exec = "Discord --start-minimized";
         genericName = "All-in-one cross-platform voice and text chat for gamers";
         icon = "discord";
         mimeType = ["x-scheme-handler/discord"];
-        name = "Discord";
         type = "Application";
+        settings = {
+          StartupWMClass = "discord";
+        };
+      };
+
+      slack = {
+        name = "Slack";
+        categories = ["GNOME" "GTK" "Network" "InstantMessaging"];
+        exec = "${pkgs.slack}/bin/slack -s %U -u";
+        genericName = "Slack Client for Linux";
+        comment = "Slack Desktop";
+        icon = "slack";
+        mimeType = ["x-scheme-handler/slack"];
+        type = "Application";
+        startupNotify = true;
         settings = {
           StartupWMClass = "discord";
         };
