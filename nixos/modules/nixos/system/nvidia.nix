@@ -10,7 +10,10 @@
   config = lib.mkIf config.nvidia.enable {
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = ["nvidia"];
+
     hardware.nvidia = {
+      nvidiaPersistenced = true;
+
       # Modesetting is required.
       modesetting.enable = true;
 
@@ -41,8 +44,9 @@
 
       prime = {
         sync.enable = true;
+        offload.enable = false;
         #  use `nix-shell -p pciutils --run lspci | grep VGA` to find correct id
-        nvidiaBusId = "1@0:0:0";
+        nvidiaBusId = "1@0:1:0";
         amdgpuBusId = "10@0:0:0";
       };
     };
