@@ -13,6 +13,7 @@
     home.packages = with pkgs; [
       grc # Generic text colouriser
       babelfish # Translate bash scripts to fish.
+      oh-my-fish # Fish Shell Framework
     ];
 
     home.file = {
