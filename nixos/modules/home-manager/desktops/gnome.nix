@@ -99,6 +99,11 @@
         toggle-quick-settings = [];
       };
 
+      "org/gnome/shell/extensions/system-monitor" = {
+        show-download = false;
+        show-upload = false;
+      };
+
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
         enable-super = true;
         super-key-mode = 3;
