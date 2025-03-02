@@ -28,6 +28,11 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
+  fileSystems."/big-chungus" = {
+    device = "/dev/disk/by-uuid/840091F50091EE84";
+    fsType = "ntfs";
+  };
+
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
