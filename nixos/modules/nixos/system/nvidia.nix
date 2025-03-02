@@ -40,8 +40,10 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
 
       prime = {
-        #  use `nix-shell -p pciutils --run lspci | grep NVIDIA ` to find correct id
-        nvidiaBusId = "PCI:01:00.0";
+        sync.enable = true;
+        #  use `nix-shell -p pciutils --run lspci | grep VGA` to find correct id
+        nvidiaBusId = "1@0:0:0";
+        amdgpuBusId = "10@0:0:0";
       };
     };
   };
