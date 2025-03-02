@@ -37,6 +37,20 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs pkgs-unstable;};
       modules = [
+        ({
+          config,
+          pkgs,
+          ...
+        }: {
+          nixpkgs = {
+            config = {
+              allowUnfree = true;
+            };
+            overlays = [
+            ];
+            # ++ import ./overlays {inherit pkgs;};
+          };
+        })
         ./modules/nixos/default.nix
         ./hosts/default/hardware-configuration.nix
         ./hosts/default/configuration.nix

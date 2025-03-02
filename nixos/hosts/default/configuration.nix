@@ -236,6 +236,7 @@
 
     # System
     libnotify # For notifications
+    cmake # For building
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
