@@ -200,6 +200,25 @@
         "type": "github"
       }
     },
+    "gvdb-src": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.gnome.org",
+        "lastModified": 1726152673,
+        "narHash": "sha256-CIdEwRbtxWCwgTb5HYHrixXi+G+qeE1APRaUeka3NWk=",
+        "owner": "GNOME",
+        "repo": "gvdb",
+        "rev": "2b42fc75f09dbe1cd1057580b5782b08f2dcb400",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.gnome.org",
+        "owner": "GNOME",
+        "ref": "main",
+        "repo": "gvdb",
+        "type": "gitlab"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -243,6 +262,25 @@
         "type": "github"
       }
     },
+    "mutter-triple-buffering-src": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.gnome.org",
+        "lastModified": 1740735394,
+        "narHash": "sha256-Jlhzt2Cc44epkBcz3PA6I5aTnVEqMsHBOE8aEmvANWw=",
+        "owner": "vanvugt",
+        "repo": "mutter",
+        "rev": "4d4f091cb1f9b5168986bc1dcd0658de2d147064",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.gnome.org",
+        "owner": "vanvugt",
+        "ref": "triple-buffering-v4-47",
+        "repo": "mutter",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1739923778,
@@ -277,7 +315,9 @@
     },
     "root": {
       "inputs": {
+        "gvdb-src": "gvdb-src",
         "home-manager": "home-manager",
+        "mutter-triple-buffering-src": "mutter-triple-buffering-src",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix",
