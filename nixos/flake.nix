@@ -22,6 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Fixes triple-buffering for Gnome 47.3 (should be included by default in Gnome 48)
     # https://nixos.wiki/wiki/GNOME#:~:text=specific%20dbus%20session.-,Dynamic%20triple%20buffering,-Big%20merge%20request
     mutter-triple-buffering-src = {
       url = "gitlab:vanvugt/mutter?ref=triple-buffering-v4-47&host=gitlab.gnome.org";

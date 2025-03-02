@@ -5,8 +5,8 @@
     ./programs/vscode.nix
     ./programs/satty.nix
 
-    ./desktops/gnome.nix
-    ./desktops/hyprland/default.nix
+    ./desktops/gnome
+    ./desktops/hyprland
     ./desktops/autostart.nix
 
     ./desktops/add-ons/dunst.nix

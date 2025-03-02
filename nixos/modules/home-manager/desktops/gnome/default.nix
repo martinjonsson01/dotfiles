@@ -138,8 +138,13 @@
 
       "org/gnome/shell/extensions/tilingshell" = {
         active-screen-edges = false;
+
         resize-complementing-windows = true;
+
         restore-window-original-size = false;
+
+        layouts-json = builtins.readFile ./tiling-shell-layouts.json;
+        selected-layouts = builtins.readFile ./tiling-shell-selected-layouts.json;
       };
 
       "org/gnome/shell/extensions/pano" = {
@@ -209,6 +214,13 @@
       };
 
       "org/gnome/shell/extensions/another-window-session-manager" = {
+      };
+
+      "org/gnome/shell/extensions/dash-to-panel" = {
+        panel-sizes = "{\"0\": 32,\"1\": 32,\"2\": 32}";
+
+        isolate-workspaces = true; # Only show apps in taskbar that are on this workspace
+        isolate-monitors = true; # Only show apps in taskbar that are on this monitor
       };
     };
   };
