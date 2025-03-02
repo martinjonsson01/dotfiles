@@ -1,6 +1,6 @@
 [
   {
-    "id": "Layout 1",
+    "id": "Big Center Layout",
     "tiles": [
       {
         "x": 0,
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "id": "6627185",
+    "id": "Two Horizontal Stack Layout",
     "tiles": [
       {
         "x": 0,
@@ -56,7 +56,7 @@
     ]
   },
   {
-    "id": "6702118",
+    "id": "Three Vertical Stack Layout",
     "tiles": [
       {
         "x": 0,
