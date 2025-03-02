@@ -16,6 +16,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
+  boot.supportedFilesystems = ["ntfs"]; # For NTFS drive
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/4ece33e4-e640-411f-b926-f68a6f6a9099";
@@ -30,7 +31,8 @@
 
   fileSystems."/big-chungus" = {
     device = "/dev/disk/by-uuid/840091F50091EE84";
-    fsType = "ntfs";
+    fsType = "ntfs-3g";
+    options = ["rw" "uid=1000"]; # 1000 is id of 'martin'
   };
 
   swapDevices = [];
