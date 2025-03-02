@@ -144,7 +144,7 @@
         restore-window-original-size = false;
 
         layouts-json = builtins.readFile ./tiling-shell-layouts.json;
-        selected-layouts = builtins.readFile ./tiling-shell-selected-layouts.json;
+        selected-layouts = import ./tiling-shell-selected-layouts.nix;
       };
 
       "org/gnome/shell/extensions/pano" = {
