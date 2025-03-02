@@ -127,7 +127,6 @@
       ns = "nix search";
 
       # Other
-      ":q" = "exit";
       cat = "${bat}/bin/bat";
       du = "${du-dust}/bin/dust";
       g = "${gitAndTools.git}/bin/git";
