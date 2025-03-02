@@ -160,6 +160,14 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Configure swap
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 64 * 1024; # 64GiB
+    }
+  ];
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
