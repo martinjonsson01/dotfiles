@@ -90,6 +90,11 @@
           name = "colored-man-pages";
           src = pkgs.fishPlugins.colored-man-pages.src;
         }
+        # Support for `nix-shell`
+        {
+          name = "foreign-env";
+          src = pkgs.fishPlugins.foreign-env.src;
+        }
       ];
 
       interactiveShellInit = ''
