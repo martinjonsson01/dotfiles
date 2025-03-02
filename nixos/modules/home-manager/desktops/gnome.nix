@@ -134,7 +134,7 @@
 
       "org/gnome/shell/extensions/tilingshell" = {
         active-screen-edges = false;
-        resize-complementing-windows = false;
+        resize-complementing-windows = true;
         restore-window-original-size = false;
       };
 
