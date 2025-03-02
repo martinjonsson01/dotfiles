@@ -18,6 +18,7 @@
       gnomeExtensions.pano
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.dash-to-panel
+      gnomeExtensions.another-window-session-manager
     ];
 
     dconf.settings."org/gnome/shell" = {
@@ -31,6 +32,7 @@
         pano.extensionUuid
         advanced-alttab-window-switcher.extensionUuid
         dash-to-panel.extensionUuid
+        another-window-session-manager.extensionUuid
       ];
     };
 
@@ -50,6 +52,8 @@
         color-scheme = "prefer-dark";
         font-antialiasing = "rgba";
         font-hinting = "full";
+
+        enable-hot-corners = false; # Disable moving mouse into corner stuff
 
         # Older GTK apps don't use the above color-scheme setting. For those set
         # the legacy theme to a dark one
@@ -202,6 +206,9 @@
 
       "org/gnome/GWeather" = {
         temperature-unit = "centigrade";
+      };
+
+      "org/gnome/shell/extensions/another-window-session-manager" = {
       };
     };
   };
