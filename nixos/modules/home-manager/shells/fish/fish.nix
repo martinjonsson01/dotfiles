@@ -137,6 +137,7 @@
       g = "${gitAndTools.git}/bin/git";
       lg = "${pkgs-unstable.lazygit}/bin/lazygit";
       ls = "${lsd}/bin/lsd";
+      k = "kubectl"; # Without reference to package since it's inside a shell.nix
     };
   };
 }
