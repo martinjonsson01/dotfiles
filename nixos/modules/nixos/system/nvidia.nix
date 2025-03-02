@@ -11,6 +11,8 @@
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = ["nvidia"];
 
+    boot.kernelParams = ["nomodeset" "nvidia-drm.modeset=1"];
+
     hardware.nvidia = {
       nvidiaPersistenced = true;
 
