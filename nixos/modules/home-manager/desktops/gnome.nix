@@ -17,7 +17,6 @@
       gnomeExtensions.super-key
       gnomeExtensions.pano
       gnomeExtensions.advanced-alttab-window-switcher
-      gnomeExtensions.smart-auto-move
       gnomeExtensions.dash-to-panel
     ];
 
@@ -31,7 +30,6 @@
         appindicator.extensionUuid
         pano.extensionUuid
         advanced-alttab-window-switcher.extensionUuid
-        smart-auto-move.extensionUuid
         dash-to-panel.extensionUuid
       ];
     };
@@ -193,22 +191,6 @@
 
       "org/gnome/GWeather" = {
         temperature-unit = "centigrade";
-      };
-
-      "org/gnome/shell/extensions/smart-auto-move" = {
-        activate-workspace = true;
-        debug-logging = false;
-        freeze-saves = false;
-        ignore-position = false;
-        ignore-workspace = false;
-        match-threshold = 0.7;
-        overrides = ''
-          {}
-        '';
-        save-frequency = 1000;
-        startup-delay = 2500;
-        sync-frequency = 100;
-        sync-mode = "RESTORE";
       };
     };
   };

@@ -59,9 +59,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    # Temp
-    firefox
-
     # Social
     discord
     slack
