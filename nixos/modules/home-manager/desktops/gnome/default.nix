@@ -217,7 +217,12 @@
       };
 
       "org/gnome/shell/extensions/dash-to-panel" = {
-        panel-sizes = "{\"0\": 32,\"1\": 32,\"2\": 32}";
+        panel-sizes = "{\"0\": 32,\"1\": 32,\"2\": 48}";
+
+        panel-positions-monitors-sync = false;
+        panel-positions = "{\"2\":\"RIGHT\"}";
+
+        appicon-margin = 4;
 
         isolate-workspaces = true; # Only show apps in taskbar that are on this workspace
         isolate-monitors = true; # Only show apps in taskbar that are on this monitor
