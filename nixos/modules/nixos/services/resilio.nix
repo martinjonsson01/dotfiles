@@ -26,7 +26,9 @@
         {
           directory = "/big-chungus/Drive";
           secretFile = config.sops.secrets."resilio-secret".path;
-          knownHosts = [];
+          knownHosts = [
+            "192.168.0.162:28889"
+          ];
           searchLAN = true;
           useDHT = false;
           useRelayServer = true;
