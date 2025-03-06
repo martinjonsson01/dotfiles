@@ -32,7 +32,11 @@
   fileSystems."/big-chungus" = {
     device = "/dev/disk/by-uuid/840091F50091EE84";
     fsType = "ntfs-3g";
-    options = ["rw" "uid=1000"]; # 1000 is id of 'martin'
+    options = [
+      "rw"
+      "uid=1000" # 1000 is id of 'martin'
+      "gid=988" # 998 is id of 'rslsync'
+    ];
   };
 
   swapDevices = [];
