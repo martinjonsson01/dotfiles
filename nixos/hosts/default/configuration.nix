@@ -244,7 +244,7 @@
   users.users.martin = {
     isNormalUser = true;
     description = "Martin";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "rslsync"];
     packages = with pkgs; [
       hexchat # IRC Client
     ];

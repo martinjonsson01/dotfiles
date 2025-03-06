@@ -9,3 +9,7 @@ creation_rules:
     key_groups:
     - age:
       - *primary
+  - path_regex: secrets/resilio-secret.txt$
+    key_groups:
+    - age:
+      - *primary

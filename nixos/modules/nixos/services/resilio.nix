@@ -9,16 +9,31 @@
   };
 
   config = lib.mkIf config.resilio.enable {
+    environment.systemPackages = with pkgs; [resilio-sync];
+
+    sops.secrets."resilio-secret" = {
+      sopsFile = ./../../../secrets/resilio-secret.txt;
+      format = "binary";
+    };
+
     services.resilio = {
       enable = true;
 
-      directoryRoot = "/big-chungus/Drive";
-
       deviceName = config.networking.hostName;
 
-      enableWebUI = true;
-      httpListenPort = 10000;
-      httpListenAddr = "0.0.0.0";
+      enableWebUI = false;
+      sharedFolders = [
+        {
+          directory = "/big-chungus/Drive";
+          secretFile = config.sops.secrets."resilio-secret".path;
+          knownHosts = [];
+          searchLAN = true;
+          useDHT = false;
+          useRelayServer = true;
+          useSyncTrash = true;
+          useTracker = true;
+        }
+      ];
     };
   };
 }
