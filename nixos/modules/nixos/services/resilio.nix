@@ -5,7 +5,7 @@
 }: {
   environment.systemPackages = with pkgs; [resilio-sync];
 
-  services.resilio = {
+  services.resasdasdilio = {
     enable = true;
 
     directoryRoot = "/big-chungus/Drive";
