@@ -3,6 +3,8 @@
   config,
   ...
 }: {
+  environment.systemPackages = with pkgs; [resilio-sync];
+
   services.resilio = {
     enable = true;
 
