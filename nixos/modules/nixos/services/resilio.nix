@@ -1,19 +1,24 @@
 {
+  lib,
   pkgs,
   config,
   ...
 }: {
-  environment.systemPackages = with pkgs; [resilio-sync];
+  options = {
+    resilio.enable = lib.mkEnableOption "Enables Resilio sync";
+  };
 
-  services.resasdasdilio = {
-    enable = true;
+  config = lib.mkIf config.resilio.enable {
+    services.resilio = {
+      enable = true;
 
-    directoryRoot = "/big-chungus/Drive";
+      directoryRoot = "/big-chungus/Drive";
 
-    deviceName = config.networking.hostName;
+      deviceName = config.networking.hostName;
 
-    enableWebUI = true;
-    httpListenPort = 10000;
-    httpListenAddr = "0.0.0.0";
+      enableWebUI = true;
+      httpListenPort = 10000;
+      httpListenAddr = "0.0.0.0";
+    };
   };
 }

@@ -8,6 +8,8 @@
     ./system/stylix.nix
     ./system/myHardware.nix
 
+    ./services/resilio.nix
+
     ./shells/fish.nix
   ];
 }

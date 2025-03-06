@@ -108,6 +108,7 @@
   custom-style.enable = true;
   fish.enable = true;
   polkit-gnome.enable = true;
+  resilio.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
