@@ -5,9 +5,13 @@
 }: {
   services.resilio = {
     enable = true;
-    enableWebUI = true;
-    deviceName = config.networking.hostName;
+
     directoryRoot = "/big-chungus/Drive";
+
+    deviceName = config.networking.hostName;
+
+    enableWebUI = true;
     httpListenPort = 10000;
+    httpListenAddr = "0.0.0.0";
   };
 }
