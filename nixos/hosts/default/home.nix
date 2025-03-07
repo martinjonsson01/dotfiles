@@ -85,7 +85,6 @@
 
     # Media
     plexamp
-    plex-desktop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -139,6 +138,7 @@
   rofi-rbw.enable = true;
   fish.enable = true;
   satty.enable = true;
+  plex-desktop.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

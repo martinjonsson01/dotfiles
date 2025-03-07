@@ -4,6 +4,7 @@
     ./programs/rbw.nix
     ./programs/vscode.nix
     ./programs/satty.nix
+    ./programs/plex.nix
 
     ./desktops/gnome
     ./desktops/hyprland
