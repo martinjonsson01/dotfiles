@@ -8,8 +8,6 @@
     postInstall =
       (previousAttrs.postInstall or "")
       + ''
-        asdasdkajhasdkajhsd
-
         # Remove built-in libmvp (save backup of it),
         # then symlink to updated libmpv
         ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
@@ -23,7 +21,7 @@ in {
   config = lib.mkIf config.plex-desktop.enable {
     home.packages = [
       pkgs.mpv # Dependency to be able to update libmpv.so.2
-      # patchedMpvPlex
+      patchedMpvPlex
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
