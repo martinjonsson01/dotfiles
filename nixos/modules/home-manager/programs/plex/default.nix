@@ -8,11 +8,11 @@
     postInstall =
       (previousAttrs.postInstall or "")
       + ''
-        echo "TESTING PLEX OVERRIDE"
+        rm ${pkgs.plex-desktop}/lib/libmvp.so.2
 
         # Remove built-in libmvp (save backup of it),
         # then symlink to updated libmpv
-        sudo ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
+        ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
       '';
   });
 in {
