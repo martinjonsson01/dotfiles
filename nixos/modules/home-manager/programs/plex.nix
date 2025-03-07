@@ -14,7 +14,7 @@
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
-      vf-add=vlip
+      vf=vlip
     '';
   };
 }
