@@ -8,7 +8,7 @@
     postInstall =
       (previousAttrs.postInstall or "")
       + ''
-        rm ${pkgs.plex-desktop}/lib/libmvp.so.2
+        asdasdkajhasdkajhsd
 
         # Remove built-in libmvp (save backup of it),
         # then symlink to updated libmpv
