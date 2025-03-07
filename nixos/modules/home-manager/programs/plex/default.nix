@@ -23,7 +23,7 @@ in {
   config = lib.mkIf config.plex-desktop.enable {
     home.packages = [
       pkgs.mpv # Dependency to be able to update libmpv.so.2
-      patchedMpvPlex
+      # patchedMpvPlex
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
