@@ -5,13 +5,13 @@
   ...
 }: let
   patchedMpvPlex = pkgs.plex-desktop.overrideAttrs (previousAttrs: {
-    patchPhase =
-      (previousAttrs.patchPhase or "")
-      + ''
-        # Remove built-in libmvp (save backup of it),
-        # then symlink to updated libmpv
-        ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
-      '';
+    postInstall = ''
+      ${previousAttrs.postInstall or ""}
+
+      # Remove built-in libmvp (save backup of it),
+      # then symlink to updated libmpv
+      ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
+    '';
   });
 in {
   options = {
