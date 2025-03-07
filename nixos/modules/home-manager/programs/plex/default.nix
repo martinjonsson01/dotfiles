@@ -14,6 +14,8 @@
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
+      vf=help
+
       # For HDR content
       vo=gpu-next
       target-colorspace-hint
