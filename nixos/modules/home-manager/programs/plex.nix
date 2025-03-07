@@ -14,7 +14,7 @@
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
-      video-zoom=0.43
+
     '';
   };
 }
