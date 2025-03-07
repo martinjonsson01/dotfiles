@@ -5,8 +5,8 @@
   ...
 }: let
   patchedMpvPlex = pkgs.plex-desktop.overrideAttrs (previousAttrs: {
-    postInstall =
-      (previousAttrs.postInstall or "")
+    patchPhase =
+      (previousAttrs.patchPhase or "")
       + ''
         # Remove built-in libmvp (save backup of it),
         # then symlink to updated libmpv
