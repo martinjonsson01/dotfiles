@@ -24,5 +24,8 @@
       # Required for the dynamic-crop script
       hwdec=no
     '';
+
+    # Script that auto-crops black bars.
+    xdg.dataFile."plex/scripts/dynamic-crop.lua".source = ./dynamic-crop.lua;
   };
 }
