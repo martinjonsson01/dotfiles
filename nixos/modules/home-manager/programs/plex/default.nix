@@ -12,7 +12,7 @@
 
         # Remove built-in libmvp (save backup of it),
         # then symlink to updated libmpv
-        ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
+        sudo ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
       '';
   });
 in {
