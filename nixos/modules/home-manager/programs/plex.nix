@@ -14,7 +14,7 @@
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
-      vf=vlip
+      video-zoom=0.43
     '';
   };
 }
