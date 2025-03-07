@@ -14,7 +14,15 @@
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
+      # For HDR content
+      vo=gpu-next
+      target-colorspace-hint
 
+      gpu-api=d3d11
+      gpu-context=wayland
+
+      # Required for the dynamic-crop script
+      hwdec=no
     '';
   };
 }
