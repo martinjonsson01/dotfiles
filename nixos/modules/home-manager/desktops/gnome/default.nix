@@ -228,13 +228,14 @@
       };
 
       "org/gnome/shell/extensions/dash-to-panel" = {
-        panel-sizes = "{\"0\": 48,\"1\": 48,\"2\": 96}";
+        panel-sizes = "{\"0\": 48,\"1\": 48,\"2\": 79}";
 
         panel-positions-monitors-sync = false;
         panel-positions = "{\"2\":\"RIGHT\"}";
 
         appicon-margin = 4;
         appicon-padding = 8;
+        tray-size = 14; # Tray font size
 
         window-preview-size = 360;
 
@@ -250,6 +251,10 @@
         hide-overview-on-startup = true;
 
         stockgs-panelbtn-click-only = true; # Activate panel menu buttons on click only (no hover)
+
+        show-showdesktop-hover = true;
+        show-showdesktop-time = 100;
+        show-showdesktop-delay = 500;
       };
     };
   };
