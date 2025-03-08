@@ -89,6 +89,11 @@ in {
       );
       default = [];
     };
+
+    disabledAudioSinkNodeNames = mkOption {
+      type = types.listOf (types.str);
+      default = [];
+    };
   };
 
   config = {

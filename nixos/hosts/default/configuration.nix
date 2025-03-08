@@ -56,6 +56,14 @@
         ];
       }
     ];
+
+    # List sink IDs using `wpctl status`
+    # Get sink node.name using `wpctl inspect [ID]`
+    disabledAudioSinkNodeNames = [
+      "alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink"
+      "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      "alsa_output.usb-Elgato_Systems_Elgato_Wave_3_BS01K1A01450-00.analog-stereo"
+    ];
   };
 
   # Allow unfree packages
@@ -109,6 +117,7 @@
   fish.enable = true;
   polkit-gnome.enable = true;
   resilio.enable = true;
+  audio.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -190,22 +199,6 @@
     };
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

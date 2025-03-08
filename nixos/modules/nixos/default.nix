@@ -9,6 +9,7 @@
     ./system/myHardware.nix
 
     ./services/resilio.nix
+    ./services/audio.nix
 
     ./shells/fish.nix
   ];
