@@ -226,7 +226,7 @@
       };
 
       "org/gnome/shell/extensions/dash-to-panel" = {
-        panel-sizes = "{\"0\": 64,\"1\": 64,\"2\": 64}";
+        panel-sizes = "{\"0\": 48,\"1\": 48,\"2\": 64}";
 
         panel-positions-monitors-sync = false;
         panel-positions = "{\"2\":\"RIGHT\"}";
