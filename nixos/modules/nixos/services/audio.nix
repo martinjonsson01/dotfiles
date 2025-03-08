@@ -26,6 +26,9 @@
 
       wireplumber = {
         configPackages = [
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-bluetooth-policy.conf" ''
+            wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+          '')
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-disable-redundant-sinks.conf" ''
             monitor.alsa.rules = [
             ${
