@@ -130,6 +130,7 @@
 
   # Docker containers
   virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = ["martin"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
