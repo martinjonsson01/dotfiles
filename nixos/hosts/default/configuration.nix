@@ -59,10 +59,12 @@
 
     # List sink IDs using `wpctl status`
     # Get sink node.name using `wpctl inspect [ID]`
-    disabledAudioSinkNodeNames = [
-      "alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink"
-      "alsa_output.pci-0000_01_00.1.hdmi-stereo"
-      "alsa_output.usb-Elgato_Systems_Elgato_Wave_3_BS01K1A01450-00.analog-stereo"
+    disabledAudioMatches = [
+      "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink\""
+      "node.name = \"alsa_output.pci-0000_01_00.1.hdmi-stereo\""
+      "node.name = \"alsa_output.usb-Elgato_Systems_Elgato_Wave_3_BS01K1A01450-00.analog-stereo\""
+      "device.nick = \"HDA NVidia\""
+      "device.name = \"alsa_card.pci-0000_10_00.1\""
     ];
   };
 

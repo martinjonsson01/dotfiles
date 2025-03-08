@@ -33,12 +33,10 @@
             monitor.alsa.rules = [
               {
                 matches = [
-              ${lib.strings.concatMapStrings (nodeName: ''
-                {
-                  "node.name" = "${nodeName}"
-                }
+              ${lib.strings.concatMapStrings (matchRule: ''
+                { ${matchRule} }
               '')
-              config.myHardware.disabledAudioSinkNodeNames}
+              config.myHardware.disabledAudioMatches}
                 ]
                 actions = {
                   update-props = {

@@ -90,7 +90,8 @@ in {
       default = [];
     };
 
-    disabledAudioSinkNodeNames = mkOption {
+    # WirePlumber match rules for devices/nodes to disable.
+    disabledAudioMatches = mkOption {
       type = types.listOf (types.str);
       default = [];
     };
