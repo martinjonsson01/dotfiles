@@ -55,8 +55,8 @@
       direnv.enable = true;
       direnv.nix-direnv.enable = true;
       # Creates programs.sqlite database for command-not-found.
-      nix-index.enable = true;
-      nix-index.enableFishIntegration = true;
+      # nix-index.enable = true;
+      # nix-index.enableFishIntegration = true;
     };
 
     programs.fish = {
