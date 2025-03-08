@@ -90,10 +90,25 @@ in {
       default = [];
     };
 
-    # WirePlumber match rules for devices/nodes to disable.
-    disabledAudioMatches = mkOption {
-      type = types.listOf (types.str);
-      default = [];
+    audio = mkOption {
+      type = types.submodule (
+        {config, ...}: {
+          options = {
+            # WirePlumber match rules for devices/nodes to disable.
+            disabledMatches = mkOption {
+              type = types.listOf (types.str);
+              default = [];
+            };
+
+            # WirePlumber match rules for priority to change which sink is automatically selected.
+            # Order determines priority, where first is highest priority.
+            sinkPriorityMatches = mkOption {
+              type = types.listOf (types.str);
+              default = [];
+            };
+          };
+        }
+      );
     };
   };
 

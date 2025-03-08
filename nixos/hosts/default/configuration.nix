@@ -57,15 +57,22 @@
       }
     ];
 
-    # List sink IDs using `wpctl status`
-    # Get sink node.name using `wpctl inspect [ID]`
-    disabledAudioMatches = [
-      "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink\""
-      "node.name = \"alsa_output.pci-0000_01_00.1.hdmi-stereo\""
-      "node.name = \"alsa_output.usb-Elgato_Systems_Elgato_Wave_3_BS01K1A01450-00.analog-stereo\""
-      "device.nick = \"HDA NVidia\""
-      "device.name = \"alsa_card.pci-0000_10_00.1\""
-    ];
+    audio = {
+      # List sink IDs using `wpctl status`
+      # Get sink node.name using `wpctl inspect [ID]`
+      disabledMatches = [
+        "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink\""
+        "node.name = \"alsa_output.pci-0000_01_00.1.hdmi-stereo\""
+        "node.name = \"alsa_output.usb-Elgato_Systems_Elgato_Wave_3_BS01K1A01450-00.analog-stereo\""
+        "device.nick = \"HDA NVidia\""
+        "device.name = \"alsa_card.pci-0000_10_00.1\""
+      ];
+
+      sinkPriorityMatches = [
+        "node.description = \"WH-1000XM3\""
+        "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Speaker__sink\"" # Speakers plugged into motherboard
+      ];
+    };
   };
 
   # Allow unfree packages

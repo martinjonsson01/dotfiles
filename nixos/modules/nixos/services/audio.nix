@@ -36,7 +36,7 @@
               ${lib.strings.concatMapStrings (matchRule: ''
                 { ${matchRule} }
               '')
-              config.myHardware.disabledAudioMatches}
+              config.myHardware.audio.disabledMatches}
                 ]
                 actions = {
                   update-props = {
@@ -45,6 +45,24 @@
                   }
                 }
               }
+            ]
+          '')
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-set-sink-priority.conf" ''
+            monitor.alsa.rules = [
+              ${lib.strings.concatImapStrings (index: matchRule: ''
+                {
+                  matches = [
+                    { ${matchRule} }
+                  ]
+                  actions = {
+                    update-props = {
+                      priority.driver = ${toString (2000 - index * 10)}
+                      priority.session = ${toString (2000 - index * 10)}
+                    }
+                  }
+                }
+              '')
+              config.myHardware.audio.sinkPriorityMatches}
             ]
           '')
         ];
