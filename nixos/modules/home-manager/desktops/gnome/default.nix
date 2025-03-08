@@ -25,7 +25,6 @@
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
         system-monitor.extensionUuid
-        workspace-indicator.extensionUuid
         tiling-shell.extensionUuid
         runcat.extensionUuid
         appindicator.extensionUuid
