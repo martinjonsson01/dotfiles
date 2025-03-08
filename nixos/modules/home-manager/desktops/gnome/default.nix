@@ -56,6 +56,8 @@
         # gtk-theme = "Adwaita"; Disabled due to gtk-theme.nix - this should maybe be broken out into its own module?
 
         gtk-enable-primary-paste = false;
+
+        clock-show-seconds = true;
       };
 
       "org/gnome/TextEditor" = {
