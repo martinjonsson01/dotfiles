@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -23,23 +24,33 @@
       # no need to redefine it in your config for now)
       #media-session.enable = true;
 
-      wireplumber.extraConfig."51-disable-redundant-sinks" = {
-        "monitor.alsa.rules" =
-          builtins.map (
-            nodeName: {
-              matches = [
-                {
-                  "node.name" = nodeName;
-                }
-              ];
-              actions = {
-                update-props = {
-                  "device.disabled" = true;
-                };
-              };
+      wireplumber = {
+        configPackages = [
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-disable-redundant-sinks.conf" ''
+            monitor.alsa.rules = [
+            ${
+              builtins.concatStringsSep "\n"
+              (builtins.map (
+                  nodeName: ''
+                    {
+                      matches = [
+                        {
+                          node.name = "${nodeName}"
+                        }
+                      ]
+                      actions = {
+                        update-props = {
+                          device.disabled = true,
+                        }
+                      }
+                    }
+                  ''
+                )
+                config.myHardware.disabledAudioSinkNodeNames)
             }
-          )
-          config.myHardware.disabledAudioSinkNodeNames;
+            ]
+          '')
+        ];
       };
     };
   };
