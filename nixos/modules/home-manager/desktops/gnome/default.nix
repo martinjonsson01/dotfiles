@@ -86,6 +86,7 @@
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         ];
       };
 
@@ -93,6 +94,12 @@
         binding = "<Super>period";
         command = "rofimoji --action copy";
         name = "Rofimoji";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>e";
+        command = "${pkgs.nautilus}/bin/nautilus";
+        name = "Nautilus File Explorer";
       };
 
       "org/gnome/shell/keybindings" = {
