@@ -14,11 +14,9 @@
       gnomeExtensions.tiling-shell
       gnomeExtensions.appindicator
       gnomeExtensions.runcat
-      gnomeExtensions.super-key
       gnomeExtensions.pano
       gnomeExtensions.advanced-alttab-window-switcher
       gnomeExtensions.dash-to-panel
-      gnomeExtensions.another-window-session-manager
     ];
 
     dconf.settings."org/gnome/shell" = {
@@ -31,7 +29,6 @@
         pano.extensionUuid
         advanced-alttab-window-switcher.extensionUuid
         dash-to-panel.extensionUuid
-        another-window-session-manager.extensionUuid
       ];
     };
 
