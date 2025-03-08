@@ -4,20 +4,42 @@
   config,
   ...
 }: let
-  patchedMpvPlex = pkgs.plex-desktop.overrideAttrs (previousAttrs: {
-    postInstall = ''
-      ${previousAttrs.postInstall or ""}
-
-      # Remove built-in libmvp (save backup of it),
-      # then symlink to updated libmpv
-      ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
-    '';
-  });
+  # plexWithUpdatedMpvLib =
+  # pkgs.runCommand "plex-desktop" {
+  #   buildInputs = [pkgs.makeWrapper];
+  # } ''
+  #   mkdir $out
   #
-  # patch = pkgs.runCommandNoCC "plex-desktop-mpv-patch" {} ''
-  #   # Remove built-in libmvp (save backup of it),
-  #   # then symlink to updated libmpv
-  #   ln --backup --force --symbolic --target-directory=${pkgs.plex-desktop}/lib ${pkgs.mpv}/lib/libmvp.so.2
+  #   # Link every top-level folder from pkgs.hello to our new target
+  #   ln -s ${pkgs.plex-desktop}/* $out
+  #
+  #   # Except the lib folder
+  #   rm $out/lib
+  #   mkdir $out/lib
+  #
+  #   # Except the bin folder
+  #   rm $out/bin
+  #   mkdir $out/bin
+  #
+  #
+  #   # We create the lib folder ourselves and link every library in it
+  #   ln -s ${pkgs.plex-desktop}/lib/* $out/lib
+  #
+  #   # Except the mpv library
+  #   rm $out/lib/libmvp.so.2
+  #
+  #   # We take the latest mpv binary from the mpv package
+  #   ln -s ${pkgs.mpv}/lib/libmpv.so.2 $out/lib
+  #
+  #
+  #   # We create the bin folder ourselves and link every binary in it
+  #   ln -s ${pkgs.plex-desktop}/bin/* $out/bin
+  #
+  #   # Except the plex binary
+  #   rm $out/bin/plex-desktop
+  #
+  #   # Because we create this ourself, by creating a wrapper
+  #   makeWrapper ${pkgs.plex-desktop}/bin/plex-desktop $out/bin/plex-desktop
   # '';
 in {
   options = {
@@ -26,9 +48,8 @@ in {
 
   config = lib.mkIf config.plex-desktop.enable {
     home.packages = [
-      # pkgs.mpv # Dependency to be able to update libmpv.so.2
-      patchedMpvPlex
-      # patch
+      # plexWithUpdatedMpvLib
+      pkgs.plex-desktop
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''
