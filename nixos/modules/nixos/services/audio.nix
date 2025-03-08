@@ -31,26 +31,22 @@
           '')
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-disable-redundant-sinks.conf" ''
             monitor.alsa.rules = [
-            ${
-              builtins.concatStringsSep "\n"
-              (builtins.map (
-                  nodeName: ''
-                    {
-                      matches = [
-                        {
-                          node.name = "${nodeName}"
-                        }
-                      ]
-                      actions = {
-                        update-props = {
-                          device.disabled = true,
-                        }
-                      }
-                    }
-                  ''
-                )
-                config.myHardware.disabledAudioSinkNodeNames)
-            }
+              {
+                matches = [
+              ${lib.strings.concatMapStrings (nodeName: ''
+                {
+                  "node.name" = "${nodeName}"
+                }
+              '')
+              config.myHardware.disabledAudioSinkNodeNames}
+                ]
+                actions = {
+                  update-props = {
+                    device.disabled = true
+                    node.disabled = true
+                  }
+                }
+              }
             ]
           '')
         ];
