@@ -69,7 +69,7 @@
       ];
 
       sinkPriorityMatches = [
-        "node.description = \"WH-1000XM3\""
+        "node.name = \"bluez_output.38_18_4C_05_C3_B1.1\"" # WH-1000XM3
         "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Speaker__sink\"" # Speakers plugged into motherboard
       ];
     };
