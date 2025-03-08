@@ -232,9 +232,22 @@
         panel-positions = "{\"2\":\"RIGHT\"}";
 
         appicon-margin = 4;
+        appicon-padding = 8;
+
+        window-preview-size = 360;
+
+        show-window-previews-timeout = 100;
+        leave-timeout = 10;
+        window-preview-animation-time = 100;
+        window-preview-hide-immediate-click = true;
+        enter-peek-mode-timeout = 200;
 
         isolate-workspaces = true; # Only show apps in taskbar that are on this workspace
         isolate-monitors = true; # Only show apps in taskbar that are on this monitor
+
+        hide-overview-on-startup = true;
+
+        stockgs-panelbtn-click-only = true; # Activate panel menu buttons on click only (no hover)
       };
     };
   };
