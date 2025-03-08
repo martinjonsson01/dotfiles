@@ -117,13 +117,15 @@
 
       "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
         enable-super = true;
-        super-key-mode = 3;
+        super-key-mode = 2;
         hot-edge-position = 0;
         switcher-popup-monitor = 3;
         switcher-popup-position = 2;
         switcher-popup-start-search = true;
-        switcher-popup-timeout = 10;
+        switcher-popup-timeout = 0;
         switcher-popup-tooltip-label-scale = 150;
+        switcher-ws-thumbnails = 1;
+        switcher-popup-preview-selected = 0;
         win-switcher-popup-start-search = true;
         win-switcher-popup-filter = 3;
         win-switcher-popup-preview-size = 296;
