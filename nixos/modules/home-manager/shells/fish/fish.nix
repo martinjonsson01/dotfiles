@@ -91,9 +91,20 @@
           src = pkgs.fishPlugins.colored-man-pages.src;
         }
         # Support for `nix-shell`
+        # {
+        #   name = "foreign-env";
+        #   src = pkgs.fishPlugins.foreign-env.src;
+        # }
+        # Support for `nix-shell`
         {
-          name = "foreign-env";
-          src = pkgs.fishPlugins.foreign-env.src;
+          name = "nix-env";
+          src = pkgs.fetchFromGitHub {
+            owner = "lilyball";
+            repo = "nix-env.fish";
+            # NOTE: manual update required
+            rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
+            sha256 = "sha256-RG/0rfhgq6aEKNZ0XwIqOaZ6K5S4+/Y5EEMnIdtfPhk=";
+          };
         }
       ];
 
