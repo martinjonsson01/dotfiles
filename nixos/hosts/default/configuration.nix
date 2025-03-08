@@ -128,6 +128,9 @@
   resilio.enable = true;
   audio.enable = true;
 
+  # Docker containers
+  virtualisation.docker.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

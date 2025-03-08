@@ -79,7 +79,6 @@
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
     rofimoji # Emoji selector
     gparted # Disk partition editing/viewing tool
-    docker # Containers
 
     # Style
     (nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
