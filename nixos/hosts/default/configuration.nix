@@ -249,7 +249,7 @@
   users.users.martin = {
     isNormalUser = true;
     description = "Martin";
-    extraGroups = ["networkmanager" "wheel" "rslsync" "docker"];
+    extraGroups = ["networkmanager" "wheel" "rslsync"];
     packages = with pkgs; [
       hexchat # IRC Client
     ];
