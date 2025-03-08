@@ -49,7 +49,7 @@
           '')
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-set-sink-priority.conf" ''
             monitor.alsa.rules = [
-              ${lib.strings.concatImapStrings (index: matchRule: ''
+              ${lib.strings.concatImapStringsSep "\n" (index: matchRule: ''
                 {
                   matches = [
                     { ${matchRule} }
