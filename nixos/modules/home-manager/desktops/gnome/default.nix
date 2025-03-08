@@ -125,7 +125,7 @@
         switcher-popup-timeout = 0;
         switcher-popup-tooltip-label-scale = 150;
         switcher-ws-thumbnails = 1;
-        switcher-popup-preview-selected = 0;
+        switcher-popup-preview-selected = 2;
         win-switcher-popup-start-search = true;
         win-switcher-popup-filter = 3;
         win-switcher-popup-preview-size = 296;
