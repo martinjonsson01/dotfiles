@@ -23,6 +23,7 @@
           editorconfig.editorconfig # Override user settings with .editorconfig
           pkief.material-icon-theme # Icon theme
           gruntfuggly.todo-tree # Show todo items in a tree view
+          ms-vscode-remote.remote-containers # Dev-containers using Docker
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
