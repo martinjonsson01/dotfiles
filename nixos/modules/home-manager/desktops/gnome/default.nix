@@ -98,7 +98,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         binding = "<Super>e";
-        command = "${pkgs.nautilus}/bin/nautilus";
+        command = "${pkgs.nautilus}/bin/nautilus --new-window";
         name = "Nautilus File Explorer";
       };
 
