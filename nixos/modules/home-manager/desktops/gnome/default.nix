@@ -58,6 +58,7 @@
         gtk-enable-primary-paste = false;
 
         clock-show-seconds = true;
+        clock-show-weekday = true;
       };
 
       "org/gnome/TextEditor" = {
