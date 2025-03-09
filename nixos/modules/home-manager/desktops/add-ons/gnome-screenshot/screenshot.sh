@@ -2,9 +2,20 @@
 
 YEAR=$(date +%Y) || exit
 MONTH=$(date +%b) || exit
+DAY=$(date +%d) || exit
 TIME=$(date +'%H:%M:%S') || exit
+
+TEMP_PATH="/tmp/screenshot-$YEAR-$MONTH-$DAY-$TIME.png"
+FINAL_PATH="$HOME/Pictures/Screenshots/$YEAR/$MONTH/$DAY-$TIME.png"
 
 mkdir -p $HOME/Pictures/Screenshots/$YEAR
 mkdir -p $HOME/Pictures/Screenshots/$YEAR/$MONTH
 
-gnome-screenshot --file="$HOME/Pictures/Screenshots/$YEAR/$MONTH/$TIME.png" --clipboard "$@"
+# Take actual screenshot, store to temp path...
+gnome-screenshot --file=$TEMP_PATH "$@"
+
+# Edit with swappy, save as file and copy to clipboard.
+swappy -f $TEMP_PATH -o - | tee $FINAL_PATH | wl-copy
+
+# Clean up temp file.
+rm $TEMP_PATH
