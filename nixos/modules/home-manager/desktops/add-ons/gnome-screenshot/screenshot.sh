@@ -14,9 +14,9 @@ mkdir -p $HOME/Pictures/Screenshots/$YEAR/$MONTH
 # Take actual screenshot, store to temp path...
 gnome-screenshot --file=$TEMP_PATH "$@" || exit
 
-# If screenshot was cancelled, exit.
+# If screenshot was canceled, exit.
 if [ ! -f $TEMP_PATH ]; then
-  echo "Screenshot cancelled"
+  echo "Screenshot canceled"
   exit
 fi
 
