@@ -106,7 +106,6 @@
 
       "org/gnome/shell/keybindings" = {
         focus-active-notification = ["<Shift><Super>n"];
-        show-screen-recording-ui = ["<Control>Print"];
         toggle-message-tray = ["<Super>n"];
         toggle-overview = ["<Super>d"];
         toggle-quick-settings = [];
