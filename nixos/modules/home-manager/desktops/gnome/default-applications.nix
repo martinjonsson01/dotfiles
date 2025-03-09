@@ -1,7 +1,7 @@
 {
   xdg.mime.defaultApplications = {
     "text/*" = "org.gnome.TextEditor.desktop";
-    "image/*" = "eog.desktop";
+    "image/*" = "org.gnome.Loupe.desktop";
     "video/*" = "mpv.desktop";
     "audio/*" = "mpv.desktop";
     "application/pdf" = "google-chrome.desktop";
