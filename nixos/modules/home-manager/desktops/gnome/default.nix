@@ -86,8 +86,6 @@
 
           switch-windows = ["<alt>Tab"];
           switch-windows-backward = ["<alt><shift>Tab"];
-
-          show-screen-recording-ui = ["<control><alt>Print"];
         };
 
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -114,6 +112,8 @@
           toggle-message-tray = ["<Super>n"];
           toggle-overview = ["<Super>d"];
           toggle-quick-settings = [];
+
+          show-screen-recording-ui = ["<Control><Alt>Print"];
         };
 
         "org/gnome/shell/extensions/system-monitor" = {
