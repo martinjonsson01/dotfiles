@@ -142,5 +142,5 @@
 
   # Desktop add-ons
   gtk-theme.enable = true;
-  grimblast.enable = true;
+  gnome-screenshot.enable = true;
 }
