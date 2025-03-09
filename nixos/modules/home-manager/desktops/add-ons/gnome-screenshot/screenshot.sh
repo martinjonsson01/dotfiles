@@ -12,7 +12,7 @@ mkdir -p $HOME/Pictures/Screenshots/$YEAR
 mkdir -p $HOME/Pictures/Screenshots/$YEAR/$MONTH
 
 # Take actual screenshot, store to temp path...
-gnome-screenshot --file=$TEMP_PATH "$@"
+gnome-screenshot --file=$TEMP_PATH "$@" || exit
 
 # Edit with swappy, save as file and copy to clipboard.
 swappy -f $TEMP_PATH -o - | tee $FINAL_PATH | wl-copy
