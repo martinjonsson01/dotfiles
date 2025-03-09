@@ -13,7 +13,9 @@
 
   config = lib.mkIf config.gnome-screenshot.enable {
     home.packages = with pkgs; [
-      gnome-screenshot
+      gnome-screenshot # For taking screenshot
+      swappy # For editing screenshot
+      wl-clipboard # For copying screenshot
     ];
 
     # Script for screenshots that get saved to dated directory + to clipboard.
