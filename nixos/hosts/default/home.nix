@@ -84,7 +84,8 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
 
     # Media
-    plexamp
+    plexamp # Self-hosted music
+    mpv # Media player
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
