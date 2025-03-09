@@ -144,6 +144,8 @@
 
       "org/gnome/mutter" = {
         overlay-key = "Super";
+
+        center-new-windows = true;
       };
 
       "org/gnome/shell/extensions/tilingshell" = {
