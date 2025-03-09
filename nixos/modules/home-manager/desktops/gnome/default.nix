@@ -87,7 +87,7 @@
           switch-windows = ["<alt>Tab"];
           switch-windows-backward = ["<alt><shift>Tab"];
 
-          show-screen-recording-ui = ["<Control><Alt>Print"];
+          show-screen-recording-ui = ["<control><alt>Print"];
         };
 
         "org/gnome/settings-daemon/plugins/media-keys" = {
