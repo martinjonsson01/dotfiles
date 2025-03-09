@@ -77,6 +77,8 @@
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
       "org/gnome/desktop/screensaver".lock-enabled = false;
 
+      "org/gnome/nautilus/icon-view" = {captions = ["size" "date_modified" "none"];};
+
       "org/gnome/desktop/wm/keybindings" = {
         switch-applications = ["<Super>Space"];
         switch-applications-backward = ["<Super><shift>Space"];
