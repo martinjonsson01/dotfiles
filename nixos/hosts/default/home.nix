@@ -86,7 +86,7 @@
     # Media
     plexamp # Self-hosted music
     mpv # Media player
-    feh # Lightweight image viewer
+    eog # Gnome image viewer
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
