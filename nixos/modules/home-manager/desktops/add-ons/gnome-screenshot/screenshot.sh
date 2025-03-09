@@ -14,6 +14,12 @@ mkdir -p $HOME/Pictures/Screenshots/$YEAR/$MONTH
 # Take actual screenshot, store to temp path...
 gnome-screenshot --file=$TEMP_PATH "$@" || exit
 
+# If screenshot was cancelled, exit.
+if [ ! -f $TEMP_PATH ]; then
+  echo "Screenshot cancelled"
+  exit
+fi
+
 # Edit with swappy, save as file and copy to clipboard.
 swappy -f $TEMP_PATH -o - | tee $FINAL_PATH | wl-copy
 
