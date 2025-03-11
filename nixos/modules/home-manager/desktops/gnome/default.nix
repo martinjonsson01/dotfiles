@@ -72,7 +72,9 @@
 
         "org/gnome/desktop/wm/preferences" = {
           action-middle-click-titlebar = "toggle-maximize-vertically";
-          button-layout = "appmenu:minimize,close";
+          button-layout = "appmenu:minimize,maximize,close";
+
+          num-workspaces = 5;
         };
 
         "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
