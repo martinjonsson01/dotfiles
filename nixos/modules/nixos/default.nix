@@ -8,6 +8,8 @@
     ./system/stylix.nix
     ./system/myHardware.nix
 
+    ./programs/teamviewer.nix
+
     ./services/resilio.nix
     ./services/audio.nix
 

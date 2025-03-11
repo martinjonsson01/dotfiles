@@ -127,6 +127,7 @@
   polkit-gnome.enable = true;
   resilio.enable = true;
   audio.enable = true;
+  teamviewer.enable = true;
 
   # Docker containers
   virtualisation.docker.enable = true;
