@@ -86,7 +86,7 @@
 
     # Media
     plexamp # Self-hosted music
-    mpv # Media player
+    vlc # Media player
     kdePackages.okular # KDE document viewer
   ];
 
