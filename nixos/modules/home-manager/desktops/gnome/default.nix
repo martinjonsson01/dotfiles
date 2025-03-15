@@ -134,6 +134,7 @@
           switcher-popup-tooltip-label-scale = 150;
           switcher-ws-thumbnails = 1;
           switcher-popup-preview-selected = 2;
+          switcher-popup-shift-hotkeys = true; # Require shift for action hotkeys
           win-switcher-popup-start-search = true;
           win-switcher-popup-filter = 3;
           win-switcher-popup-preview-size = 296;
@@ -141,6 +142,7 @@
           win-switcher-popup-ws-indexes = false;
           win-switcher-single-prev-size = 224;
           win-switch-include-modals = true;
+          app-switcher-popup-show-wins-on-activate = 0; # Disable
         };
 
         "org/gnome/settings-daemon/plugins/color" = {
@@ -248,7 +250,7 @@
           window-preview-size = 360;
 
           show-window-previews-timeout = 100;
-          leave-timeout = 10;
+          leave-timeout = 100;
           window-preview-animation-time = 100;
           window-preview-hide-immediate-click = true;
           enter-peek-mode-timeout = 200;
