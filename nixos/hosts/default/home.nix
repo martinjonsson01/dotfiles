@@ -67,6 +67,7 @@
     nil # LSP for Nix
     sops # Secrets management
     pre-commit # Hooks that run before committing
+    libgcc # GNU Compiler Collection
 
     # CLI
     fd # Simple, fast and user-friendly alternative to find
