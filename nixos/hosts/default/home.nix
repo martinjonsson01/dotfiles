@@ -83,6 +83,7 @@
     python310 # Scripting
     curl # Command line tool for transferring files with URL syntax
     wget # Tool for retrieving files using HTTP, HTTPS, and FTP
+    ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
 
     # Music utils
     sox # Sample Rate Converter for audio
