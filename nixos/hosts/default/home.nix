@@ -80,6 +80,13 @@
     rofimoji # Emoji selector
     gparted # Disk partition editing/viewing tool
     python313 # Scripting
+    curl # Command line tool for transferring files with URL syntax
+    wget # Tool for retrieving files using HTTP, HTTPS, and FTP
+
+    # Music utils
+    sox # Sample Rate Converter for audio
+    flac # Library and tools for encoding and decoding the FLAC lossless audio file format
+    mp3val # Tool for validating and repairing MPEG audio streams
 
     # Style
     (nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
