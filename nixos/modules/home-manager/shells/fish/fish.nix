@@ -139,6 +139,7 @@
       ls = "${lsd}/bin/lsd";
       kubectl = "kubecolor"; # Use colorized version of kubectl
       k = "kubectl"; # Without reference to package since it's inside a shell.nix
+      salmon = "/home/martin/redacted/smoked-salmon/.venv/bin/python3 /home/martin/redacted/smoked-salmon/run.py";
     };
   };
 }
