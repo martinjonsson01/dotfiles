@@ -80,7 +80,7 @@
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
     rofimoji # Emoji selector
     gparted # Disk partition editing/viewing tool
-    python313 # Scripting
+    python310 # Scripting
     curl # Command line tool for transferring files with URL syntax
     wget # Tool for retrieving files using HTTP, HTTPS, and FTP
 
