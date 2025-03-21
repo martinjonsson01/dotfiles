@@ -16,7 +16,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
-  boot.supportedFilesystems = ["ntfs"]; # For NTFS drive
+  boot.supportedFilesystems = ["nfs" "ntfs"]; # For NTFS drive and NFS mount
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/4ece33e4-e640-411f-b926-f68a6f6a9099";
@@ -37,6 +37,11 @@
       "uid=1000" # 1000 is id of 'martin'
       "gid=988" # 998 is id of 'rslsync'
     ];
+  };
+
+  fileSystems."/mnt/Media" = {
+    device = "192.168.0.162:/volume1/Media";
+    fsType = "nfs";
   };
 
   swapDevices = [];
