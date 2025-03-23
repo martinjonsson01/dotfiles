@@ -68,6 +68,7 @@
     sops # Secrets management
     pre-commit # Hooks that run before committing
     gcc # GNU Compiler Collection
+    jetbrains.rust-rover # Rust IDE
 
     # CLI
     fd # Simple, fast and user-friendly alternative to find
