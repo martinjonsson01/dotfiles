@@ -5,6 +5,7 @@
     ./programs/vscode.nix
     ./programs/satty.nix
     ./programs/plex
+    ./programs/btop.nix
 
     ./desktops/gnome
     ./desktops/hyprland
