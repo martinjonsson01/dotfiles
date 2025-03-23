@@ -90,6 +90,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
+      download-buffer-size = 536870912; # (512 MiB) The size of Nix's internal download buffer during curl transfers.
     };
 
     gc = {
