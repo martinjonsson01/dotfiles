@@ -225,6 +225,7 @@
     wayland
     xorg.libX11
     xorg.libXcursor
+    xorg.libXext
   ];
 
   # Enable automatic login for the user.
