@@ -224,6 +224,7 @@
     fontconfig
     wayland
     xorg.libX11
+    xorg.libXcursor
   ];
 
   # Enable automatic login for the user.
