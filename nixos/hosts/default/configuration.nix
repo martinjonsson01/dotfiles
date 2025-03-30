@@ -226,6 +226,7 @@
     xorg.libX11
     xorg.libXcursor
     xorg.libXext
+    xorg.xinput
   ];
 
   # Enable automatic login for the user.
