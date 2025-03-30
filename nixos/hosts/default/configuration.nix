@@ -218,9 +218,12 @@
   # services.xserver.libinput.enable = true;
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = [
+  programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages.
+    fontconfig
+    wayland
+    xorg.libX11
   ];
 
   # Enable automatic login for the user.
