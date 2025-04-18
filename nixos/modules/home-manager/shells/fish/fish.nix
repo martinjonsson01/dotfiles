@@ -95,6 +95,11 @@
           name = "foreign-env";
           src = pkgs.fishPlugins.foreign-env.src;
         }
+        # Quick directory jumping
+        {
+          name = "z";
+          src = pkgs.fishPlugins.z.src;
+        }
       ];
 
       interactiveShellInit = ''
