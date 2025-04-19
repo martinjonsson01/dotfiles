@@ -2,7 +2,7 @@
 # zoom.us video conferencing application.
 #
 {
-  pkgs,
+  pkgs-unstable,
   config,
   lib,
   ...
@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.zoom.enable {
     home.packages = [
-      pkgs.zoom-us
+      pkgs-unstable.zoom-us
     ];
 
     xdg.desktopEntries."zoom-wayland" = {
