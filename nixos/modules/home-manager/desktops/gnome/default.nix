@@ -11,7 +11,7 @@
   config =
     lib.mkIf config.gnome.enable {
       home.packages = with pkgs; [
-        gnome.gnome-tweaks
+        gnome-tweaks
         gnomeExtensions.tiling-shell
         gnomeExtensions.appindicator
         gnomeExtensions.runcat
