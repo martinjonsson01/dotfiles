@@ -153,6 +153,7 @@
   satty.enable = true;
   plex-desktop.enable = true;
   btop.enable = true;
+  zoom.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

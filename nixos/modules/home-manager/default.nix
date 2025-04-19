@@ -6,6 +6,7 @@
     ./programs/satty.nix
     ./programs/plex
     ./programs/btop.nix
+    ./programs/zoom.nix
 
     ./desktops/gnome
     ./desktops/hyprland
