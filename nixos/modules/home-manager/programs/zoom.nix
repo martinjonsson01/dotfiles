@@ -13,7 +13,13 @@
 
   config = lib.mkIf config.zoom.enable {
     home.packages = [
-      pkgs.zoom
+      pkgs.zoom-us
     ];
+
+    xdg.desktopEntries."zoom-wayland" = {
+      name = "zoom-wayland";
+      genericName = "Proprietary meeting app, lauching with wayland flags";
+      exec = "zoom-us --enable-features=UseOzonePlatform --ozone-platform=wayland";
+    };
   };
 }
