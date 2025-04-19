@@ -256,7 +256,7 @@
           enter-peek-mode-timeout = 200;
 
           isolate-workspaces = true; # Only show apps in taskbar that are on this workspace
-          isolate-monitors = true; # Only show apps in taskbar that are on this monitor
+          isolate-monitors = false; # Show apps in taskbar on all monitors on same workspace
 
           hide-overview-on-startup = true;
 
