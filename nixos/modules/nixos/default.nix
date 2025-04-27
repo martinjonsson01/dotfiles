@@ -9,6 +9,7 @@
     ./system/myHardware.nix
 
     ./programs/teamviewer.nix
+    ./programs/steam.nix
 
     ./services/resilio.nix
     ./services/audio.nix

@@ -129,6 +129,7 @@
   resilio.enable = true;
   audio.enable = true;
   teamviewer.enable = true;
+  steam.enable = true;
 
   # Docker containers
   virtualisation.docker.enable = true;
