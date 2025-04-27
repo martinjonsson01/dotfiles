@@ -17,6 +17,10 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["nfs" "ntfs"]; # For NTFS drive and NFS mount
+  boot.kernelParams = [
+    # Disable staggered spin-up, which serializes drive probing and slows down boot speed.
+    "libahci.ignore_sss=1"
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/4ece33e4-e640-411f-b926-f68a6f6a9099";
