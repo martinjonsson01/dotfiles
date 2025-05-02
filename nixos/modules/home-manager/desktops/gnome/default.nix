@@ -74,7 +74,7 @@
           action-middle-click-titlebar = "toggle-maximize-vertically";
           button-layout = "appmenu:minimize,maximize,close";
 
-          resize-with-right-button = "true"; # Ability to resize windows by holding right click when moving with super.
+          resize-with-right-button = true; # Ability to resize windows by holding right click when moving with super.
 
           num-workspaces = 5;
         };
