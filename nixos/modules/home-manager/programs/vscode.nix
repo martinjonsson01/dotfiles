@@ -79,7 +79,7 @@
 
         "update.mode" = "none"; # Disables annoying update notification.
 
-        "window.openFilesInNewWindow" = "off"; # When running `code x` in terminal, open in new window.
+        "window.openFilesInNewWindow" = "on"; # When running `code x` in terminal, open in new window.
       };
 
       keybindings = [
