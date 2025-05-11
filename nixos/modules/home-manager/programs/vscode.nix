@@ -78,6 +78,8 @@
         "terminal.integrated.fontSize" = config.stylix.fonts.sizes.terminal + 2;
 
         "update.mode" = "none"; # Disables annoying update notification.
+
+        "window.openFilesInNewWindow" = "off"; # When running `code x` in terminal, open in new window.
       };
 
       keybindings = [
