@@ -68,5 +68,7 @@ in {
 
     # Script that auto-crops black bars.
     xdg.dataFile."plex/scripts/dynamic-crop.lua".source = ./dynamic-crop.lua;
+    # Manual MPV controls.
+    xdg.dataFile."plex/scripts/mpv-keybinds.lua".source = ./mpv-keybinds.lua;
   };
 }
