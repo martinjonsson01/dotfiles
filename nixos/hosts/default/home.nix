@@ -92,7 +92,7 @@
     mp3val # Tool for validating and repairing MPEG audio streams
 
     # Style
-    (nerdfonts.override {fonts = ["JetBrainsMono"];}) # Font with icons
+    nerd-fonts.jetbrains-mono # Font with icons
 
     # Media
     plexamp # Self-hosted music

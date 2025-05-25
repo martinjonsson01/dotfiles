@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.gtk-theme.enable {
     home.pointerCursor = {
-      package = pkgs.vimix-cursor-theme;
+      package = pkgs.vimix-cursors;
       name = "Vimix-Cursors";
       size = 24;
       gtk.enable = true;

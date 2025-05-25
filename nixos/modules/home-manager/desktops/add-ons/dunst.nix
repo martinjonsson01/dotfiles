@@ -15,7 +15,7 @@
   config = lib.mkIf config.dunst.enable {
     home.packages = with pkgs; [
       libnotify # For notifications
-      vimix-cursor-theme # For icons
+      vimix-cursors # For icons
     ];
 
     services.dunst = {

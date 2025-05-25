@@ -15,8 +15,6 @@
     boot.kernelParams = ["nomodeset" "nvidia-drm.modeset=1"];
 
     hardware.nvidia = {
-      nvidiaPersistenced = true;
-
       # Modesetting is required.
       modesetting.enable = true;
 
@@ -49,8 +47,8 @@
         sync.enable = true;
         offload.enable = false;
         #  use `nix-shell -p pciutils --run lspci | grep VGA` to find correct id
-        nvidiaBusId = "1@0:1:0";
-        amdgpuBusId = "10@0:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+        amdgpuBusId = "PCI:10:0:0";
       };
     };
   };

@@ -43,7 +43,7 @@
       fzf.enableFishIntegration = true;
       # Next gen ls command
       lsd.enable = true;
-      lsd.enableAliases = true;
+      lsd.enableFishIntegration = true;
       # Fast cd command that learns your habits
       zoxide.enable = true;
       zoxide.enableFishIntegration = true;
