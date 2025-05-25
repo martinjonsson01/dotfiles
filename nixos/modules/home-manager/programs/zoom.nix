@@ -15,7 +15,7 @@
   config = lib.mkIf config.zoom.enable {
     home.packages = [
       pkgs-unstable.zoom-us
-      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gnome
     ];
 
     xdg.desktopEntries."zoom-wayland" = {
