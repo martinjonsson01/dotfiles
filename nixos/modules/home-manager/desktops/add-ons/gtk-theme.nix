@@ -12,13 +12,13 @@
   };
 
   config = lib.mkIf config.gtk-theme.enable {
-    home.pointerCursor = {
-      package = pkgs.vimix-cursors;
-      name = "Vimix-Cursors";
-      size = 24;
-      gtk.enable = true;
-      x11.enable = true;
-    };
+    #home.pointerCursor = {
+    #  package = pkgs.vimix-cursors;
+    #  name = "Vimix-Cursors";
+    #  size = 24;
+    #  gtk.enable = true;
+    #  x11.enable = true;
+    #};
     gtk = {
       enable = true;
       font = {
