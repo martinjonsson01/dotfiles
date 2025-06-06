@@ -264,6 +264,10 @@
     ];
   };
 
+  # GameMode is a daemon/lib combo for Linux that allows games to request a set of
+  # optimisations be temporarily applied to the host OS and/or a game process.
+  programs.gamemode.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
