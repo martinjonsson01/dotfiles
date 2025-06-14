@@ -7,6 +7,7 @@
     ./programs/plex
     ./programs/btop.nix
     ./programs/zoom.nix
+    ./programs/pinta.nix
 
     ./desktops/gnome
     ./desktops/hyprland

@@ -154,6 +154,7 @@
   plex-desktop.enable = true;
   btop.enable = true;
   zoom.enable = true;
+  pinta.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
