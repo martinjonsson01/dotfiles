@@ -243,7 +243,7 @@
           panel-sizes = "{\"0\": 48,\"1\": 85,\"2\": 48}";
 
           panel-positions-monitors-sync = false;
-          panel-positions = "{\"2\":\"RIGHT\"}";
+          panel-positions = "{\"1\":\"RIGHT\"}";
 
           appicon-margin = 4;
           appicon-padding = 8;
