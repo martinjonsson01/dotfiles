@@ -20,6 +20,8 @@
   boot.kernelParams = [
     # Disable staggered spin-up, which serializes drive probing and slows down boot speed.
     "libahci.ignore_sss=1"
+    # To save and restore all video memory contents after suspend.
+    "NVreg_PreserveVideoMemoryAllocations=1"
   ];
 
   fileSystems."/" = {
