@@ -73,8 +73,6 @@
 
         "explorer.confirmDragAndDrop" = false;
 
-        "workbench.colorTheme" = "Syntax Material Dark";
-
         "terminal.integrated.fontSize" = config.stylix.fonts.sizes.terminal + 2;
 
         "update.mode" = "none"; # Disables annoying update notification.
