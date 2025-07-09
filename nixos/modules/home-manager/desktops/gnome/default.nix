@@ -18,6 +18,7 @@
         gnomeExtensions.pano
         gnomeExtensions.advanced-alttab-window-switcher
         gnomeExtensions.dash-to-panel
+        gnomeExtensions.user-themes
       ];
 
       dconf.settings."org/gnome/shell" = {
@@ -62,7 +63,7 @@
           clock-show-weekday = true;
 
           font-name = "${config.stylix.fonts.sansSerif.name} ${toString config.stylix.fonts.sizes.desktop}";
-          document-font-name = "${config.stylix.fonts.sansSerif.name} ${toString config.stylix.fonts.sizes.desktop}";
+          document-font-name = lib.mkForce "${config.stylix.fonts.sansSerif.name} ${toString config.stylix.fonts.sizes.desktop}";
         };
 
         "org/gnome/TextEditor" = {

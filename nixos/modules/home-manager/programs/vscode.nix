@@ -9,9 +9,9 @@
   };
 
   config = lib.mkIf config.vscode.enable {
-    programs.vscode = {
-      enable = true;
+    programs.vscode.enable = true;
 
+    programs.vscode.profiles.default = {
       extensions = with pkgs.vscode-extensions;
         [
           jnoortheen.nix-ide # LSP integration for nix
@@ -55,7 +55,7 @@
           }
         ];
 
-      userSettings = {
+      userSettings = lib.mkForce {
         "nix.formatterPath" = "alejandra";
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nil";

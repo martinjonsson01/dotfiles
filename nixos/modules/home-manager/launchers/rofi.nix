@@ -57,7 +57,7 @@
         kb-select-10 = "Ctrl+0";
       };
 
-      theme = "${pkgs.fetchurl {
+      theme = lib.mkForce "${pkgs.fetchurl {
         url = "https://github.com/undiabler/nord-rofi-theme/raw/eebddcbf36052e140a9af7c86f1fbd88e31d2365/nord.rasi";
         sha256 = "sha256-3P7Fpsev0Y7oBtK+x2R4V4aCkdQThybUSySufNFGtl4=";
       }}";

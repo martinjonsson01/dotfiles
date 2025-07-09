@@ -12,7 +12,7 @@
   };
 
   config = lib.mkIf config.gtk-theme.enable {
-    home.pointerCursor = {
+    home.pointerCursor = lib.mkForce {
       package = config.stylix.cursor.package;
       name = config.stylix.cursor.name;
       size = config.stylix.cursor.size;
@@ -25,11 +25,11 @@
         name = config.stylix.fonts.sansSerif.name;
         size = config.stylix.fonts.sizes.desktop;
       };
-      theme = {
+      theme = lib.mkForce {
         name = "Tokyonight-Dark";
         package = pkgs.tokyonight-gtk-theme;
       };
-      iconTheme = {
+      iconTheme = lib.mkForce {
         name = "Tokyonight-Dark";
         package = pkgs.tokyonight-gtk-theme;
       };

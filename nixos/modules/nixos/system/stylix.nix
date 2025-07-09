@@ -11,8 +11,9 @@
   config = lib.mkIf config.custom-style.enable {
     # https://stylix.danth.me/options/nixos.html
     stylix = {
+      enable = true;
+
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-      image = /run/current-system/sw/share/backgrounds/gnome/blobs-l.svg;
 
       cursor = {
         package = pkgs.bibata-cursors;
