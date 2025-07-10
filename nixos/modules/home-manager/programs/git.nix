@@ -29,6 +29,7 @@
         diff = {
           colorMoved = "default";
         };
+        advice.diverging = false; # For some reason this warning pops up even though pull.rebase = true
       };
     };
 
