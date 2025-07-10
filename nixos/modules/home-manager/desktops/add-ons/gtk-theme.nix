@@ -12,6 +12,10 @@
   };
 
   config = lib.mkIf config.gtk-theme.enable {
+    home.packages = with pkgs; [
+      gtk-engine-murrine
+    ];
+
     home.pointerCursor = lib.mkForce {
       package = config.stylix.cursor.package;
       name = config.stylix.cursor.name;
