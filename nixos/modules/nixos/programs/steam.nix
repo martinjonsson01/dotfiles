@@ -16,9 +16,10 @@
       steam
       # The FHS-compatible chroot used for Steam can also be used to run other Linux games that expect a FHS environment.
       steam-run
-      # SteamOS session compositing window manager, used to fix some incompatible games.
-      gamescope
     ];
+
+    # SteamOS session compositing window manager, used to fix some incompatible games.
+    programs.gamescope.enable = true;
 
     # We need 32bit versions of all the OpenGL etc libraries for steam to run
     hardware.graphics.enable32Bit = true;
