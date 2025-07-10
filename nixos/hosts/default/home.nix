@@ -157,6 +157,6 @@
   pinta.enable = true;
 
   # Desktop add-ons
-  gtk-theme.enable = true;
+  gtk-theme.enable = false;
   gnome-screenshot.enable = true;
 }
