@@ -22,5 +22,19 @@
 
     # We need 32bit versions of all the OpenGL etc libraries for steam to run
     hardware.graphics.enable32Bit = true;
+
+    # Configure Steam
+    programs.steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      package = pkgs.steam.override {
+        extraPkgs = pkgs:
+          with pkgs; [
+            libkrb5
+            keyutils
+          ];
+      };
+    };
   };
 }
