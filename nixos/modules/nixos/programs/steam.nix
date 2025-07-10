@@ -13,13 +13,18 @@
 
   config = lib.mkIf config.steam.enable {
     environment.systemPackages = with pkgs; [
-      steam
       # The FHS-compatible chroot used for Steam can also be used to run other Linux games that expect a FHS environment.
       steam-run
     ];
 
     # SteamOS session compositing window manager, used to fix some incompatible games.
-    programs.gamescope.enable = true;
+    programs.gamescope = {
+      enable = true;
+      args = [
+        "-f"
+        "-W 5120 -H 1440"
+      ];
+    };
 
     # We need 32bit versions of all the OpenGL etc libraries for steam to run
     hardware.graphics.enable32Bit = true;
@@ -32,6 +37,14 @@
       package = pkgs.steam.override {
         extraPkgs = pkgs:
           with pkgs; [
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib
             libkrb5
             keyutils
           ];
