@@ -134,7 +134,7 @@
         matchVscodeNixos
       ];
       open-on-workspace = "nixos";
-      default-column-width = {proportion = 1.0 / 2.0;};
+      default-column-width = {proportion = 1.0 / 4.0;};
     }
     # cluster
     {
@@ -142,7 +142,7 @@
         matchVscodeCluster
       ];
       open-on-workspace = "cluster";
-      default-column-width = {proportion = 1.0 / 2.0;};
+      default-column-width = {proportion = 1.0 / 4.0;};
     }
   ];
 }
