@@ -21,7 +21,8 @@
     programs.gamescope = {
       enable = true;
       args = [
-        "-f"
+        "--fullscreen"
+        "--force-grab-cursor"
         "-W 5120 -H 1440"
       ];
     };
