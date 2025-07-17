@@ -29,8 +29,20 @@
         else "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
+
       tooltip = true;
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
+      calendar = {
+        mode = "month";
+        weeks-pos = "left";
+        format = {
+          months = "<span color='#ebdbb2'><b>{}</b></span>";
+          days = "<span color='#a89984'><b>{}</b></span>";
+          weeks = "<span color='#ebdbb2'><b>{:%V}</b></span>";
+          weekdays = "<span color='#ebdbb2'><b>{}</b></span>";
+          today = "<span color='#d79921'><b>{}</b></span>";
+        };
+      };
     };
     "custom/power" = {
       format = "󰤆";
