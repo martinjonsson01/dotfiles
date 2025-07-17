@@ -16,14 +16,14 @@
       clip-to-geometry = true;
     }
     # Open some apps in wide mode.
-    #{
-    #  matches = [
-    #    {
-    #      app-id = "^Code$";
-    #    }
-    #  ];
-    #  default-column-width = {proportion = 1.0 / 2.0;};
-    #}
+    {
+      matches = [
+        {
+          app-id = "^Code$";
+        }
+      ];
+      default-column-width = {proportion = 1.0 / 2.0;};
+    }
     # Open picture-in-picture as unfocused floating.
     {
       matches = [
