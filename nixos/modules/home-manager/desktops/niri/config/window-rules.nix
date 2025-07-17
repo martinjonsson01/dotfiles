@@ -23,6 +23,7 @@
         }
       ];
       default-column-width = {proportion = 1.0 / 2.0;};
+      open-on-workspace = "cluster";
     }
     # Open picture-in-picture as unfocused floating.
     {
