@@ -25,12 +25,12 @@
     clock = {
       format =
         if isVertical
-        then "{:%A %n %d %b %n %H:%M:%S %n %F}"
+        then "{:%A%n%d%b%n%H:%M:%S%n%F}" # Newlines between components using %n
         else "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
       tooltip = true;
-      tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+      tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
     };
     "custom/power" = {
       format = "󰤆";
