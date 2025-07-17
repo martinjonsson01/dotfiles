@@ -1,6 +1,14 @@
 {config}: {
   window-rules = let
     colors = config.lib.stylix.colors.withHashtag;
+    matchVscodeNixos = {
+      app-id = "^Code$";
+      title = ".*nixos - Visual Studio Code$";
+    };
+    matchVscodeCluster = {
+      app-id = "^Code$";
+      title = ".*cluster - Visual Studio Code$";
+    };
   in [
     # Add border radius to windows.
     {
@@ -22,8 +30,11 @@
           app-id = "^Code$";
         }
       ];
+      excludes = [
+        matchVscodeNixos
+        matchVscodeCluster
+      ];
       default-column-width = {proportion = 1.0 / 2.0;};
-      open-on-workspace = "cluster";
     }
     # Open picture-in-picture as unfocused floating.
     {
@@ -120,22 +131,18 @@
     # nixos
     {
       matches = [
-        {
-          app-id = "^Code$";
-          title = ".*nixos - Visual Studio Code$";
-        }
+        matchVscodeNixos
       ];
       open-on-workspace = "nixos";
+      default-column-width = {proportion = 1.0 / 2.0;};
     }
     # cluster
     {
       matches = [
-        {
-          app-id = "^Code$";
-          title = ".*cluster - Visual Studio Code$";
-        }
+        matchVscodeCluster
       ];
       open-on-workspace = "cluster";
+      default-column-width = {proportion = 1.0 / 2.0;};
     }
   ];
 }
