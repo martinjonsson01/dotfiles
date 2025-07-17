@@ -27,6 +27,7 @@
     ./desktops/add-ons/grimblast
     ./desktops/add-ons/gnome-screenshot
     ./desktops/add-ons/hypridle.nix
+    ./desktops/add-ons/fuzzel.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

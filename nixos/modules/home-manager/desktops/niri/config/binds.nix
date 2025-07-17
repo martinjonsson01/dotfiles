@@ -1,7 +1,9 @@
 {
+  lib,
   config,
   pkgs,
-}: {
+}:
+with lib; {
   binds = with config.lib.niri.actions; let
     niri = "${config.programs.niri.package}/bin/niri";
   in {
@@ -20,12 +22,12 @@
     "Mod+Shift+plus".action = show-hotkey-overlay;
 
     # Binds for running programs: terminal, app launcher, screen locker.
-    "Mod+Return".action = spawn "kitty";
-    "Mod+D".action = spawn "fuzzel";
-    "Mod+L".action = spawn "${pkgs.nwg-bar}/bin/nwg-bar";
-    "Mod+S".action = spawn "fsearch";
-    "Mod+Tab".action = spawn ["rofi" "-show" "window"];
-    "Mod+E".action = spawn ["${pkgs.nautilus}/bin/nautilus" "--new-window"];
+    "Mod+Return".action = spawn "${getExe pkgs.kitty}";
+    "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
+    "Mod+L".action = spawn "${getExe pkgs.nwg-bar}";
+    "Mod+S".action = spawn "${getExe pkgs.fsearch}";
+    "Mod+Tab".action = spawn ["${getExe pkgs.rofi}" "-show" "window"];
+    "Mod+E".action = spawn ["${getExe pkgs.nautilus}" "--new-window"];
 
     # Volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.
