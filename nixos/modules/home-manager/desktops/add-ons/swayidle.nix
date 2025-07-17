@@ -13,20 +13,30 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+with lib; {
   options = {
-    swayidle.enable = lib.mkEnableOption "Enables swayidle";
+    swayidle.enable = mkEnableOption "Enables swayidle";
   };
 
-  config = lib.mkIf config.swayidle.enable {
+  config = mkIf config.swayidle.enable {
     services.swayidle = {
       enable = true;
       timeouts = [
         {
           # Execute timeout command if there is no activity for seconds.
-          timeout = 1800; # 30 minutes
-          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-          resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on"; # resume command will be run when there is activity again.
+          timeout = 60 * 30;
+          command =
+            if config.hyprland.enable
+            then "${getExe pkgs.hyprland} dispatch dpms off"
+            else if config.niri.enable
+            then "${getExe pkgs.niri} msg action power-off-monitors"
+            else "";
+          # resume command will be run when there is activity again.
+          resumeCommand =
+            if config.hyprland.enable
+            then "${getExe pkgs.hyprland} dispatch dpms on"
+            else "";
         }
       ];
       systemdTarget = "hyprland-session.target";
