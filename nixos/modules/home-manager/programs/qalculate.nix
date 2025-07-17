@@ -28,7 +28,7 @@ with lib; {
           error_info_shown = 1;
           save_mode_on_exit = 1;
           save_definitions_on_exit = 0;
-          save_history_separately = 0;
+          save_history_separately = 1;
           auto_update_exchange_rates = 1;
           clear_history_on_exit = 0;
           history_expression_type = 2;
