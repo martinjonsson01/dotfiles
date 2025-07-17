@@ -12,8 +12,6 @@
 
   leftModules =
     [
-      "load"
-      "memory"
     ]
     ++ (
       if config.hyprland.enable
@@ -21,10 +19,17 @@
         "hyprland/workspaces"
         "hyprland/submap"
       ]
+      else if config.niri.enable
+      then [
+        "niri/workspaces"
+      ]
       else []
     );
   centerModules = ["clock"];
-  rightModules = [];
+  rightModules = [
+    "load"
+    "memory"
+  ];
 
   createModulesCfg = isVertical: {
     clock = {
@@ -95,6 +100,9 @@
     "hyprland/submap" = {
       format = "󰔡 {}";
       max-length = 100;
+    };
+    "niri/workspaces" = {
+      format = "{}";
     };
   };
 in {
