@@ -126,6 +126,7 @@
         }
       ];
       open-floating = false;
+      open-on-workspace = "nixos";
       open-on-output = "Samsung Electric Company C49RG9x H1AK500000";
       default-column-width = {proportion = 2.0 / 7.0;};
       default-window-height = {proportion = 1.0;};
