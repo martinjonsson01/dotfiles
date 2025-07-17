@@ -15,6 +15,17 @@
       };
       clip-to-geometry = true;
     }
+    # Open browser windows in small width.
+    {
+      matches = [
+        {
+          app-id = "^google-chrome$";
+        }
+      ];
+      open-floating = false;
+      default-column-width = {proportion = 2.0 / 7.0;};
+      default-window-height = {proportion = 1.0;};
+    }
     # Open some apps in wide mode.
     {
       matches = [
