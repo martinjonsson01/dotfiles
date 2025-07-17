@@ -39,7 +39,14 @@ with lib; {
             else "";
         }
       ];
-      systemdTarget = "hyprland-session.target";
+      systemdTarget =
+        if config.hyprland.enable
+        then "hyprland-session.target"
+        else "";
     };
+    systemd.user.services.swayidle.Unit.WantedBy =
+      if config.niri.enable
+      then "niri.service"
+      else "";
   };
 }
