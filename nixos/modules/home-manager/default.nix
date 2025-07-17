@@ -8,6 +8,7 @@
     ./programs/btop.nix
     ./programs/zoom.nix
     ./programs/pinta.nix
+    ./programs/qalculate.nix
 
     ./desktops/gnome
     ./desktops/hyprland
