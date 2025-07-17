@@ -92,7 +92,10 @@ in {
             {
               output = monitor.connector;
               layer = "top";
-              position = "top";
+              position =
+                if monitor.width > 5000
+                then "right"
+                else "top";
               margin = "5 20 -5 20";
 
               modules-left = leftModules;
