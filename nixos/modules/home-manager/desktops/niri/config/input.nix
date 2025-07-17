@@ -6,6 +6,7 @@
 
     mouse = {
       accel-profile = "flat"; # Disable mouse acceleration.
+      accel-speed = 0.5; # Pointer speed.
     };
 
     # Focuses windows and outputs automatically when moving the mouse over them.
