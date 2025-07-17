@@ -80,12 +80,12 @@
       open-on-workspace = "statuses";
       open-floating = true;
       default-floating-position = {
-        x = 0;
-        y = 0;
+        x = 20;
+        y = 20;
         relative-to = "bottom-left";
       };
-      default-column-width = {proportion = 1.0;};
-      default-window-height = {proportion = 1.0 / 4.0;};
+      default-column-width = {proportion = 0.95;};
+      default-window-height = {proportion = 0.95 / 3.0;};
     }
     {
       matches = [
@@ -109,12 +109,12 @@
       open-on-workspace = "statuses";
       open-floating = true;
       default-floating-position = {
-        x = 0;
-        y = 0;
+        x = 20;
+        y = 20;
         relative-to = "top-left";
       };
-      default-column-width = {proportion = 1.0;};
-      default-window-height = {proportion = 3.0 / 4.0;};
+      default-column-width = {proportion = 0.95;};
+      default-window-height = {proportion = 1.95 / 3.0;};
     }
   ];
 }
