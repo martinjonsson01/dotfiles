@@ -22,7 +22,7 @@ with lib; {
         General = {
           version = "5.5.1";
           allow_multiple_instances = 1;
-          width = 500;
+          width = 800;
           always_on_top = 0;
           enable_tooltips = 1;
           error_info_shown = 1;
