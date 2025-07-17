@@ -7,7 +7,7 @@
       # To support X11 applications
       {command = ["${pkgs.xwayland-satellite}/bin/xwayland-satellite"];}
       # Waybar status bar
-      {command = ["pidof ${pkgs.waybar}/bin/waybar"];}
+      {command = ["sh" "-c" "pidof" "${pkgs.waybar}/bin/waybar" "||" "${pkgs.waybar}/bin/waybar"];}
     ]
     # Wallpapers
     ++ builtins.map (

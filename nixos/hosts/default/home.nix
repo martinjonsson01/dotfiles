@@ -148,6 +148,7 @@
   zoom.enable = true;
   pinta.enable = true;
   niri.enable = true;
+  waybar.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
