@@ -39,6 +39,7 @@ in {
           {config, ...}: {
             options = {
               name = mkOption {type = types.str;};
+              connector = mkOption {type = types.str;};
               xname = mkOption {
                 type = types.str;
                 default = config.name;

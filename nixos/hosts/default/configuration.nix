@@ -14,7 +14,8 @@
     monitors = [
       # Acer 144hz 27" monitor. card1-DP-5     2560x1440
       {
-        name = "DP-5";
+        name = "Acer Technologies 27\"";
+        connector = "DP-5";
         width = 2560;
         height = 1440;
         refreshRate = 144.0;
@@ -27,7 +28,8 @@
       }
       # Samsung ultrawide 49" monitor. card1-DP-6     5120x1440
       {
-        name = "DP-6";
+        name = "Samsung Electric Company 49\"";
+        connector = "DP-6";
         width = 5120;
         height = 1440;
         refreshRate = 120.0;
@@ -46,7 +48,8 @@
       }
       # Samsung 24" monitor. card1-HDMI-A-2 1920x1080
       {
-        name = "HDMI-A-2";
+        name = "Samsung Electric Company 24\"";
+        connector = "HDMI-A-2";
         width = 1920;
         height = 1080;
         x = -1920;
@@ -130,6 +133,7 @@
   audio.enable = true;
   teamviewer.enable = true;
   steam.enable = true;
+  niri.enable = true;
 
   # Docker containers
   virtualisation.docker.enable = true;
@@ -168,10 +172,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -233,10 +233,6 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "martin";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

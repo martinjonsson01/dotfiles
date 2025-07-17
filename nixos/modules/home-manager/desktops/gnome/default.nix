@@ -10,6 +10,13 @@
 
   config =
     lib.mkIf config.gnome.enable {
+      ######## GNOME APP ISSUE ########
+      # https://github.com/nix-community/home-manager/issues/1439
+      targets.genericLinux.enable = true;
+      xdg.mime.enable = true;
+      xdg.systemDirs.data = ["${config.home.homeDirectory}/.nix-profile/share/applications"];
+      ################################
+
       home.packages = with pkgs; [
         gnome-tweaks
         gnomeExtensions.tiling-shell

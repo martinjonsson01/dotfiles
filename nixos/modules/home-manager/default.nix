@@ -11,6 +11,7 @@
 
     ./desktops/gnome
     ./desktops/hyprland
+    ./desktops/niri
     ./desktops/autostart.nix
 
     ./desktops/add-ons/dunst.nix

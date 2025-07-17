@@ -1,0 +1,43 @@
+{
+  lib,
+  myHardware,
+}: let
+  inherit
+    (lib)
+    mod
+    ;
+in {
+  outputs = builtins.listToAttrs (map ({
+      name,
+      width,
+      height,
+      refreshRate,
+      primary,
+      rotation,
+      x,
+      y,
+      ...
+    }: {
+      name = name;
+
+      value = {
+        mode = {
+          width = width;
+          height = height;
+          refresh = refreshRate;
+        };
+
+        position = {
+          x = x;
+          y = y;
+        };
+
+        transform = {
+          rotation = mod (rotation * 90) 360;
+        };
+
+        focus-at-startup = primary;
+      };
+    })
+    myHardware.monitors);
+}

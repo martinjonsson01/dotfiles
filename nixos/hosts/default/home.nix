@@ -9,13 +9,6 @@
     inputs.sops-nix.homeManagerModule
   ];
 
-  ######## GNOME APP ISSUE ########
-  # https://github.com/nix-community/home-manager/issues/1439
-  targets.genericLinux.enable = true;
-  xdg.mime.enable = true;
-  xdg.systemDirs.data = ["${config.home.homeDirectory}/.nix-profile/share/applications"];
-  ################################
-
   # Secrets management
   sops = {
     defaultSopsFile = ./../../secrets/secrets.yaml;
@@ -144,7 +137,6 @@
   # Enable modules.
   git.enable = true;
   vscode.enable = true;
-  gnome.enable = true;
   autostart.enable = true;
   rbw.enable = true;
   rofi.enable = true;
@@ -155,6 +147,7 @@
   btop.enable = true;
   zoom.enable = true;
   pinta.enable = true;
+  niri.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

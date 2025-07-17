@@ -9,9 +9,9 @@
         builtins.map (
           ws:
             "${toString ws},"
-            + "monitor:${mon.name},"
+            + "monitor:${mon.connector},"
             + "layoutopt:orientation:${
-              if mon.name == "DP-5"
+              if mon.connector == "DP-5"
               then "top"
               else "center"
             },"

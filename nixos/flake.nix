@@ -16,6 +16,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Scrollable-tiling desktop environment.
+    niri = {
+      url = "github:sodiboo/niri-flake/ac9bcd788fca507d17e3c7a03de3d869bf44f52e";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Universal styling
     stylix = {
       url = "github:danth/stylix/release-25.05";
@@ -29,6 +35,7 @@
     nixpkgs-unstable,
     home-manager,
     stylix,
+    niri,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -69,6 +76,7 @@
             };
             users."martin" = {
               imports = [
+                inputs.niri.homeModules.niri
                 ./hosts/default/home.nix
               ];
             };

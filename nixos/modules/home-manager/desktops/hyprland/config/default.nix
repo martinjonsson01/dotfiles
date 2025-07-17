@@ -7,6 +7,11 @@
 }: let
   myHardware = osConfig.myHardware;
   resizeMode = "Resize: (h/Left) width- (j/Down) height-, (k/Up) height+, (l/Right) width+";
+
+  getRotation = degrees:
+    if degrees == 270
+    then 3
+    else 0;
 in {
   # Submaps are impossible to be defined in settings
   extraConfig = ''
@@ -31,7 +36,7 @@ in {
       # [ "<name>,<width>x<height>,<x>x<y>,1" ... ]
       monitor =
         builtins.map (
-          m: "${m.name},${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz,${toString m.x}x${toString m.y},1, transform, ${toString m.rotation}"
+          m: "${m.connector},${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz,${toString m.x}x${toString m.y},1, transform, ${toString (getRotation m.rotation)}"
         )
         myHardware.monitors;
 

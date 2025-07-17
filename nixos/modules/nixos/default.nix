@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    ./desktops/hyprland/default.nix
+    ./desktops/hyprland
+    ./desktops/niri
 
     ./desktops/add-ons/polkit-gnome.nix
 
