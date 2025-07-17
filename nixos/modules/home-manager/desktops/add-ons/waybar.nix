@@ -35,7 +35,7 @@
     clock = {
       format =
         if isVertical
-        then "{:%A%n%d%b%n%H:%M:%S%n%F}" # Newlines between components using %n
+        then "{:%A%n%d %b%n%H:%M:%S%n%F}" # Newlines between components using %n
         else "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
