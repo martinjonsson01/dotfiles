@@ -13,6 +13,7 @@
   leftModules =
     [
       "load"
+      "memory"
     ]
     ++ (
       if config.hyprland.enable
@@ -62,7 +63,12 @@
     };
     load = {
       interval = 10;
-      format = "{load1}";
+      format = "load: {load1}";
+    };
+    memory = {
+      interval = 30;
+      format = "{used:0.1f}G/{total:0.1f}G ";
+      max-length = 10;
     };
     "hyprland/workspaces" = {
       format = "{name}";
