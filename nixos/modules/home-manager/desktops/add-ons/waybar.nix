@@ -46,6 +46,8 @@
 
       actions = {
         on-click-right = "mode";
+        on-scroll-up = "shift_up";
+        on-scroll-down = "shift_down";
       };
     };
     "custom/power" = {
