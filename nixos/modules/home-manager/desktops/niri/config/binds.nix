@@ -22,7 +22,8 @@
     # Binds for running programs: terminal, app launcher, screen locker.
     "Mod+Return".action = spawn "kitty";
     "Mod+D".action = spawn "fuzzel";
-    # "Mod+Ctrl+Shift+L".action = spawn "swaylock";
+    "Mod+L".action = spawn "swaylock";
+    "Mod+S".action = spawn "fsearch";
     "Mod+Tab".action = spawn ["rofi" "-show" "window"];
     "Mod+E".action = spawn ["${pkgs.nautilus}/bin/nautilus" "--new-window"];
 
@@ -52,20 +53,12 @@
     "Mod+Down".action = focus-window-or-workspace-down;
     "Mod+Up".action = focus-window-or-workspace-up;
     "Mod+Right".action = focus-column-right;
-    "Mod+H".action = focus-column-left;
-    "Mod+J".action = focus-window-or-workspace-down;
-    "Mod+K".action = focus-window-or-workspace-up;
-    "Mod+L".action = focus-column-right;
 
     # Move using ctrl + directional keys.
     "Mod+Ctrl+Left".action = move-column-left;
     "Mod+Ctrl+Down".action = move-window-down-or-to-workspace-down;
     "Mod+Ctrl+Up".action = move-window-up-or-to-workspace-up;
     "Mod+Ctrl+Right".action = move-column-right;
-    "Mod+Ctrl+H".action = move-column-left;
-    "Mod+Ctrl+J".action = move-window-down-or-to-workspace-down;
-    "Mod+Ctrl+K".action = move-window-up-or-to-workspace-up;
-    "Mod+Ctrl+L".action = move-column-right;
 
     # Move/focus first/last.
     "Mod+Home".action = focus-column-first;
@@ -78,20 +71,12 @@
     "Mod+Shift+Down".action = focus-monitor-down;
     "Mod+Shift+Up".action = focus-monitor-up;
     "Mod+Shift+Right".action = focus-monitor-right;
-    "Mod+Shift+H".action = focus-monitor-left;
-    "Mod+Shift+J".action = focus-monitor-down;
-    "Mod+Shift+K".action = focus-monitor-up;
-    "Mod+Shift+L".action = focus-monitor-right;
 
     # Move to different monitors.
     "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
     "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down;
     "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up;
     "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
-    "Mod+Shift+Ctrl+H".action = move-column-to-monitor-left;
-    "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
-    "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
-    "Mod+Shift+Ctrl+L".action = move-column-to-monitor-right;
 
     # Focus on/move to different workspaces.
     "Mod+Page_Down".action = focus-workspace-down;
