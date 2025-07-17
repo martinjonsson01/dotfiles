@@ -19,6 +19,9 @@
     # The default width of new windows.
     default-column-width = {proportion = 1.0 / 4.0;};
 
+    # So the wallpaper is viewable.
+    background-color = "transparent";
+
     # Hide border around windows.
     border.enable = false;
     # Show ring around focused windows.
