@@ -125,10 +125,10 @@ in {
                 position = "right";
                 margin = "5 20 5 20";
 
+                modules-left = leftModules;
+                modules-center = centerModules;
                 modules-right =
-                  leftModules
-                  ++ centerModules
-                  ++ rightModules
+                  rightModules
                   ++ (
                     if monitor.primary
                     then [
