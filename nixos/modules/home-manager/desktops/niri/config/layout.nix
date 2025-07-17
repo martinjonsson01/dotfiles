@@ -17,7 +17,7 @@
     ];
 
     # The default width of new windows.
-    default-column-width = {proportion = 1.0 / 4.0;};
+    default-column-width = {proportion = 2.0 / 7.0;};
 
     # So the wallpaper is viewable.
     background-color = "transparent";
