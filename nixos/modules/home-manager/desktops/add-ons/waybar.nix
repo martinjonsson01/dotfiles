@@ -33,12 +33,13 @@
       tooltip = true;
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
       calendar = {
-        mode = "year";
+        mode = "month";
         weeks-pos = "left";
+        mode-mon-col = 3;
         format = {
           months = "<span color='#ebdbb2'><b>{}</b></span>";
           days = "<span color='#a89984'><b>{}</b></span>";
-          weeks = "<span color='#ebdbb2'><b>{:%V}</b></span>";
+          weeks = "<span color='#ebdbb2'><b>V{:%V}</b></span>";
           weekdays = "<span color='#ebdbb2'><b>{}</b></span>";
           today = "<span color='#d79921'><b>{}</b></span>";
         };
