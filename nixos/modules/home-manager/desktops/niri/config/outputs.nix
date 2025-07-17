@@ -24,7 +24,7 @@ in {
         mode = {
           width = width;
           height = height;
-          refresh = refreshRate;
+          # refresh = refreshRate; Omit to use highest available.
         };
 
         position = {
