@@ -19,23 +19,9 @@
     else []
   );
   centerModules = ["clock"];
-  rightModules = [
-    "network#down"
-    "network#up"
-  ];
+  rightModules = [];
 
   createModulesCfg = isVertical: {
-    "network#down" = {
-      format = "󰁅 {bandwidthDownBits}";
-      tooltip-format = "{ifname} {ipaddr}";
-      interval = 1;
-    };
-    "network#up" = {
-      format = "󰁝 {bandwidthUpBits}";
-      tooltip-format = "{ifname} {ipaddr}";
-      interval = 1;
-    };
-
     clock = {
       format =
         if isVertical
@@ -43,10 +29,11 @@
         else "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
-      tooltip = false;
+      tooltip = true;
+      tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
     };
     "custom/power" = {
-      format = "󰤆 ";
+      format = "󰤆";
       tooltip = true;
       on-click = "${pkgs.nwg-bar}/bin/nwg-bar";
     };
