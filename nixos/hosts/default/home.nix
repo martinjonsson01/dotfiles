@@ -155,4 +155,5 @@
   waybar.enable = true;
   nwg-bar.enable = true;
   dunst.enable = true;
+  blueman-applet.enable = true;
 }
