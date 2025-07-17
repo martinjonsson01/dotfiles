@@ -89,27 +89,47 @@ in {
       settings =
         builtins.map (
           monitor:
-            {
+            (
+              if monitor.width > 5000
+              then {
+                position = "right";
+                margin = "5 20 5 20";
+
+                modules-right =
+                  leftModules
+                  ++ centerModules
+                  ++ rightModules
+                  ++ (
+                    if monitor.primary
+                    then [
+                      "tray"
+                      "custom/power"
+                    ]
+                    else []
+                  );
+              }
+              else {
+                position = "top";
+                margin = "5 20 -5 20";
+
+                modules-left = leftModules;
+                modules-center = centerModules;
+                modules-right =
+                  rightModules
+                  ++ (
+                    if monitor.primary
+                    then [
+                      "tray"
+                      "custom/power"
+                    ]
+                    else []
+                  );
+              }
+            )
+            # Common
+            // {
               output = monitor.connector;
               layer = "top";
-              position =
-                if monitor.width > 5000
-                then "right"
-                else "top";
-              margin = "5 20 -5 20";
-
-              modules-left = leftModules;
-              modules-center = centerModules;
-              modules-right =
-                rightModules
-                ++ (
-                  if monitor.primary
-                  then [
-                    "tray"
-                    "custom/power"
-                  ]
-                  else []
-                );
             }
             // modulesCfg
         )

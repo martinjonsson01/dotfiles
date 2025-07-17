@@ -17,7 +17,7 @@
 
       package = pkgs.swaylock-effects;
 
-      settings = {
+      settings = lib.mkForce {
         screenshots = true;
         show-failed-attempts = true;
         line-uses-inside = true;

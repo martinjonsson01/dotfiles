@@ -31,6 +31,8 @@
           then "swaymsg exit"
           else if config.wayland.windowManager.hyprland.enable
           then "hyprctl dispatch exit"
+          else if config.niri.enable
+          then "niri msg action quit"
           else ""
         }",
             "icon": "${pkgs.nwg-bar}/share/nwg-bar/images/system-log-out.svg"

@@ -148,9 +148,10 @@
   zoom.enable = true;
   pinta.enable = true;
   niri.enable = true;
-  waybar.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
   gnome-screenshot.enable = true;
+  waybar.enable = true;
+  nwg-bar.enable = true;
 }

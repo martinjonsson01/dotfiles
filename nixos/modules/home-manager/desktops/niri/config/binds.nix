@@ -22,7 +22,7 @@
     # Binds for running programs: terminal, app launcher, screen locker.
     "Mod+Return".action = spawn "kitty";
     "Mod+D".action = spawn "fuzzel";
-    "Ctrl+Shift+L".action = spawn "swaylock";
+    # "Mod+Ctrl+Shift+L".action = spawn "swaylock";
     "Mod+Tab".action = spawn ["rofi" "-show" "window"];
     "Mod+E".action = spawn ["${pkgs.nautilus}/bin/nautilus" "--new-window"];
 

@@ -55,6 +55,12 @@
           nixpkgs = {
             config = {
               allowUnfree = true;
+
+              # Fix collisions.
+              packageOverrides = pkgs: {
+                swaylock = pkgs.lowPrio pkgs.swaylock;
+                swaylock-effects = pkgs.hiPrio pkgs.swaylock-effects;
+              };
             };
             overlays =
               [
@@ -81,7 +87,7 @@
               ];
             };
             # Extension to put on backup files.
-            backupFileExtension = "hm-backup";
+            backupFileExtension = "backup";
           };
         }
       ];
