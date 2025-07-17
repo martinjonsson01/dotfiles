@@ -39,11 +39,12 @@
       matches = [
         {
           app-id = "^steam$";
-          title = "Friends List";
         }
+      ];
+      excludes = [
         {
           app-id = "^steam$";
-          title = "Steam Settings";
+          title = "^Steam$";
         }
       ];
       max-width = 800;
