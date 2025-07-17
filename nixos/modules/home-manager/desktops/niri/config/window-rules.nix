@@ -18,18 +18,15 @@
     # Open some apps in wide mode.
     {
       matches = [
-        {
-          app-id = "^Code$";
-        }
+        {app-id = "^Code$";}
       ];
       default-column-width = {proportion = 3.0 / 7.0;};
     }
     # Open picture-in-picture as unfocused floating.
     {
       matches = [
-        {
-          title = "^Picture in picture$";
-        }
+        {title = "^Picture in picture$";}
+        {app-id = "qalculate-gtk";}
       ];
       open-floating = true;
       open-focused = false;
@@ -37,9 +34,7 @@
     #  Open some windows as floating.
     {
       matches = [
-        {
-          app-id = "^steam$";
-        }
+        {app-id = "^steam$";}
       ];
       excludes = [
         {
@@ -63,9 +58,7 @@
           app-id = "^google-chrome$";
           title = ".*ASMR.*YouTube.*";
         }
-        {
-          app-id = "^Plexamp$";
-        }
+        {app-id = "^Plexamp$";}
       ];
       open-on-workspace = "media";
       default-column-width = {proportion = 1.0 / 2.0;};

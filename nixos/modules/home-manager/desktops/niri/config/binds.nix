@@ -28,6 +28,7 @@ with lib; {
     "Mod+S".action = spawn "${getExe pkgs.fsearch}";
     "Mod+Tab".action = spawn ["${getExe pkgs.rofi}" "-show" "window"];
     "Mod+E".action = spawn ["${getExe pkgs.nautilus}" "--new-window"];
+    "Mod+Space".action = spawn "${getExe pkgs.qalculate-gtk}";
 
     # Volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.
