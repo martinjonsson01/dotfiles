@@ -10,14 +10,18 @@
 }: let
   myHardware = osConfig.myHardware;
 
-  leftModules = (
-    if config.hyprland.enable
-    then [
-      "hyprland/workspaces"
-      "hyprland/submap"
+  leftModules =
+    [
+      "load"
     ]
-    else []
-  );
+    ++ (
+      if config.hyprland.enable
+      then [
+        "hyprland/workspaces"
+        "hyprland/submap"
+      ]
+      else []
+    );
   centerModules = ["clock"];
   rightModules = [];
 
@@ -55,6 +59,10 @@
       format = "󰤆";
       tooltip = true;
       on-click = "${pkgs.nwg-bar}/bin/nwg-bar";
+    };
+    load = {
+      interval = 10;
+      format = "{load1}";
     };
     "hyprland/workspaces" = {
       format = "{name}";
