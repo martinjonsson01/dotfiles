@@ -34,7 +34,7 @@
       open-floating = true;
       open-focused = false;
     }
-    # Open some windows as floating.
+    #  Open some windows as floating.
     {
       matches = [
         {
