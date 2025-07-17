@@ -116,5 +116,25 @@
       default-column-width = {proportion = 0.98;};
       default-window-height = {proportion = 1.97 / 3.0;};
     }
+    # nixos
+    {
+      matches = [
+        {
+          app-id = "^Code$";
+          title = ".*nixos - Visual Studio Code";
+        }
+      ];
+      open-on-workspace = "nixos";
+    }
+    # cluster
+    {
+      matches = [
+        {
+          app-id = "^Code$";
+          title = ".*cluster - Visual Studio Code";
+        }
+      ];
+      open-on-workspace = "cluster";
+    }
   ];
 }
