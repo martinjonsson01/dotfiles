@@ -135,6 +135,9 @@
   # Docker containers
   virtualisation.docker.enable = true;
 
+  # Necessary to make login using swaylock possible.
+  security.pam.services.swaylock = {};
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
