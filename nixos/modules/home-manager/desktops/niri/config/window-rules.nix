@@ -114,7 +114,7 @@
         relative-to = "top-left";
       };
       default-column-width = {proportion = 0.98;};
-      default-window-height = {proportion = 1.98 / 3.0;};
+      default-window-height = {proportion = 1.97 / 3.0;};
     }
   ];
 }
