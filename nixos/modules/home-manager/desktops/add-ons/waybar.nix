@@ -50,8 +50,14 @@
     "hyprland/workspaces" = {
       format = "{name}";
       on-click = "activate";
-      on-scroll-up = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1";
-      on-scroll-down = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1";
+      on-scroll-up =
+        if config.hyprland.enable
+        then "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1"
+        else "";
+      on-scroll-down =
+        if config.hyprland.enable
+        then "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1"
+        else "";
       persistent-workspaces = {
         "1" = [];
         "2" = [];
@@ -84,7 +90,7 @@ in {
         builtins.map (
           monitor:
             {
-              output = monitor.name;
+              output = monitor.connector;
               layer = "top";
               position = "top";
               margin = "5 20 -5 20";
