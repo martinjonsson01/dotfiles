@@ -75,7 +75,7 @@
       matches = [
         {
           app-id = "^google-chrome$";
-          title = ".*| Proton Mail - Google Chrome$";
+          title = ".*\| Proton Mail - Google Chrome$";
         }
       ];
       open-on-workspace = "statuses";
@@ -116,20 +116,6 @@
       };
       default-column-width = {proportion = 0.98;};
       default-window-height = {proportion = 1.97 / 3.0;};
-    }
-
-    # Open browser windows in small width.
-    {
-      matches = [
-        {
-          app-id = "^google-chrome$";
-        }
-      ];
-      open-floating = false;
-      open-on-workspace = "nixos";
-      open-on-output = "Samsung Electric Company C49RG9x H1AK500000";
-      default-column-width = {proportion = 2.0 / 7.0;};
-      default-window-height = {proportion = 1.0;};
     }
   ];
 }
