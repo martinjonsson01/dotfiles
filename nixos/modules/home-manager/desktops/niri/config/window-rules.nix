@@ -78,6 +78,12 @@
         }
       ];
       open-on-workspace = "statuses";
+      open-floating = true;
+      default-floating-position = {
+        x = 0;
+        y = 0;
+        relative-to = "bottom-left";
+      };
       default-column-width = {proportion = 1.0;};
       default-window-height = {proportion = 1.0 / 4.0;};
     }
@@ -101,6 +107,12 @@
         }
       ];
       open-on-workspace = "statuses";
+      open-floating = true;
+      default-floating-position = {
+        x = 0;
+        y = 0;
+        relative-to = "top-left";
+      };
       default-column-width = {proportion = 1.0;};
       default-window-height = {proportion = 3.0 / 4.0;};
     }
