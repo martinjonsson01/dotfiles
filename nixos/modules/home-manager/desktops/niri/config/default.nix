@@ -22,6 +22,12 @@ in {
 
       # Speed up animations.
       animations.slowdown = 0.5;
+
+      # Disable startup help view.
+      hotkey-overlay.skip-at-startup = true;
+
+      # Disable middle mouse paste.
+      clipboard.disable-primary = true;
     }
     // (import ./input.nix)
     // (import ./outputs.nix {inherit lib myHardware;})
