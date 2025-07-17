@@ -97,7 +97,7 @@ in {
 
                 # Need to wrap when in vertical layout.
                 clock = lib.mkForce {
-                  format = "{:%An%d %bn%H:%M:%Sn%F}";
+                  format = "{:%A %n %d %b %n %H:%M:%S %n %F}";
                 };
 
                 modules-right =
