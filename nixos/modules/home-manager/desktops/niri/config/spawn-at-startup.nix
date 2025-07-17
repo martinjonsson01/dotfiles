@@ -10,23 +10,27 @@ with lib; {
       then {command = cmd;}
       else {command = singleton cmd;};
   in
-    map mkCmd [
-      # To support X11 applications
-      "${getExe pkgs.xwayland-satellite}"
+    map mkCmd ([
+        # To support X11 applications
+        "${getExe pkgs.xwayland-satellite}"
 
-      # Waybar status bar
-      ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
+        # Waybar status bar
+        ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
 
-      "${getExe pkgs.plexamp}"
+        "${getExe pkgs.plexamp}"
 
-      "${getExe pkgs.google-chrome}"
-    ]
-    # Wallpapers
-    ++ builtins.map (
-      monitor: {
-        command = ["${pkgs.swaybg}/bin/swaybg" "-o" "${monitor.connector}" "-i" "${monitor.wallpaper}"];
-      }
-    ) (
-      builtins.filter (m: m.wallpaper != null) myHardware.monitors
-    );
+        "${getExe pkgs.google-chrome}"
+      ]
+      # Wallpapers
+      ++ builtins.map (
+        monitor: ["${getExe pkgs.swaybg}" "-o" "${monitor.connector}" "-i" "${monitor.wallpaper}"]
+      ) (
+        builtins.filter (m: m.wallpaper != null) myHardware.monitors
+      )
+      ++
+      # Focus default workspace for reach monitor
+      builtins.map (
+        monitor: ["${getExe pkgs.niri}" "msg" "action" "focus-workspace" "${(head monitor.workspaces).name}"]
+      )
+      myHardware.monitors);
 }
