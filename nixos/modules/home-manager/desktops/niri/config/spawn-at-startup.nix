@@ -13,8 +13,13 @@ with lib; {
     map mkCmd [
       # To support X11 applications
       "${getExe pkgs.xwayland-satellite}"
+
       # Waybar status bar
       ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
+
+      "${getExe pkgs.plexamp}"
+
+      "${getExe pkgs.google-chrome}"
     ]
     # Wallpapers
     ++ builtins.map (
