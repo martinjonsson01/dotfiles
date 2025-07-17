@@ -43,6 +43,10 @@
           today = "<span color='#d79921'><b>{}</b></span>";
         };
       };
+
+      actions = {
+        on-click-right = "mode";
+      };
     };
     "custom/power" = {
       format = "󰤆";
