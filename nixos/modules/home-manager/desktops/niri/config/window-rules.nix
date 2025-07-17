@@ -22,7 +22,7 @@
           app-id = "^Code$";
         }
       ];
-      default-column-width = {proportion = 1.0 / 2.0;};
+      default-column-width = {proportion = 3.0 / 7.0;};
     }
     # Open picture-in-picture as unfocused floating.
     {

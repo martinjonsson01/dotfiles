@@ -11,9 +11,9 @@
 
     # The widths that the switch-preset-column-width action (Mod+R) toggles between
     preset-column-widths = [
-      {proportion = 1.0 / 2.0;}
-      {proportion = 1.0 / 3.0;}
-      {proportion = 1.0 / 4.0;}
+      {proportion = 3.0 / 7.0;}
+      {proportion = 2.0 / 7.0;}
+      {proportion = 1.0 / 7.0;}
     ];
 
     # The default width of new windows.
