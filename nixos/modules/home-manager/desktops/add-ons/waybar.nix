@@ -30,8 +30,8 @@
       interval = 1;
       timezone = "Europe/Stockholm";
 
-      tooltip = true;
-      tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
+      #tooltip = true;
+      #tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
       calendar = {
         mode = "month";
         weeks-pos = "left";
