@@ -24,5 +24,31 @@
       ];
       default-column-width = {proportion = 1.0 / 2.0;};
     }
+    # Open picture-in-picture as unfocused floating.
+    {
+      matches = [
+        {
+          title = "^Picture in picture$";
+        }
+      ];
+      open-floating = true;
+      open-focused = false;
+    }
+    # Open some windows as floating.
+    {
+      matches = [
+        {
+          app-id = "^steam$";
+          title = "Friends List";
+        }
+        {
+          app-id = "^steam$";
+          title = "Steam Settings";
+        }
+      ];
+      max-width = 800;
+      max-height = 800;
+      open-floating = true;
+    }
   ];
 }
