@@ -33,7 +33,7 @@
       tooltip = true;
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>";
       calendar = {
-        mode = "month";
+        mode = "year";
         weeks-pos = "left";
         format = {
           months = "<span color='#ebdbb2'><b>{}</b></span>";
