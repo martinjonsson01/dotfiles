@@ -24,7 +24,7 @@
     "network#up"
   ];
 
-  modulesCfg = {
+  createModulesCfg = isVertical: {
     "network#down" = {
       format = "󰁅 {bandwidthDownBits}";
       tooltip-format = "{ifname} {ipaddr}";
@@ -37,7 +37,10 @@
     };
 
     clock = {
-      format = "{:%A, %d %b %H:%M:%S - %F}";
+      format =
+        if isVertical
+        then "{:%A %n %d %b %n %H:%M:%S %n %F}"
+        else "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
       tooltip = false;
@@ -95,11 +98,6 @@ in {
                 position = "right";
                 margin = "5 20 5 20";
 
-                # Need to wrap when in vertical layout.
-                clock = lib.mkForce {
-                  format = "{:%A %n %d %b %n %H:%M:%S %n %F}";
-                };
-
                 modules-right =
                   leftModules
                   ++ centerModules
@@ -136,7 +134,7 @@ in {
               output = monitor.connector;
               layer = "top";
             }
-            // modulesCfg
+            // createModulesCfg (monitor.width > 5000)
         )
         myHardware.monitors;
 
