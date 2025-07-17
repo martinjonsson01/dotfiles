@@ -156,4 +156,5 @@
   nwg-bar.enable = true;
   dunst.enable = true;
   blueman-applet.enable = true;
+  nm-applet.enable = true;
 }
