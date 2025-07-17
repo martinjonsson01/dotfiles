@@ -12,9 +12,8 @@
     cpu = "amd";
     gpuDriver = "nvidia";
     monitors = [
-      # Acer 144hz 27" monitor. card1-DP-5     2560x1440
       {
-        name = "Acer Technologies 27\"";
+        name = "Acer Technologies XF270HU T78EE0048521";
         connector = "DP-5";
         width = 2560;
         height = 1440;
@@ -26,9 +25,8 @@
           8
         ];
       }
-      # Samsung ultrawide 49" monitor. card1-DP-6     5120x1440
       {
-        name = "Samsung Electric Company 49\"";
+        name = "Samsung Electric Company C49RG9x H1AK500000";
         connector = "DP-6";
         width = 5120;
         height = 1440;
@@ -46,9 +44,8 @@
           7
         ];
       }
-      # Samsung 24" monitor. card1-HDMI-A-2 1920x1080
       {
-        name = "Samsung Electric Company 24\"";
+        name = "Samsung Electric Company S24F350 H4ZR100448";
         connector = "HDMI-A-2";
         width = 1920;
         height = 1080;
