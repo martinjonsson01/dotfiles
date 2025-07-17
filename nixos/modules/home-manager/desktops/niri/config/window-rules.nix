@@ -91,19 +91,15 @@
     {
       matches = [
         {
-          app-id = "^google-chrome$";
           title = "Actual - Google Chrome$";
         }
         {
-          app-id = "^google-chrome$";
           title = "WhatsApp - Google Chrome$";
         }
         {
-          app-id = "^google-chrome$";
           title = ".*MyAnimeList.net - Google Chrome$";
         }
         {
-          app-id = "^google-chrome$";
           title = "^Google Kalender.*";
         }
       ];
