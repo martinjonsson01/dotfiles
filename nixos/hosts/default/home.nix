@@ -160,4 +160,5 @@
   nm-applet.enable = true;
   fuzzel.enable = true;
   swayidle.enable = true;
+  hyprsunset.enable = true;
 }
