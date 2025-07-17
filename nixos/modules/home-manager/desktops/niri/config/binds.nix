@@ -46,7 +46,7 @@
       allow-when-locked = true;
     };
 
-    "Mod+C".action = close-window;
+    "Mod+W".action = close-window;
 
     # Focus using directional keys.
     "Mod+Left".action = focus-column-left;
@@ -187,7 +187,7 @@
     # Toggle tabbed column display mode.
     # Windows in this column will appear as vertical tabs,
     # rather than stacked on top of each other.
-    "Mod+W".action = toggle-column-tabbed-display;
+    "Mod+C".action = toggle-column-tabbed-display;
 
     # Actions to switch layouts.
     # Note: if you uncomment these, make sure you do NOT have
