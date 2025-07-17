@@ -81,7 +81,7 @@ in {
                 default = null;
               };
               workspaces = mkOption {
-                type = types.listOf types.submodule (
+                type = types.listOf (types.submodule (
                   {...}: {
                     options = {
                       name = mkOption {
@@ -93,7 +93,7 @@ in {
                       };
                     };
                   }
-                );
+                ));
                 default = [];
               };
             };
