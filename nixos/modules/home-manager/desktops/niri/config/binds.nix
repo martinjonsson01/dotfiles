@@ -1,4 +1,7 @@
-{config}: {
+{
+  config,
+  pkgs,
+}: {
   binds = with config.lib.niri.actions; let
     niri = "${config.programs.niri.package}/bin/niri";
   in {
@@ -21,6 +24,7 @@
     "Mod+D".action = spawn "fuzzel";
     "Ctrl+Shift+L".action = spawn "swaylock";
     "Mod+Tab".action = spawn ["rofi" "-show" "window"];
+    "Mod+E".action = spawn ["${pkgs.nautilus}/bin/nautilus" "--new-window"];
 
     # Volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.

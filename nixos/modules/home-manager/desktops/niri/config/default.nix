@@ -28,5 +28,5 @@ in {
     // (import ./spawn-at-startup.nix {inherit pkgs myHardware;})
     // (import ./layout.nix)
     // (import ./window-rules.nix)
-    // (import ./binds.nix {inherit config;});
+    // (import ./binds.nix {inherit pkgs config;});
 }
