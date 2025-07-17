@@ -154,4 +154,5 @@
   gnome-screenshot.enable = true;
   waybar.enable = true;
   nwg-bar.enable = true;
+  dunst.enable = true;
 }

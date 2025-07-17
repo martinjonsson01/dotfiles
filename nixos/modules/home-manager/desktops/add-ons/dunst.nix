@@ -18,7 +18,7 @@
       vimix-cursors # For icons
     ];
 
-    services.dunst = {
+    services.dunst = lib.mkForce {
       enable = true;
       settings = {
         global = {
