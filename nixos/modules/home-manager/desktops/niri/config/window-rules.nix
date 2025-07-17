@@ -50,5 +50,24 @@
       max-height = 800;
       open-floating = true;
     }
+
+    #
+    # Set up placement of my usual windows.
+    #
+
+    # Media
+    {
+      matches = [
+        {
+          app-id = "^google-chrome$";
+          title = ".*ASMR.*YouTube.*";
+        }
+        {
+          app-id = "^Plexamp$";
+        }
+      ];
+      open-on-workspace = "media";
+      default-column-width = {proportion = 1.0 / 2.0;};
+    }
   ];
 }
