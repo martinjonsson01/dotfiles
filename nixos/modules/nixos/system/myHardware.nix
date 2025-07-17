@@ -81,7 +81,19 @@ in {
                 default = null;
               };
               workspaces = mkOption {
-                type = types.listOf types.int;
+                type = types.listOf types.submodule (
+                  {...}: {
+                    options = {
+                      name = mkOption {
+                        type = types.str;
+                        default = "";
+                      };
+                      id = mkOption {
+                        type = types.int;
+                      };
+                    };
+                  }
+                );
                 default = [];
               };
             };

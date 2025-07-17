@@ -22,7 +22,10 @@
         x = 5120;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
-          8
+          {
+            id = 8;
+            name = "statuses";
+          }
         ];
       }
       {
@@ -35,13 +38,22 @@
         x = 0;
         wallpaper = ./wallpapers/skull2.png;
         workspaces = [
-          1
-          2
-          3
-          4
-          5
-          6
-          7
+          {
+            id = 1;
+            name = "casual";
+          }
+          {
+            id = 2;
+            name = "nixos";
+          }
+          {
+            id = 3;
+            name = "cluster";
+          }
+          {
+            id = 4;
+            name = "project";
+          }
         ];
       }
       {
@@ -52,7 +64,10 @@
         x = -1920;
         wallpaper = ./wallpapers/kanagawa-dark.jpg;
         workspaces = [
-          9
+          {
+            id = 9;
+            name = "media";
+          }
         ];
       }
     ];
