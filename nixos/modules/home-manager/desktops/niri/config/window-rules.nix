@@ -1,5 +1,7 @@
-{
-  window-rules = [
+{config}: {
+  window-rules = let
+    colors = config.lib.stylix.colors.withHashtag;
+  in [
     # Add border radius to windows.
     {
       draw-border-with-background = false;
@@ -12,6 +14,15 @@
         bottom-right = r;
       };
       clip-to-geometry = true;
+    }
+    # Open some apps in wide mode.
+    {
+      matches = [
+        {
+          app-id = "^Code$";
+        }
+      ];
+      default-column-width = {proportion = 1.0 / 2.0;};
     }
   ];
 }

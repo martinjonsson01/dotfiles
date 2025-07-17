@@ -33,6 +33,7 @@ in {
     // (import ./outputs.nix {inherit lib myHardware;})
     // (import ./spawn-at-startup.nix {inherit pkgs myHardware;})
     // (import ./layout.nix)
-    // (import ./window-rules.nix)
+    // (import ./window-rules.nix {inherit config;})
+    // (import ./layer-rules.nix)
     // (import ./binds.nix {inherit pkgs config;});
 }
