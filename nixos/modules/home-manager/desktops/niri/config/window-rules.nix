@@ -84,8 +84,8 @@
         y = 20;
         relative-to = "bottom-left";
       };
-      default-column-width = {proportion = 0.95;};
-      default-window-height = {proportion = 0.95 / 3.0;};
+      default-column-width = {proportion = 0.98;};
+      default-window-height = {proportion = 0.98 / 3.0;};
     }
     {
       matches = [
@@ -113,8 +113,8 @@
         y = 20;
         relative-to = "top-left";
       };
-      default-column-width = {proportion = 0.95;};
-      default-window-height = {proportion = 1.95 / 3.0;};
+      default-column-width = {proportion = 0.98;};
+      default-window-height = {proportion = 1.98 / 3.0;};
     }
   ];
 }
