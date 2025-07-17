@@ -26,7 +26,6 @@
     {
       matches = [
         {title = "^Picture in picture$";}
-        {app-id = "qalculate-gtk";}
       ];
       open-floating = true;
       open-focused = false;
@@ -35,6 +34,7 @@
     {
       matches = [
         {app-id = "^steam$";}
+        {app-id = "qalculate-gtk";}
       ];
       excludes = [
         {
