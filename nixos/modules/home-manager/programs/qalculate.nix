@@ -28,7 +28,7 @@ with lib; {
           error_info_shown = 1;
           save_mode_on_exit = 1;
           save_definitions_on_exit = 0;
-          save_history_separately = 1;
+          save_history_separately = 1; # Saves history in another file (so it persists even though nixos overwrites the config)
           auto_update_exchange_rates = 1;
           clear_history_on_exit = 0;
           history_expression_type = 2;
@@ -61,7 +61,7 @@ with lib; {
           show_stack = 1;
           show_convert = 0;
           persistent_keypad = 0;
-          minimal_mode = 1;
+          minimal_mode = 0;
           rpn_keys = 1;
           display_expression_status = 1;
           parsed_expression_in_resultview = 0;
