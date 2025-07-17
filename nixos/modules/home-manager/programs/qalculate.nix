@@ -93,9 +93,9 @@ with lib; {
         Mode = {
           min_deci = 0;
           use_min_deci = 0;
-          max_deci = 2;
-          use_max_deci = 0;
-          precision = 2;
+          max_deci = 2; # How many decimals to show.
+          use_max_deci = 1;
+          precision = 10;
           interval_arithmetic = 1;
           interval_display = 0;
           min_exp = -1;
