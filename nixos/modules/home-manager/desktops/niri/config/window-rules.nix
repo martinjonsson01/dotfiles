@@ -75,7 +75,7 @@
       matches = [
         {
           app-id = "^google-chrome$";
-          title = ".*\| Proton Mail - Google Chrome$";
+          title = ".*\\| Proton Mail - Google Chrome$";
         }
       ];
       open-on-workspace = "statuses";
