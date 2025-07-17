@@ -69,5 +69,40 @@
       open-on-workspace = "media";
       default-column-width = {proportion = 1.0 / 2.0;};
     }
+    # Statuses
+    {
+      matches = [
+        {
+          app-id = "^google-chrome$";
+          title = ".*| Proton Mail - Google Chrome$";
+        }
+      ];
+      open-on-workspace = "statuses";
+      default-column-width = {proportion = 1.0;};
+      default-window-height = {proportion = 1.0 / 4.0;};
+    }
+    {
+      matches = [
+        {
+          app-id = "^google-chrome$";
+          title = "Actual - Google Chrome$";
+        }
+        {
+          app-id = "^google-chrome$";
+          title = "WhatsApp - Google Chrome$";
+        }
+        {
+          app-id = "^google-chrome$";
+          title = ".*MyAnimeList.net - Google Chrome$";
+        }
+        {
+          app-id = "^google-chrome$";
+          title = "^Google Kalender.*";
+        }
+      ];
+      open-on-workspace = "statuses";
+      default-column-width = {proportion = 1.0;};
+      default-window-height = {proportion = 3.0 / 4.0;};
+    }
   ];
 }
