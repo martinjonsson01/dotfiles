@@ -45,7 +45,7 @@
       };
 
       actions = {
-        on-click-right = "mode";
+        on-click-left = "mode";
       };
     };
     "custom/power" = {
