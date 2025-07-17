@@ -91,15 +91,19 @@
     {
       matches = [
         {
+          app-id = "^google-chrome$";
           title = "Actual - Google Chrome$";
         }
         {
+          app-id = "^google-chrome$";
           title = "WhatsApp - Google Chrome$";
         }
         {
+          app-id = "^google-chrome$";
           title = ".*MyAnimeList.net - Google Chrome$";
         }
         {
+          app-id = "^google-chrome$";
           title = "^Google Kalender.*";
         }
       ];
@@ -122,6 +126,7 @@
         }
       ];
       open-floating = false;
+      open-on-workspace = null;
       default-column-width = {proportion = 2.0 / 7.0;};
       default-window-height = {proportion = 1.0;};
     }
