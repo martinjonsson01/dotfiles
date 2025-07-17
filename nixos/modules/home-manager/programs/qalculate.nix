@@ -57,11 +57,11 @@ with lib; {
           show_keypad = 0;
           show_history = 1;
           history_height = 336;
-          minimal_width = 500;
+          minimal_width = 800;
           show_stack = 1;
           show_convert = 0;
           persistent_keypad = 0;
-          minimal_mode = 0;
+          minimal_mode = 1;
           rpn_keys = 1;
           display_expression_status = 1;
           parsed_expression_in_resultview = 0;
