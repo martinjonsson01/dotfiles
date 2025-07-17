@@ -121,7 +121,7 @@
       matches = [
         {
           app-id = "^Code$";
-          title = ".*nixos - Visual Studio Code";
+          title = ".*nixos - Visual Studio Code$";
         }
       ];
       open-on-workspace = "nixos";
@@ -131,7 +131,7 @@
       matches = [
         {
           app-id = "^Code$";
-          title = ".*cluster - Visual Studio Code";
+          title = ".*cluster - Visual Studio Code$";
         }
       ];
       open-on-workspace = "cluster";
