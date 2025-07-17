@@ -80,8 +80,8 @@
       open-on-workspace = "statuses";
       open-floating = true;
       default-floating-position = {
-        x = 20;
-        y = 20;
+        x = 15;
+        y = 15;
         relative-to = "bottom-left";
       };
       default-column-width = {proportion = 0.98;};
@@ -109,8 +109,8 @@
       open-on-workspace = "statuses";
       open-floating = true;
       default-floating-position = {
-        x = 20;
-        y = 20;
+        x = 15;
+        y = 15;
         relative-to = "top-left";
       };
       default-column-width = {proportion = 0.98;};
