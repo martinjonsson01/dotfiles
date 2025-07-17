@@ -38,6 +38,11 @@
             "icon": "${pkgs.nwg-bar}/share/nwg-bar/images/system-log-out.svg"
           },
           {
+            "label": "Suspend",
+            "exec": "systemctl suspend",
+            "icon": "${pkgs.kdePackages.breeze-icons}/share/icons/breeze-dark/actions/32@3x/system-suspend.svg"
+          },
+          {
             "label": "_Reboot",
             "exec": "systemctl reboot",
             "icon": "${pkgs.nwg-bar}/share/nwg-bar/images/system-reboot.svg"
