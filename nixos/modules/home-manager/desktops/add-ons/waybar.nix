@@ -37,7 +37,7 @@
     };
 
     clock = {
-      format = "{:%A, %d %b %R - %F}";
+      format = "{:%A, %d %b %H:%M:%S - %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
       tooltip = false;
@@ -94,6 +94,11 @@ in {
               then {
                 position = "right";
                 margin = "5 20 5 20";
+
+                # Need to wrap when in vertical layout.
+                clock = lib.mkForce {
+                  format = "{:%A\n%d %b %H:%M:%S - %F}";
+                };
 
                 modules-right =
                   leftModules
