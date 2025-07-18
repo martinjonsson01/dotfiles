@@ -3,12 +3,13 @@
   lib,
   config,
   ...
-}: {
+}:
+with lib; {
   options = {
     custom-style.enable = lib.mkEnableOption "Enables Stylix";
   };
 
-  config = lib.mkIf config.custom-style.enable {
+  config = mkIf config.custom-style.enable {
     # https://stylix.danth.me/options/nixos.html
     stylix = {
       enable = true;
@@ -36,10 +37,10 @@
         };
       };
 
-      fonts.sizes = {
+      fonts.sizes = mkForce {
         applications = 13;
         terminal = 13;
-        desktop = 13;
+        desktop = 16;
         popups = 16;
       };
 

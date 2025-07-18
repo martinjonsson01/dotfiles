@@ -6,17 +6,18 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+with lib; {
   options = {
-    gtk-theme.enable = lib.mkEnableOption "Enables GTK theme";
+    gtk-theme.enable = mkEnableOption "Enables GTK theme";
   };
 
-  config = lib.mkIf config.gtk-theme.enable {
+  config = mkIf config.gtk-theme.enable {
     home.packages = with pkgs; [
       gtk-engine-murrine
     ];
 
-    home.pointerCursor = lib.mkForce {
+    home.pointerCursor = mkForce {
       package = config.stylix.cursor.package;
       name = config.stylix.cursor.name;
       size = config.stylix.cursor.size;
@@ -25,15 +26,15 @@
     };
     gtk = {
       enable = true;
-      font = {
+      font = mkForce {
         name = config.stylix.fonts.sansSerif.name;
-        size = config.stylix.fonts.sizes.desktop;
+        size = config.stylix.fonts.sizes.applications;
       };
-      theme = lib.mkForce {
+      theme = mkForce {
         name = "Tokyonight-Dark";
         package = pkgs.tokyonight-gtk-theme;
       };
-      iconTheme = lib.mkForce {
+      iconTheme = mkForce {
         name = "Tokyonight-Dark";
         package = pkgs.tokyonight-gtk-theme;
       };
