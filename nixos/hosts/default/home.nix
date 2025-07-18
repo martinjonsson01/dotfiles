@@ -134,6 +134,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  dconf.settings."org/gnome/nautilus/icon-view" = {
+    captions = ["size" "date_modified" "none"];
+  };
+
   # Enable modules.
   git.enable = true;
   vscode.enable = true;
