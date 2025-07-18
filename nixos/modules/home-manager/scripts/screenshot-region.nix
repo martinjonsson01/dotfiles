@@ -15,6 +15,8 @@ with lib; let
     {
         color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
 
+        echo color is
+        echo $color
         # If picker exits with no color, escape was pressed.
         if [ $color -e "" ]; then
             # Kill the region picker, so user doesn't
