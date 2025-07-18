@@ -146,7 +146,9 @@
   teamviewer.enable = true;
   steam.enable = true;
   niri.enable = true;
-  nautilus.enable = true;
+
+  # Needed for trash to work.
+  services.gvfs.enable = true;
 
   # Docker containers
   virtualisation.docker.enable = true;

@@ -10,6 +10,7 @@
     ./programs/pinta.nix
     ./programs/qalculate.nix
     ./programs/kitty.nix
+    ./programs/nemo.nix
 
     ./desktops/gnome
     ./desktops/hyprland

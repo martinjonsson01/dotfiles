@@ -277,5 +277,5 @@
         };
       };
     }
-    // (import ./default-applications.nix);
+    // (import ../default-applications.nix);
 }

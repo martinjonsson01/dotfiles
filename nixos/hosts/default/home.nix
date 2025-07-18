@@ -153,6 +153,7 @@
   screenrecord-region.enable = true;
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
+  nemo.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
