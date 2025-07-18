@@ -38,7 +38,7 @@ with lib; let
 
         wl-copy -t image/gif < "$FINAL_PATH.gif"
         echo "file://$FINAL_PATH.mkv" | wl-copy -t text/uri-list
-    } &
+    } # &
   '';
 in {
   options = {
