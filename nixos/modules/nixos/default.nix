@@ -11,6 +11,7 @@
 
     ./programs/teamviewer.nix
     ./programs/steam.nix
+    ./programs/nautilus.nix
 
     ./services/resilio.nix
     ./services/audio.nix
