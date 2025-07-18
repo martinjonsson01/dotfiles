@@ -139,7 +139,7 @@ in {
                   );
               }
               else {
-                position = "top";
+                position = "bottom";
                 margin = "5 20 -5 20";
 
                 modules-left = leftModules;
