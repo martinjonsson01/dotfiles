@@ -152,6 +152,7 @@
   kitty.enable = true;
   screenrecord-region.enable = true;
   screenshot-region.enable = true;
+  open-screenshot-dir.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
