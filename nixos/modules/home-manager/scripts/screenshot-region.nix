@@ -14,6 +14,7 @@ with lib; let
     # Use the color picker to freeze all screens.
     {
         color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
+        color_picker=$!
 
         # If picker exits with no color, escape was pressed.
         if [ "$color" = "" ]; then
@@ -45,7 +46,7 @@ with lib; let
     fi
 
     # Kill the color picker running in the background.
-    kill $!
+    kill $color_picker
 
     # If screenshot was canceled, exit.
     if [ ! -f $TEMP_PATH ]; then
