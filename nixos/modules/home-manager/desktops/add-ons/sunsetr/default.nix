@@ -30,7 +30,7 @@
       description = "Automatic blue light filter for Hyprland, Niri, and everything Wayland";
       homepage = "https://github.com/psi4j/sunsetr";
       license = licenses.mit;
-      maintainers = with maintainers; [];
+      maintainers = [];
       mainProgram = "sunsetr";
     };
   };
