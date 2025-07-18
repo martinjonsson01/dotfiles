@@ -17,6 +17,8 @@ with lib; {
       nemo-with-extensions
       nemo-preview # For previewing files
       nemo-fileroller # For compression
+      imagemagick
+      ffmpegthumbnailer
     ];
 
     dconf.settings = {
