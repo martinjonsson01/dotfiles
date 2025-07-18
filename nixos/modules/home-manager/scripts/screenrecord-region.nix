@@ -15,7 +15,7 @@ with lib; let
     pkill -x ${builtins.baseNameOf (getExe pkgs.wf-recorder)} || running=$?
 
     # If there was no running wf-recorder instance to kill, start recording...
-    [ running -ne 0 ] && {
+    [ $running -ne 0 ] && {
         YEAR=$(date +%Y)
         MONTH=$(date +%b)
         DAY=$(date +%d)
