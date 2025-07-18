@@ -7,9 +7,9 @@ in {
 
     # Spacing between monitor edges.
     struts = {
-      top = -gapWidth;
+      top = -gapWidth + 2;
       left = 0;
-      bottom = -gapWidth;
+      bottom = -gapWidth + 2;
       right = 0;
     };
 
