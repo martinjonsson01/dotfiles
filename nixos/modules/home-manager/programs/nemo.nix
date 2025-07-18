@@ -17,9 +17,6 @@ with lib; {
       nemo
     ];
 
-    # Set default application for opening directories.
-    xdg.mime.defaultApplications."inode/directory" = "nemo.desktop";
-
     dconf.settings = {
       "org/nemo/preferences" = {
         always-use-browser = true;
@@ -38,6 +35,8 @@ with lib; {
         show-search-icon-toolbar = false;
         show-show-thumbnails-toolbar = false;
         thumbnail-limit = 10485760;
+        default-folder-viewer = "list-view";
+        inherit-folder-viewer = true;
       };
       "org/nemo/preferences/menu-config" = {
         background-menu-open-as-root = false;
