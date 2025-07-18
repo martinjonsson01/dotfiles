@@ -14,7 +14,7 @@ with lib; let
     # Use the color picker to freeze all screens.
     {
         # Make sure picker exits when this background process is killed.
-        trap 'kill $(jobs -p) 2>/dev/null' EXIT
+        trap 'echo trap is run' EXIT
 
         color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
 
