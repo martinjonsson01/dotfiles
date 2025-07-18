@@ -38,5 +38,6 @@
     ./shells/fish/fish.nix
 
     ./scripts/screenrecord-region.nix
+    ./scripts/screenshot-region.nix
   ];
 }

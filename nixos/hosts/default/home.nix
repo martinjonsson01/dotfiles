@@ -151,6 +151,7 @@
   qalculate.enable = true;
   kitty.enable = true;
   screenrecord-region.enable = true;
+  screenshot-region.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

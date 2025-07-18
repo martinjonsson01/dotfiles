@@ -1,0 +1,64 @@
+#
+# A Wayland area screenshot script.
+#
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib; let
+  screenshot-region = pkgs.writers.writeBashBin "screenshot-region.sh" ''
+    set -eu
+
+    # Use the color picker to freeze all screens.
+    ${getExe pkgs.hyprpicker} --render-inactive --no-zoom &
+    sleep 0.2 # it needs time to freeze the screen...
+
+    geometry="$(${getExe pkgs.slurp} -c '#ff3f3faf' -w 2 -d -o)"
+    sleep 0.2 # slurp needs time to remove the red border...
+
+    YEAR=$(date +%Y)
+    MONTH=$(date +%b)
+    DAY=$(date +%d)
+    TIME=$(date +'%H:%M:%S')
+
+    TEMP_PATH="/tmp/screenshot-$YEAR-$MONTH-$DAY-$TIME.png"
+    FINAL_PATH="$HOME/Pictures/Screenshots/$YEAR/$MONTH/$DAY-$TIME.png"
+
+    mkdir -p $HOME/Pictures/Screenshots/$YEAR
+    mkdir -p $HOME/Pictures/Screenshots/$YEAR/$MONTH
+
+    if [ -n "$geometry" ]; then
+        ${getExe pkgs.grim} -g "$geometry" -t png $TEMP_PATH
+    else
+        ${getExe pkgs.grim} -t png $TEMP_PATH
+    fi
+
+    # Kill the color picker running in the background.
+    kill $!
+
+    # If screenshot was canceled, exit.
+    if [ ! -f $TEMP_PATH ]; then
+      echo "Screenshot canceled"
+      exit
+    fi
+
+    # Edit with swappy, save as file and copy to clipboard.
+    swappy -f $TEMP_PATH -o - | tee $FINAL_PATH | wl-copy
+
+    # Clean up temp file.
+    rm $TEMP_PATH
+  '';
+in {
+  options = {
+    screenshot-region.enable = mkEnableOption "Enables screenshot-region";
+  };
+
+  config = mkIf config.screenshot-region.enable {
+    home.packages = [
+      pkgs.wl-clipboard # To use wl-copy in the script
+      screenshot-region
+    ];
+  };
+}
