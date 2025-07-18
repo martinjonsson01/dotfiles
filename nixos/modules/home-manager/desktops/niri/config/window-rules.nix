@@ -42,8 +42,6 @@
           title = "^Steam$";
         }
       ];
-      max-width = 800;
-      max-height = 800;
       open-floating = true;
     }
 
