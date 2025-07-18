@@ -15,7 +15,7 @@ with lib; {
   config = mkIf config.nemo.enable {
     home.packages = with pkgs; [
       (nemo-with-extensions.override {
-        extensions = [
+        extensions = with pkgs; [
           nemo-preview # For previewing files
           nemo-fileroller # For compression
         ];
