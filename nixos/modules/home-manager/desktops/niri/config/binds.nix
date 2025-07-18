@@ -200,6 +200,7 @@ with lib; {
     # "Mod+At".action = switch-layout "next";
     # Mod+Shift+Space { switch-layout "prev"; }
 
+    "Ctrl+Shift+Print".action = spawn ["screenrecord-region.sh"];
     "Print".action = screenshot;
     "Alt+Print".action = screenshot-window;
 
