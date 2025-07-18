@@ -140,7 +140,7 @@ in {
               }
               else {
                 position = "bottom";
-                margin = "5 20 -5 20";
+                margin = "5 20 5 20";
 
                 modules-left = leftModules;
                 modules-center = centerModules;
