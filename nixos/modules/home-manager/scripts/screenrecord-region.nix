@@ -9,10 +9,13 @@
 }:
 with lib; let
   screenrecord-region = pkgs.writers.writeBashBin "screenrecord-region.sh" ''
-    pkill -x ${builtins.baseNameOf (getExe pkgs.wf-recorder)}
+    set -eu
+
+    running=0
+    pkill -x ${builtins.baseNameOf (getExe pkgs.wf-recorder)} || running=$?
 
     # If there was no running wf-recorder instance to kill, start recording...
-    [ $? -ne 0 ] && {
+    [ running -ne 0 ] && {
         YEAR=$(date +%Y)
         MONTH=$(date +%b)
         DAY=$(date +%d)
