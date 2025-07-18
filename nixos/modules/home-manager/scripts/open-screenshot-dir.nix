@@ -19,7 +19,7 @@ with lib; let
     mkdir -p $HOME/Pictures/Screenshots/$YEAR
     mkdir -p $DIR
 
-    ${getExe pkgs.nautilus} --new-window "$DIR"
+    ${getExe pkgs.nemo} --no-default-window "$DIR"
   '';
 in {
   options = {
