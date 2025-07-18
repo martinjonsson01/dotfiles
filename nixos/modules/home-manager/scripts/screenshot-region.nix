@@ -25,7 +25,7 @@ with lib; let
             pkill -x ${builtins.baseNameOf (getExe pkgs.slurp)}
         fi
     } &
-    picker=$!
+    picker_pid=$!
     sleep 0.1 # it needs time to freeze the screen...
 
     geometry="$(${getExe pkgs.slurp} -c '#ff3f3faf' -w 2 -d -o)"
@@ -49,7 +49,7 @@ with lib; let
     fi
 
     # Kill the color picker running in the background.
-    kill $picker
+    kill -- $picker_pid
 
     # If screenshot was canceled, exit.
     if [ ! -f $TEMP_PATH ]; then
