@@ -14,10 +14,9 @@ with lib; let
     # Use the color picker to freeze all screens.
     {
         # Make sure picker exits when this background process is killed.
-        trap 'kill $picker_pid' EXIT
+        trap 'kill 0' EXIT
 
         color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
-        picker_pid=$!
 
         # If picker exits with no color, escape was pressed.
         if [ "$color" = "" ]; then
