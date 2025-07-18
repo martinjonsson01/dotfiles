@@ -150,6 +150,7 @@
   niri.enable = true;
   qalculate.enable = true;
   kitty.enable = true;
+  screenrecord-region.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

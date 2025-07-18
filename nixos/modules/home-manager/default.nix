@@ -36,5 +36,7 @@
     ./launchers/rofi-rbw.nix
 
     ./shells/fish/fish.nix
+
+    ./scripts/screenrecord-region.nix
   ];
 }

@@ -25,7 +25,14 @@
       ]
       else []
     );
-  centerModules = ["clock"];
+  centerModules = [
+    "clock"
+    "custom/recording"
+  ];
+  primaryModules = [
+    "tray"
+    "custom/power"
+  ];
   rightModules = [
     "load"
     "memory"
@@ -61,19 +68,23 @@
         on-scroll-down = "shift_up";
       };
     };
+
     "custom/power" = {
       format = "󰤆";
       tooltip = true;
       on-click = "${pkgs.nwg-bar}/bin/nwg-bar";
     };
+
     load = {
       interval = 10;
       format = "load: {load1}";
     };
+
     memory = {
       interval = 30;
       format = "{used:0.1f}G/{total:0.1f}G ";
     };
+
     "hyprland/workspaces" = {
       format = "{name}";
       on-click = "activate";
@@ -97,12 +108,28 @@
         "9" = [];
       };
     };
+
     "hyprland/submap" = {
       format = "󰔡 {}";
       max-length = 100;
     };
+
     "niri/workspaces" = {
       format = "{}";
+    };
+
+    # Shows an icon if the screen recorder is running.
+    "custom/recording" = {
+      exec = "${pkgs.writers.writeBashBin "waybar-recording.sh" ''
+        if pgrep -x wf-recorder > /dev/null; then
+            printf '{"text": "  "}\n'
+        else
+            printf '{"text": ""}\n'
+        fi
+      ''}";
+      return-type = "json";
+      signal = 3;
+      interval = "once";
     };
   };
 in {
@@ -131,10 +158,7 @@ in {
                   rightModules
                   ++ (
                     if monitor.primary
-                    then [
-                      "tray"
-                      "custom/power"
-                    ]
+                    then primaryModules
                     else []
                   );
               }
@@ -148,10 +172,7 @@ in {
                   rightModules
                   ++ (
                     if monitor.primary
-                    then [
-                      "tray"
-                      "custom/power"
-                    ]
+                    then primaryModules
                     else []
                   );
               }
