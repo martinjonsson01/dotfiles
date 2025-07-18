@@ -9,12 +9,12 @@
 }:
 with lib; let
   screenshot-region = pkgs.writers.writeBashBin "screenshot-region.sh" ''
-    set -eu
+    set -eum
 
     # Use the color picker to freeze all screens.
     {
         # Make sure picker exits when this background process is killed.
-        trap 'kill 0' EXIT
+        #trap 'echo exiting' EXIT
 
         color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
 
