@@ -12,7 +12,16 @@ with lib; let
     set -eu
 
     # Use the color picker to freeze all screens.
-    ${getExe pkgs.hyprpicker} --render-inactive --no-zoom &
+    {
+        color=${getExe pkgs.hyprpicker} --render-inactive --no-zoom
+
+        # If picker exits with no color, escape was pressed.
+        if [ $color -e "" ]; then
+            # Kill the region picker, so user doesn't
+            # need to press escape twice.
+            pkill -x ${builtins.baseNameOf (getExe pkgs.slurp)}
+        fi
+    } &
     sleep 0.2 # it needs time to freeze the screen...
 
     geometry="$(${getExe pkgs.slurp} -c '#ff3f3faf' -w 2 -d -o)"
