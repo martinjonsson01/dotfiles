@@ -29,7 +29,6 @@ with lib; let
     sleep 0.1 # it needs time to freeze the screen...
 
     geometry="$(${getExe pkgs.slurp} -c '#ff3f3faf' -w 2 -d -o)"
-    #sleep 0.1 # slurp needs time to remove the red border...
 
     YEAR=$(date +%Y)
     MONTH=$(date +%b)
