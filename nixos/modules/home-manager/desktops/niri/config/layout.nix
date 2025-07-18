@@ -1,7 +1,17 @@
-{
+let
+  gapWidth = 16;
+in {
   layout = {
     # Spacing between windows.
-    gaps = 16;
+    gaps = gapWidth;
+
+    # Spacing between monitor edges.
+    struts = {
+      top = -gapWidth;
+      left = 0;
+      bottom = -gapWidth;
+      right = 0;
+    };
 
     # When to center a column when changing focus.
     center-focused-column = "on-overflow"; # focusing a column will center it if it doesn't fit on screen together with the previously focused column.
