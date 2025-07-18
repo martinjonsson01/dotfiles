@@ -149,6 +149,7 @@
   pinta.enable = true;
   niri.enable = true;
   qalculate.enable = true;
+  kitty.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

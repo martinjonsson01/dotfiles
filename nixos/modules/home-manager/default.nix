@@ -9,6 +9,7 @@
     ./programs/zoom.nix
     ./programs/pinta.nix
     ./programs/qalculate.nix
+    ./programs/kitty.nix
 
     ./desktops/gnome
     ./desktops/hyprland
