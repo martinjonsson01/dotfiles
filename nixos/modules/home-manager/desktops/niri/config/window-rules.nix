@@ -108,5 +108,16 @@
       default-column-width = {proportion = 0.98;};
       default-window-height = {proportion = 1.97 / 3.0;};
     }
+
+    # Open standard chrome windows on main workspace at initial startup.
+    {
+      matches = [
+        {
+          app-id = "^google-chrome$";
+          at-startup = true;
+        }
+      ];
+      open-on-workspace = "casual";
+    }
   ];
 }
