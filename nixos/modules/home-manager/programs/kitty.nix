@@ -2,7 +2,6 @@
 # The fast, feature-rich, GPU based terminal emulator
 #
 {
-  pkgs,
   lib,
   config,
   ...

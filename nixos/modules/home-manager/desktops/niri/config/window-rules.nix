@@ -1,7 +1,5 @@
 {config}: {
-  window-rules = let
-    colors = config.lib.stylix.colors.withHashtag;
-  in [
+  window-rules = [
     # Add border radius to windows.
     {
       draw-border-with-background = false;
