@@ -146,6 +146,7 @@
   teamviewer.enable = true;
   steam.enable = true;
   niri.enable = true;
+  sunsetr.enable = true;
 
   # Docker containers
   virtualisation.docker.enable = true;

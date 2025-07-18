@@ -27,6 +27,12 @@
       url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # To build rust packages.
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay/dc221f842e9ddc8c0416beae8d77f2ea356b91ae";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -36,6 +42,7 @@
     home-manager,
     stylix,
     niri,
+    rust-overlay,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -64,9 +71,12 @@
             };
             overlays =
               [
+                rust-overlay.overlays.default
               ]
               ++ import ./overlays {inherit pkgs inputs;};
           };
+          # For the rust-overlay
+          environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
         })
         ./modules/nixos/default.nix
         ./hosts/default/hardware-configuration.nix
