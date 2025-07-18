@@ -29,6 +29,7 @@
     ./desktops/add-ons/gnome-screenshot
     ./desktops/add-ons/hypridle.nix
     ./desktops/add-ons/fuzzel.nix
+    ./desktops/add-ons/sunsetr
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

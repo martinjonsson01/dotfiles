@@ -4,7 +4,6 @@
     ./desktops/niri
 
     ./desktops/add-ons/polkit-gnome.nix
-    ./desktops/add-ons/sunsetr
 
     ./system/nvidia.nix
     ./system/stylix.nix
