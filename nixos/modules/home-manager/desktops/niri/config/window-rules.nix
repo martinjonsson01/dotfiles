@@ -34,7 +34,8 @@
     {
       matches = [
         {app-id = "^steam$";}
-        {app-id = "qalculate-gtk";}
+        {app-id = "^qalculate-gtk$";}
+        {app-id = "^fsearch$";}
       ];
       excludes = [
         {
