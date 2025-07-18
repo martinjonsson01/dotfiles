@@ -49,7 +49,7 @@ with lib; let
     fi
 
     # Kill the color picker running in the background.
-    kill -- $picker_pid
+    kill -- -$picker_pid
 
     # If screenshot was canceled, exit.
     if [ ! -f $TEMP_PATH ]; then
