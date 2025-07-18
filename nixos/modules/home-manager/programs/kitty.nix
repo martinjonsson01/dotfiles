@@ -31,8 +31,6 @@ with lib; {
         tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{index}:{title}";
         confirm_os_window_close = 0;
         window_padding_width = "8.0";
-        wheel_scroll_multiplier = "32.0";
-        touch_scroll_multiplier = "32.0";
       };
 
       keybindings = {
