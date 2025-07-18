@@ -16,6 +16,9 @@
       max-scroll-amount = "0%"; # Never focus if it'll result in scroll
     };
 
+    # Move the pointer to the focused window.
+    warp-mouse-to-focus = true;
+
     # Switching to the same workspace by index twice will switch back to the previous workspace.
     workspace-auto-back-and-forth = true;
   };
