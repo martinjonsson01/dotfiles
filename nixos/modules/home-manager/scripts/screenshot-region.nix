@@ -13,7 +13,7 @@ with lib; let
 
     # Use the color picker to freeze all screens.
     {
-        color=${getExe pkgs.hyprpicker} --render-inactive --no-zoom
+        color=$(${getExe pkgs.hyprpicker} --render-inactive --no-zoom)
 
         # If picker exits with no color, escape was pressed.
         if [ $color -e "" ]; then
