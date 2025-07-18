@@ -34,6 +34,7 @@
         {app-id = "^steam$";}
         {app-id = "^qalculate-gtk$";}
         {app-id = "^fsearch$";}
+        {app-id = "^org.gnome.NautilusPreviewer$";}
       ];
       excludes = [
         {
