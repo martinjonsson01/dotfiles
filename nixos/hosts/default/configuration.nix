@@ -150,6 +150,9 @@
   # Needed for trash to work.
   services.gvfs.enable = true;
 
+  # Thumbnailer service for file managers.
+  services.tumbler.enable = true;
+
   # Docker containers
   virtualisation.docker.enable = true;
 
