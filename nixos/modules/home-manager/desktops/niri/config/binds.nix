@@ -24,7 +24,7 @@ with lib; {
     # Binds for running programs: terminal, app launcher, screen locker.
     "Mod+Return".action = spawn "${getExe pkgs.kitty}";
     "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
-    "Mod+L".action = spawn "${getExe pkgs.nwg-bar}";
+    "Mod+L".action = spawn ["systemctl" "suspend"];
     "Mod+S".action = spawn "${getExe pkgs.fsearch}";
     "Mod+Tab".action = spawn ["${getExe pkgs.rofi}" "-show" "window"];
     "Mod+E".action = spawn ["${getExe pkgs.nautilus}" "--new-window"];
