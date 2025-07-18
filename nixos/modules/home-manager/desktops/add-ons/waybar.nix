@@ -7,7 +7,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+with lib; let
   myHardware = osConfig.myHardware;
 
   leftModules =
@@ -120,13 +121,13 @@
 
     # Shows an icon if the screen recorder is running.
     "custom/recording" = {
-      exec = "${pkgs.writers.writeBashBin "waybar-recording.sh" ''
+      exec = "${getExe (pkgs.writers.writeBashBin "waybar-recording.sh" ''
         if pgrep -x wf-recorder > /dev/null; then
             printf '{"text": "  "}\n'
         else
             printf '{"text": ""}\n'
         fi
-      ''}";
+      '')}";
       return-type = "json";
       signal = 3;
       interval = "once";
@@ -134,10 +135,10 @@
   };
 in {
   options = {
-    waybar.enable = lib.mkEnableOption "Enables Waybar";
+    waybar.enable = mkEnableOption "Enables Waybar";
   };
 
-  config = lib.mkIf config.waybar.enable {
+  config = mkIf config.waybar.enable {
     programs.waybar = {
       enable = true;
 
