@@ -31,14 +31,14 @@ with lib; let
         geometry="$(${getExe pkgs.slurp} -c '#ff3f3faf' -w 2 -d -o)"
         sleep 0.2 # slurp needs time to remove the red border...
         pkill -RTMIN+3 -x .waybar-wrapped # Send signal 3 to waybar to show recording icon
-        ${getExe pkgs.wf-recorder} -g "$geometry" -f "$FINAL_PATH.mkv"
+        ${getExe pkgs.wf-recorder} -g "$geometry" -f "$FINAL_PATH.mp4"
         pkill -RTMIN+3 -x .waybar-wrapped # Send signal 3 to waybar to hide recording icon
 
-        ${getExe pkgs.ffmpeg} -i "$FINAL_PATH.mkv" -vf "fps=15,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$FINAL_PATH.gif"
-        ${getExe pkgs.libnotify} -t 2000 'Screen recording' "Recording is ready: $FINAL_PATH.{mkv,gif}"
+        ${getExe pkgs.ffmpeg} -i "$FINAL_PATH.mp4" -vf "fps=15,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$FINAL_PATH.gif"
+        ${getExe pkgs.libnotify} -t 2000 'Screen recording' "Recording is ready: $FINAL_PATH.{mp4,gif}"
 
         wl-copy -t image/gif < "$FINAL_PATH.gif"
-        echo "file://$FINAL_PATH.mkv" | wl-copy -t text/uri-list
+        echo "file://$FINAL_PATH.mp4" | wl-copy -t text/uri-list
     } &
   '';
 in {
