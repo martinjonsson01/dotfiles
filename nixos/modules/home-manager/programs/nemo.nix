@@ -14,11 +14,12 @@ with lib; {
 
   config = mkIf config.nemo.enable {
     home.packages = with pkgs; [
-      nemo-with-extensions
-      nemo-preview # For previewing files
-      nemo-fileroller # For compression
-      imagemagick
-      ffmpegthumbnailer
+      (nemo-with-extensions.override {
+        extensions = [
+          nemo-preview # For previewing files
+          nemo-fileroller # For compression
+        ];
+      })
     ];
 
     dconf.settings = {
