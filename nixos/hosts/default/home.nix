@@ -134,19 +134,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  dconf.settings = {
-    "org/gnome/nautilus/icon-view" = {
-      captions = ["size" "date_modified" "none"];
-    };
-
-    "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "list-view";
-      migrated-gtk-settings = true;
-      search-filter-time-type = "last_modified";
-      search-view = "list-view";
-    };
-  };
-
   # Enable modules.
   git.enable = true;
   vscode.enable = true;
