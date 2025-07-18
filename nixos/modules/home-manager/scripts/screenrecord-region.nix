@@ -9,14 +9,10 @@
 }:
 with lib; let
   screenrecord-region = pkgs.writers.writeBashBin "screenrecord-region.sh" ''
-    set -e
-    echo 1
     pkill -x ${builtins.baseNameOf (getExe pkgs.wf-recorder)}
-    echo 2
 
     # If there was no running wf-recorder instance to kill, start recording...
     [ $? -ne 0 ] && {
-        echo 3
         YEAR=$(date +%Y)
         MONTH=$(date +%b)
         DAY=$(date +%d)
@@ -35,17 +31,12 @@ with lib; let
         ${getExe pkgs.wf-recorder} -g "$geometry" -f "$FINAL_PATH.mkv"
         pkill -RTMIN+3 -x .waybar-wrapped # Send signal 3 to waybar to hide recording icon
 
-        echo 4
         ${getExe pkgs.ffmpeg} -i "$FINAL_PATH.mkv" -vf "fps=15,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$FINAL_PATH.gif"
         ${getExe pkgs.libnotify} -t 2000 'Screen recording' "Recording is ready: $FINAL_PATH.{mkv,gif}"
 
         wl-copy -t image/gif < "$FINAL_PATH.gif"
         echo "file://$FINAL_PATH.mkv" | wl-copy -t text/uri-list
-
-        echo 5
-    } # &
-
-        echo 6
+    } &
   '';
 in {
   options = {
