@@ -93,6 +93,8 @@
     plexamp # Self-hosted music
     vlc # Media player
     kdePackages.okular # KDE document viewer
+
+    nautilus # Necessary for file pickers, even if not used as primary file explorer.
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
