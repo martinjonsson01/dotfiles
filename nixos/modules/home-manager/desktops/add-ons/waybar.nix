@@ -394,7 +394,7 @@ in {
         }
 
         #upower {
-            text-align: center;
+            justify: center;
         }
       '';
     };
