@@ -69,6 +69,7 @@
     dust # Disk usage utility written in Rust
     thefuck # Fixes last run command
     comma # Place a , in front of a command to run software without installing it.
+    jq # JSON parsing/querying
 
     # Utility
     fsearch # Like Void Tools Everything but on linux (i.e. file search)
