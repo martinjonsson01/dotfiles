@@ -419,6 +419,11 @@ in {
         #custom-nvidia {
             min-width: 120px;
         }
+
+        #custom-swaync {
+            font-family: ${config.stylix.fonts.sansSerif.name};
+            font-size: ${toString config.stylix.fonts.sizes.applications};
+        }
       '';
     };
   };
