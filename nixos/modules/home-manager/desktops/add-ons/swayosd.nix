@@ -15,6 +15,20 @@ with lib; {
   config = lib.mkIf config.swayosd.enable {
     home.packages = with pkgs; [
       swayosd
+      # Need to update dbus policy to allow the swayosd bus name.
+      (pkgs.writeTextFile {
+        name = "swayosd.conf";
+        text = ''
+          <!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN"
+           "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+          <busconfig>
+            <policy user="root">
+              <allow own="org.erikreider.swayosd"/>
+            </policy>
+          </busconfig>
+        '';
+        destination = "/etc/dbus-1/system.d/swayosd.conf";
+      })
     ];
 
     systemd.user.services.swayosd = {
