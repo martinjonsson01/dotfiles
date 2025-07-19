@@ -216,7 +216,7 @@ with lib; let
 
     # Shows fridge temperature.
     "custom/kyltermometer" = {
-      format = "🌡️{}°C ❄️";
+      format = "❄️ {}°C";
       exec = "${config.sops.secrets."kyltermometer".path}";
       exec-if = "exit 0";
       restart-interval = 60;
