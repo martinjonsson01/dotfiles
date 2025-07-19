@@ -5,5 +5,13 @@
 
       place-within-backdrop = true;
     }
+    {
+      matches = [
+        {namespace = "^swaync-notification-window$";}
+        {namespace = "^swaync-control-center$";}
+      ];
+
+      block-out-from = "screencast";
+    }
   ];
 }
