@@ -40,6 +40,7 @@ with lib; let
   ];
   rightModules = [
     "cpu"
+    "temperature"
     "memory"
     "custom/nvidia"
     "custom/kyltermometer"
@@ -84,7 +85,7 @@ with lib; let
 
     # Display CPU usage.
     cpu = {
-      interval = 2;
+      interval = 1;
       format = let
         cores = 32;
         width =
@@ -115,6 +116,31 @@ with lib; let
       ];
     };
 
+    # CPU temperature.
+    temperature = {
+      critical-threshold = 75;
+      format = "⚙️ {temperatureC}°C";
+      hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+      on-click = "kitty btop";
+    };
+
+    # RAM usage.
+    memory = {
+      interval = 1;
+      format = "{used:0.1f}G${
+        if isVertical
+        then "\n"
+        else ""
+      }/{total:0.1f}G";
+    };
+
+    # Shows GPU utilization and temperature.
+    "custom/nvidia" = {
+      exec = "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% \\2°C/g'";
+      format = "🖥️ {}";
+      interval = 1;
+    };
+
     # Display battery statuses.
     "upower#headset" = {
       native-path = "/org/bluez/hci0/dev_38_18_4C_05_C3_B1"; # WH-1000XM3
@@ -139,15 +165,6 @@ with lib; let
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
-    };
-
-    memory = {
-      interval = 30;
-      format = "{used:0.1f}G${
-        if isVertical
-        then "\n"
-        else ""
-      }/{total:0.1f}G";
     };
 
     "hyprland/workspaces" = {
@@ -195,13 +212,6 @@ with lib; let
       return-type = "json";
       signal = 3;
       interval = "once";
-    };
-
-    # Shows GPU utilization and temperature.
-    "custom/nvidia" = {
-      exec = "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'";
-      format = "{} 🖥️";
-      interval = 10;
     };
 
     # Shows fridge temperature.
