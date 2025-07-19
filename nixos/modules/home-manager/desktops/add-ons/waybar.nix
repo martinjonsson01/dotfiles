@@ -36,6 +36,7 @@ with lib; let
     "custom/power"
   ];
   rightModules = [
+    "wlr/taskbar"
     "load"
     "memory"
     "custom/nvidia"
@@ -171,6 +172,20 @@ with lib; let
       ];
       ignore-monitor = true;
       ignore = [];
+    };
+
+    "wlr/taskbar" = {
+      format = "{icon}";
+      icon-size = 18;
+      # icon-theme = "Tela-circle-dracula";
+      spacing = 0;
+      tooltip-format = "{title}";
+      on-click = "activate";
+      on-click-middle = "close";
+      ignore-list = ["Alacritty"];
+      app_ids-mapping = {
+        firefoxdeveloperedition = "firefox-developer-edition";
+      };
     };
   };
 in {
