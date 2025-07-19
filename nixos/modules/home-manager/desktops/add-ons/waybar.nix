@@ -390,7 +390,7 @@ in {
         }
 
         #custom-nvidia {
-            min-width: 100px;
+            min-width: 120px;
         }
       '';
     };
