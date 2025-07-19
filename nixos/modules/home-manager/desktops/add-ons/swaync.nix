@@ -44,7 +44,7 @@ in {
     #   "example-action-script": {
     #     "exec": "echo 'Do something actionable!'",
     #     "urgency": "Normal",
-    #     "run-on": "action"
+    #     "run-on":  "action"
     #   }
     # },
     xdg.configFile."swaync/config.json".text = ''
