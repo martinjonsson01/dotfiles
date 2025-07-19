@@ -83,5 +83,19 @@ in
           WantedBy = ["graphical-session.target"];
         };
       };
+
+      systemd.user.services.sunsetr-reload-after-suspend = {
+        Unit = {
+          Description = "Sunsetr needs to be reset when resuming from suspend, to update state properly.";
+          After = "suspend.target";
+        };
+        Service = {
+          Type = "oneshot";
+          ExecStart = "${getExe sunsetr} --reload";
+        };
+        Install = {
+          WantedBy = ["suspend.target"];
+        };
+      };
     };
   }
