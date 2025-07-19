@@ -117,7 +117,7 @@ with lib; let
     # Display battery statuses.
     "upower#headset" = {
       native-path = "/org/bluez/hci0/dev_38_18_4C_05_C3_B1"; # WH-1000XM3
-      icon-size = 20;
+      show-icon = false;
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
