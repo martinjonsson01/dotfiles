@@ -139,7 +139,6 @@ with lib; let
       exec = "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% \\2°C/g'";
       format = "🖥️ {}";
       interval = 1;
-      max-length = 20;
     };
 
     # Display battery statuses.
@@ -388,6 +387,10 @@ in {
         #custom-power {
             color: #F7768E;
             padding-right: 8px;
+        }
+
+        #custom-nvidia {
+            min-width: 100px;
         }
       '';
     };
