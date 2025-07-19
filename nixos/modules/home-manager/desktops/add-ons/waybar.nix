@@ -50,8 +50,8 @@ with lib; let
     clock = {
       format =
         if isVertical
-        then "{:%A%n%d %b%n%H:%M:%S%n%F}" # Newlines between components using %n
-        else "{:%A, %d %b %H:%M:%S - %F}";
+        then "{:%A%n%H:%M:%S%n%F}" # Newlines between components using %n
+        else "{:%A %H:%M:%S}";
       interval = 1;
       timezone = "Europe/Stockholm";
 
