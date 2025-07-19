@@ -18,6 +18,7 @@
     ./desktops/autostart.nix
 
     ./desktops/add-ons/dunst.nix
+    ./desktops/add-ons/swaync.nix
     ./desktops/add-ons/blueman-applet.nix
     ./desktops/add-ons/gtk-theme.nix
     ./desktops/add-ons/swaylock

@@ -44,6 +44,7 @@ with lib; let
     "memory"
     "custom/nvidia"
     "custom/kyltermometer"
+    "custom/swaync"
   ];
 
   createModulesCfg = isVertical: {
@@ -242,6 +243,30 @@ with lib; let
       ];
       ignore-monitor = true;
       ignore = [];
+    };
+
+    # Sway notification center.
+    "custom/swaync" = let
+      swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
+    in {
+      tooltip = false;
+      format = "{icon}";
+      format-icons = {
+        none = "";
+        notification = "";
+        inhibited-none = "";
+        inhibited-notification = "";
+        dnd-none = "";
+        dnd-notification = "";
+        dnd-inhibited-none = "";
+        dnd-inhibited-notification = "";
+      };
+      return-type = "json";
+      exec = "${swaync} -swb";
+      on-click = "${swaync} -t -sw";
+      on-click-right = "${swaync} -d -sw";
+      on-click-middle = "${swaync} -C -sw";
+      escape = true;
     };
   };
 in {

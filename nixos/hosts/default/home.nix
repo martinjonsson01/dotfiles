@@ -165,7 +165,7 @@
   gnome-screenshot.enable = true;
   waybar.enable = true;
   nwg-bar.enable = true;
-  dunst.enable = true;
+  swaync.enable = true;
   blueman-applet.enable = true;
   nm-applet.enable = true;
   fuzzel.enable = true;
