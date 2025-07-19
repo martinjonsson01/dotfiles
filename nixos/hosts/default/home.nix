@@ -139,6 +139,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Enable services.
+  services.swayosd.enable = true;
+
   # Enable modules.
   git.enable = true;
   vscode.enable = true;
