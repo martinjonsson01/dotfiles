@@ -82,7 +82,7 @@ with lib; let
     cpu = {
       interval = 2;
       #format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
-      format = strings.concatMapStrings (n: "{icon${toString n}}%n") (range 0 31);
+      format = strings.concatMapStrings (n: "{icon${toString n}}\n") (range 0 31);
       format-icons = [
         "<span color='#69ff94'>▁</span>" # green
         "<span color='#2aa9ff'>▂</span>" # blue
