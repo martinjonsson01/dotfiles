@@ -29,6 +29,7 @@ with lib; let
   centerModules = [
     "clock"
     "custom/recording"
+    "privacy"
   ];
   primaryModules = [
     "tray"
@@ -149,6 +150,32 @@ with lib; let
       exec-if = "exit 0";
       restart-interval = 60;
       escape = true;
+    };
+
+    # Shows if something is capturing audio/video.
+    "privacy" = {
+      icon-spacing = 4;
+      icon-size = 18;
+      transition-duration = 250;
+      modules = [
+        {
+          type = "screenshare";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+        {
+          type = "audio-out";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+        {
+          type = "audio-in";
+          tooltip = true;
+          tooltip-icon-size = 24;
+        }
+      ];
+      ignore-monitor = true;
+      ignore = [];
     };
   };
 in {
