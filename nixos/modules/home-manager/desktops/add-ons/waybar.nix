@@ -81,8 +81,21 @@ with lib; let
 
     cpu = {
       interval = 2;
-      #format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
-      format = strings.concatMapStrings (n: "{icon${toString n}}\n") (range 0 31);
+      format = let
+        cores = 32;
+        width = 4;
+        icons = map (n: "{icon${toString n}}") (range 0 (cores - 1));
+        # Inserts y every n elements in xs
+        insert = n: y: xs:
+          if n == 0
+          then xs
+          else if xs == []
+          then []
+          else if builtins.length xs < n
+          then xs
+          else lists.take n xs ++ [y] ++ insert n y (lists.drop n xs);
+      in
+        strings.concatStrings (insert width "\n" icons);
       format-icons = [
         "<span color='#69ff94'>▁</span>" # green
         "<span color='#2aa9ff'>▂</span>" # blue
