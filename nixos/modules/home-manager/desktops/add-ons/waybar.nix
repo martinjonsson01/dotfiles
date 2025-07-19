@@ -165,6 +165,7 @@ in {
     sops.secrets."kyltermometer" = {
       sopsFile = ./../../../../secrets/kyltermometer.sh;
       format = "binary";
+      mode = "550";
     };
 
     programs.waybar = {
