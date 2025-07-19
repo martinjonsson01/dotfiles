@@ -425,7 +425,7 @@ in {
         }
 
         #custom-recording {
-            color: #7AA2F7;
+            color:rgb(255, 52, 48);
             font-size: 40px;
         }
       '';
