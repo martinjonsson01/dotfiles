@@ -6,6 +6,7 @@
 with lib; {
   binds = with config.lib.niri.actions; let
     niri = "${config.programs.niri.package}/bin/niri";
+    swayosd-client = getExe' pkgs.swayosd "swayosd-client";
   in {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
     # in the end. To find an XKB name for a particular key, you may use a program
@@ -34,19 +35,19 @@ with lib; {
     # Volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume = {
-      action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
+      action = spawn [swayosd-client "--output-volume" "+0.1"];
       allow-when-locked = true;
     };
     XF86AudioLowerVolume = {
-      action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
+      action = spawn [swayosd-client "--output-volume" "-0.1"];
       allow-when-locked = true;
     };
     XF86AudioMute = {
-      action = spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+      action = spawn [swayosd-client "--output-volume" "mute-toggle"];
       allow-when-locked = true;
     };
     XF86AudioMicMute = {
-      action = spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
+      action = spawn [swayosd-client "--output-volume" "mute-toggle"];
       allow-when-locked = true;
     };
 
