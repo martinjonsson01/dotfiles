@@ -149,7 +149,6 @@ with lib; let
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
-      justify = "center";
     };
     "upower#mouse" = {
       native-path = "hidpp_battery_0"; # G603
@@ -158,7 +157,6 @@ with lib; let
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
-      justify = "center";
     };
     "upower#controller" = {
       native-path = "/org/bluez/hci0/dev_40_8E_2C_A4_0A_6B"; # Xbox controller
