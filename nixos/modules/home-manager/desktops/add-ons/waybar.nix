@@ -37,6 +37,7 @@ with lib; let
   rightModules = [
     "load"
     "memory"
+    "custom/nvidia"
   ];
 
   createModulesCfg = isVertical: {
@@ -131,6 +132,13 @@ with lib; let
       return-type = "json";
       signal = 3;
       interval = "once";
+    };
+
+    # Shows GPU utilization and temperature.
+    "custom/nvidia" = {
+      exec = "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'";
+      format = "{} 🖥️";
+      interval = 10;
     };
   };
 in {
