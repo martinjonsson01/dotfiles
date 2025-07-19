@@ -394,7 +394,7 @@ in {
         }
 
         #upower {
-            justify: center;
+            "justify": "center";
         }
       '';
     };
