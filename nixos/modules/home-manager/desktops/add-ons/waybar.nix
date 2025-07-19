@@ -117,6 +117,7 @@ with lib; let
     # Display battery statuses.
     "upower#headset" = {
       native-path = "/org/bluez/hci0/dev_38_18_4C_05_C3_B1"; # WH-1000XM3
+      format = "🎧 {percentage}";
       show-icon = false;
       hide-if-empty = true;
       tooltip = true;
@@ -124,7 +125,8 @@ with lib; let
     };
     "upower#mouse" = {
       native-path = "hidpp_battery_0"; # G603
-      icon-size = 20;
+      format = "🖱️ {percentage}";
+      show-icon = false;
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
