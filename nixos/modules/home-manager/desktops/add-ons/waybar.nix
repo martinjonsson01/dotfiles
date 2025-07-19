@@ -129,7 +129,7 @@ with lib; let
       interval = 1;
       format = "{used:0.1f}G${
         if isVertical
-        then "\n"
+        then ""
         else ""
       }/{total:0.1f}G";
     };
