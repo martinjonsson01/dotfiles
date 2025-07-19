@@ -38,6 +38,7 @@ with lib; let
     "load"
     "memory"
     "custom/nvidia"
+    "custom/kyltermometer"
   ];
 
   createModulesCfg = isVertical: {
@@ -140,6 +141,15 @@ with lib; let
       format = "{} 🖥️";
       interval = 10;
     };
+
+    # Shows fridge temperature.
+    "custom/kyltermometer" = {
+      format = "🌡️{}°C ❄️";
+      exec = "${config.sops.secrets."kyltermometer".path}";
+      exec-if = "exit 0";
+      restart-interval = 60;
+      escape = true;
+    };
   };
 in {
   options = {
@@ -147,6 +157,16 @@ in {
   };
 
   config = mkIf config.waybar.enable {
+    home.packages = with pkgs; [
+      mosquitto # For accessing MQTT bus.
+    ];
+
+    # Script containing secrets.
+    sops.secrets."kyltermometer" = {
+      sopsFile = ./../../../../secrets/kyltermometer.sh;
+      format = "binary";
+    };
+
     programs.waybar = {
       enable = true;
 
