@@ -83,7 +83,7 @@ with lib; let
       interval = 2;
       format = let
         cores = 32;
-        width = 4;
+        width = 8;
         icons = map (n: "{icon${toString n}}") (range 0 (cores - 1));
         # Inserts y every n elements in xs
         insert = n: y: xs:
