@@ -19,8 +19,6 @@ with lib; {
 
         "${getExe pkgs.plexamp}"
 
-        "${getExe pkgs.google-chrome}"
-
         "${getExe pkgs.discord}"
 
         "${getExe pkgs.slack}"
