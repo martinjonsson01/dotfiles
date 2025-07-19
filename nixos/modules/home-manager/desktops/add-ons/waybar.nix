@@ -36,7 +36,8 @@ with lib; let
   ];
   primaryModules = [
     "tray"
-    "custom/power"
+    #"custom/power"
+    "custom/swaync"
   ];
   rightModules = [
     "cpu"
@@ -44,7 +45,6 @@ with lib; let
     "memory"
     "custom/nvidia"
     "custom/kyltermometer"
-    "custom/swaync"
   ];
 
   createModulesCfg = isVertical: {
