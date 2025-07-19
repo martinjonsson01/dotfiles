@@ -423,6 +423,11 @@ in {
             font-family: ${config.stylix.fonts.sansSerif.name};
             font-size: 20px;
         }
+
+        #custom-recording {
+            color: #7AA2F7;
+            font-size: 40px;
+        }
       '';
     };
   };
