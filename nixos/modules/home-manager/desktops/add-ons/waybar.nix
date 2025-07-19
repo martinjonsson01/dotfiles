@@ -36,7 +36,7 @@ with lib; let
     "custom/power"
   ];
   rightModules = [
-    "load"
+    "cpu"
     "memory"
     "custom/nvidia"
     "custom/kyltermometer"
@@ -79,9 +79,19 @@ with lib; let
       on-click = "${pkgs.nwg-bar}/bin/nwg-bar";
     };
 
-    load = {
+    cpu = {
       interval = 10;
-      format = "load: {load1}";
+      format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
+      format-icons = [
+        "<span color='#69ff94'>▁</span>" # green
+        "<span color='#2aa9ff'>▂</span>" # blue
+        "<span color='#f8f8f2'>▃</span>" # white
+        "<span color='#f8f8f2'>▄</span>" # white
+        "<span color='#ffffa5'>▅</span>" # yellow
+        "<span color='#ffffa5'>▆</span>" # yellow
+        "<span color='#ff9977'>▇</span>" # orange
+        "<span color='#dd532e'>█</span>" # red
+      ];
     };
 
     memory = {
