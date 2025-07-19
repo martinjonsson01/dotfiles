@@ -153,6 +153,9 @@
   # Thumbnailer service for file managers.
   services.tumbler.enable = true;
 
+  # Power monitoring deamon (i.e. mouse/bluetooth battery).
+  services.upower.enable = true;
+
   # Docker containers
   virtualisation.docker.enable = true;
 
