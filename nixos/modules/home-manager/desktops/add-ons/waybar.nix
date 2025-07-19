@@ -155,7 +155,7 @@ with lib; let
     # Shows if something is capturing audio/video.
     "privacy" = {
       icon-spacing = 4;
-      icon-size = 18;
+      icon-size = 36;
       transition-duration = 250;
       modules = [
         {
