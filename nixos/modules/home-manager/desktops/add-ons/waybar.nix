@@ -251,17 +251,19 @@ with lib; let
     in {
       tooltip = false;
       format = "{icon}";
+      icon-size = 30;
       format-icons = {
-        none = "";
-        notification = "";
-        inhibited-none = "";
-        inhibited-notification = "";
+        notification = "<span foreground='red'><sup></sup></span>";
+        none = "";
+        dnd-notification = "<span foreground='red'><sup></sup></span>";
         dnd-none = "";
-        dnd-notification = "";
+        inhibited-notification = "<span foreground='red'><sup></sup></span>";
+        inhibited-none = "";
+        dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
         dnd-inhibited-none = "";
-        dnd-inhibited-notification = "";
       };
       return-type = "json";
+      exec-if = "which swaync-client";
       exec = "${swaync} -swb";
       on-click = "${swaync} -t -sw";
       on-click-right = "${swaync} -d -sw";
