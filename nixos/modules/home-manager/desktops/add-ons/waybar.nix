@@ -251,7 +251,6 @@ with lib; let
     in {
       tooltip = false;
       format = "{icon}";
-      icon-size = 30;
       format-icons = {
         notification = "<span foreground='red'><sup></sup></span>";
         none = "";
@@ -422,7 +421,7 @@ in {
 
         #custom-swaync {
             font-family: ${config.stylix.fonts.sansSerif.name};
-            font-size: ${toString config.stylix.fonts.sizes.applications};
+            font-size: 20px;
         }
       '';
     };
