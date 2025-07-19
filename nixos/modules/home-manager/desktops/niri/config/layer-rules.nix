@@ -11,7 +11,7 @@
         {namespace = "^swaync-control-center$";}
       ];
 
-      block-out-from = "screencast";
+      block-out-from = "screen-capture";
     }
   ];
 }
