@@ -15,6 +15,7 @@
 
     ./services/resilio.nix
     ./services/audio.nix
+    ./services/swayosd.nix
 
     ./shells/fish.nix
   ];

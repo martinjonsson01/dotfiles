@@ -171,5 +171,4 @@
   fuzzel.enable = true;
   swayidle.enable = true;
   sunsetr.enable = true;
-  swayosd.enable = true;
 }

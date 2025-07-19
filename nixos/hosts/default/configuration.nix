@@ -146,6 +146,7 @@
   teamviewer.enable = true;
   steam.enable = true;
   niri.enable = true;
+  swayosd.enable = true;
 
   # Needed for trash to work.
   services.gvfs.enable = true;
