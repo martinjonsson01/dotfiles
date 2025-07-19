@@ -143,7 +143,11 @@ with lib; let
 
     memory = {
       interval = 30;
-      format = "{used:0.1f}G/{total:0.1f}G ";
+      format = "{used:0.1f}G${
+        if isVertical
+        then "\n"
+        else ""
+      }/{total:0.1f}G";
     };
 
     "hyprland/workspaces" = {
