@@ -392,6 +392,10 @@ in {
         #custom-nvidia {
             min-width: 120px;
         }
+
+        #upower {
+            text-align: center;
+        }
       '';
     };
   };
