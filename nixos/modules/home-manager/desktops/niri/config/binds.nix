@@ -35,11 +35,11 @@ with lib; {
     # Volume keys mappings for PipeWire & WirePlumber.
     # The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume = {
-      action = spawn [swayosd-client "--output-volume" "+1"];
+      action = spawn [swayosd-client "--output-volume" "+5"];
       allow-when-locked = true;
     };
     XF86AudioLowerVolume = {
-      action = spawn [swayosd-client "--output-volume" "-1"];
+      action = spawn [swayosd-client "--output-volume" "-5"];
       allow-when-locked = true;
     };
     XF86AudioMute = {
