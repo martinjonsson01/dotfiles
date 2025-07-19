@@ -164,11 +164,6 @@ with lib; let
           tooltip-icon-size = 24;
         }
         {
-          type = "audio-out";
-          tooltip = true;
-          tooltip-icon-size = 24;
-        }
-        {
           type = "audio-in";
           tooltip = true;
           tooltip-icon-size = 24;
