@@ -47,7 +47,6 @@ in {
     sops.secrets."rbw-setup" = {
       sopsFile = ./../../../secrets/rbw-setup.sh;
       format = "binary";
-      mode = "550";
     };
 
     # Ensure the script is executed to apply the configuration
