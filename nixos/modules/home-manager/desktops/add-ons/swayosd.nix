@@ -20,8 +20,8 @@ with lib; {
     systemd.user.services.swayosd = {
       Unit = {
         Description = "SwayOSD LibInput backend for listening to certain keys like CapsLock, ScrollLock, VolumeUp, etc...";
-        PartOf = ["graphical.target"];
-        After = ["graphical.target"];
+        PartOf = ["graphical-session.target"];
+        After = ["graphical-session.target"];
       };
       Service = {
         Type = "dbus";
@@ -30,7 +30,7 @@ with lib; {
         Restart = "on-failure";
       };
       Install = {
-        WantedBy = ["graphical.target"];
+        WantedBy = ["graphical-session.target"];
       };
     };
   };
