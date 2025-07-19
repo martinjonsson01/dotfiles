@@ -68,7 +68,7 @@ in
 
       systemd.user.services.sunsetr = {
         Unit = {
-          Description = "Sunsetr - Automatic color temperature adjustment for Hyprland";
+          Description = "Sunsetr - Automatic color temperature adjustment for Hyprland, Niri, and everything Wayland";
           PartOf = "graphical-session.target";
           Requires = "graphical-session.target";
           After = "graphical-session.target";
