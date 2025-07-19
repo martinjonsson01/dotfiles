@@ -12,9 +12,7 @@ with lib; let
   myHardware = osConfig.myHardware;
 
   leftModules =
-    [
-    ]
-    ++ (
+    (
       if config.hyprland.enable
       then [
         "hyprland/workspaces"
@@ -25,7 +23,11 @@ with lib; let
         "niri/workspaces"
       ]
       else []
-    );
+    )
+    ++ [
+      "upower#headset"
+      "upower#mouse"
+    ];
   centerModules = [
     "clock"
     "custom/recording"
@@ -79,6 +81,7 @@ with lib; let
       on-click = "${pkgs.nwg-bar}/bin/nwg-bar";
     };
 
+    # Display CPU usage.
     cpu = {
       interval = 2;
       format = let
@@ -109,6 +112,22 @@ with lib; let
         "<span color='#ff9977'>▇</span>" # orange
         "<span color='#dd532e'>█</span>" # red
       ];
+    };
+
+    # Display battery statuses.
+    "upower#headset" = {
+      native-path = "/org/bluez/hci0/dev_38_18_4C_05_C3_B1"; # WH-1000XM3
+      icon-size = 20;
+      hide-if-empty = true;
+      tooltip = true;
+      tooltip-spacing = 20;
+    };
+    "upower#mouse" = {
+      native-path = "hidpp_battery_0"; # G603
+      icon-size = 20;
+      hide-if-empty = true;
+      tooltip = true;
+      tooltip-spacing = 20;
     };
 
     memory = {
