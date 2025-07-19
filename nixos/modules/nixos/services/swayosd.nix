@@ -13,6 +13,7 @@ with lib; {
   };
 
   config = lib.mkIf config.swayosd.enable {
+    environment.systemPackages = with pkgs; [swayosd];
     systemd.packages = with pkgs; [swayosd];
     systemd.services."swayosd-libinput-backend" = {
       wantedBy = ["graphical.target"];
