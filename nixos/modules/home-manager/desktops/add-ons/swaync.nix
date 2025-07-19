@@ -50,7 +50,7 @@ in {
     xdg.configFile."swaync/config.json".text = ''
       {
         "$schema": "${pkgs.swaynotificationcenter}/etc/xdg/swaync/configSchema.json",
-        "positionX": "center",
+        "positionX": "right",
         "positionY": "top",
         "layer": "overlay",
         "control-center-layer": "top",
