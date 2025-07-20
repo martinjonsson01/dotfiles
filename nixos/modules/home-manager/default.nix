@@ -33,6 +33,7 @@
     ./desktops/add-ons/hypridle.nix
     ./desktops/add-ons/fuzzel.nix
     ./desktops/add-ons/sunsetr
+    ./desktops/add-ons/gammastep.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix
