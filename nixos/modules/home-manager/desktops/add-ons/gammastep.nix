@@ -22,7 +22,7 @@ with lib; {
       dawnTime = "05:00";
       duskTime = "09:50";
       settings.general = {
-        fade = true;
+        fade = false;
         adjustment-method = "wayland";
       };
     };
