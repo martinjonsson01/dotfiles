@@ -91,7 +91,7 @@ in
         };
         Service = {
           Type = "oneshot";
-          ExecStart = "${getExe sunsetr} --reload";
+          ExecStart = "pkill -x sunsetr && ${getExe sunsetr} --reload";
         };
         Install = {
           WantedBy = ["suspend.target"];
