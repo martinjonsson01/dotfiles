@@ -19,8 +19,8 @@ with lib; {
       enable = true;
       tray = true;
       temperature.night = 3000;
-      dawnTime = "09:42";
-      duskTime = "09:41";
+      dawnTime = "09:44-09:45";
+      duskTime = "09:42-09:43";
       settings.general = {
         fade = true;
         adjustment-method = "wayland";
