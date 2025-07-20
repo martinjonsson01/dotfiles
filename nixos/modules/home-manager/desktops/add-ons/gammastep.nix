@@ -17,11 +17,10 @@ with lib; {
   config = lib.mkIf config.gammastep.enable {
     services.gammastep = {
       enable = true;
-      provider = "manual";
-      tray = false;
+      tray = true;
       temperature.night = 3000;
-      dawnTime = "9:46-9:47";
-      duskTime = "9:44-9:45";
+      dawnTime = "05:00";
+      duskTime = "09:50";
       settings.general = {
         fade = true;
         adjustment-method = "wayland";
