@@ -18,8 +18,8 @@ with lib; {
     services.gammastep = {
       enable = true;
       temperature.night = 3000;
-      dawnTime = "09:36";
-      duskTime = "09:35";
+      dawnTime = "09:40-09:41";
+      duskTime = "09:38-09:39";
     };
   };
 }
