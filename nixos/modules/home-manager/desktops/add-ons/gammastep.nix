@@ -17,7 +17,8 @@ with lib; {
   config = lib.mkIf config.gammastep.enable {
     services.gammastep = {
       enable = true;
-      tray = true;
+      provider = "manual";
+      tray = false;
       temperature.night = 3000;
       dawnTime = "9:46-9:47";
       duskTime = "9:44-9:45";
