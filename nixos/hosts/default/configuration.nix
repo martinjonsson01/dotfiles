@@ -248,6 +248,7 @@
     # programs here, NOT in environment.systemPackages.
     fontconfig
     wayland
+    libGL
     xorg.libX11
     xorg.libXcursor
     xorg.libXext

@@ -11,6 +11,7 @@
     ./programs/qalculate.nix
     ./programs/kitty.nix
     ./programs/nemo.nix
+    ./programs/jetbrains.nix
 
     ./desktops/gnome
     ./desktops/hyprland

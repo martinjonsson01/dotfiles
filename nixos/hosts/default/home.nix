@@ -61,7 +61,6 @@
     sops # Secrets management
     pre-commit # Hooks that run before committing
     gcc # GNU Compiler Collection
-    jetbrains.rust-rover # Rust IDE
 
     # CLI
     fd # Simple, fast and user-friendly alternative to find
@@ -162,6 +161,7 @@
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
   nemo.enable = true;
+  jetbrains.enable = false;
 
   # Desktop add-ons
   gtk-theme.enable = true;

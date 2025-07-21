@@ -1,0 +1,34 @@
+#
+# JetBrains IDEs.
+#
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib; {
+  options = {
+    jetbrains.enable = mkEnableOption "Enables JetBrains";
+  };
+
+  config = mkIf config.jetbrains.enable {
+    home.packages = with pkgs.jetbrains; [
+      # Rust IDE
+      ((rust-rover.overrideAttrs
+          {
+            version = "2025.1.3";
+            src = pkgs.fetchurl {
+              # https://www.jetbrains.com/rust/nextversion/
+              url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.23892.231.tar.gz"; # 2025.2 EAP 8
+              sha256 = "9757560842b3c5e56d784e457b16ee0cf2ef11f03340d3dcdf92e20d0b3b9ab8";
+            };
+          }).override
+        {
+          vmopts = concatStringsSep "\n" [
+            "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
+          ];
+        })
+    ];
+  };
+}
