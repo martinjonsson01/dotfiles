@@ -13,22 +13,22 @@ with lib; {
   };
 
   config = mkIf config.jetbrains.enable {
-    home.packages = with pkgs.jetbrains; [
+    home.packages = with pkgs; [
       # Rust IDE
-      ((rust-rover.overrideAttrs
-          {
-            version = "2025.1.3";
-            src = pkgs.fetchurl {
-              # https://www.jetbrains.com/rust/nextversion/
-              url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.23892.231.tar.gz"; # 2025.2 EAP 8
-              sha256 = "9757560842b3c5e56d784e457b16ee0cf2ef11f03340d3dcdf92e20d0b3b9ab8";
-            };
-          }).override
-        {
-          vmopts = concatStringsSep "\n" [
-            "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
-          ];
-        })
+      ((jetbrains.rust-rover.overrideAttrs
+        (oldAttrs: {
+          version = "2025.1.3";
+          src = pkgs.fetchurl {
+            # https://www.jetbrains.com/rust/nextversion/
+            url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.23892.231.tar.gz"; # 2025.2 EAP 8
+            sha256 = "9757560842b3c5e56d784e457b16ee0cf2ef11f03340d3dcdf92e20d0b3b9ab8";
+          };
+          buildInputs = oldAttrs.buildInputs ++ [pkgs.libGL];
+        })).override {
+        vmopts = concatStringsSep "\n" [
+          "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
+        ];
+      })
     ];
   };
 }

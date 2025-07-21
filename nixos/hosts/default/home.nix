@@ -161,7 +161,7 @@
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
   nemo.enable = true;
-  jetbrains.enable = false;
+  jetbrains.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
