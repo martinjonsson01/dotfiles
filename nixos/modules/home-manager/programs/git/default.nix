@@ -32,8 +32,13 @@
         diff = {
           colorMoved = "default";
         };
+        core = {
+          excludesFile = ["~/.config/git/ignore"]; # Global .gitignore
+        };
       };
     };
+
+    xdg.configFile."git/ignore".source = ./ignore;
 
     programs.lazygit = {
       enable = true;

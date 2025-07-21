@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./programs/git.nix
+    ./programs/git
     ./programs/rbw.nix
     ./programs/vscode.nix
     ./programs/satty.nix
