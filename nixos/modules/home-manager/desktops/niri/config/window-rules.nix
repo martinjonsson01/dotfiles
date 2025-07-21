@@ -39,6 +39,10 @@
           app-id = "^jetbrains-rustrover$";
           title = " ";
         }
+        {
+          app-id = "^jetbrains-rustrover$";
+          title = "^win[0-9]*$";
+        }
       ];
       excludes = [
         {
