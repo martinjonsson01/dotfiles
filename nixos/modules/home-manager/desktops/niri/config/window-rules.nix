@@ -37,7 +37,7 @@
         {app-id = "^org.gnome.NautilusPreviewer$";}
         {
           app-id = "^jetbrains-rustrover$";
-          title = " ";
+          title = "^ $";
         }
         {
           app-id = "^jetbrains-rustrover$";
