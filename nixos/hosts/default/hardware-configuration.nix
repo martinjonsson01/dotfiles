@@ -15,7 +15,7 @@
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = with config.boot.kernelPackages; [broadcom_sta];
   boot.supportedFilesystems = ["nfs" "ntfs"]; # For NTFS drive and NFS mount
   boot.kernelParams = [
     # Disable staggered spin-up, which serializes drive probing and slows down boot speed.

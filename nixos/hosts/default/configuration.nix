@@ -273,6 +273,7 @@
     # System
     libnotify # For notifications
     cmake # For building
+    broadcom-bt-firmware # Bluetooth firmware
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
