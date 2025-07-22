@@ -1,0 +1,30 @@
+#
+# Thunar is a GTK file manager originally made for Xfce.
+#
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib; {
+  options = {
+    thunar.enable = mkEnableOption "Enables Thunar";
+  };
+
+  config = mkIf config.thunar.enable {
+    programs = {
+      thunar = {
+        enable = true;
+        plugins = with pkgs.xfce; [
+          thunar-archive-plugin # Provides file context menus for archives.
+          thunar-volman # Provides automatic management of removable drives and media.
+        ];
+      };
+      # If xfce is not used as desktop and therefore xfconf is not enabled, preference changes are discarded.
+      xfconf.enable = true;
+    };
+    services.gvfs.enable = true; # Mount, trash, and other functionalities
+    services.tumbler.enable = true; # Thumbnail support for images
+  };
+}
