@@ -269,6 +269,7 @@
     wget # For downloading
     alejandra # Nix formatter
     tree # Shows directory structures
+    fastfetch # Shows system info
 
     # System
     libnotify # For notifications
