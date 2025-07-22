@@ -19,7 +19,7 @@ with lib; let
     mkdir -p $HOME/Pictures/Screenshots/$YEAR
     mkdir -p $DIR
 
-    ${getExe pkgs.nemo} "$DIR"
+    ${getExe pkgs.xfce.thunar} "$DIR"
   '';
 in {
   options = {

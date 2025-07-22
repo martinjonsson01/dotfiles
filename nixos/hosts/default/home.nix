@@ -160,7 +160,6 @@
   screenrecord-region.enable = true;
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
-  nemo.enable = true;
   jetbrains.enable = true;
 
   # Desktop add-ons

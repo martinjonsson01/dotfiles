@@ -9,6 +9,6 @@
     "x-scheme-handler/https" = "google-chrome.desktop";
     "application/x-email" = "google-chrome.desktop";
     "x-scheme-handler/mailto" = "google-chrome.desktop";
-    "inode/directory" = "nemo.desktop";
+    "inode/directory" = "thunar.desktop";
   };
 }
