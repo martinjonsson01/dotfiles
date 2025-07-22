@@ -4,12 +4,13 @@
   pkgs-unstable,
   config,
   ...
-}: {
+}:
+with lib; {
   options = {
-    fish.enable = lib.mkEnableOption "Enables fish";
+    fish.enable = mkEnableOption "Enables fish";
   };
 
-  config = lib.mkIf config.fish.enable {
+  config = mkIf config.fish.enable {
     home.packages = with pkgs; [
       grc # Generic text colouriser
       babelfish # Translate bash scripts to fish.
@@ -127,7 +128,7 @@
     # Greeting
     xdg.configFile."fish/functions/fish_greeting.fish".text = ''
       function fish_greeting
-        fastfetch
+        ${getExe pkgs.fastfetch}
       end
     '';
 
