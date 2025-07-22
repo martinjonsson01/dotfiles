@@ -103,7 +103,7 @@
       ];
 
       interactiveShellInit = ''
-        set -g fish_greeting ""
+        set -g fish_greeting "fastfetch"
 
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
         ${pkgs.thefuck}/bin/thefuck --alias | source
