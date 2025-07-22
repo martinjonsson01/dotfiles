@@ -103,8 +103,6 @@
       ];
 
       interactiveShellInit = ''
-        set -g fish_greeting "fastfetch"
-
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
         ${pkgs.thefuck}/bin/thefuck --alias | source
 
@@ -125,6 +123,13 @@
         set -g fish_color_cancel       red       # color of the '^C' indicator on a canceled command
       '';
     };
+
+    # Greeting
+    xdg.configFile."fish/functions/fish_greeting.fish".text = ''
+      function fish_greeting
+        fastfetch
+      end
+    '';
 
     # Aliases
     home.shellAliases = with pkgs; {
