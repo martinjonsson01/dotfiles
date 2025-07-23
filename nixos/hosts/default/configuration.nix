@@ -209,6 +209,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    brlaser # CUPS driver for Brother laser printers.
+  ];
   # Enable automatic finding and configuring of printers.
   services.printing.browsing = true;
   services.printing.browsedConf = ''
