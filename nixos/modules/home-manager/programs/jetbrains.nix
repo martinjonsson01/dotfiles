@@ -27,6 +27,8 @@ with lib; {
         })).override {
         vmopts = concatStringsSep "\n" [
           "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
+          "-Xms16g" # Give more RAM
+          "-Xmx16g"
         ];
       })
     ];
