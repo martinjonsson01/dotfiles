@@ -53,79 +53,13 @@
       open-floating = true;
     }
 
-    #
-    # Set up placement of my usual windows.
-    #
-
     # Media
     {
       matches = [
-        {
-          app-id = "^google-chrome$";
-          title = ".*ASMR.*YouTube.*";
-        }
         {app-id = "^Plexamp$";}
       ];
       open-on-workspace = "media";
       default-column-width = {proportion = 1.0 / 2.0;};
-    }
-    # Statuses
-    {
-      matches = [
-        {
-          app-id = "^google-chrome$";
-          title = ".*\\| Proton Mail - Google Chrome$";
-        }
-      ];
-      open-on-workspace = "statuses";
-      open-floating = true;
-      default-floating-position = {
-        x = 15;
-        y = 15;
-        relative-to = "bottom-left";
-      };
-      default-column-width = {proportion = 0.98;};
-      default-window-height = {proportion = 0.98 / 3.0;};
-    }
-    {
-      matches = [
-        {
-          app-id = "^google-chrome$";
-          title = "Actual - Google Chrome$";
-        }
-        {
-          app-id = "^google-chrome$";
-          title = "WhatsApp - Google Chrome$";
-        }
-        {
-          app-id = "^google-chrome$";
-          title = ".*MyAnimeList.net - Google Chrome$";
-        }
-        {
-          app-id = "^google-chrome$";
-          title = "^Google Kalender.*";
-        }
-      ];
-      open-on-workspace = "statuses";
-      open-floating = true;
-      default-floating-position = {
-        x = 15;
-        y = 15;
-        relative-to = "top-left";
-      };
-      default-column-width = {proportion = 0.98;};
-      default-window-height = {proportion = 1.97 / 3.0;};
-    }
-
-    # Open standard chrome windows on main workspace at initial startup.
-    {
-      matches = [
-        {
-          app-id = "^google-chrome$";
-          at-startup = true;
-        }
-      ];
-      open-on-workspace = "casual";
     }
   ];
 }
