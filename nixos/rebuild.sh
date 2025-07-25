@@ -25,7 +25,7 @@ git --no-pager diff --unified=0 '*.nix' '*.fish' '*.sh' '*.json' '*.txt' '*.lua'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake /home/martin/dotfiles/nixos#default &>nixos-switch.log || (cat nixos-switch.log | grep --color -A 100 error && exit 1)
+sudo nixos-rebuild switch --flake /home/martin/dotfiles/nixos#default |& tee nixos-switch.log || (grep --color -A 100 error < nixos-switch.log && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
