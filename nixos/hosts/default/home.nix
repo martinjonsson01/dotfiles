@@ -1,10 +1,12 @@
 {
+  lib,
   inputs,
   config,
   pkgs,
   pkgs-unstable,
   ...
-}: {
+}:
+with lib; {
   imports = [
     ../../modules/home-manager/default.nix
     inputs.sops-nix.homeManagerModule
@@ -144,6 +146,13 @@
 
   # Enable services.
   services.swayosd.enable = true;
+
+  # Override which file manager is used by dbus.
+  xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
+    [D-BUS Service]
+    Name=org.freedesktop.FileManager1
+    Exec=${getExe pkgs.xfce.thunar}
+  '';
 
   # Enable modules.
   git.enable = true;

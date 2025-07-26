@@ -11,11 +11,4 @@
     "x-scheme-handler/mailto" = "google-chrome.desktop";
     "inode/directory" = "thunar.desktop";
   };
-
-  # Override which file manager is used by dbus.
-  xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
-    [D-BUS Service]
-    Name=org.freedesktop.FileManager1
-    Exec=thunar
-  '';
 }
