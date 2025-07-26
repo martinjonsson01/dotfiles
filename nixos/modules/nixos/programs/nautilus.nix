@@ -16,6 +16,7 @@ with lib; {
     environment.systemPackages = with pkgs; [
       nautilus
       sushi # For thumbnails in nautilus
+      xdg-desktop-portal-gnome # For file pickers
     ];
 
     # Needed for trash to work in nautilus.

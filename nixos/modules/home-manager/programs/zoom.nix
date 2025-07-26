@@ -17,7 +17,6 @@
       pkgs-unstable.zoom-us
       # For screensharing
       pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gnome
     ];
 
     xdg.desktopEntries."zoom-wayland" = {

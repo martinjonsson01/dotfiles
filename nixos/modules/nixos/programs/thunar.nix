@@ -13,6 +13,10 @@ with lib; {
   };
 
   config = mkIf config.thunar.enable {
+    home.packages = with pkgs; [
+      kdePackages.xdg-desktop-portal-kde # For file pickers
+    ];
+
     programs = {
       thunar = {
         enable = true;
