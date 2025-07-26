@@ -93,9 +93,6 @@
       # Media
       vlc # Media player
       kdePackages.okular # KDE document viewer
-
-      nautilus # Necessary for file pickers, even if not used as primary file explorer.
-      sushi # File previewer for Nautilus
     ]
     ++ [
       # Unstable packages
