@@ -20,7 +20,7 @@
     niri = {
       url = "github:martinjonsson01/niri-flake/2f6b0cfe0419bac27f3d91ca1f22a4a53ee1e485";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-stable.url = "github:martinjonsson01/niri/5ae7e29230d632ad6fcdd5c4fdba9f7653ca393f";
+      inputs.niri-stable.url = "github:martinjonsson01/niri/404030b2b6366aace48084316c4e7b253d527d7d";
     };
 
     # Universal styling
