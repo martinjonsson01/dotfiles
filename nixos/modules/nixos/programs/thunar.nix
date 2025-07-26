@@ -13,7 +13,7 @@ with lib; {
   };
 
   config = mkIf config.thunar.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       kdePackages.xdg-desktop-portal-kde # For file pickers
     ];
 

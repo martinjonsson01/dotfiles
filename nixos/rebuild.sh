@@ -3,7 +3,10 @@
 # Taken from https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
 
 # A rebuild script that commits on a successful build
-set -e
+
+set -o errexit   # abort on nonzero exitstatus
+set -o nounset   # abort on unbound variable
+set -o pipefail  # don't hide errors within pipes
 
 # cd to your config dir
 pushd ~/dotfiles/nixos/
