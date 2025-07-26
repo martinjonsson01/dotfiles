@@ -16,12 +16,6 @@ with lib; {
 
         # Waybar status bar
         ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
-
-        "${getExe pkgs.plexamp}"
-
-        "${getExe pkgs.discord}"
-
-        "${getExe pkgs.slack}"
       ]
       # Wallpapers
       ++ builtins.map (

@@ -2,6 +2,7 @@
   inputs,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -34,68 +35,72 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+  home.packages = with pkgs;
+    [
+      # # Adds the 'hello' command to your environment. It prints a friendly
+      # # "Hello, world!" when run.
+      # pkgs.hello
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # overrides. You can do that directly here, just don't forget the
+      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # # fonts?
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
 
-    # Social
-    discord
-    slack
+      # Social
+      discord
+      slack
 
-    # Dev
-    nil # LSP for Nix
-    sops # Secrets management
-    pre-commit # Hooks that run before committing
-    gcc # GNU Compiler Collection
+      # Dev
+      nil # LSP for Nix
+      sops # Secrets management
+      pre-commit # Hooks that run before committing
+      gcc # GNU Compiler Collection
 
-    # CLI
-    fd # Simple, fast and user-friendly alternative to find
-    bat # Cat(1) clone with syntax highlighting and Git integration
-    dust # Disk usage utility written in Rust
-    thefuck # Fixes last run command
-    comma # Place a , in front of a command to run software without installing it.
-    jq # JSON parsing/querying
+      # CLI
+      fd # Simple, fast and user-friendly alternative to find
+      bat # Cat(1) clone with syntax highlighting and Git integration
+      dust # Disk usage utility written in Rust
+      thefuck # Fixes last run command
+      comma # Place a , in front of a command to run software without installing it.
+      jq # JSON parsing/querying
 
-    # Utility
-    fsearch # Like Void Tools Everything but on linux (i.e. file search)
-    rofimoji # Emoji selector
-    gparted # Disk partition editing/viewing tool
-    python310 # Scripting
-    curl # Command line tool for transferring files with URL syntax
-    wget # Tool for retrieving files using HTTP, HTTPS, and FTP
-    ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
-    yt-dlp # To download youtube videos
+      # Utility
+      fsearch # Like Void Tools Everything but on linux (i.e. file search)
+      rofimoji # Emoji selector
+      gparted # Disk partition editing/viewing tool
+      python310 # Scripting
+      curl # Command line tool for transferring files with URL syntax
+      wget # Tool for retrieving files using HTTP, HTTPS, and FTP
+      ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
+      yt-dlp # To download youtube videos
 
-    # Music utils
-    sox # Sample Rate Converter for audio
-    flac # Library and tools for encoding and decoding the FLAC lossless audio file format
-    mp3val # Tool for validating and repairing MPEG audio streams
+      # Music utils
+      sox # Sample Rate Converter for audio
+      flac # Library and tools for encoding and decoding the FLAC lossless audio file format
+      mp3val # Tool for validating and repairing MPEG audio streams
 
-    # Style
-    nerd-fonts.jetbrains-mono # Font with icons
+      # Style
+      nerd-fonts.jetbrains-mono # Font with icons
 
-    # Media
-    plexamp # Self-hosted music
-    vlc # Media player
-    kdePackages.okular # KDE document viewer
+      # Media
+      vlc # Media player
+      kdePackages.okular # KDE document viewer
 
-    nautilus # Necessary for file pickers, even if not used as primary file explorer.
-    sushi # File previewer for Nautilus
-  ];
+      nautilus # Necessary for file pickers, even if not used as primary file explorer.
+      sushi # File previewer for Nautilus
+    ]
+    ++ [
+      # Unstable packages
+      pkgs-unstable.plexamp # Self-hosted music
+    ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
