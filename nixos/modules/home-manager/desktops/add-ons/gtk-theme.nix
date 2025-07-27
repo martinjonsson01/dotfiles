@@ -36,7 +36,7 @@ with lib; {
       };
       iconTheme = mkForce {
         name = "Tokyonight-Dark";
-        package = pkgs.tokyonight-gtk-theme;
+        package = pkgs.morewaita-icon-theme;
       };
     };
   };
