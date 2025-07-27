@@ -35,6 +35,7 @@
         {app-id = "^qalculate-gtk$";}
         {app-id = "^fsearch$";}
         {app-id = "^org.gnome.NautilusPreviewer$";}
+        {app-id = "^org.gnome.Loupe$";}
         {
           app-id = "^jetbrains-rustrover$";
           title = "^ $";
