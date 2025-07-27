@@ -7,7 +7,8 @@
   inputs,
   lib,
   ...
-}: {
+}:
+with lib; {
   myHardware = {
     cpu = "amd";
     gpuDriver = "nvidia";
@@ -287,7 +288,7 @@
 
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "/usr/bin/systemctl --user --machine=%i@ start --wait suspend.target";
+      ExecStart = "${getExe' pkgs.systemd "systemctl"} --user --machine=%i@ start --wait suspend.target";
     };
 
     wantedBy = ["suspend.target"];
