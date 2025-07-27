@@ -97,6 +97,7 @@ with lib; {
       vlc # Media player
       kdePackages.okular # KDE document viewer
       loupe # GNOME image viewer
+      komikku # Comic reader
 
       nautilus # Necessary for file pickers, even if not used as primary file explorer.
     ]
