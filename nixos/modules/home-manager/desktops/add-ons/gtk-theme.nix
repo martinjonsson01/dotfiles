@@ -38,6 +38,16 @@ with lib; {
         name = "Tokyonight-Dark";
         package = pkgs.morewaita-icon-theme;
       };
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+        gtk-button-images = true;
+        gtk-menu-images = true;
+      };
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+        gtk-button-images = true;
+        gtk-menu-images = true;
+      };
     };
   };
 }
