@@ -36,6 +36,7 @@
         {app-id = "^fsearch$";}
         {app-id = "^org.gnome.NautilusPreviewer$";}
         {app-id = "^org.gnome.Loupe$";}
+        {app-id = "^vlc$";}
         {
           app-id = "^jetbrains-rustrover$";
           title = "^ $";
