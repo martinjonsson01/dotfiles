@@ -278,6 +278,21 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "martin";
 
+  # Service that triggers suspend.target hook in user services.
+  systemd.services.user-suspend = {
+    enable = true;
+
+    description = "Call user's suspend target after system suspend";
+    after = ["suspend.target"];
+
+    serviceConfig = {
+      type = "oneshot";
+      execStart = "/usr/bin/systemctl --user --machine=%i@ start --wait suspend.target";
+    };
+
+    wantedBy = ["suspend.target"];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

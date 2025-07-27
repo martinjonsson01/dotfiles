@@ -86,12 +86,12 @@ in
 
       systemd.user.services.sunsetr-reload-after-suspend = {
         Unit = {
-          Description = "Sunsetr needs to be reset when resuming from suspend, to update state properly.";
+          Description = "Sunsetr needs to be reset when resuming from suspend, to update state properly";
           After = "suspend.target";
         };
         Service = {
           Type = "oneshot";
-          ExecStart = "pkill -x sunsetr && ${getExe sunsetr} --reload";
+          ExecStart = "${getExe sunsetr} --reload ; ${getExe pkgs.libnotify} -e 'Sunsetr reloaded!'";
         };
         Install = {
           WantedBy = ["suspend.target"];
