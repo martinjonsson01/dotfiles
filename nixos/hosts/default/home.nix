@@ -83,6 +83,7 @@ with lib; {
       wget # Tool for retrieving files using HTTP, HTTPS, and FTP
       ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
       yt-dlp # To download youtube videos
+      video-trimmer # For trimming video files
 
       # Music utils
       sox # Sample Rate Converter for audio
