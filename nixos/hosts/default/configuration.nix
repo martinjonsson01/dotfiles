@@ -286,8 +286,8 @@
     after = ["suspend.target"];
 
     serviceConfig = {
-      type = "oneshot";
-      execStart = "/usr/bin/systemctl --user --machine=%i@ start --wait suspend.target";
+      Type = "oneshot";
+      ExecStart = "/usr/bin/systemctl --user --machine=%i@ start --wait suspend.target";
     };
 
     wantedBy = ["suspend.target"];
