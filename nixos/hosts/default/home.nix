@@ -146,6 +146,7 @@ with lib; {
     Unit = {
       Description = "User level suspend target";
       StopWhenUnneeded = "yes";
+      Wants = ["sunsetr-reload-after-suspend.service"];
     };
   };
 
