@@ -36,6 +36,7 @@ with lib; {
         matches = [
           {
             app-id = "^thunar$";
+            title = "^Rename \".*\"$";
           }
         ];
         open-floating = true;
