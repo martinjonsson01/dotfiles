@@ -14,6 +14,7 @@
     ./programs/jetbrains.nix
     ./programs/totem.nix
     ./programs/decibels.nix
+    ./programs/mpv.nix
 
     ./desktops/gnome
     ./desktops/hyprland

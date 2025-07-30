@@ -185,7 +185,7 @@ with lib; {
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
   jetbrains.enable = true;
-  totem.enable = true;
+  mpv.enable = true;
   decibels.enable = true;
 
   # Desktop add-ons
