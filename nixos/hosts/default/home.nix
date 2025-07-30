@@ -95,7 +95,6 @@ with lib; {
 
       # Media
       kdePackages.okular # KDE document viewer
-      loupe # GNOME image viewer
       komikku # Comic reader
 
       nautilus # Necessary for file pickers, even if not used as primary file explorer.
@@ -187,6 +186,7 @@ with lib; {
   jetbrains.enable = true;
   mpv.enable = true;
   decibels.enable = true;
+  loupe.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

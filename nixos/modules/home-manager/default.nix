@@ -15,6 +15,7 @@
     ./programs/totem.nix
     ./programs/decibels.nix
     ./programs/mpv.nix
+    ./programs/loupe.nix
 
     ./desktops/gnome
     ./desktops/hyprland
