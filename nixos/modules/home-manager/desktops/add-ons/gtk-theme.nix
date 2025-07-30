@@ -36,7 +36,7 @@ with lib; {
       };
       iconTheme = mkForce {
         name = "Tokyonight-Dark";
-        package = pkgs.morewaita-icon-theme;
+        package = pkgs.tokyonight-gtk-theme.override {iconVariants = ["Dark"];};
       };
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
