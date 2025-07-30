@@ -14,7 +14,7 @@ in {
     };
 
     # When to center a column when changing focus.
-    center-focused-column = "always"; # the focused column will always be centered.
+    center-focused-column = "on-overflow"; # focusing a column will center it if it doesn't fit on screen together with the previously focused column.
 
     # Always center a single column on a workspace.
     always-center-single-column = true;
