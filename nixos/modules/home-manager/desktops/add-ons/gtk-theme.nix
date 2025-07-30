@@ -32,11 +32,11 @@ with lib; {
       };
       theme = mkForce {
         name = "Tokyonight-Dark";
-        package = pkgs.tokyonight-gtk-theme;
+        package = pkgs.tokyonight-gtk-theme.override {iconVariants = ["Dark"];};
       };
       iconTheme = mkForce {
         name = "Tokyonight-Dark";
-        package = pkgs.tokyonight-gtk-theme.override {iconVariants = ["Dark"];};
+        package = config.gtk.theme.package;
       };
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
