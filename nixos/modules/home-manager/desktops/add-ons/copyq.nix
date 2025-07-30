@@ -15,6 +15,11 @@ with lib; {
   config = mkIf config.copyq.enable {
     services.copyq.enable = true;
 
+    home.sessionVariables = {
+      # Necessary to run on Wayland.
+      QT_QPA_PLATFORM = "wayland";
+    };
+
     programs.niri.settings.binds = with config.lib.niri.actions;
       mkIf config.niri.enable {
         "Mod+V".action = spawn "${getExe pkgs.copyq} show";
