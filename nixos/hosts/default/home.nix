@@ -94,7 +94,7 @@ with lib; {
       nerd-fonts.jetbrains-mono # Font with icons
 
       # Media
-      vlc # Media player
+      totem # Media player
       kdePackages.okular # KDE document viewer
       loupe # GNOME image viewer
       komikku # Comic reader
