@@ -199,4 +199,5 @@ with lib; {
   fuzzel.enable = true;
   swayidle.enable = true;
   sunsetr.enable = true;
+  cliphist.enable = true;
 }
