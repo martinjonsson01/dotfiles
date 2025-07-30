@@ -21,7 +21,7 @@ with lib; {
       #  Open as floating.
       {
         matches = [
-          {app-id = "^decibels$";}
+          {app-id = "^org.gnome.Decibels$";}
         ];
         open-floating = true;
       }
