@@ -36,9 +36,22 @@ with lib; {
       };
     };
 
+    # Add keybind.
     programs.niri.settings.binds = with config.lib.niri.actions;
       mkIf config.niri.enable {
         "Mod+V".action = spawn "${getExe pkgs.copyq} show";
       };
+
+    # Make window floating.
+    programs.niri.settings.window-rules = mkIf config.niri.enable [
+      {
+        matches = [
+          {
+            app-id = "^com.github.hluk.copyq$";
+          }
+        ];
+        open-floating = true;
+      }
+    ];
   };
 }
