@@ -13,11 +13,25 @@ with lib; {
   };
 
   config = mkIf config.copyq.enable {
-    services.copyq.enable = true;
+    # Built-in copyq service is broken on wayland, need to
+    # create one manually.
+    services.copyq.enable = false;
+    systemd.user.services.copyq = {
+      Unit = {
+        Description = "CopyQ clipboard management daemon";
+        PartOf = ["graphical-session.target"];
+        After = ["graphical-session.target"];
+      };
 
-    home.sessionVariables = {
-      # Necessary to run on Wayland.
-      QT_QPA_PLATFORM = "wayland";
+      Service = {
+        ExecStart = "${getExe pkgs.copyq}";
+        Restart = "on-failure";
+        Environment = ["QT_QPA_PLATFORM=wayland"];
+      };
+
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
     };
 
     programs.niri.settings.binds = with config.lib.niri.actions;
