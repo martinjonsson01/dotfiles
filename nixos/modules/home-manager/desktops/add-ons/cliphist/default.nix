@@ -9,7 +9,7 @@
 }:
 with lib; let
   cliphist-fuzzel-img =
-    pkgs.writeShellScriptBin "cliphist-fuzzel-img" ./cliphist-fuzzel-img.sh;
+    pkgs.writers.writeBashBin "cliphist-fuzzel-img" ./cliphist-fuzzel-img.sh;
 in {
   options = {
     cliphist.enable = mkEnableOption "Enables Cliphist";
