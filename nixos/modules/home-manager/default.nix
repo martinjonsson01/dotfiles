@@ -39,6 +39,7 @@
     ./desktops/add-ons/fuzzel.nix
     ./desktops/add-ons/sunsetr
     ./desktops/add-ons/cliphist
+    ./desktops/add-ons/copyq.nix
 
     ./launchers/rofi.nix
     ./launchers/rofi-rbw.nix

@@ -186,8 +186,8 @@ with lib; {
     "Mod+Shift+Dead_diaeresis".action = set-window-height "+5%";
 
     # Move the focused window between the floating and the tiling layout.
-    "Mod+V".action = toggle-window-floating;
-    "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
+    "Mod+B".action = toggle-window-floating;
+    "Mod+Shift+B".action = switch-focus-between-floating-and-tiling;
 
     # Toggle tabbed column display mode.
     # Windows in this column will appear as vertical tabs,
