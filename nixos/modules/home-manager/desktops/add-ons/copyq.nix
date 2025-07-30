@@ -39,7 +39,7 @@ with lib; {
     # Add keybind.
     programs.niri.settings.binds = with config.lib.niri.actions;
       mkIf config.niri.enable {
-        "Mod+V".action = spawn ["${getExe pkgs.copyq}" "show"];
+        "Mod+V".action = spawn ["${getExe pkgs.copyq}" "toggle"];
       };
 
     # Make window floating.
