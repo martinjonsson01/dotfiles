@@ -51,6 +51,8 @@ with lib; {
           }
         ];
         open-floating = true;
+        default-column-width = {fixed = 300;};
+        default-window-height = {fixed = 800;};
       }
     ];
 
