@@ -13,6 +13,8 @@ with lib; {
   };
 
   config = mkIf config.copyq.enable {
+    home.packages = with pkgs; [copyq];
+
     # Built-in copyq service is broken on wayland, need to
     # create one manually.
     services.copyq.enable = false;
