@@ -139,6 +139,7 @@ with lib; {
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    GDK_GL = "gles"; # Necessary for Totem's OpenGL support in Wayland (see https://gitlab.gnome.org/GNOME/totem/-/issues/616)
   };
 
   # Nicely reload system units when changing configs
