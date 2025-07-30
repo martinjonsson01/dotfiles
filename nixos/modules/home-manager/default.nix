@@ -13,6 +13,7 @@
     ./programs/nemo.nix
     ./programs/jetbrains.nix
     ./programs/totem.nix
+    ./programs/decibels.nix
 
     ./desktops/gnome
     ./desktops/hyprland

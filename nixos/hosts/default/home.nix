@@ -186,6 +186,7 @@ with lib; {
   open-screenshot-dir.enable = true;
   jetbrains.enable = true;
   totem.enable = true;
+  decibels.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

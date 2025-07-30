@@ -2,7 +2,7 @@
   xdg.mime.defaultApplications = {
     "text/*" = "org.gnome.TextEditor.desktop";
     "image/*" = "org.gnome.Loupe.desktop";
-    "video/*" = "vlc.desktop";
+    "video/*" = "totem.desktop";
     "audio/*" = "vlc.desktop";
     "application/pdf" = "google-chrome.desktop";
     "x-scheme-handler/http" = "google-chrome.desktop";
