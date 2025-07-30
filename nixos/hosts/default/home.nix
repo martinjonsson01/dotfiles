@@ -98,6 +98,8 @@ with lib; {
       komikku # Comic reader
 
       nautilus # Necessary for file pickers, even if not used as primary file explorer.
+      zeitgeist
+      diodon
     ]
     ++ [
       # Unstable packages

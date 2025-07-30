@@ -32,25 +32,10 @@ with lib; {
     services.tumbler.enable = true; # Thumbnail support for images
 
     home-manager.users.martin.programs.niri.settings.window-rules = mkIf config.niri.enable [
-      #  Open main window as floating.
-      #{
-      #  matches = [
-      #    {app-id = "^thunar$";}
-      #  ];
-      #  excludes = [
-      #    {
-      #      app-id = "^thunar$";
-      #      title = "^Rename \".*\"$";
-      #    }
-      #  ];
-      #  open-floating = true;
-      #}
-      #  Open dialog windows as floating.
       {
         matches = [
           {
             app-id = "^thunar$";
-            # title = "^Rename \".*\"$";
           }
         ];
         open-floating = true;
