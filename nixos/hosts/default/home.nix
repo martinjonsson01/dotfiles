@@ -94,7 +94,6 @@ with lib; {
       nerd-fonts.jetbrains-mono # Font with icons
 
       # Media
-      totem # Media player
       kdePackages.okular # KDE document viewer
       loupe # GNOME image viewer
       komikku # Comic reader
@@ -139,7 +138,6 @@ with lib; {
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-    GDK_GL = "gles"; # Necessary for Totem's OpenGL support in Wayland (see https://gitlab.gnome.org/GNOME/totem/-/issues/616)
   };
 
   # Nicely reload system units when changing configs
@@ -187,6 +185,7 @@ with lib; {
   screenshot-region.enable = true;
   open-screenshot-dir.enable = true;
   jetbrains.enable = true;
+  totem.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

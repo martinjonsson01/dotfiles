@@ -12,6 +12,7 @@
     ./programs/kitty.nix
     ./programs/nemo.nix
     ./programs/jetbrains.nix
+    ./programs/totem.nix
 
     ./desktops/gnome
     ./desktops/hyprland
