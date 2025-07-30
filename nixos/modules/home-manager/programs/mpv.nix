@@ -22,6 +22,8 @@ with lib; {
           {app-id = "^mpv$";}
         ];
         open-floating = true;
+        min-width = 800;
+        min-height = 800;
       }
     ];
   };
