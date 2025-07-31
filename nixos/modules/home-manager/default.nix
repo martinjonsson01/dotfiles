@@ -49,5 +49,6 @@
     ./scripts/screenrecord-region.nix
     ./scripts/screenshot-region.nix
     ./scripts/open-screenshot-dir.nix
+    ./scripts/search-google.nix
   ];
 }

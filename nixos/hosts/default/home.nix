@@ -188,6 +188,7 @@ with lib; {
   mpv.enable = true;
   decibels.enable = true;
   loupe.enable = true;
+  search-google.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
