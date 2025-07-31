@@ -71,7 +71,6 @@ with lib; {
       bat # Cat(1) clone with syntax highlighting and Git integration
       dust # Disk usage utility written in Rust
       thefuck # Fixes last run command
-      comma # Place a , in front of a command to run software without installing it.
       jq # JSON parsing/querying
 
       # Utility
@@ -102,6 +101,7 @@ with lib; {
     ++ [
       # Unstable packages
       pkgs-unstable.plexamp # Self-hosted music
+      pkgs-unstable.comma # Place a , in front of a command to run software without installing it.
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
