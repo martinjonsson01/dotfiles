@@ -14,7 +14,8 @@ with lib; let
     set -o pipefail  # don't hide errors within pipes
 
     query=$(${getExe pkgs.fuzzel} --dmenu --prompt-only "GitHub Nix: " | ${getExe pkgs.jq} --slurp --raw-output --raw-input @uri)
-    ${getExe pkgs.google-chrome} --new-window "https://github.com/search?q=language%3Anix+$query&type=code"
+    plus_query=''${query//%20/+}
+    ${getExe pkgs.google-chrome} --new-window "https://github.com/search?q=language%3Anix+$plus_query&type=code"
   '';
 in {
   options = {
