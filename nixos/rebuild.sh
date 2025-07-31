@@ -11,19 +11,12 @@ set -o pipefail  # don't hide errors within pipes
 # cd to your config dir
 pushd ~/dotfiles/nixos/
 
-# Early return if no changes were detected (thanks @singiamtel!)
-if git --no-pager diff HEAD --quiet '*.nix' '*.fish' '*.sh' '*.json' '*.txt' '*.lua'; then
-    echo "No changes detected, exiting."
-    popd
-    exit 0
-fi
-
 # Autoformat your nix files
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git --no-pager diff --unified=0 '*.nix' '*.fish' '*.sh' '*.json' '*.txt' '*.lua'
+git --no-pager diff --unified=0 '*.nix' '*.fish' '*.sh' '*.json' '*.txt' '*.lua' '*.py'
 
 echo "NixOS Rebuilding..."
 

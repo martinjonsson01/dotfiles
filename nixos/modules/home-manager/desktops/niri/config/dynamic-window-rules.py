@@ -69,6 +69,10 @@ RULES = [
         [Match(app_id="^Code$", title="nixos - Visual Studio Code$")],
         open_on_workspace="nixos",
     ),
+    Rule(
+        [Match(app_id="^Code$", title="cluster - Visual Studio Code$")],
+        open_on_workspace="cluster",
+    ),
 ]
 
 
