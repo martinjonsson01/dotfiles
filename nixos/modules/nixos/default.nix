@@ -9,6 +9,7 @@
     ./system/stylix.nix
     ./system/myHardware.nix
     ./system/plymouth.nix
+    ./system/grub.nix
 
     ./programs/teamviewer.nix
     ./programs/steam.nix
