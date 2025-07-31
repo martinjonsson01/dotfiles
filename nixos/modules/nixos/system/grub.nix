@@ -35,14 +35,16 @@ in {
       [
         "quiet" # Runs kernel in non-verbose mode (i.e. no output)
         "splash" # Show fancy loading screen instead of log messages
-        "udev.log_priority=3" # Hide systemd init messages
+        "systemd.show_status=0" # Make systemd more quiet
+        "udev.log_priority=3" # Prevent systemd version number print
       ]
       ++ map (
-        monitor: "video=${monitor.connector}:${toString monitor.width}x${toString monitor.height}@${toString monitor.refreshRate}"
+        monitor: "video=${monitor.connector}:${toString monitor.width}x${toString monitor.height}@${toString (builtins.ceil monitor.refreshRate)}"
       )
       monitors;
 
     loader = {
+      timeout = 2;
       grub = {
         enable = true;
         efiSupport = true;
