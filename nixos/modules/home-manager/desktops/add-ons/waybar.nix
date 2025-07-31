@@ -337,96 +337,148 @@ in {
 
       style = ''
         * {
-            border: none;
-            border-radius: 0;
-            font-family: "${config.stylix.fonts.monospace.name}";
-            font-size: ${toString config.stylix.fonts.sizes.desktop}px;
-            font-weight: normal;
-            padding: 1px;
+          font-family: "${config.stylix.fonts.monospace.name}";
+          font-size: ${toString config.stylix.fonts.sizes.desktop}px;
+          border-radius: 0;
+          min-height: 0;
+          border: none;
+          font-weight: bold;
         }
 
-        button {
-          min-height: 24px;
-          min-width: 16px;
+        #workspaces{
+          background-color: rgba(24,24,37,1.0);
+          border: none;
+          box-shadow: none;
         }
 
-        window#waybar {
-            background-color: rgb(0, 0, 0);
-            color: #C0CAF5;
-            transition-property: background-color;
-            transition-duration: .5s;
-            border: 1px solid #C0CAF5;
-            border-radius: 10px;
+        #tray{
+          margin: 6px 3px;
+          background-color: rgba(36, 36, 52, 1.0);
+          padding: 6px 12px;
+          border-radius: 6px;
+          border-width: 0px;
         }
 
-        window#waybar.hidden {
-            opacity: 0.2;
+        #waybar {
+          background-color: #181825;
+          transition-property: background-color;
+          transition-duration: 0.5s;
         }
 
-        #workspaces button {
-            color: #C0CAF5;
-            padding: 0 3px;
-            border-radius: 5px;
-        }
-
-        #workspaces button.focused {
-            color: #7AA2F7;
-        }
-
-        #workspaces button.active {
-            color: #7AA2F7;
-        }
-
-        #workspaces button.urgent {
-            color: #F7768E;
-        }
-
-        #mode {
-            color: #F7768E;
-            padding-left: 2px;
-        }
-
-        #submap {
-            color: #F7768E;
-            padding-left: 2px;
+        #window,
+        #clock,
+        #custom-power,
+        #custom-reboot,
+        #bluetooth,
+        #battery,
+        #pulseaudio,
+        #backlight,
+        #custom-temperature,
+        #memory,
+        #cpu,
+        #network,
+        #custom-lock{
+          border-radius: 4px;
+          margin: 6px 3px;
+          padding: 6px 12px;
+          background-color: #1e1e2e;
+          color: #181825;
         }
 
         #clock {
-            color: #BB9AF7;
+          background-color: #89b4fa;
         }
-
-        #network.down {
-            color: #9ECE6A;
-            padding-right: 8px;
+        #custom-power{
+          background-color: #f38ba8;
         }
-
-        #network.up {
-            color: #7AA2F7;
-            padding-right: 8px;
+        #custom-reboot{
+          background-color: #a6e3a1;
         }
-
-        #tray {
-            color: #C0CAF5;
-            padding-right: 8px;
+        #bluetooth{
+          background-color: #f9e2af;
         }
-
-        #custom-power {
-            color: #F7768E;
-            padding-right: 8px;
+        #battery{
+          background-color: #cba6f7;
         }
-
-        #custom-nvidia {
-            min-width: 120px;
+        #pulseaudio{
+          background-color: #89dceb;
+        }
+        #backlight{
+          background-color: #a6a3a1;
+        }
+        #custom-temperature{
+          background-color: #74c7ec;
+        }
+        #memory{
+          background-color: #f7768e;
+        }
+        #cpu{
+          background-color: #f38ba8;
+        }
+        #network{
+          background-color: #fab387;
+        }
+        #custom-lock{
+          background-color: #94e2d5;
+        }
+        #window{
+          background-color: #74c7ec;
         }
 
         #custom-swaync {
             font-family: ${config.stylix.fonts.sansSerif.name};
             font-size: 20px;
         }
-
         #custom-recording {
             color:rgb(255, 52, 48);
             font-size: 40px;
+        }
+        #custom-nvidia {
+            min-width: 120px;
+        }
+
+
+        #waybar.hidden {
+          opacity: 0.5;
+        }
+
+        #workspaces button {
+          all: initial;
+          /* Remove GTK theme values (waybar #1351) */
+          min-width: 0;
+          /* Fix weird spacing in materia (waybar #450) */
+          box-shadow: inset 0 -3px transparent;
+          /* Use box-shadow instead of border so the text isn't offset */
+          padding: 6px 18px;
+          margin: 6px 3px;
+          border-radius: 4px;
+          background-color: rgba(36, 36, 52, 1.0);
+          color: #cdd6f4;
+        }
+
+        #workspaces button.active {
+          color: #1e1e2e;
+          background-color: #cdd6f4;
+        }
+
+        #workspaces button:hover {
+          box-shadow: inherit;
+          text-shadow: inherit;
+          color: #1e1e2e;
+          background-color: #cdd6f4;
+        }
+
+        tooltip {
+          border-radius: 8px;
+          padding: 16px;
+          background-color: #131822;
+          color: #C0C0C0;
+        }
+
+        tooltip label {
+          padding: 5px;
+          background-color: #131822;
+          color: #C0C0C0;
         }
       '';
     };
