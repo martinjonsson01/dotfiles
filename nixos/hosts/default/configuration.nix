@@ -148,6 +148,7 @@ with lib; {
   steam.enable = true;
   niri.enable = true;
   thunar.enable = true;
+  plymouth.enable = true;
 
   # Needed for trash to work.
   services.gvfs.enable = true;
@@ -325,6 +326,14 @@ with lib; {
   # GameMode is a daemon/lib combo for Linux that allows games to request a set of
   # optimisations be temporarily applied to the host OS and/or a game process.
   programs.gamemode.enable = true;
+
+  # Sunsetr needs to be reset when resuming from suspend, to update state properly.
+  powerManagement = {
+    resumeCommands = ''
+      sunsetr --reload
+      ${getExe pkgs.libnotify} -e 'Sunsetr reloaded!'
+    '';
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

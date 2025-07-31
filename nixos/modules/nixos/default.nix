@@ -8,6 +8,7 @@
     ./system/nvidia.nix
     ./system/stylix.nix
     ./system/myHardware.nix
+    ./system/plymouth.nix
 
     ./programs/teamviewer.nix
     ./programs/steam.nix
