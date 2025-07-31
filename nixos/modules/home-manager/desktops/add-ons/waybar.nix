@@ -299,7 +299,7 @@ in {
               if monitor.width > 5000
               then {
                 position = "right";
-                margin = "20 0 20 5";
+                margin = "0 0 0 5";
 
                 modules-left = leftModules;
                 modules-center = centerModules;
