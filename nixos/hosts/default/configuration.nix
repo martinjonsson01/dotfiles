@@ -327,14 +327,6 @@ with lib; {
   # optimisations be temporarily applied to the host OS and/or a game process.
   programs.gamemode.enable = true;
 
-  # Sunsetr needs to be reset when resuming from suspend, to update state properly.
-  powerManagement = {
-    resumeCommands = ''
-      sunsetr --reload
-      ${getExe pkgs.libnotify} -e 'Sunsetr reloaded!'
-    '';
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
