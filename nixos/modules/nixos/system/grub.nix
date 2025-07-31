@@ -45,9 +45,7 @@ in {
         useOSProber = true;
         theme = mkForce catppuccin;
         splashImage = mkForce "${catppuccin}/background.png";
-        extraConfig = ''
-          GRUB_GFXMODE="${toString mainMonitor.width}x${toString mainMonitor.height}"
-        '';
+        gfxmodeEfi = "${toString mainMonitor.width}x${toString mainMonitor.height}";
       };
       efi.canTouchEfiVariables = true;
     };
