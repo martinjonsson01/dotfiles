@@ -52,6 +52,9 @@ with lib; {
       };
 
       polarity = "dark";
+
+      # Manually configure plymouth in plymouth.nix
+      targets.plymouth.enable = false;
     };
   };
 }
