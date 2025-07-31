@@ -39,12 +39,16 @@ in {
         "udev.log_priority=3" # Prevent systemd version number print
       ]
       ++ map (
-        monitor: "video=${monitor.connector}:${toString monitor.width}x${toString monitor.height}@${toString (builtins.ceil monitor.refreshRate)}"
+        monitor: "video=${monitor.connector}:${toString monitor.width}x${toString monitor.height}"
       )
       monitors;
 
     loader = {
-      timeout = 2;
+      # Hide the OS choice for bootloaders.
+      # It's still possible to open the bootloader list by pressing any key
+      # It will just not appear on screen unless a key is pressed
+      timeout = 0;
+
       grub = {
         enable = true;
         efiSupport = true;
