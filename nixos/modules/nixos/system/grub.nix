@@ -4,7 +4,7 @@
 {
   pkgs,
   lib,
-  myHardware,
+  config,
   ...
 }:
 with lib; let
@@ -12,18 +12,24 @@ with lib; let
     flavor = "mocha";
   };
 
-  monitors = myHardware.monitors;
+  monitors = config.myHardware.monitors;
   mainMonitor =
     lists.findSingle (monitor: monitor.primary)
     (lists.head monitors)
     (lists.head monitors)
     monitors;
 in {
-  config.boot.loader.grub = {
-    theme = catppuccin;
-    splashImage = "${catppuccin}/background.png";
-    extraConfig = ''
-      GRUB_GFXMODE="${toString mainMonitor.width}x${toString mainMonitor.height}"
-    '';
+  config.boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      theme = mkForce catppuccin;
+      splashImage = mkForce "${catppuccin}/background.png";
+      extraConfig = ''
+        GRUB_GFXMODE="${toString mainMonitor.width}x${toString mainMonitor.height}"
+      '';
+    };
+    efi.canTouchEfiVariables = true;
   };
 }
