@@ -26,10 +26,11 @@ with lib; {
     "Mod+Return".action = spawn "${getExe pkgs.kitty}";
     "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
     "Mod+L".action = spawn ["systemctl" "suspend"];
-    "Mod+S".action = spawn "${getExe pkgs.fsearch}";
-    "Mod+Tab".action = spawn ["${getExe pkgs.rofi}" "-show" "window"];
+    "Mod+H".action = spawn "${getExe pkgs.fsearch}";
     "Mod+E".action = spawn ["${getExe pkgs.xfce.thunar}" "/home/martin/Downloads"];
     "Mod+P".action = spawn ["open-screenshot-dir.sh"];
+    "Mod+S".action = spawn ["search-google.sh"];
+    "Mod+G".action = spawn ["search-github-nix.sh"];
     "Mod+Space".action = spawn "${getExe pkgs.qalculate-gtk}";
 
     # Volume keys mappings for PipeWire & WirePlumber.
