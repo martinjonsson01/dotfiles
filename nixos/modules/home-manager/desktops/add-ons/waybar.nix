@@ -391,10 +391,10 @@ in {
         #custom-power{
           background-color: #f38ba8;
         }
-        #custom-reboot{
+        #custom-nvidia{
           background-color: #a6e3a1;
         }
-        #bluetooth{
+        #upower{
           background-color: #f9e2af;
         }
         #battery{
@@ -406,7 +406,7 @@ in {
         #backlight{
           background-color: #a6a3a1;
         }
-        #custom-temperature{
+        #temperature{
           background-color: #74c7ec;
         }
         #memory{
@@ -415,7 +415,7 @@ in {
         #cpu{
           background-color: #e91e58;
         }
-        #network{
+        #custom-kyltermometer{
           background-color: #fab387;
         }
         #custom-lock{
