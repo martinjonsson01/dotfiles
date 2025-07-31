@@ -130,6 +130,7 @@ def update_matched(win):
         win["matched"] = matched
         if matched:
             matched_rule = rule
+            break
 
     if win["matched"] and not matched_before:
         print(f"rule matched for title={win['title']}, app_id={win['app_id']}")
