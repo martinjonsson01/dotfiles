@@ -16,6 +16,7 @@
     ./programs/decibels.nix
     ./programs/mpv.nix
     ./programs/loupe.nix
+    ./programs/flameshot.nix
 
     ./desktops/gnome
     ./desktops/hyprland
