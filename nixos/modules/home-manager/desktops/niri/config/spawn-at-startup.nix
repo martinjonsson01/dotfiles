@@ -17,6 +17,7 @@ with lib; {
         ["${getExe pkgs.discord}" "--start-minimized"]
         ["${getExe pkgs.slack}" "--silent" "--startup"]
         "${getExe pkgs.google-chrome}"
+        "${getExe pkgs.vscode}"
 
         # Waybar status bar
         ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
