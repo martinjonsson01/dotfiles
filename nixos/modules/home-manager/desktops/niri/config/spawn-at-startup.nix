@@ -14,6 +14,10 @@ with lib; {
         # To support X11 applications
         "${getExe pkgs.xwayland-satellite}"
 
+        ["${getExe pkgs.discord}" "--start-minimized"]
+        ["${getExe pkgs.slack}" "--silent" "--startup"]
+        "${getExe pkgs.google-chrome}"
+
         # Waybar status bar
         ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
       ]

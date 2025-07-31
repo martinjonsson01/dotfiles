@@ -25,6 +25,7 @@
           gruntfuggly.todo-tree # Show todo items in a tree view
           ms-vscode-remote.remote-containers # Dev-containers using Docker
           timonwong.shellcheck # Bash LSP
+          ms-python.python # Python LSP
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
