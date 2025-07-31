@@ -398,7 +398,7 @@ in {
           background-color: #a6e3a1;
         }
         #upower{
-          background-color: #f9e2af;
+          background-color: #ca9ee6;
         }
         #battery{
           background-color: #cba6f7;
@@ -416,7 +416,7 @@ in {
           background-color: #f7768e;
         }
         #cpu{
-          background-color: #179299;
+          background-color: #99d1db;
         }
         #custom-kyltermometer{
           background-color: #fab387;
