@@ -189,6 +189,7 @@ with lib; {
   decibels.enable = true;
   loupe.enable = true;
   search-google.enable = true;
+  search-github-nix.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

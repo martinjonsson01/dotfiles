@@ -50,5 +50,6 @@
     ./scripts/screenshot-region.nix
     ./scripts/open-screenshot-dir.nix
     ./scripts/search-google.nix
+    ./scripts/search-github-nix.nix
   ];
 }
