@@ -373,10 +373,12 @@ in {
         #battery,
         #pulseaudio,
         #backlight,
-        #custom-temperature,
+        #temperature,
         #memory,
         #cpu,
         #network,
+        #custom-kyltermometer,
+        #custom-nvidia,
         #custom-lock{
           border-radius: 4px;
           margin: 6px 3px;
