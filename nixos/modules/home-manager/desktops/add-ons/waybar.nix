@@ -383,7 +383,7 @@ in {
         #custom-lock{
           border-radius: 4px;
           margin: 6px 3px;
-          padding: 6px 12px;
+          padding: 6px 6px;
           background-color: #1e1e2e;
           color: #181825;
         }
