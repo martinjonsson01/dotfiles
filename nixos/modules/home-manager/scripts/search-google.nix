@@ -13,7 +13,7 @@ with lib; let
     set -o nounset   # abort on unbound variable
     set -o pipefail  # don't hide errors within pipes
 
-    query=$(${getExe pkgs.fuzzel} --dmenu --prompt-only "Google: " | ${getExe pkgs.jq} --slurp --raw-output --raw-input @uri)
+    query=$(${getExe pkgs.fuzzel} --dmenu --prompt-only "Google: " | ${getExe pkgs.jq} --raw-output --raw-input @uri)
     ${getExe pkgs.google-chrome} --new-window "https://www.google.com/search?q=$query"
   '';
 in {

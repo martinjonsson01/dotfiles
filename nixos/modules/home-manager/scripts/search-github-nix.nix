@@ -13,7 +13,7 @@ with lib; let
     set -o nounset   # abort on unbound variable
     set -o pipefail  # don't hide errors within pipes
 
-    query=$(${getExe pkgs.fuzzel} --dmenu --prompt-only "GitHub Nix: " | ${getExe pkgs.jq} --slurp --raw-output --raw-input @uri)
+    query=$(${getExe pkgs.fuzzel} --dmenu --prompt-only "GitHub Nix: " | ${getExe pkgs.jq} --raw-output --raw-input @uri)
     plus_query=''${query//%20/+}
     ${getExe pkgs.google-chrome} --new-window "https://github.com/search?q=language%3Anix+$plus_query&type=code"
   '';
