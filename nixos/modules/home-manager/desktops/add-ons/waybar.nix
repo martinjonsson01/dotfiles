@@ -416,7 +416,7 @@ in {
           background-color: #f7768e;
         }
         #cpu{
-          background-color: #e91e58;
+          background-color: #8839ef;
         }
         #custom-kyltermometer{
           background-color: #fab387;
