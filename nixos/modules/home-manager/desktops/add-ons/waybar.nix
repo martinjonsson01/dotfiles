@@ -413,7 +413,7 @@ in {
           background-color: #f7768e;
         }
         #cpu{
-          background-color: #f38ba8;
+          background-color: #e91e58ff;
         }
         #network{
           background-color: #fab387;
