@@ -26,6 +26,7 @@
           ms-vscode-remote.remote-containers # Dev-containers using Docker
           timonwong.shellcheck # Bash LSP
           ms-python.python # Python LSP
+          ms-python.black-formatter # Python formatter
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
