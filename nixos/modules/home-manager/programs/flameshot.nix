@@ -19,5 +19,16 @@ with lib; {
           enableWlrSupport = true;
         })
     ];
+
+    programs.niri.settings.window-rules = mkIf config.niri.enable [
+      {
+        matches = [
+          {
+            app-id = "^flameshot$";
+          }
+        ];
+        open-floating = true;
+      }
+    ];
   };
 }
