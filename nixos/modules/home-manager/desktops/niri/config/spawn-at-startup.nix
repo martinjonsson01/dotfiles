@@ -20,6 +20,13 @@ with lib; {
 
         # Waybar status bar
         ["sh" "-c" "pidof" "${getExe pkgs.waybar}" "||" "${getExe pkgs.waybar}"]
+
+        # Script that applies window rules to apps that set titles late
+        "${getExe (
+          pkgs.writers.writePython3Bin
+          "dynamic-window-rules" {libraries = [];}
+          ./dynamic-window-rules.py
+        )}"
       ]
       # Wallpapers
       ++ builtins.map (
