@@ -374,6 +374,7 @@ in {
         #pulseaudio,
         #backlight,
         #temperature,
+        #upower,
         #memory,
         #cpu,
         #network,
