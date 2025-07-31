@@ -17,8 +17,8 @@ from socket import AF_UNIX, SHUT_WR, socket
 
 @dataclass(kw_only=True)
 class Match:
-    title: str | None = None
     app_id: str | None = None
+    title: str | None = None
 
     def matches(self, window):
         if self.title is None and self.app_id is None:
@@ -66,11 +66,11 @@ RULES = [
     #     ]
     # ),
     Rule(
-        [Match(app_id="^Code$", title="nixos - Visual Studio Code$")],
+        [Match(app_id="^Code$", title="^.* nixos - Visual Studio Code$")],
         open_on_workspace="nixos",
     ),
     Rule(
-        [Match(app_id="^Code$", title="cluster - Visual Studio Code$")],
+        [Match(app_id="^Code$", title="^.* cluster - Visual Studio Code$")],
         open_on_workspace="cluster",
     ),
 ]
@@ -126,7 +126,7 @@ def update_matched(win):
     matched_before = win["matched"]
     matched_rule = None
     for rule in RULES:
-        matched = any(r.matches(win) for r in RULES)
+        matched = rule.matches(win)
         win["matched"] = matched
         if matched:
             matched_rule = rule
