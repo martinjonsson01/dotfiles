@@ -149,6 +149,7 @@ with lib; {
   niri.enable = true;
   thunar.enable = true;
   plymouth.enable = true;
+  ydotool.enable = true;
 
   # Needed for trash to work.
   services.gvfs.enable = true;
@@ -322,9 +323,6 @@ with lib; {
   # GameMode is a daemon/lib combo for Linux that allows games to request a set of
   # optimisations be temporarily applied to the host OS and/or a game process.
   programs.gamemode.enable = true;
-
-  # Required for programmatic input control in Wayland.
-  programs.ydotool.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

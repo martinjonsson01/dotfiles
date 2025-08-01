@@ -18,6 +18,7 @@
 
     ./services/resilio.nix
     ./services/audio.nix
+    ./services/ydotool.nix
 
     ./shells/fish.nix
   ];
