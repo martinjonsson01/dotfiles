@@ -13,7 +13,10 @@ with lib; {
   };
 
   config = mkIf config.copyq.enable {
-    home.packages = with pkgs; [copyq];
+    home.packages = with pkgs; [
+      copyq
+      ydotool # Required for auto-paste of clipboard items.
+    ];
 
     # Built-in copyq service is broken on wayland, need to
     # create one manually.
@@ -57,6 +60,6 @@ with lib; {
     ];
 
     home.file.".config/copyq/copyq.conf".source = ./copyq.conf;
-    home.file.".config/copyq/copyq-commands.ini".source = ./copyq-commands.ini;
+    home.file.".config/copyq/copyq-commands-new.ini".source = ./copyq-commands.ini;
   };
 }
