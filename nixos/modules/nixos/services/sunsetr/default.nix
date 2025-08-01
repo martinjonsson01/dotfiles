@@ -84,7 +84,7 @@ in
         };
       };
 
-      systemd.services.user-suspend = {
+      systemd.services.sunsetr-reload-on-resume = {
         enable = true;
 
         description = "Sunsetr reset to update state properly when resuming";
