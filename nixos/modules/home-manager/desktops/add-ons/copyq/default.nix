@@ -59,6 +59,6 @@ with lib; {
     ];
 
     home.file.".config/copyq/copyq.conf".source = ./copyq.conf;
-    home.file.".config/copyq/copyq-commands-new.ini".source = ./copyq-commands.ini;
+    home.file.".config/copyq/copyq-commands.ini".source = ./copyq-commands.ini;
   };
 }
