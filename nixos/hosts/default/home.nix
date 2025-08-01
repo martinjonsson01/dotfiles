@@ -84,6 +84,7 @@ with lib; {
       yt-dlp # To download youtube videos
       video-trimmer # For trimming video files
       dysk # Simple and easy to view disk usage
+      songrec # Shazam song recognition
 
       # Music utils
       sox # Sample Rate Converter for audio
