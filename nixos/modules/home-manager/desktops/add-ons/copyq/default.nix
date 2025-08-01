@@ -15,7 +15,6 @@ with lib; {
   config = mkIf config.copyq.enable {
     home.packages = with pkgs; [
       copyq
-      ydotool # Required for auto-paste of clipboard items.
     ];
 
     # Built-in copyq service is broken on wayland, need to

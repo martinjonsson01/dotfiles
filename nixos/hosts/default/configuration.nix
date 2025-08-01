@@ -323,6 +323,9 @@ with lib; {
   # optimisations be temporarily applied to the host OS and/or a game process.
   programs.gamemode.enable = true;
 
+  # Required for programmatic input control in Wayland.
+  programs.ydotool.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
