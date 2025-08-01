@@ -61,6 +61,8 @@ in
 
     config = lib.mkIf config.sunsetr.enable {
       home-manager.users.martin = {
+        home.packages = [sunsetr];
+
         xdg.configFile."sunsetr/sunsetr.toml".source = pkgs.writers.writeTOML "sunsetr.toml" settings;
 
         systemd.user.services.sunsetr = {
