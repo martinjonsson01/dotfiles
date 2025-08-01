@@ -299,37 +299,26 @@ in {
               if monitor.width > 5000
               then {
                 position = "right";
-                margin = "0 0 0 0";
-
-                modules-left = leftModules;
-                modules-center = centerModules;
-                modules-right =
-                  rightModules
-                  ++ (
-                    if monitor.primary
-                    then primaryModules
-                    else []
-                  );
               }
               else {
                 position = "bottom";
-                margin = "0 0 0 0";
-
-                modules-left = leftModules;
-                modules-center = centerModules;
-                modules-right =
-                  rightModules
-                  ++ (
-                    if monitor.primary
-                    then primaryModules
-                    else []
-                  );
               }
             )
             # Common
             // {
               output = monitor.connector;
               layer = "top";
+              margin = "0 0 0 0";
+
+              modules-left = leftModules;
+              modules-center = centerModules;
+              modules-right =
+                rightModules
+                ++ (
+                  if monitor.primary
+                  then primaryModules
+                  else []
+                );
             }
             // createModulesCfg (monitor.width > 5000)
         )
