@@ -150,6 +150,7 @@ with lib; {
   thunar.enable = true;
   plymouth.enable = true;
   ydotool.enable = true;
+  sunsetr.enable = true;
 
   # Needed for trash to work.
   services.gvfs.enable = true;
@@ -276,21 +277,6 @@ with lib; {
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "martin";
-
-  # Service that triggers suspend.target hook in user services.
-  systemd.services.user-suspend = {
-    enable = true;
-
-    description = "Call user's suspend target after system suspend";
-    after = ["suspend.target"];
-
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${getExe' pkgs.systemd "systemctl"} --user --machine=%i@ start --wait suspend.target";
-    };
-
-    wantedBy = ["suspend.target"];
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

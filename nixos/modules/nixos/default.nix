@@ -19,6 +19,7 @@
     ./services/resilio.nix
     ./services/audio.nix
     ./services/ydotool.nix
+    ./services/sunsetr
 
     ./shells/fish.nix
   ];

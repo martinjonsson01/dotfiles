@@ -49,7 +49,7 @@
     transition_mode = "finish_by"; # Select: "geo", "finish_by", "start_at", "center"
 
     #[Manual transitions]
-    sunset = "19:00:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
+    sunset = "19:30:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
     sunrise = "05:00:00"; # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
     transition_duration = 30; # Transition duration in minutes (5-120)
   };
@@ -60,42 +60,45 @@ in
     };
 
     config = lib.mkIf config.sunsetr.enable {
-      home.packages = [
-        sunsetr
-      ];
+      home-manager.users.martin = {
+        xdg.configFile."sunsetr/sunsetr.toml".source = pkgs.writers.writeTOML "sunsetr.toml" settings;
 
-      xdg.configFile."sunsetr/sunsetr.toml".source = pkgs.writers.writeTOML "sunsetr.toml" settings;
-
-      systemd.user.services.sunsetr = {
-        Unit = {
-          Description = "Sunsetr - Automatic color temperature adjustment for Hyprland, Niri, and everything Wayland";
-          PartOf = "graphical-session.target";
-          Requires = "graphical-session.target";
-          After = "graphical-session.target";
-        };
-        Service = {
-          Type = "simple";
-          ExecStart = "${getExe sunsetr}";
-          Restart = "on-failure";
-          RestartSec = 30;
-        };
-        Install = {
-          WantedBy = ["graphical-session.target"];
+        systemd.user.services.sunsetr = {
+          Unit = {
+            Description = "Sunsetr - Automatic color temperature adjustment for Hyprland, Niri, and everything Wayland";
+            PartOf = "graphical-session.target";
+            Requires = "graphical-session.target";
+            After = "graphical-session.target";
+          };
+          Service = {
+            Type = "simple";
+            ExecStart = "${getExe sunsetr}";
+            Restart = "on-failure";
+            RestartSec = 30;
+          };
+          Install = {
+            WantedBy = ["graphical-session.target"];
+          };
         };
       };
 
-      systemd.user.services.sunsetr-reload-after-suspend = {
-        Unit = {
-          Description = "Sunsetr needs to be reset when resuming from suspend, to update state properly";
-          After = "suspend.target";
+      systemd.services.user-suspend = {
+        enable = true;
+
+        description = "Sunsetr reset to update state properly when resuming";
+        after = ["suspend.target"];
+
+        environment = {
+          # Sunsetr looks up its lockfile containing the pid at this location.
+          XDG_RUNTIME_DIR = "/run/user/1000";
         };
-        Service = {
+
+        serviceConfig = {
           Type = "oneshot";
-          ExecStart = "${getExe sunsetr} --reload ; ${getExe pkgs.libnotify} -e 'Sunsetr reloaded!'";
+          ExecStart = "${getExe sunsetr} --reload";
         };
-        Install = {
-          WantedBy = ["suspend.target"];
-        };
+
+        wantedBy = ["suspend.target"];
       };
     };
   }

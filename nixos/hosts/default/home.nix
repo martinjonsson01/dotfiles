@@ -143,15 +143,6 @@ with lib; {
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # Create user level suspend target.
-  systemd.user.targets.suspend = {
-    Unit = {
-      Description = "User level suspend target";
-      StopWhenUnneeded = "yes";
-      Wants = ["sunsetr-reload-after-suspend.service"];
-    };
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -201,6 +192,5 @@ with lib; {
   nm-applet.enable = true;
   fuzzel.enable = true;
   swayidle.enable = true;
-  sunsetr.enable = true;
   copyq.enable = true;
 }
