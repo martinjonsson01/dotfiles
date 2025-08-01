@@ -17,6 +17,7 @@ in {
 
   config = mkIf config.ydotool.enable {
     environment.variables.YDOTOOL_SOCKET = socket;
+    environment.sessionVariables.YDOTOOL_SOCKET = socket;
 
     users.groups.ydotool = {};
     users.users.martin.extraGroups = ["ydotool"];
