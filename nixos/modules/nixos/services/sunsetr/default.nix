@@ -75,7 +75,7 @@ in
           Service = {
             Type = "simple";
             ExecStart = "${getExe sunsetr}";
-            Restart = "on-failure";
+            Restart = "always";
             RestartSec = 30;
           };
           Install = {
