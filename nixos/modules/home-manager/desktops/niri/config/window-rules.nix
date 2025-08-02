@@ -32,6 +32,11 @@
     {
       matches = [
         {app-id = "^steam$";}
+        {
+          # Empty app-id and title for some chrome notifications
+          app-id = "^$";
+          title = "^$";
+        }
         {app-id = "^qalculate-gtk$";}
         {app-id = "^fsearch$";}
         {app-id = "^org.gnome.NautilusPreviewer$";}
