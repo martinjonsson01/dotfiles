@@ -38,6 +38,7 @@
         {app-id = "^org.gnome.Nautilus$";}
         {title = "^Bitwarden$";}
         {app-id = "^songrec$";}
+        {title = "^$";} # Vscode tabs
         {app-id = "^vlc$";}
         {
           app-id = "^jetbrains-rustrover$";
