@@ -56,23 +56,6 @@
       ];
       open-floating = true;
     }
-    # Notifications
-    {
-      matches = [
-        {
-          # Empty app-id and title for some chrome notifications
-          app-id = "^$";
-          title = "^$";
-        }
-      ];
-      open-floating = true;
-      open-focused = false;
-      default-floating-position = {
-        x = 32;
-        y = 32;
-        relative-to = "top-right";
-      };
-    }
 
     # Media
     {
