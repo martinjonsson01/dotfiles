@@ -36,6 +36,7 @@
         {app-id = "^fsearch$";}
         {app-id = "^org.gnome.NautilusPreviewer$";}
         {app-id = "^org.gnome.Nautilus$";}
+        {title = "^Bitwarden$";}
         {app-id = "^songrec$";}
         {app-id = "^vlc$";}
         {
