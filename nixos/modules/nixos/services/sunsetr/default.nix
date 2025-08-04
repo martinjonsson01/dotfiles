@@ -97,7 +97,7 @@ in
 
         serviceConfig = {
           Type = "oneshot";
-          ExecStart = "${getExe sunsetr} --reload";
+          ExecStart = "sleep 5 ; ${getExe sunsetr} --reload";
         };
 
         wantedBy = ["suspend.target"];
