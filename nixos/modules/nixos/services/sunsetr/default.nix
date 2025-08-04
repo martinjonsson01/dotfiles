@@ -49,7 +49,7 @@
     transition_mode = "finish_by"; # Select: "geo", "finish_by", "start_at", "center"
 
     #[Manual transitions]
-    sunset = "19:30:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
+    sunset = "19:15:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
     sunrise = "05:00:00"; # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
     transition_duration = 30; # Transition duration in minutes (5-120)
   };
