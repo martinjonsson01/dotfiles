@@ -35,7 +35,7 @@ with lib; {
           use_custom_history_font = 0;
           expression_lines = 3;
           use_custom_expression_font = 0;
-          enable_completion = 1;
+          enable_completion = 0;
           enable_completion2 = 1;
           completion_min = 1;
           completion_min2 = 1;
