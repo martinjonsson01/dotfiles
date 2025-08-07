@@ -97,7 +97,6 @@ with lib; {
       # Media
       kdePackages.okular # KDE document viewer
       komikku # Comic reader
-      lutris # Open Source gaming platform for GNU/Linux
 
       nautilus # Necessary for file pickers, even if not used as primary file explorer.
     ]
@@ -183,6 +182,7 @@ with lib; {
   loupe.enable = true;
   search-google.enable = true;
   search-github-nix.enable = true;
+  lutris.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

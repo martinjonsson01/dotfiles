@@ -17,6 +17,7 @@
     ./programs/mpv.nix
     ./programs/loupe.nix
     ./programs/flameshot.nix
+    ./programs/lutris.nix
 
     ./desktops/gnome
     ./desktops/hyprland
