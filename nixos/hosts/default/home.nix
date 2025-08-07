@@ -97,6 +97,7 @@ with lib; {
       # Media
       kdePackages.okular # KDE document viewer
       komikku # Comic reader
+      lutris # Open Source gaming platform for GNU/Linux
 
       nautilus # Necessary for file pickers, even if not used as primary file explorer.
     ]
