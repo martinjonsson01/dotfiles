@@ -328,6 +328,14 @@ with lib; {
     SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="0616", ATTR{authorized}="0"
   '';
 
+  services.udev.packages = [
+    (pkgs.writeTextFile {
+      name = "qmk-rules";
+      destination = "/etc/udev/rules.d/50-qmk.rules";
+      text = builtins.readFile ./qmk.rules;
+    })
+  ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
