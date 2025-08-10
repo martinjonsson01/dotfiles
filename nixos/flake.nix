@@ -35,6 +35,12 @@
       url = "github:oxalica/rust-overlay/dc221f842e9ddc8c0416beae8d77f2ea356b91ae";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # A Neovim distribution built around Nix modules.
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -45,6 +51,7 @@
     stylix,
     niri,
     rust-overlay,
+    nixvim,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -95,6 +102,7 @@
             users."martin" = {
               imports = [
                 inputs.niri.homeModules.niri
+                nixvim.homeModules.nixvim
                 ./hosts/default/home.nix
               ];
             };

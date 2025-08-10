@@ -47,6 +47,8 @@
 
     ./shells/fish/fish.nix
 
+    ./editors/neovim
+
     ./scripts/screenrecord-region.nix
     ./scripts/screenshot-region.nix
     ./scripts/open-screenshot-dir.nix
