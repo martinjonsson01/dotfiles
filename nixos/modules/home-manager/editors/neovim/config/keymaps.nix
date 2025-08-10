@@ -341,7 +341,7 @@
     }
     {
       mode = "t";
-      key = "<esc><esc>";
+      key = "<esc>";
       action = "<c-\\><c-n>";
       options = {
         desc = "Enter Normal Mode";
