@@ -2,7 +2,6 @@
 # Vim text editor fork focused on extensibility and agility.
 #
 {
-  pkgs,
   lib,
   config,
   ...
@@ -13,6 +12,10 @@ with lib; {
   };
 
   config = mkIf config.neovim.enable {
-    programs.nixvim.enable = true;
+    programs.nixvim =
+      {
+        enable = true;
+      }
+      // (import ./config);
   };
 }
