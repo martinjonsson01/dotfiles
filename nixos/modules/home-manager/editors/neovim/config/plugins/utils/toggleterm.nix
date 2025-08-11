@@ -3,17 +3,11 @@ _: {
     enable = true;
     settings = {
       size = 20;
+      start_in_insert = true;
+      open_mapping = "[[<C-ö>]]";
     };
   };
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>t";
-      action = "<cmd>ToggleTerm<cr>";
-      options = {
-        desc = "Toggle Terminal Window";
-      };
-    }
     {
       mode = "n";
       key = "<leader>tv";
