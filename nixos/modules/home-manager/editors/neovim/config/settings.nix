@@ -23,6 +23,9 @@
       # Use the system clipboard
       clipboard = "unnamedplus";
 
+      # Persist undo history
+      undofile = true;
+
       # Number of spaces that represent a <TAB>
       tabstop = 2;
       softtabstop = 2;
