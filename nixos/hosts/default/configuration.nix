@@ -151,6 +151,7 @@ with lib; {
   plymouth.enable = true;
   ydotool.enable = true;
   sunsetr.enable = true;
+  kanata.enable = true;
 
   # Needed for trash to work.
   services.gvfs.enable = true;

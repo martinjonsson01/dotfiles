@@ -20,6 +20,7 @@
     ./services/audio.nix
     ./services/ydotool.nix
     ./services/sunsetr
+    ./services/kanata.nix
 
     ./shells/fish.nix
   ];
