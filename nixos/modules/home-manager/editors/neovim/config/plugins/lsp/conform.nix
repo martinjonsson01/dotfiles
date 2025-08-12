@@ -124,6 +124,12 @@
             "shellharden"
             "shfmt"
           ];
+          # Neovim sets the filetype as sh rather than bash for bash files...
+          sh = [
+            "shellcheck"
+            "shellharden"
+            "shfmt"
+          ];
           json = ["jq"];
           "_" = ["trim_whitespace"];
         };
