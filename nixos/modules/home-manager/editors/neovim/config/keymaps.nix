@@ -325,7 +325,7 @@
     }
     {
       mode = "n";
-      key = "<leader>qq";
+      key = "<leader>qa";
       action = "<cmd>qa<cr>";
       options = {
         desc = "Quit All";
