@@ -13,6 +13,12 @@
       enable = true;
       inlayHints = true;
       servers = {
+        nixd = {
+          enable = true;
+          settings.settings = {
+            formatting.command = ["alejandra"];
+          };
+        };
         html = {
           enable = true;
         };
