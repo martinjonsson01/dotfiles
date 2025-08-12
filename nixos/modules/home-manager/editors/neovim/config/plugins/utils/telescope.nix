@@ -16,7 +16,9 @@
             prompt_position = "top";
           };
         };
-        sorting_strategy = "ascending";
+        sorting_strategy = "ascending"; # Show best result at the top.
+        path_display = ["filename_first"]; # Show filename first.
+        scroll_strategy = "limit"; # Don't keep cycling results.
       };
     };
     keymaps = {
