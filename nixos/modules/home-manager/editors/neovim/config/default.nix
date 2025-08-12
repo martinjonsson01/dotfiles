@@ -5,6 +5,7 @@
     ./keymaps.nix
     ./auto_cmds.nix
     ./file_types.nix
+    ./file_type_plugins.nix
 
     # Themes
     ./plugins/themes
