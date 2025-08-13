@@ -1,25 +1,48 @@
 {
+  pkgs,
+  lib,
+  ...
+}:
+with lib; {
   plugins.telescope = {
     enable = true;
     extensions = {
-      file-browser = {
-        enable = true;
-      };
-      fzf-native = {
-        enable = true;
-      };
+      file-browser.enable = true;
+      fzf-native.enable = true;
+      frecency.enable = true; # Orders results by frequency/recency
     };
-    settings = {
+    settings = let
+      rgArgs = [
+        "--smart-case" # make search case-insensitive, unless it contains uppercase
+      ];
+    in {
       defaults = {
         layout_config = {
           horizontal = {
             prompt_position = "top";
           };
         };
+        vimgrep_arguments =
+          [
+            (getExe pkgs.ripgrep)
+            # Required arguments, do not change:
+            "--color=never"
+            "--no-heading"
+            "--with-filename"
+            "--line-number"
+            "--column"
+          ]
+          ++ rgArgs;
         sorting_strategy = "ascending"; # Show best result at the top.
         path_display = ["filename_first"]; # Show filename first.
         scroll_strategy = "limit"; # Don't keep cycling results.
       };
+      pickers.find_files.find_command =
+        [
+          (getExe pkgs.ripgrep)
+          "--files"
+        ]
+        ++ rgArgs;
     };
     keymaps = {
       "<leader><space>" = {
@@ -74,12 +97,6 @@
         action = "buffers";
         options = {
           desc = "Buffers";
-        };
-      };
-      "<C-p>" = {
-        action = "git_files";
-        options = {
-          desc = "Search git files";
         };
       };
       "<leader>gc" = {
@@ -177,6 +194,14 @@
   keymaps = [
     {
       mode = "n";
+      key = "<C-p>";
+      action = "<cmd>Telescope frecency workspace=CWD<cr>";
+      options = {
+        desc = "Search project files, ordered by recency";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>sd";
       action = "<cmd>Telescope diagnostics bufnr=0<cr>";
       options = {
@@ -201,12 +226,12 @@
     }
   ];
   extraConfigLua = ''
-    require("telescope").setup{
-      pickers = {
-        colorscheme = {
-          enable_preview = true
-        }
-      }
-    }
+    require("telescope").setup({
+    	pickers = {
+    		colorscheme = {
+    			enable_preview = true,
+    		},
+    	},
+    })
   '';
 }
