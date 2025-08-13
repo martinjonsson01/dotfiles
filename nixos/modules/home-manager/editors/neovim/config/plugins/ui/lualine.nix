@@ -55,7 +55,7 @@ _: {
         lualine_x = [
           {
             __unkeyed-1 = "filetype";
-            icon_only = true;
+            icon_only = false;
             separator = "";
             padding = {
               left = 1;
