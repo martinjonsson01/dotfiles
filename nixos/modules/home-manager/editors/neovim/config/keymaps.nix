@@ -499,5 +499,13 @@
         desc = "Previous Tab";
       };
     }
+    {
+      mode = "n";
+      key = "<C-w>d";
+      action = "<cmd>lua MiniBufremove.delete()<cr>";
+      options = {
+        desc = "Close buffer (keep window in place)";
+      };
+    }
   ];
 }
