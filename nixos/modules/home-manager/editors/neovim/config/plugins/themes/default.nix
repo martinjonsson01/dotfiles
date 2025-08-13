@@ -15,7 +15,7 @@
             }
           end
         '';
-        flavour = "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
+        # Setting this breaks nvim-web-devicons for some reason ?? flavour = "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
         no_bold = false;
         no_italic = false;
         no_underline = false;
