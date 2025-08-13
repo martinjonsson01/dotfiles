@@ -2,7 +2,6 @@
   autoGroups = {
     highlight_yank = {};
     vim_enter = {};
-    indentscope = {};
     restore_cursor = {};
   };
 
@@ -27,26 +26,6 @@
         __raw = ''
           function()
             vim.cmd('Startup')
-          end
-        '';
-      };
-    }
-    {
-      group = "indentscope";
-      event = ["FileType"];
-      pattern = [
-        "help"
-        "Startup"
-        "startup"
-        "neo-tree"
-        "Trouble"
-        "trouble"
-        "notify"
-      ];
-      callback = {
-        __raw = ''
-          function()
-            vim.b.miniindentscope_disable = true
           end
         '';
       };
