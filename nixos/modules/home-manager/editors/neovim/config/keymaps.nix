@@ -1,6 +1,16 @@
 {
   globals.mapleader = " ";
 
+  # US layout has [] easily accessible, but SE does not, so remap them.
+  extraConfigVim = ''
+    nmap å [
+    nmap ä ]
+    omap å [
+    omap ä ]
+    xmap å [
+    xmap ä ]
+  '';
+
   keymaps = [
     {
       mode = [
