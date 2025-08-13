@@ -5,6 +5,7 @@ _: {
       size = 20;
       start_in_insert = true;
       open_mapping = "[[<C-ö>]]";
+      direction = "float";
     };
   };
   keymaps = [
