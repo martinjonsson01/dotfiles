@@ -49,7 +49,7 @@
       cursorline = true;
 
       # Minimum number of screen lines to keep above and below the cursor
-      scrolloff = 8;
+      scrolloff = 20;
 
       # Enable mouse support
       mouse = "a";
