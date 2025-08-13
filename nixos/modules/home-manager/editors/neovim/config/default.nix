@@ -35,6 +35,7 @@
     ./plugins/ui/lualine.nix
     ./plugins/ui/startup.nix
     ./plugins/ui/statusline.nix
+    ./plugins/ui/context.nix
 
     # LSP and formatting
     ./plugins/lsp/lsp.nix
