@@ -13,6 +13,10 @@
       providers.wl-copy.enable = true;
     };
 
+    diagnostic.settings = {
+      virtual_text = true; # Make diagnostics show up inline
+    };
+
     opts = {
       # Show line numbers
       number = true;
