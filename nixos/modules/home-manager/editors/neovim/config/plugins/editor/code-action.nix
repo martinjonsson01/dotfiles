@@ -1,4 +1,14 @@
 {pkgs, ...}: {
+  plugins.nvim-lightbulb = {
+    enable = true;
+
+    settings = {
+      autocmd.enabled = true;
+      sign.enabled = false;
+      virtual_text.enabled = true;
+    };
+  };
+
   extraPackages = with pkgs; [
     delta # Syntax-highlighting pager for git
   ];
