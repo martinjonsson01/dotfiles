@@ -37,6 +37,15 @@ with lib; {
           excludesFile = ["~/.config/git/ignore"]; # Global .gitignore
         };
       };
+      delta = {
+        # Syntax-highlighting pager for git
+        enable = true;
+        options = {
+          navigate = true;
+          line-numbers = true;
+          hyperlinks = true;
+        };
+      };
     };
 
     xdg.configFile."git/ignore".source = ./ignore;
@@ -47,6 +56,9 @@ with lib; {
       settings = {
         os = {
           editPreset = "nvim";
+        };
+        git = {
+          paging.pager = "delta --dark --paging=never";
         };
       };
     };
