@@ -14,7 +14,7 @@ _: {
             "alpha"
           ];
         };
-        theme = "catppuccin";
+        theme = "tokyonight";
       };
       sections = {
         lualine_a = [

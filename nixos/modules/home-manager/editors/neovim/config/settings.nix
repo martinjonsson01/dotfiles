@@ -15,6 +15,7 @@
 
     diagnostic.settings = {
       virtual_text = true; # Make diagnostics show up inline
+      underline = true; # Underline parts of row affected by diagnostic
     };
 
     opts = {

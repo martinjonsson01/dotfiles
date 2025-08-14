@@ -55,6 +55,8 @@ with lib; {
 
       # Manually configure plymouth in plymouth.nix
       targets.plymouth.enable = false;
+      # Manually configure nixvim in home-manager module
+      targets.nixvim.enable = false;
     };
   };
 }

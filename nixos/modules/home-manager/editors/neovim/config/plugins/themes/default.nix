@@ -1,12 +1,8 @@
 {
   colorschemes = {
     catppuccin = {
-      enable = true;
+      enable = false;
       settings = {
-        background = {
-          light = "macchiato";
-          dark = "mocha";
-        };
         custom_highlights = ''
           function(highlights)
             return {
@@ -16,10 +12,6 @@
           end
         '';
         # Setting this breaks nvim-web-devicons for some reason ?? flavour = "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
-        no_bold = false;
-        no_italic = false;
-        no_underline = false;
-        transparent_background = true;
         integrations = {
           cmp = true;
           notify = true;
@@ -53,14 +45,42 @@
               ok = ["italic"];
             };
             underlines = {
-              errors = ["underline"];
-              hints = ["underline"];
-              information = ["underline"];
-              warnings = ["underline"];
+              errors = ["undercurl"];
+              hints = ["undercurl"];
+              information = ["undercurl"];
+              warnings = ["undercurl"];
             };
           };
         };
       };
     };
+
+    tokyonight = {
+      enable = true;
+
+      settings = {
+        style = "night";
+        styles = {
+          floats = "dark";
+          sidebars = "dark";
+          comments.italic = true;
+          keywords = {
+            bold = true;
+          };
+        };
+        on_highlights =
+          #lua
+          ''
+            function(highlights, colors)
+              highlights.TreesitterContext = highlights.NormalFloat;
+            end
+          '';
+      };
+    };
   };
+
+  # Workaround necessary to enable theme late
+  extraConfigLuaPost = ''
+    vim.cmd("colorscheme tokyonight")
+  '';
 }
