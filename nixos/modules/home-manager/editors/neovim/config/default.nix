@@ -28,6 +28,7 @@
     ./plugins/editor/todo-comments.nix
     ./plugins/editor/navic.nix
     ./plugins/editor/unimpaired.nix
+    ./plugins/editor/code-action.nix
 
     # UI plugins
     ./plugins/ui/lualine.nix
