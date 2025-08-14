@@ -183,6 +183,7 @@ with lib; {
   search-github-nix.enable = true;
   lutris.enable = true;
   neovim.enable = true;
+  tokyonight.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;

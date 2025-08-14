@@ -54,5 +54,7 @@
     ./scripts/open-screenshot-dir.nix
     ./scripts/search-google.nix
     ./scripts/search-github-nix.nix
+
+    ./themes/tokyonight.nix
   ];
 }
