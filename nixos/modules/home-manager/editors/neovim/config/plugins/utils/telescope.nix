@@ -38,6 +38,7 @@ with lib; {
         scroll_strategy = "limit"; # Don't keep cycling results.
         mappings = {
           i = {
+            "<C-t>".__raw = "require('trouble.sources.telescope').open";
             "<C-j>" = "move_selection_next";
             "<C-k>" = "move_selection_previous";
           };
