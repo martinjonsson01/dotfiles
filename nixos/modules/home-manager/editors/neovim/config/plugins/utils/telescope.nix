@@ -36,6 +36,12 @@ with lib; {
         sorting_strategy = "ascending"; # Show best result at the top.
         path_display = ["filename_first"]; # Show filename first.
         scroll_strategy = "limit"; # Don't keep cycling results.
+        mappings = {
+          i = {
+            "<C-j>" = "move_selection_next";
+            "<C-k>" = "move_selection_previous";
+          };
+        };
       };
       pickers.find_files.find_command =
         [
