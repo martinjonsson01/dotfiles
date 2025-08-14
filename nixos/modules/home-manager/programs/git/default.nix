@@ -3,12 +3,13 @@
   lib,
   config,
   ...
-}: {
+}:
+with lib; {
   options = {
-    git.enable = lib.mkEnableOption "Enables git";
+    git.enable = mkEnableOption "Enables git";
   };
 
-  config = lib.mkIf config.git.enable {
+  config = mkIf config.git.enable {
     programs.git = {
       enable = true;
       userName = "Martin";
@@ -43,6 +44,11 @@
     programs.lazygit = {
       enable = true;
       package = pkgs-unstable.lazygit;
+      settings = {
+        os = {
+          editPreset = "nvim";
+        };
+      };
     };
   };
 }
