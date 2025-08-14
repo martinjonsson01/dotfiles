@@ -42,6 +42,7 @@ with lib; {
             "<C-t>".__raw = "require('trouble.sources.telescope').open";
             "<C-j>" = "move_selection_next";
             "<C-k>" = "move_selection_previous";
+            "<C-h>" = "which_key";
           };
         };
       };
