@@ -54,6 +54,13 @@
             Snacks.rename.on_rename_file(data.source, data.destination)
           end
         '';
+      file_opened =
+        #lua
+        ''
+          function(file_path)
+            require("neo-tree").close_all()
+          end
+        '';
     };
   };
 
