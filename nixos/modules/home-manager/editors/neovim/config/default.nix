@@ -57,5 +57,6 @@
     ./plugins/utils/auto-session.nix
     ./plugins/utils/sops.nix
     ./plugins/utils/trouble.nix
+    ./plugins/utils/snacks.nix
   ];
 }

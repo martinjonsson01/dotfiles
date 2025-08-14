@@ -38,6 +38,23 @@
         };
       };
     };
+
+    eventHandlers = {
+      file_moved =
+        #lua
+        ''
+          function(data)
+          	Snacks.rename.on_rename_file(data.source, data.destination)
+          end
+        '';
+      file_renamed =
+        #lua
+        ''
+          function(data)
+            Snacks.rename.on_rename_file(data.source, data.destination)
+          end
+        '';
+    };
   };
 
   keymaps = [
@@ -50,4 +67,8 @@
       };
     }
   ];
+
+  extraConfigLua = ''
+
+  '';
 }
