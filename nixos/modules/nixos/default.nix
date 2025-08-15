@@ -19,7 +19,7 @@
     ./services/resilio.nix
     ./services/audio.nix
     ./services/ydotool.nix
-    ./services/sunsetr
+    ./services/sunsetr.nix
     ./services/kanata.nix
 
     ./shells/fish.nix
