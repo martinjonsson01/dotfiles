@@ -507,5 +507,13 @@
         desc = "Close buffer (keep window in place)";
       };
     }
+    {
+      mode = "x";
+      key = "<C-r>";
+      action = "y:%s/<C-r>+//g<left><left>";
+      options = {
+        desc = "Replace selected text";
+      };
+    }
   ];
 }
