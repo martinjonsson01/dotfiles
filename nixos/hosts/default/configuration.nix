@@ -259,6 +259,8 @@ with lib; {
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  hardware.xpadneo.enable = true; # For xbox gamepad support
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
