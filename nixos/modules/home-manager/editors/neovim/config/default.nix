@@ -29,6 +29,7 @@
     ./plugins/editor/navic.nix
     ./plugins/editor/unimpaired.nix
     ./plugins/editor/code-action.nix
+    ./plugins/editor/precognition.nix
 
     # UI plugins
     ./plugins/ui/lualine.nix
