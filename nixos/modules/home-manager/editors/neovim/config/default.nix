@@ -6,6 +6,7 @@
     ./auto_cmds.nix
     ./file_types.nix
     ./file_type_plugins.nix
+    ./performance.nix
 
     # Themes
     ./plugins/themes
