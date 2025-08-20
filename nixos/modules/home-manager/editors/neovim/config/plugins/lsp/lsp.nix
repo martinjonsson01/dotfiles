@@ -23,6 +23,41 @@
         terraformls.enable = true;
         ansiblels.enable = true;
         jsonls.enable = true;
+        rust_analyzer = {
+          enable = true;
+          # Installed through per-project flakes instead.
+          installCargo = false;
+          installRustc = false;
+
+          settings.settings = {
+            diagnostics = {
+              enable = true;
+              styleLints.enable = true;
+            };
+
+            files = {
+              excludeDirs = [
+                ".direnv"
+                "rust/.direnv"
+              ];
+            };
+
+            inlayHints = {
+              bindingModeHints.enable = true;
+              closureStyle = "rust_analyzer";
+              closureReturnTypeHints.enable = "always";
+              discriminantHints.enable = "always";
+              expressionAdjustmentHints.enable = "always";
+              implicitDrops.enable = true;
+              lifetimeElisionHints.enable = "always";
+              rangeExclusiveHints.enable = true;
+            };
+
+            procMacro = {
+              enable = true;
+            };
+          };
+        };
         helm_ls = {
           enable = true;
           extraOptions = {
