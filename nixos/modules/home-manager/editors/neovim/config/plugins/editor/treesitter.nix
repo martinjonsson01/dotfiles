@@ -25,20 +25,62 @@
       enable = true;
       lookahead = true;
       keymaps = {
-        "ab" = "@block.outer";
-        "ib" = "@block.inner";
-        "aa" = "@parameter.outer";
-        "ia" = "@parameter.inner";
-        "af" = "@function.outer";
-        "if" = "@function.inner";
-        "ac" = "@class.outer";
-        "ic" = "@class.inner";
-        "ii" = "@conditional.inner";
-        "ai" = "@conditional.outer";
-        "il" = "@loop.inner";
-        "al" = "@loop.outer";
-        "at" = "@comment.outer";
-        "it" = "@comment.inner";
+        ab = {
+          query = "@block.outer";
+          desc = "around block";
+        };
+        ib = {
+          query = "@block.inner";
+          desc = "inside block";
+        };
+        aa = {
+          query = "@parameter.outer";
+          desc = "around parameter";
+        };
+        ia = {
+          query = "@parameter.inner";
+          desc = "inside parameter";
+        };
+        af = {
+          query = "@function.outer";
+          desc = "around function";
+        };
+        "if" = {
+          query = "@function.inner";
+          desc = "inside function";
+        };
+        ac = {
+          query = "@class.outer";
+          desc = "around class";
+        };
+        ic = {
+          query = "@class.inner";
+          desc = "inside class";
+        };
+        ai = {
+          query = "@conditional.outer";
+          desc = "around conditional";
+        };
+        ii = {
+          query = "@conditional.inner";
+          desc = "inside conditional";
+        };
+        al = {
+          query = "@loop.outer";
+          desc = "around loop";
+        };
+        il = {
+          query = "@loop.inner";
+          desc = "inside loop";
+        };
+        at = {
+          query = "@comment.outer";
+          desc = "around comment";
+        };
+        it = {
+          query = "@comment.inner";
+          desc = "inside comment";
+        };
       };
     };
     move = {
