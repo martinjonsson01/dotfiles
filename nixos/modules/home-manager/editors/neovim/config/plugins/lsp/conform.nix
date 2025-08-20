@@ -131,6 +131,7 @@
             "shfmt"
           ];
           json = ["jq"];
+          rust = ["rustfmt"];
           "_" = ["trim_whitespace"];
         };
 
@@ -146,6 +147,7 @@
           shfmt.command = "${lib.getExe pkgs.shfmt}";
           shellharden.command = "${lib.getExe pkgs.shellharden}";
           bicep.command = "${lib.getExe pkgs.bicep}";
+          rustfmt.command = "${lib.getExe pkgs.rustfmt}";
           injected = {
             options = {
               ignore_errors = true; # Partial code snippets can break formatters.
