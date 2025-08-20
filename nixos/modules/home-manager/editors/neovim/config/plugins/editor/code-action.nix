@@ -38,6 +38,9 @@
     			hotkeys_mode = "text_diff_based", -- Generates smarter hotkeys based on title differences.
     			auto_preview = true, -- Automatically previews the selected action.
     			auto_accept = true, -- Automatically accepts the selected action without confirmation.
+    			keymaps = {
+    				close = "<ESC>",
+    			},
     		},
     	},
     })
@@ -46,11 +49,11 @@
   keymaps = [
     {
       mode = "n";
-      key = "gra";
+      key = "ga";
       action = "<cmd>lua require('tiny-code-action').code_action()<cr>";
       options = {
         silent = true;
-        desc = "Goto refactor action (code action)";
+        desc = "Goto action (code action)";
       };
     }
   ];
