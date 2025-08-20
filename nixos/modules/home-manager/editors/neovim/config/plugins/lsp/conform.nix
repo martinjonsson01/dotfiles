@@ -132,6 +132,8 @@
           ];
           json = ["jq"];
           rust = ["rustfmt"];
+          c = ["clang_format"];
+          cmake = ["cmake-format"];
           "_" = ["trim_whitespace"];
         };
 
@@ -148,6 +150,8 @@
           shellharden.command = "${lib.getExe pkgs.shellharden}";
           bicep.command = "${lib.getExe pkgs.bicep}";
           rustfmt.command = "${lib.getExe pkgs.rustfmt}";
+          clang_format = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
+          cmake-format = "${lib.getExe pkgs.cmake-format}";
           injected = {
             options = {
               ignore_errors = true; # Partial code snippets can break formatters.

@@ -91,6 +91,29 @@
             };
           };
         };
+        clangd = {
+          enable = true;
+          settings = {
+            settings = {
+              init_options = {
+                usePlaceholders = true;
+                completeUnimported = true;
+                clangdFileStatus = true;
+              };
+            };
+            cmd = [
+              "clangd"
+              "--background-index" # Index project code in the background and persist index on disk.
+              "--pretty" # Pretty-print JSON output
+              "--clang-tidy" # Enable clang-tidy diagnostics
+              "--header-insertion=iwyu" # Include what you use. Insert the owning header for top-level symbols, unless the header is already directly included or the symbol is forward-declared
+              "--completion-style=detailed" # One completion item for each semantically distinct completion, with full type information
+              "--function-arg-placeholders" # When enabled, completions also contain placeholders for method parameters
+              "--fallback-style=llvm" # clang-format style to apply by default when no .clang-format file is found
+              "--compile-commands-dir=build" # Specify a path to look for compile_commands.json. If path is invalid, clangd will look in the current directory and parent paths of each source file
+            ];
+          };
+        };
       };
 
       keymaps = {
