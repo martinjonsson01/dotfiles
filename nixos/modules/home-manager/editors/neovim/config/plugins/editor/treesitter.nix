@@ -20,11 +20,13 @@
   };
 
   plugins.treesitter-textobjects = {
-    enable = false;
+    enable = true;
     select = {
       enable = true;
       lookahead = true;
       keymaps = {
+        "ab" = "@block.outer";
+        "ib" = "@block.inner";
         "aa" = "@parameter.outer";
         "ia" = "@parameter.inner";
         "af" = "@function.outer";
@@ -36,6 +38,7 @@
         "il" = "@loop.inner";
         "al" = "@loop.outer";
         "at" = "@comment.outer";
+        "it" = "@comment.inner";
       };
     };
     move = {
