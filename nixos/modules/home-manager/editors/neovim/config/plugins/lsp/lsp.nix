@@ -13,36 +13,16 @@
             formatting.command = ["alejandra"];
           };
         };
-        html = {
-          enable = true;
-        };
-        lua_ls = {
-          enable = true;
-        };
-        nil_ls = {
-          enable = true;
-        };
-        ts_ls = {
-          enable = true;
-        };
-        marksman = {
-          enable = true;
-        };
-        pyright = {
-          enable = true;
-        };
-        gopls = {
-          enable = true;
-        };
-        terraformls = {
-          enable = true;
-        };
-        ansiblels = {
-          enable = true;
-        };
-        jsonls = {
-          enable = true;
-        };
+        html.enable = true;
+        lua_ls.enable = true;
+        nil_ls.enable = true;
+        ts_ls.enable = true;
+        marksman.enable = true;
+        pyright.enable = true;
+        gopls.enable = true;
+        terraformls.enable = true;
+        ansiblels.enable = true;
+        jsonls.enable = true;
         helm_ls = {
           enable = true;
           extraOptions = {
