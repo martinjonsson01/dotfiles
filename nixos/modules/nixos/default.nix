@@ -10,6 +10,7 @@
     ./system/myHardware.nix
     ./system/plymouth.nix
     ./system/grub.nix
+    ./system/RTL8761BU-firmware.nix
 
     ./programs/teamviewer.nix
     ./programs/steam.nix

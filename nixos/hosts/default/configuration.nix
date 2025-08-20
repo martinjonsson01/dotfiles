@@ -258,6 +258,7 @@ with lib; {
     };
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  rtl8761bu-firmware.enable = true; # Necessary to replace the newest firmware which causes disconnects
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
