@@ -6,7 +6,7 @@ thumbnail_size=64
 thumbnail_dir="${XDG_CACHE_HOME:-$HOME/.cache}/cliphist/thumbnails"
 
 cliphist_list=$(cliphist list)
-if [ -z "$cliphist_list" ]; then
+if [ "$cliphist_list" = "" ]; then
   fuzzel -d --placeholder "cliphist: please store something first" --lines 0
   rm -rf "$thumbnail_dir"
   exit
@@ -38,13 +38,13 @@ if [ "$exit_code" -eq 19 ]; then
 # ALT+1 to delete selected item
 # configure the keybind with `custom-1` in your fuzzel.ini
 elif [ "$exit_code" -eq 10 ]; then
-  if [ -n "$item" ]; then
+  if [ "$item" != "" ]; then
     item_id=$(echo "$item" | cut -f1)
     echo "$item_id" | cliphist delete
     find "$thumbnail_dir" -name "${item_id}.*" -delete
   fi
 else
-  [ -z "$item" ] || echo "$item" | cliphist decode | wl-copy
+  [ "$item" = "" ] || echo "$item" | cliphist decode | wl-copy
 fi
 
 # Delete cached thumbnails that are no longer in cliphist db
