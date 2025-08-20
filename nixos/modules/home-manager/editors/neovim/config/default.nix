@@ -59,5 +59,6 @@
     ./plugins/utils/sops.nix
     ./plugins/utils/trouble.nix
     ./plugins/utils/snacks.nix
+    ./plugins/utils/colorizer.nix
   ];
 }
