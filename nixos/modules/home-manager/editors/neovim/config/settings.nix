@@ -44,6 +44,12 @@
       # Enable smart indentation
       smartindent = true;
 
+      # Make searches case-insensitive unless they contain capital letters
+      smartcase = true;
+
+      # Make searches case-insensitive by default.
+      ignorecase = true;
+
       # Number of spaces to use for each step of (auto)indent
       shiftwidth = 2;
 
