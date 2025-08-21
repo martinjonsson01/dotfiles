@@ -2,7 +2,6 @@
   autoGroups = {
     highlight_yank = {};
     vim_enter = {};
-    restore_cursor = {};
   };
 
   autoCmd = [
