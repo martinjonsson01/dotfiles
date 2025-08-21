@@ -63,5 +63,6 @@
     ./plugins/utils/trouble.nix
     ./plugins/utils/snacks.nix
     ./plugins/utils/colorizer.nix
+    ./plugins/utils/grug-far.nix
   ];
 }

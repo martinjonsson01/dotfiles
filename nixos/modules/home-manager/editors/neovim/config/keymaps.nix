@@ -1,5 +1,6 @@
 {
   globals.mapleader = " ";
+  globals.maplocalleader = " ";
 
   # US layout has [] easily accessible, but SE does not, so remap them.
   extraConfigVim = ''
