@@ -1,11 +1,16 @@
 {
+  lib,
+  config,
+  ...
+}:
+with lib; {
   plugins.precognition = {
-    enable = true;
+    enable = false;
 
     settings.startVisible = true;
   };
 
-  keymaps = [
+  keymaps = mkIf config.plugins.precognition.enable [
     {
       mode = "n";
       key = "<leader>vp";
