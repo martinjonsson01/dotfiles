@@ -32,6 +32,7 @@
     ./plugins/editor/unimpaired.nix
     ./plugins/editor/code-action.nix
     ./plugins/editor/precognition.nix
+    ./plugins/editor/eyeliner.nix
 
     # UI plugins
     ./plugins/ui/lualine.nix

@@ -73,6 +73,7 @@
           ''
             function(highlights, colors)
               highlights.TreesitterContext = highlights.NormalFloat;
+              highlights.EyelinerPrimary = highlights.WarningMsg;
             end
           '';
       };
