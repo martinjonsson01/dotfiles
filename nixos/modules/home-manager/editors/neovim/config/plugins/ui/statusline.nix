@@ -68,7 +68,7 @@
 
     require("incline").setup({
     	hide = {
-    		only_win = true,
+    		only_win = false,
     		cursorline = false,
     		focused_win = false,
     	},
