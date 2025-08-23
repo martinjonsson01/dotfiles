@@ -5,7 +5,7 @@
 }:
 with lib; {
   plugins.grug-far = {
-    enable = true;
+    enable = false;
 
     lazyLoad.settings.cmd = "GrugFar";
   };
