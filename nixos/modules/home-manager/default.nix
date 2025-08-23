@@ -18,6 +18,7 @@
     ./programs/loupe.nix
     ./programs/flameshot.nix
     ./programs/lutris.nix
+    ./programs/zellij.nix
 
     ./desktops/gnome
     ./desktops/hyprland

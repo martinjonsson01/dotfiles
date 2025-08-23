@@ -184,6 +184,7 @@ with lib; {
   lutris.enable = true;
   neovim.enable = true;
   tokyonight.enable = true;
+  zellij.enable = true;
 
   # Desktop add-ons
   gtk-theme.enable = true;
