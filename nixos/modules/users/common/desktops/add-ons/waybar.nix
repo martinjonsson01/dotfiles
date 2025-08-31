@@ -204,10 +204,10 @@ with lib; let
     # Shows an icon if the screen recorder is running.
     "custom/recording" = {
       exec = "${getExe (pkgs.writers.writeBashBin "waybar-recording.sh" ''
-        if pgrep -x wf-recorder > /dev/null; then
-            printf '{"text": "  "}\n'
+        if pgrep -x wf-recorder >/dev/null; then
+          printf '{"text": "  "}\n'
         else
-            printf '{"text": ""}\n'
+          printf '{"text": ""}\n'
         fi
       '')}";
       return-type = "json";
@@ -282,7 +282,7 @@ in {
 
     # Script containing secrets.
     sops.secrets."kyltermometer" = {
-      sopsFile = ./../../../../secrets/kyltermometer.sh;
+      sopsFile = ./../../../../../secrets/kyltermometer.sh;
       format = "binary";
       mode = "550";
     };

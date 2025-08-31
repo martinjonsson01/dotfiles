@@ -1,5 +1,5 @@
 {
-  pkgs-unstable,
+  pkgs,
   lib,
   config,
   ...
@@ -52,7 +52,7 @@ with lib; {
 
     programs.lazygit = {
       enable = true;
-      package = pkgs-unstable.lazygit;
+      package = pkgs.unstable.lazygit;
       settings = {
         os = {
           editPreset = "nvim";

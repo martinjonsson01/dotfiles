@@ -5,11 +5,9 @@
   ...
 }:
 with lib; {
-  options = {
-    custom-style.enable = lib.mkEnableOption "Enables Stylix";
-  };
+  options.Eclipse.stylix.enable = lib.mkEnableOption "Enables Stylix";
 
-  config = mkIf config.custom-style.enable {
+  config = mkIf config.Eclipse.stylix.enable {
     # https://stylix.danth.me/options/nixos.html
     stylix = {
       enable = true;

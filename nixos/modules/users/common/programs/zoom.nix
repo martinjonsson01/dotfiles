@@ -3,7 +3,6 @@
 #
 {
   pkgs,
-  pkgs-unstable,
   config,
   lib,
   ...
@@ -14,7 +13,7 @@
 
   config = lib.mkIf config.zoom.enable {
     home.packages = [
-      pkgs-unstable.zoom-us
+      pkgs.unstable.zoom-us
       # For screensharing
       pkgs.xdg-desktop-portal
     ];

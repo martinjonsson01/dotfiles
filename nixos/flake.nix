@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "Martin's system Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
@@ -43,74 +43,68 @@
     };
   };
 
-  outputs = {
-    self,
+  outputs = inputs @ {
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
+    sops-nix,
     stylix,
     niri,
-    rust-overlay,
     nixvim,
     ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs-unstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs pkgs-unstable;};
-      modules = [
-        ({
-          config,
-          pkgs,
-          ...
-        }: {
-          nixpkgs = {
-            config = {
-              allowUnfree = true;
+  }: let
+    # Shared modules and imports
+    defaultModules = [
+      ./modules/autoimport.nix
+      ./overlays/unstable.nix
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          extraSpecialArgs = {
+            inherit inputs;
+          };
 
-              # Fix collisions.
-              packageOverrides = pkgs: {
-                swaylock = pkgs.lowPrio pkgs.swaylock;
-                swaylock-effects = pkgs.hiPrio pkgs.swaylock-effects;
-              };
-            };
-            overlays =
-              [
-                rust-overlay.overlays.default
-              ]
-              ++ import ./overlays {inherit pkgs inputs;};
+          /*
+          When running, Home Manager will use the global package cache.
+          It will also back up any files that it would otherwise overwrite.
+          The originals will have the extension shown below.
+          */
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          backupFileExtension = "home-manager-backup";
+
+          # Modules shared across all users
+          sharedModules = [
+            niri.homeModules.niri
+            nixvim.homeModules.nixvim
+            sops-nix.homeManagerModule
+          ];
+        };
+      }
+      sops-nix.nixosModules.sops
+      stylix.nixosModules.stylix
+      ({...}: {
+        nixpkgs.config = {
+          allowUnfree = true;
+
+          # Fix collisions.
+          packageOverrides = pkgs: {
+            swaylock = pkgs.lowPrio pkgs.swaylock;
+            swaylock-effects = pkgs.hiPrio pkgs.swaylock-effects;
           };
-          # For the rust-overlay
-          environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
-        })
-        ./modules/nixos/default.nix
-        ./hosts/default/hardware-configuration.nix
-        ./hosts/default/configuration.nix
-        inputs.sops-nix.nixosModules.sops
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            extraSpecialArgs = {
-              inherit inputs pkgs-unstable;
-            };
-            users."martin" = {
-              imports = [
-                inputs.niri.homeModules.niri
-                nixvim.homeModules.nixvim
-                ./hosts/default/home.nix
-              ];
-            };
-            # Extension to put on backup files.
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+        };
+      })
+    ];
+  in {
+    nixosConfigurations = {
+      Femto = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        system = "x86_64-linux";
+        modules =
+          defaultModules
+          ++ [
+            ./hosts/Femto
+          ];
+      };
     };
   };
 }

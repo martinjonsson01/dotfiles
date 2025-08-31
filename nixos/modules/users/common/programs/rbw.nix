@@ -45,7 +45,7 @@ in {
     ];
 
     sops.secrets."rbw-setup" = {
-      sopsFile = ./../../../secrets/rbw-setup.sh;
+      sopsFile = ./../../../../secrets/rbw-setup.sh;
       format = "binary";
     };
 

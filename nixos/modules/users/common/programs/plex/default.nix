@@ -1,5 +1,5 @@
 {
-  pkgs-unstable,
+  pkgs,
   lib,
   config,
   ...
@@ -49,7 +49,7 @@ in {
   config = lib.mkIf config.plex-desktop.enable {
     home.packages = [
       # plexWithUpdatedMpvLib
-      pkgs-unstable.plex-desktop
+      pkgs.unstable.plex-desktop
     ];
 
     xdg.dataFile."plex/mpv.conf".text = ''

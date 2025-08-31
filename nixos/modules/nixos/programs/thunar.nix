@@ -42,5 +42,12 @@ with lib; {
         open-floating = true;
       }
     ];
+
+    # Override which file manager is used by dbus.
+    home-manager.users.martin.xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
+      [D-BUS Service]
+      Name=org.freedesktop.FileManager1
+      Exec=${getExe pkgs.xfce.thunar}
+    '';
   };
 }
