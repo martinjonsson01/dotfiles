@@ -95,6 +95,7 @@ in {
         [
           nerd-fonts.jetbrains-mono # Font with icons
           nautilus # Necessary for file pickers, even if not used as primary file explorer.
+          swappy # Necessary for screenshot script
 
           nil # LSP for Nix
           sops # Secrets management
