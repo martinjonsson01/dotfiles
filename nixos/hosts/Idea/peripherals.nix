@@ -10,6 +10,10 @@
         primary = true;
         x = 0;
         workspaces = [
+          {
+            id = 0;
+            name = "default";
+          }
         ];
       }
       {
@@ -19,6 +23,10 @@
         height = 1440;
         x = 2560;
         workspaces = [
+          {
+            id = 1;
+            name = "default";
+          }
         ];
       }
     ];

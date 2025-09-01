@@ -105,6 +105,15 @@
             ./hosts/Femto
           ];
       };
+      Idea = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        system = "x86_64-linux";
+        modules =
+          defaultModules
+          ++ [
+            ./hosts/Idea
+          ];
+      };
     };
   };
 }

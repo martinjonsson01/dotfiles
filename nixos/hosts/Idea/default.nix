@@ -163,15 +163,6 @@ with lib; {
     cmake # For building
   ];
 
-  # Automatically give users keyboard hardware access.
-  services.udev.packages = [
-    (pkgs.writeTextFile {
-      name = "qmk-rules";
-      destination = "/etc/udev/rules.d/50-qmk.rules";
-      text = builtins.readFile ./qmk.rules;
-    })
-  ];
-
   # Custom modules
   Eclipse = {
     stylix.enable = true;
