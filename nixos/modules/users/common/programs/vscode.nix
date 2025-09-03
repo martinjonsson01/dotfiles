@@ -27,6 +27,8 @@
           timonwong.shellcheck # Bash LSP
           ms-python.python # Python LSP
           ms-python.black-formatter # Python formatter
+          ms-dotnettools.csharp # Official C# support
+          ms-dotnettools.vscode-dotnet-runtime # Provides a way for other Visual Studio Code extensions to install local versions of .NET SDK/Runtime
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
