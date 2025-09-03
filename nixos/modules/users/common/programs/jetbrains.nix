@@ -7,7 +7,13 @@
   config,
   ...
 }:
-with lib; {
+with lib; let
+  vmOptions = concatStringsSep "\n" [
+    "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
+    "-Xms16g" # Give more RAM
+    "-Xmx16g"
+  ];
+in {
   options = {
     jetbrains.enable = mkEnableOption "Enables JetBrains";
   };
@@ -25,12 +31,13 @@ with lib; {
           };
           buildInputs = oldAttrs.buildInputs ++ [pkgs.libGL];
         })).override {
-        vmopts = concatStringsSep "\n" [
-          "-Dawt.toolkit.name=WLToolkit" # Use native Wayland support
-          "-Xms16g" # Give more RAM
-          "-Xmx16g"
-        ];
+        vmopts = vmOptions;
       })
+      # C# IDE
+      (jetbrains.rider.override {
+        vmopts = vmOptions;
+      })
+      dotnetCorePackages.sdk_9_0-bin # dotnet 9 SDK
     ];
   };
 }
