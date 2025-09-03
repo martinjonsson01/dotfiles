@@ -176,4 +176,27 @@ with lib; {
 
     users.martin.enable = true;
   };
+
+  # Work Git config
+  home-manager.users.martin.home = {
+    file.".ssh/config".text = ''
+      Host dev.antmicro.com
+        IdentityFile ~/.ssh/id_mjonsson
+        IdentitiesOnly yes
+
+      Host github.com-antmicro
+        IdentityFile ~/.ssh/id_mjonsson
+        IdentitiesOnly yes
+        HostName github.com
+    '';
+
+    file."Projects/.gitconfig".text = ''
+      [user]
+        name = "Martin Jonsson"
+        email = "mjonsson@antmicro.com"
+
+      [url "git@github.com-antmicro"]
+        insteadOf = git@github.com
+    '';
+  };
 }

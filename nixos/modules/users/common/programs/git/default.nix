@@ -15,6 +15,7 @@ with lib; {
       userName = "Martin";
       userEmail = "martinjonsson01@gmail.com";
       extraConfig = {
+        includeIf."gitdir:${config.home.homeDirectory}/Projects/".path = "~/Projects/.gitconfig";
         pull = {
           rebase = true;
           ff = false;
