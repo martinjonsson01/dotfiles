@@ -19,16 +19,6 @@ in {
     # Always center a single column on a workspace.
     always-center-single-column = true;
 
-    # The widths that the switch-preset-column-width action (Mod+R) toggles between
-    preset-column-widths = [
-      {proportion = 3.0 / 7.0;}
-      {proportion = 2.0 / 7.0;}
-      {proportion = 1.0 / 7.0;}
-    ];
-
-    # The default width of new windows.
-    default-column-width = {proportion = 2.0 / 7.0;};
-
     # So the wallpaper is viewable.
     background-color = "transparent";
 

@@ -199,4 +199,12 @@ with lib; {
         insteadOf = git@github.com
     '';
   };
+
+  # The widths that the switch-preset-column-width action (Mod+R) toggles between
+  home-manager.users.martin.programs.niri.settings.layout.preset-column-widths = [
+    {proportion = 1.0 / 2.0;}
+    {proportion = 1.0 / 3.0;}
+  ];
+  # The default width of new windows.
+  home-manager.users.martin.programs.niri.settings.layout.default-column-width = {proportion = 1.0 / 2.0;};
 }
