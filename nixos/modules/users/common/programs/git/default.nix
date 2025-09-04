@@ -54,6 +54,10 @@ with lib; {
       };
     };
 
+    home.packages = with pkgs; [
+      git-absorb # git commit --fixup, but automatic
+    ];
+
     xdg.configFile."git/ignore".source = ./ignore;
 
     programs.lazygit = {
