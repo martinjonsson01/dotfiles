@@ -14,7 +14,6 @@ in {
     audio.enable = true;
     niri.enable = true;
     thunar.enable = true;
-    plymouth.enable = true;
     ydotool.enable = true;
     sunsetr.enable = true;
     kanata.enable = true;
