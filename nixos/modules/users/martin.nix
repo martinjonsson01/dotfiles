@@ -73,6 +73,7 @@ in {
       vscode.enable = true;
       jetbrains.enable = true;
       zellij.enable = true;
+      podman.enable = true;
 
       plex-desktop.enable = true;
       pinta.enable = true;

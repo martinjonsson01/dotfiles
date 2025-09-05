@@ -19,6 +19,7 @@
     ./programs/flameshot.nix
     ./programs/lutris.nix
     ./programs/zellij
+    ./programs/podman.nix
 
     ./desktops/gnome
     ./desktops/hyprland
