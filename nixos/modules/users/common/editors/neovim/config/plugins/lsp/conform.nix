@@ -151,9 +151,9 @@
           shellharden.command = "${lib.getExe pkgs.shellharden}";
           bicep.command = "${lib.getExe pkgs.bicep}";
           rustfmt.command = "${lib.getExe pkgs.rustfmt}";
-          clang_format = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
-          cmake-format = "${lib.getExe pkgs.cmake-format}";
-          robotidy = "${lib.getExe pkgs.robotframework-tidy}";
+          clang_format.command = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
+          cmake-format.command = "${lib.getExe pkgs.cmake-format}";
+          robotidy.command = "${lib.getExe pkgs.robotframework-tidy} ~/.config/fish/functions/utils/robotidy-config.toml";
           injected = {
             options = {
               ignore_errors = true; # Partial code snippets can break formatters.
