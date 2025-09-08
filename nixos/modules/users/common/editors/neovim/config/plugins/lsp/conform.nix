@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   config = {
@@ -153,7 +154,15 @@
           rustfmt.command = "${lib.getExe pkgs.rustfmt}";
           clang_format.command = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
           cmake-format.command = "${lib.getExe pkgs.cmake-format}";
-          robotidy.command = "${lib.getExe pkgs.robotframework-tidy} ~/.config/fish/functions/utils/robotidy-config.toml";
+          robotidy = {
+            command = "${lib.getExe pkgs.robotframework-tidy}";
+            args = [
+              "--config"
+              "${config.xdg.configHome}/fish/functions/utils/robotidy-config.toml"
+              "$FILENAME"
+            ];
+            stdin = false; # robotidy wants to modify the file in-place
+          };
           injected = {
             options = {
               ignore_errors = true; # Partial code snippets can break formatters.

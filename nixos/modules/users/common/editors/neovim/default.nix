@@ -2,6 +2,7 @@
 # Vim text editor fork focused on extensibility and agility.
 #
 {
+  pkgs,
   lib,
   config,
   ...
@@ -16,6 +17,6 @@ with lib; {
       {
         enable = true;
       }
-      // (import ./config);
+      // (import ./config {inherit pkgs lib config;});
   };
 }

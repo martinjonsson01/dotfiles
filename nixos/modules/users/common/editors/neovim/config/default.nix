@@ -1,4 +1,9 @@
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     # General Configuration
     ./settings.nix
@@ -42,7 +47,7 @@
 
     # LSP and formatting
     ./plugins/lsp/lsp.nix
-    ./plugins/lsp/conform.nix
+    (import ./plugins/lsp/conform.nix {inherit pkgs lib config;})
     ./plugins/lsp/fidget.nix
 
     # Git
