@@ -134,6 +134,7 @@
           rust = ["rustfmt"];
           c = ["clang_format"];
           cmake = ["cmake-format"];
+          robot = ["robotidy"];
           "_" = ["trim_whitespace"];
         };
 
@@ -152,6 +153,7 @@
           rustfmt.command = "${lib.getExe pkgs.rustfmt}";
           clang_format = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
           cmake-format = "${lib.getExe pkgs.cmake-format}";
+          robotidy = "${lib.getExe pkgs.robotframework-tidy}";
           injected = {
             options = {
               ignore_errors = true; # Partial code snippets can break formatters.
