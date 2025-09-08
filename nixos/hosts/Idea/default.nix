@@ -207,4 +207,7 @@ with lib; {
   ];
   # The default width of new windows.
   home-manager.users.martin.programs.niri.settings.layout.default-column-width = {proportion = 1.0 / 2.0;};
+
+  # Allow GDB to attach to processes.
+  boot.kernel.sysctl."kernel.yama.ptrace_scope" = lib.mkForce 0;
 }
