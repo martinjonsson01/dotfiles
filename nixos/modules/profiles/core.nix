@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -19,6 +18,9 @@ in {
     kanata.enable = true;
     resilio.enable = true;
     polkit-gnome.enable = true;
+
+    # To enable wayland support in e.g. Slack
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     home-manager.users.martin = {
     };
