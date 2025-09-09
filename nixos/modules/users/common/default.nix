@@ -20,6 +20,7 @@
     ./programs/lutris.nix
     ./programs/zellij
     ./programs/podman.nix
+    ./programs/gdb-dashboard.nix
 
     ./desktops/gnome
     ./desktops/hyprland

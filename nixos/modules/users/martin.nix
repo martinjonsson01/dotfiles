@@ -92,6 +92,7 @@ in {
       search-github-nix.enable = true;
       niri-rename-workspace.enable = true;
       satty.enable = true;
+      gdb-dashboard.enable = true;
 
       home.packages = with pkgs;
         [
