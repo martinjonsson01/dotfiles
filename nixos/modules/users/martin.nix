@@ -90,6 +90,7 @@ in {
       open-screenshot-dir.enable = true;
       search-google.enable = true;
       search-github-nix.enable = true;
+      niri-rename-workspace.enable = true;
       satty.enable = true;
 
       home.packages = with pkgs;

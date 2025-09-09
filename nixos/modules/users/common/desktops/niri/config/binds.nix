@@ -31,6 +31,7 @@ with lib; {
     "Mod+P".action = spawn ["open-screenshot-dir.sh"];
     "Mod+S".action = spawn ["search-google.sh"];
     "Mod+G".action = spawn ["search-github-nix.sh"];
+    "Mod+T".action = spawn ["niri-rename-workspace.sh"];
     "Mod+Space".action = spawn "${getExe pkgs.qalculate-gtk}";
 
     # Volume keys mappings for PipeWire & WirePlumber.
