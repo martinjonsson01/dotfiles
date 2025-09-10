@@ -135,21 +135,9 @@
             action = "implementation";
             desc = "Goto Implementation";
           };
-          gT = {
-            action = "type_definition";
-            desc = "Type Definition";
-          };
-          K = {
-            action = "hover";
-            desc = "Hover";
-          };
           "<leader>cw" = {
             action = "workspace_symbol";
             desc = "Workspace Symbol";
-          };
-          "<leader>cr" = {
-            action = "rename";
-            desc = "Rename";
           };
         };
         diagnostic = {
@@ -166,6 +154,58 @@
             desc = "Previous Diagnostic";
           };
         };
+        extra = [
+          {
+            key = "g.";
+            action = "<cmd>Lspsaga code_action<CR>";
+            mode = [
+              "n"
+              "x"
+            ];
+            options.desc = "Code Actions";
+          }
+
+          # Incomming/ Outgoing Definitions
+          {
+            key = "gCi";
+            action = "<cmd>Lspsaga incoming_calls<CR>";
+            options.desc = "Goto Calls Icomming";
+          }
+          {
+            key = "gCI";
+            action = "<cmd>Lspsaga outgoing_calls<CR>";
+            options.desc = "Goto Calls Outgoing";
+          }
+
+          # Type & Definition
+          {
+            key = "gpt";
+            action = "<cmd>Lspsaga peek_type_definition<CR>";
+            options.desc = "Peek variable Type";
+          }
+          {
+            key = "gpd";
+            action = "<cmd>Lspsaga peek_definition<CR>";
+            options.desc = "Peek Definition";
+          }
+
+          {
+            key = "K";
+            action = "<cmd>Lspsaga hover_doc<CR>";
+            options.desc = "Hover Documentation";
+          }
+          {
+            key = "gh";
+            action = "<cmd>Lspsaga hover_doc ++keep<CR>";
+            options.desc = "Hover Documentation Keep";
+          }
+
+          {
+            key = "gn";
+            action = "<cmd>Lspsaga rename<CR>";
+            options.desc = "Rename";
+          }
+        ];
       };
     };
   };

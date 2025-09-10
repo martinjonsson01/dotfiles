@@ -49,6 +49,7 @@
     ./plugins/lsp/lsp.nix
     (import ./plugins/lsp/conform.nix {inherit pkgs lib config;})
     ./plugins/lsp/fidget.nix
+    ./plugins/lsp/lspsaga.nix
 
     # Git
     ./plugins/git/lazygit.nix
