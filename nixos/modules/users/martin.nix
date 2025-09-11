@@ -56,6 +56,7 @@ in {
       kitty.enable = true;
       lutris.enable = true;
       tokyonight.enable = true;
+      ssh.enable = true;
 
       services.swayosd.enable = true;
 

@@ -21,6 +21,7 @@
     ./programs/zellij
     ./programs/podman.nix
     ./programs/gdb-dashboard.nix
+    ./programs/ssh.nix
 
     ./desktops/gnome
     ./desktops/hyprland
