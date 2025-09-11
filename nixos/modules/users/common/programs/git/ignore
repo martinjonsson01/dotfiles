@@ -1,6 +1,8 @@
 # Just ignore all JetBrains stuff for now.
 .idea/
 
+# And all vscode stuff.
+.vscode/
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,direnv,jetbrains,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,direnv,jetbrains,visualstudiocode
