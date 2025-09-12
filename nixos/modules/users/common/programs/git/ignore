@@ -1,6 +1,9 @@
 # Just ignore all JetBrains stuff for now.
 .idea/
 
+# Ignore user settings
+*.DotSettings.user
+
 # And all vscode stuff.
 .vscode/
 
