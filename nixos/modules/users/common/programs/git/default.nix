@@ -56,6 +56,7 @@ with lib; {
 
     home.packages = with pkgs; [
       git-absorb # git commit --fixup, but automatic
+      commitizen # Commit rules
     ];
 
     xdg.configFile."git/ignore".source = ./ignore;
@@ -67,9 +68,35 @@ with lib; {
         os = {
           editPreset = "nvim";
         };
+
         git = {
           paging.pager = "delta --dark --paging=never";
+          commitPrefix = [
+            {
+              pattern = "^([^-]+)-.*"; # Take all text prior to the first dash
+              replace = "[#$1] ";
+            }
+          ];
         };
+
+        gui = {
+          showDivergenceFromBaseBranch = "arrowAndNumber";
+        };
+
+        quitOnTopLevelReturn = true;
+        disableStartupPopups = true;
+        promptToReturnFromSubprocess = false;
+
+        customCommands = [
+          {
+            key = "C";
+            command = "git cz c";
+            description = "commit with commitizen";
+            context = "files";
+            loadingText = "opening commitizen commit tool";
+            output = "terminal";
+          }
+        ];
       };
     };
   };
