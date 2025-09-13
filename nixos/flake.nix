@@ -19,9 +19,9 @@
 
     # Scrollable-tiling desktop environment.
     niri = {
-      url = "github:martinjonsson01/niri-flake/2f6b0cfe0419bac27f3d91ca1f22a4a53ee1e485";
+      url = "github:martinjonsson01/niri-flake/bdc23782b085a238339ba91882865a24fb49336a";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-stable.url = "github:martinjonsson01/niri/404030b2b6366aace48084316c4e7b253d527d7d";
+      inputs.niri-stable.url = "github:martinjonsson01/niri/26e793de0e81ee1b027b0bdf3e62f30a40e9a8e1";
     };
 
     # Universal styling

@@ -28,9 +28,6 @@ in {
 
       # Disable middle mouse paste.
       clipboard.disable-primary = true;
-
-      # Workaround to fix screen share flickering (https://github.com/YaLTeR/niri/issues/1955)
-      debug.wait-for-frame-completion-in-pipewire = {};
     }
     // (import ./input.nix)
     // (import ./outputs.nix {inherit lib myHardware;})
