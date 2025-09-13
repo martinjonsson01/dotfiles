@@ -26,8 +26,8 @@ in {
           version = "2025.1.3";
           src = pkgs.fetchurl {
             # https://www.jetbrains.com/rust/nextversion/
-            url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.23892.231.tar.gz"; # 2025.2 EAP 8
-            sha256 = "9757560842b3c5e56d784e457b16ee0cf2ef11f03340d3dcdf92e20d0b3b9ab8";
+            url = "https://download.jetbrains.com/rustrover/RustRover-2025.2.1.tar.gz"; # 2025.2.1
+            sha256 = "19fde47a5c3c8e1b21b402c3351018eed64e2cff575f32a86c884168b522074a";
           };
           buildInputs = oldAttrs.buildInputs ++ [pkgs.libGL];
         })).override {
