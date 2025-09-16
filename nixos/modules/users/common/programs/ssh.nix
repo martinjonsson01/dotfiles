@@ -13,6 +13,7 @@
   config = lib.mkIf config.ssh.enable {
     programs.ssh = {
       enable = true;
+      addKeysToAgent = "yes"; # Automatically add keys to ssh-agent as necessary
       matchBlocks = {
         "*" = {
           identityFile = ["~/.ssh/id_ed25519"];

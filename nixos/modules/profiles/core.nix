@@ -22,6 +22,8 @@ in {
     # To enable wayland support in e.g. Slack
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+    programs.ssh.startAgent = true;
+
     home-manager.users.martin = {
     };
   };
