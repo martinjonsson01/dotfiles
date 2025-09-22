@@ -9,6 +9,7 @@
     ./settings.nix
     ./keymaps.nix
     ./auto_cmds.nix
+    ./user_commands.nix
     ./file_types.nix
     ./file_type_plugins.nix
     ./lazy_loading.nix
