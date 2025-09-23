@@ -28,6 +28,7 @@ with lib; {
         init.defaultBranch = "master";
         rerere.enabled = true;
         column.ui = "auto";
+        color.ui = "auto";
         branch.sort = "committerdate";
         push = {
           default = "current";
