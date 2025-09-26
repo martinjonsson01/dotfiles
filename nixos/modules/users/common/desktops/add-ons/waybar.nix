@@ -39,13 +39,18 @@ with lib; let
     #"custom/power"
     "custom/swaync"
   ];
-  rightModules = [
-    "cpu"
-    "temperature"
-    "memory"
-    "custom/nvidia"
-    "custom/kyltermometer"
-  ];
+  rightModules =
+    [
+      "cpu"
+      "temperature"
+      "memory"
+    ]
+    ++ (lib.optionals (myHardware.gpuDriver == "nvidia") [
+      "custom/nvidia"
+    ])
+    ++ [
+      "custom/kyltermometer"
+    ];
 
   createModulesCfg = isVertical: {
     clock = {
