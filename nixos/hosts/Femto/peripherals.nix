@@ -1,6 +1,9 @@
 {...}: {
   myHardware = {
-    cpu = "amd";
+    cpu = {
+      brand = "amd";
+      numberOfCores = 32;
+    };
     gpuDriver = "nvidia";
     monitors = [
       {

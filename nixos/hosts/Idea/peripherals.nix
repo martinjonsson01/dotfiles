@@ -1,6 +1,9 @@
 {...}: {
   myHardware = {
-    cpu = "amd";
+    cpu = {
+      brand = "amd";
+      numberOfCores = 16;
+    };
     monitors = [
       {
         name = "Dell Inc. DELL P2723D 3N5DG04";

@@ -7,13 +7,21 @@
 in {
   options.myHardware = {
     cpu = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "amd"
-          "intel"
-        ]
+      type = types.submodule (
+        {...}: {
+          options = {
+            brand = mkOption {
+              type = types.enum [
+                "amd"
+                "intel"
+              ];
+            };
+            numberOfCores = mkOption {
+              type = types.int;
+            };
+          };
+        }
       );
-      default = null;
     };
 
     gpuDriver = mkOption {
