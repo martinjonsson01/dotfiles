@@ -135,7 +135,14 @@ in {
         ]
         ++ (with pkgs.unstable; [
           comma # Place a , in front of a command to run software without installing it.
-          plexamp # Self-hosted music
+          (plexamp.overrideAttrs (old: {
+            nativeBuildInputs = (old.nativeBuildInputs or []) ++ [makeWrapper];
+            buildCommand = ''
+              ${old.buildCommand}
+              source "${makeWrapper}/nix-support/setup-hook"
+              wrapProgram "$out/bin/plexamp" --add-flags "--disable-gpu"
+            '';
+          }))
         ]);
     };
 
