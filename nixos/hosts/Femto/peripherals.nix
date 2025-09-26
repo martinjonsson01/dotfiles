@@ -3,6 +3,7 @@
     cpu = {
       brand = "amd";
       numberOfCores = 32;
+      temperatureHwmonPath = "/sys/class/hwmon/hwmon2/temp1_input";
     };
     gpuDriver = "nvidia";
     monitors = [

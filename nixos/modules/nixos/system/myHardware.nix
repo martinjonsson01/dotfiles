@@ -19,6 +19,9 @@ in {
             numberOfCores = mkOption {
               type = types.int;
             };
+            temperatureHwmonPath = mkOption {
+              type = types.str;
+            };
           };
         }
       );

@@ -3,6 +3,7 @@
     cpu = {
       brand = "amd";
       numberOfCores = 16;
+      temperatureHwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
     };
     monitors = [
       {
