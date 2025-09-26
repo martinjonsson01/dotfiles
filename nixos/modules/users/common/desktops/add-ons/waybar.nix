@@ -57,7 +57,7 @@ with lib; let
       format =
         if isVertical
         then "{:%A%n%H:%M:%S%n%F}" # Newlines between components using %n
-        else "{:%A %H:%M:%S}";
+        else "{:%A %H:%M:%S %F}";
       interval = 1;
       timezone = "Europe/Stockholm";
 
