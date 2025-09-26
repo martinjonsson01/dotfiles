@@ -126,7 +126,7 @@ with lib; let
     temperature = {
       critical-threshold = 75;
       format = "⚙️ {temperatureC}°C";
-      hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+      hwmon-path = myHardware.cpu.temperatureHwmonPath;
       on-click = "kitty btop";
     };
 
