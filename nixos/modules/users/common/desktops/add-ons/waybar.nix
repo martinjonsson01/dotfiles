@@ -93,7 +93,7 @@ with lib; let
     cpu = {
       interval = 1;
       format = let
-        cores = 32;
+        cores = myHardware.cpu.numberOfCores;
         width =
           if isVertical
           then 8
