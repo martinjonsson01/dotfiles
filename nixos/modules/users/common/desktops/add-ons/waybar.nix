@@ -47,10 +47,7 @@ with lib; let
     ]
     ++ (lib.optionals (myHardware.gpuDriver == "nvidia") [
       "custom/nvidia"
-    ])
-    ++ [
-      "custom/kyltermometer"
-    ];
+    ]);
 
   createModulesCfg = isVertical: {
     clock = {
