@@ -7,32 +7,6 @@
   lib,
   ...
 }: let
-  sunsetr = pkgs.rustPlatform.buildRustPackage rec {
-    pname = "sunsetr";
-    version = "0.7.0";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "psi4j";
-      repo = "sunsetr";
-      rev = "v${version}";
-      hash = "sha256-3VKxWU92HjT5npFfZlN7zQSSnZsuVXVQdVSHGeD4MUw=";
-    };
-
-    cargoHash = "sha256-NSAxcoQvXAO0R6ojoHqp4wx3iIHJZCTKd+SUxXYSvUQ=";
-
-    checkFlags = [
-      "--skip=config::tests::test_geo_toml_exists_before_config_creation"
-    ];
-
-    meta = with lib; {
-      description = "Automatic blue light filter for Hyprland, Niri, and everything Wayland";
-      homepage = "https://github.com/psi4j/sunsetr";
-      license = licenses.mit;
-      maintainers = [];
-      mainProgram = "sunsetr";
-    };
-  };
-
   settings = {
     #[Sunsetr configuration]
     backend = "auto"; # Backend to use: "auto", "hyprland" or "wayland"
@@ -58,9 +32,11 @@ in
     };
 
     config = lib.mkIf config.sunsetr.enable {
-      home-manager.users.martin = {
-        home.packages = [sunsetr];
+      environment.systemPackages = with pkgs.unstable; [
+        sunsetr
+      ];
 
+      home-manager.users.martin = {
         xdg.configFile."sunsetr/sunsetr.toml".source = pkgs.writers.writeTOML "sunsetr.toml" settings;
 
         systemd.user.services.sunsetr = {
@@ -72,7 +48,7 @@ in
           };
           Service = {
             Type = "simple";
-            ExecStart = "${getExe sunsetr}";
+            ExecStart = "${getExe pkgs.unstable.sunsetr}";
             Restart = "always";
             RestartSec = 30;
           };
@@ -95,7 +71,7 @@ in
 
         serviceConfig = {
           Type = "oneshot";
-          ExecStart = "${getExe' pkgs.coreutils "sleep"} 5 ; ${getExe sunsetr} --reload";
+          ExecStart = "${getExe' pkgs.coreutils "sleep"} 5 ; ${getExe pkgs.unstable.sunsetr} --reload";
         };
 
         wantedBy = ["suspend.target"];
