@@ -119,6 +119,7 @@ in {
           dust # Disk usage utility written in Rust
           thefuck # Fixes last run command
           jq # JSON parsing/querying
+          ripgrep # Faster grep
 
           # Utility
           fsearch # Like Void Tools Everything but on linux (i.e. file search)
