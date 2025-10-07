@@ -11,7 +11,7 @@
     {
       mode = "n";
       key = "<leader>xx";
-      action = "<cmd>Trouble preview_split toggle<cr>";
+      action = "<cmd>Trouble diagnostics toggle<cr>";
       options = {
         desc = "Diagnostics toggle";
       };
@@ -19,7 +19,7 @@
     {
       mode = "n";
       key = "<leader>xX";
-      action = "<cmd>Trouble preview_split toggle filter.buf=0<cr>";
+      action = "<cmd>Trouble diagnostics toggle filter.buf=0<cr>";
       options = {
         desc = "Buffer Diagnostics toggle";
       };
@@ -35,7 +35,7 @@
     {
       mode = "n";
       key = "<leader>xl";
-      action = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>";
+      action = "<cmd>Trouble lsp toggle focus=true<cr>";
       options = {
         desc = "LSP Definitions / references / ... toggle";
       };
