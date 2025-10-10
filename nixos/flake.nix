@@ -41,6 +41,12 @@
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Automatically updating nix-index.
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -50,6 +56,7 @@
     stylix,
     niri,
     nixvim,
+    nix-index-database,
     ...
   }: let
     # Shared modules and imports
@@ -82,7 +89,10 @@
       }
       sops-nix.nixosModules.sops
       stylix.nixosModules.stylix
+      nix-index-database.nixosModules.nix-index
       ({...}: {
+        programs.nix-index-database.comma.enable = true;
+
         nixpkgs.config = {
           allowUnfree = true;
 

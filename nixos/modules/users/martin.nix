@@ -135,7 +135,6 @@ in {
           songrec # Shazam song recognition
         ]
         ++ (with pkgs.unstable; [
-          comma # Place a , in front of a command to run software without installing it.
           (plexamp.overrideAttrs (old: {
             nativeBuildInputs = (old.nativeBuildInputs or []) ++ [makeWrapper];
             buildCommand = ''
