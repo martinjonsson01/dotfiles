@@ -45,5 +45,21 @@
       '';
       desc = "Toggle automatic formatting on save";
     };
+
+    FormatModificationsToggle = {
+      bang = true;
+      command.__raw = ''
+        function(args)
+          if args.bang then
+            -- Toggle formatting for current buffer
+            vim.b.format_modifications_only = not vim.b.format_modifications_only
+          else
+            -- Toggle formatting globally
+            vim.g.format_modifications_only = not vim.g.format_modifications_only
+          end
+        end
+      '';
+      desc = "Toggle automatic formatting of only modified lines";
+    };
   };
 }

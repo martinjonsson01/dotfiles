@@ -9,6 +9,28 @@
       # lua
       ''
         local slow_format_filetypes = {}
+        local range_ignore_filetypes = { "lua" }
+        vim.g.format_modifications_only = true
+
+        function format_hunks()
+        	local hunks = require("gitsigns").get_hunks()
+        	if hunks == nil then
+        		return
+        	end
+
+        	local format = require("conform").format
+        	for i = #hunks, 1, -1 do
+        		local hunk = hunks[i]
+        		if hunk ~= nil and hunk.type ~= "delete" then
+        			local start = hunk.added.start
+        			local last = start + hunk.added.count
+        			-- nvim_buf_get_lines uses zero-based indexing -> subtract from last
+        			local last_hunk_line = vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
+        			local range = { start = { start, 0 }, ["end"] = { last - 1, last_hunk_line:len() } }
+        			format({ range = range, lsp_fallback = true })
+        		end
+        	end
+        end
       '';
     plugins.conform-nvim = {
       enable = true;
@@ -22,7 +44,7 @@
               end
 
               if slow_format_filetypes[vim.bo[bufnr].filetype] then
-              return
+                return
               end
 
               local function on_format(err)
@@ -31,8 +53,12 @@
                 end
               end
 
-              return { timeout_ms = 200, lsp_fallback = true }, on_format
-             end
+              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, vim.bo[bufnr].filetype) then
+                format_hunks()
+              else
+                return { timeout_ms = 200, lsp_fallback = true }, on_format
+              end
+            end
           '';
 
         format_after_save =
@@ -47,7 +73,11 @@
                 return
               end
 
-              return { lsp_fallback = true }
+              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, vim.bo[bufnr].filetype) then
+                format_hunks()
+              else
+                return { lsp_fallback = true }
+              end
             end
           '';
         notify_on_error = true;
