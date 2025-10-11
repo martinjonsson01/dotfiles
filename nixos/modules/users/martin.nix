@@ -92,6 +92,7 @@ in {
       search-google.enable = true;
       search-github-nix.enable = true;
       niri-rename-workspace.enable = true;
+      niri-launch-kitty-workspace-cwd.enable = true;
       satty.enable = true;
       gdb-dashboard.enable = true;
 

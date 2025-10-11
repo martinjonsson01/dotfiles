@@ -23,7 +23,7 @@ with lib; {
     "Mod+Shift+plus".action = show-hotkey-overlay;
 
     # Binds for running programs: terminal, app launcher, screen locker.
-    "Mod+Return".action = spawn "${getExe pkgs.kitty}";
+    "Mod+Return".action = spawn ["niri-launch-kitty-workspace-cwd.sh"];
     "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
     "Mod+Alt+L".action = spawn ["systemctl" "suspend"];
     "Mod+Alt+H".action = spawn "${getExe pkgs.fsearch}";
