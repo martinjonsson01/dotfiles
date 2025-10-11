@@ -55,6 +55,12 @@ with lib; {
       targets.plymouth.enable = false;
       # Manually configure nixvim in home-manager module
       targets.nixvim.enable = false;
+      # Disable fish since it conflicts with kitty theming
+      targets.fish.enable = false;
     };
+    # Manually configure kitty using builtin theming
+    home-manager.users.martin.stylix.targets.kitty.enable = false;
+    # Disable fish since it conflicts with kitty theming
+    home-manager.users.martin.stylix.targets.fish.enable = false;
   };
 }
