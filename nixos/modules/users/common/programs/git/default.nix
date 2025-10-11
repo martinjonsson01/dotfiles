@@ -46,12 +46,18 @@ with lib; {
       };
       delta = {
         # Syntax-highlighting pager for git
-        enable = true;
+        enable = false;
         options = {
           navigate = true;
           line-numbers = true;
           hyperlinks = true;
         };
+      };
+      difftastic = {
+        # Syntax-aware diff
+        enable = true;
+        enableAsDifftool = true;
+        background = "dark";
       };
     };
 
@@ -71,7 +77,7 @@ with lib; {
         };
 
         git = {
-          paging.pager = "delta --dark --paging=never";
+          paging.externalDiffCommand = "difft --color=always";
           commitPrefix = [
             {
               pattern = "^([^-]+)-.*"; # Take all text prior to the first dash
