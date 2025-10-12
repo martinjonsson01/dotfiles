@@ -156,16 +156,6 @@
           };
         };
         extra = [
-          {
-            key = "g.";
-            action = "<cmd>Lspsaga code_action<CR>";
-            mode = [
-              "n"
-              "x"
-            ];
-            options.desc = "Code Actions";
-          }
-
           # Incomming/ Outgoing Definitions
           {
             key = "gCi";

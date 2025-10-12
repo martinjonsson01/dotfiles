@@ -34,6 +34,22 @@ with lib; {
   keymaps = mkIf config.plugins.gitsigns.enable [
     {
       mode = "n";
+      key = "g,";
+      action = "<cmd>Gitsigns nav_hunk prev<CR>";
+      options = {
+        desc = "Go to previous hunk";
+      };
+    }
+    {
+      mode = "n";
+      key = "g.";
+      action = "<cmd>Gitsigns nav_hunk next<CR>";
+      options = {
+        desc = "Go to next hunk";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>gb";
       action = "<cmd>Gitsigns blame_line { full=true }<CR>";
       options = {
