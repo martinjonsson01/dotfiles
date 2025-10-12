@@ -13,6 +13,14 @@ with lib; {
 
   keymaps = mkIf config.plugins.gitsigns.enable [
     {
+      mode = ["o" "v"];
+      key = "ih";
+      action = "<cmd>Gitsigns select_hunk<CR>";
+      options = {
+        desc = "in hunk";
+      };
+    }
+    {
       mode = "n";
       key = "g,";
       action = "<cmd>Gitsigns nav_hunk prev<CR>";
