@@ -50,6 +50,14 @@ with lib; {
     }
     {
       mode = "n";
+      key = "<leader>grb";
+      action = "<cmd>Gitsigns reset_buffer<CR>";
+      options = {
+        desc = "Git reset buffer";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>gb";
       action = "<cmd>Gitsigns blame_line { full=true }<CR>";
       options = {
