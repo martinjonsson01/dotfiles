@@ -25,6 +25,20 @@ _: {
         ];
         lualine_b = [
           {
+            __unkeyed-1 = "macro";
+            fmt = ''
+              function()
+                local reg = vim.fn.reg_recording()
+                if reg ~= "" then
+                  return "Recording @" .. reg
+                end
+                return nil
+              end
+            '';
+            color = {fg = "#ff9e64";};
+            draw_empty = false;
+          }
+          {
             __unkeyed-1 = "branch";
             icon = "";
           }
