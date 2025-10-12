@@ -12,10 +12,10 @@ with lib; {
     copyq.enable = mkEnableOption "Enables CopyQ";
   };
 
-  config = mkIf config.copyq.enable {
-    home.packages = with pkgs; [
-      copyq
-    ];
+  config = mkIf config.copyq.enable (let
+    copyq = pkgs.unstable.copyq;
+  in {
+    home.packages = [copyq];
 
     # Built-in copyq service is broken on wayland, need to
     # create one manually.
@@ -28,7 +28,7 @@ with lib; {
       };
 
       Service = {
-        ExecStart = "${getExe pkgs.copyq}";
+        ExecStart = "${getExe copyq}";
         Restart = "on-failure";
         Environment = ["QT_QPA_PLATFORM=wayland"];
       };
@@ -41,7 +41,7 @@ with lib; {
     # Add keybind.
     programs.niri.settings.binds = with config.lib.niri.actions;
       mkIf config.niri.enable {
-        "Mod+V".action = spawn ["${getExe pkgs.copyq}" "toggle"];
+        "Mod+V".action = spawn ["${getExe copyq}" "toggle"];
       };
 
     # Make window floating.
@@ -60,5 +60,5 @@ with lib; {
 
     home.file.".config/copyq/copyq.conf".source = ./copyq.conf;
     home.file.".config/copyq/copyq-commands.ini".source = ./copyq-commands.ini;
-  };
+  });
 }
