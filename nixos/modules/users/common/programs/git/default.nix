@@ -61,6 +61,11 @@ with lib; {
       };
     };
 
+    home.sessionVariables = {
+      # Difftastic: Allow more errors before switching to textual diff.
+      DFT_PARSE_ERROR_LIMIT = 100;
+    };
+
     home.packages = with pkgs; [
       git-absorb # git commit --fixup, but automatic
       commitizen # Commit rules
