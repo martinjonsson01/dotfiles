@@ -28,8 +28,12 @@ with lib; let
         exit 0
       fi
 
+      # Only use first segment of workspace name to find working directory.
+      IFS='-' read -ra workspace_name_segments <<< "$active_workspace_name"
+      workspace_identifier="''${workspace_name_segments[0]}"
+
       # Find workspace-related directory using the fish program `z`.
-      if ! workspace_dir=$(fish -c "z --echo '$active_workspace_name'"); then
+      if ! workspace_dir=$(fish -c "z --echo '$workspace_identifier'"); then
         # Just launch normally if we couldn't find a matching directory.
         ${getExe pkgs.kitty} --single-instance
         exit 0
