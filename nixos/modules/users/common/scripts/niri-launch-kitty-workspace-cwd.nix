@@ -35,12 +35,12 @@ with lib; let
       # Find workspace-related directory using the fish program `z`.
       if ! workspace_dir=$(fish -c "z --echo '$workspace_identifier'"); then
         # Just launch normally if we couldn't find a matching directory.
-        ${getExe pkgs.kitty} --single-instance
+        ${getExe pkgs.kitty}
         exit 0
       fi
       echo "$workspace_dir"
 
-      ${getExe pkgs.kitty} --single-instance --working-directory "$workspace_dir"
+      ${getExe pkgs.kitty} --working-directory "$workspace_dir"
     '';
   };
 in {
