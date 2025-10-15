@@ -23,7 +23,11 @@
         terraformls.enable = true;
         ansiblels.enable = true;
         jsonls.enable = true;
-        omnisharp.enable = true;
+        omnisharp = {
+          enable = true;
+          settings.enableAnalyzersSupport = true;
+          settings.enableEditorConfigSupport = true;
+        };
         rust_analyzer = {
           enable = true;
           # Installed through per-project flakes instead.
