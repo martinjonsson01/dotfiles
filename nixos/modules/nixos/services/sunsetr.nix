@@ -12,7 +12,7 @@
 
     #[Backend]
     backend = "auto"; # Backend to use: "auto", "hyprland", "hyprsunset" or "wayland"
-    transition_mode = "geo"; # Select: "geo", "finish_by", "start_at", "center", "static"
+    transition_mode = "finish_by"; # Select: "geo", "finish_by", "start_at", "center", "static"
 
     #[Smoothing]
     smoothing = true; # Enable smooth transitions during startup and exit
@@ -28,7 +28,7 @@
     update_interval = 10; # Update frequency during transitions in seconds (10-300)
 
     #[Manual transitions]
-    sunset = "19:00:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
+    sunset = "18:00:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
     sunrise = "05:00:00"; # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
     transition_duration = 30; # Transition duration in minutes (5-120)
   };
