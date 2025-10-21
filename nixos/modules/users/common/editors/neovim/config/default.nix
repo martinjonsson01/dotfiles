@@ -40,6 +40,7 @@
     ./plugins/editor/precognition.nix
     ./plugins/editor/eyeliner.nix
     ./plugins/editor/marks.nix
+    ./plugins/editor/sleuth.nix
 
     # UI plugins
     ./plugins/ui/lualine.nix
