@@ -23,6 +23,7 @@
         terraformls.enable = true;
         ansiblels.enable = true;
         jsonls.enable = true;
+        fish_lsp.enable = true;
         omnisharp = {
           enable = true;
           settings.enableAnalyzersSupport = true;
