@@ -120,6 +120,7 @@ in {
           dust # Disk usage utility written in Rust
           thefuck # Fixes last run command
           jq # JSON parsing/querying
+          yq # YAML parsing/querying
           ripgrep # Faster grep
 
           # Utility
