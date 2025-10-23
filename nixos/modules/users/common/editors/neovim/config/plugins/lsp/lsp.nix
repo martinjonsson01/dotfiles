@@ -24,6 +24,12 @@
         ansiblels.enable = true;
         jsonls.enable = true;
         fish_lsp.enable = true;
+        csharp_ls = {
+          enable = true;
+          settings = {
+            csharp.applyFormattingOptions = true;
+          };
+        };
         omnisharp = {
           enable = false; # Doesn't follow style conventions for formatting :(
           settings.enableAnalyzersSupport = true;
