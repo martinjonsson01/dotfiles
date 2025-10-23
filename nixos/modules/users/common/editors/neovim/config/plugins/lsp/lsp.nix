@@ -25,7 +25,7 @@
         jsonls.enable = true;
         fish_lsp.enable = true;
         omnisharp = {
-          enable = true;
+          enable = false; # Doesn't follow style conventions for formatting :(
           settings.enableAnalyzersSupport = true;
           settings.enableEditorConfigSupport = true;
         };
