@@ -74,24 +74,5 @@ in
           };
         };
       };
-
-      systemd.services.sunsetr-reload-on-resume = {
-        enable = true;
-
-        description = "Sunsetr reset to update state properly when resuming";
-        after = ["suspend.target"];
-
-        environment = {
-          # Sunsetr looks up its lockfile containing the pid at this location.
-          XDG_RUNTIME_DIR = "/run/user/1000";
-        };
-
-        serviceConfig = {
-          Type = "oneshot";
-          ExecStart = "${getExe' pkgs.coreutils "sleep"} 5 ; ${getExe pkgs.unstable.sunsetr} --reload";
-        };
-
-        wantedBy = ["suspend.target"];
-      };
     };
   }
