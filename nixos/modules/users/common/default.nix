@@ -22,6 +22,7 @@
     ./programs/podman.nix
     ./programs/gdb-dashboard.nix
     ./programs/ssh.nix
+    ./programs/yazi.nix
 
     ./desktops/gnome
     ./desktops/hyprland

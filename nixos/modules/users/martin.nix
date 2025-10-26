@@ -85,6 +85,7 @@ in {
       zoom.enable = true;
 
       btop.enable = true;
+      yazi.enable = true;
       qalculate.enable = true;
       screenrecord-region.enable = true;
       screenshot-region.enable = true;
