@@ -41,6 +41,7 @@
     ./plugins/editor/eyeliner.nix
     ./plugins/editor/marks.nix
     ./plugins/editor/sleuth.nix
+    ./plugins/editor/neotab.nix
 
     # UI plugins
     ./plugins/ui/lualine.nix
