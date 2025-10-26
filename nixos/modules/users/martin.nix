@@ -122,6 +122,7 @@ in {
           jq # JSON parsing/querying
           yq # YAML parsing/querying
           ripgrep # Faster grep
+          fd # More intuitive 'find'
 
           # Utility
           fsearch # Like Void Tools Everything but on linux (i.e. file search)
