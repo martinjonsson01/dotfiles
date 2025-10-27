@@ -110,7 +110,6 @@
           };
           python = [
             "black"
-            "isort"
           ];
           lua = ["stylua"];
           nix = ["alejandra" "injected"];
