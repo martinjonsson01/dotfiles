@@ -46,7 +46,7 @@ with lib; let
       "memory"
     ]
     ++ (lib.optionals (myHardware.gpuDriver == "nvidia") [
-      # "custom/nvidia"  # had to disable due to driver version mismatch error
+      "custom/nvidia"
     ]);
 
   createModulesCfg = isVertical: {
