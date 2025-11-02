@@ -10,6 +10,7 @@ with lib; {
       file-browser.enable = true;
       fzf-native.enable = true;
       frecency.enable = true; # Orders results by frequency/recency
+      frecency.settings.db_safe_mode = false; # Stop the spam about cleaning database entries
     };
     settings = let
       rgArgs = [
