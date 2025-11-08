@@ -82,7 +82,11 @@ with lib; {
         };
 
         git = {
-          paging.externalDiffCommand = "difft --color=always";
+          pagers = [
+            {
+              externalDiffCommand = "difft --color=always";
+            }
+          ];
           commitPrefix = [
             {
               pattern = "^([^-]+)-.*"; # Take all text prior to the first dash
