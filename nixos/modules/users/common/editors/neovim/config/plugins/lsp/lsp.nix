@@ -24,6 +24,10 @@
         ansiblels.enable = true;
         jsonls.enable = true;
         fish_lsp.enable = true;
+        hls = {
+          enable = false;
+          installGhc = false;
+        };
         csharp_ls = {
           enable = true;
           settings = {
