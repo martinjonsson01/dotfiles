@@ -19,6 +19,13 @@ in {
     resilio.enable = true;
     polkit-gnome.enable = true;
 
+    security.sudo = {
+      enable = true;
+      configFile = ''
+        Defaults timestamp_timeout=30
+      '';
+    };
+
     environment.sessionVariables.NIXOS_OZONE_WL = "1"; # To enable wayland support in e.g. Slack
     environment.sessionVariables.EDITOR = "nvim";
 
