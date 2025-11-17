@@ -229,25 +229,6 @@
     ansible-vim
   ];
 
-  extraPackages = with pkgs; [
-    (python3.withPackages (ps:
-      with ps; [
-        psutil
-        pyyaml
-        (buildPythonPackage rec {
-          pname = "robotframework_lsp";
-          version = "1.13.0";
-
-          src = fetchPypi {
-            inherit pname version;
-            sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
-          };
-
-          doCheck = false;
-        })
-      ]))
-  ];
-
   extraConfigLua = ''
     local _border = "rounded"
 
