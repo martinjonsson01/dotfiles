@@ -56,6 +56,9 @@ with lib; {
       direnv.nix-direnv.enable = true;
     };
 
+    # Fish enables this, but it makes builds _really_ slow, so disable it.
+    programs.man.generateCaches = false;
+
     programs.fish = {
       enable = true;
 

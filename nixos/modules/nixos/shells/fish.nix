@@ -16,6 +16,9 @@
     # Enable vendor fish completions provided by Nixpkgs
     programs.fish.enable = true;
 
+    # Fish enables this, but it makes builds _really_ slow, so disable it.
+    documentation.man.generateCaches = false;
+
     # Since fish isn't POSIX compliant, we can't use it as a
     # login shell. Instead, launch it from within bash.
     programs.bash = {
