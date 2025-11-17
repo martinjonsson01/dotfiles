@@ -9,6 +9,7 @@
       # lua
       ''
         local slow_format_filetypes = { robot = true }
+        local use_lsp_fallback_filetypes = { robot = false }
         local range_ignore_filetypes = { "lua" }
         vim.g.format_modifications_only = true
 
@@ -27,7 +28,7 @@
         			-- nvim_buf_get_lines uses zero-based indexing -> subtract from last
         			local last_hunk_line = vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
         			local range = { start = { start, 0 }, ["end"] = { last - 1, last_hunk_line:len() } }
-        			local args = { range = range, lsp_fallback = true }
+        			local args = { range = range, lsp_fallback = false }
         			if on_format ~= nil then
         				args["timeout_ms"] = 5
         			end
@@ -59,10 +60,12 @@
                 end
               end
 
-              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, vim.bo[bufnr].filetype) then
+              local filetype = vim.bo[bufnr].filetype
+              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, filetype) then
                 format_hunks(on_format)
               else
-                return { timeout_ms = 200, lsp_fallback = true }, on_format
+                local use_lsp_fallback = use_lsp_fallback_filetypes[filetype] or true
+                return { timeout_ms = 200, lsp_fallback = use_lsp_fallback }, on_format
               end
             end
           '';
@@ -79,10 +82,12 @@
                 return
               end
 
-              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, vim.bo[bufnr].filetype) then
+              local filetype = vim.bo[bufnr].filetype
+              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, filetype) then
                 format_hunks(nil)
               else
-                return { lsp_fallback = true }
+                local use_lsp_fallback = use_lsp_fallback_filetypes[filetype] or true
+                return { lsp_fallback = use_lsp_fallback }
               end
             end
           '';
