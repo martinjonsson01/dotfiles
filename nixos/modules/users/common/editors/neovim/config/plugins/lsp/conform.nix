@@ -19,21 +19,34 @@
         		return
         	end
 
-        	local format = require("conform").format
+        	local format_args = {}
         	for i = #hunks, 1, -1 do
         		local hunk = hunks[i]
         		if hunk ~= nil and hunk.type ~= "delete" then
         			local start = hunk.added.start
         			local last = start + hunk.added.count
-        			-- nvim_buf_get_lines uses zero-based indexing -> subtract from last
-        			local last_hunk_line = vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
+        			local ok, result = pcall(function()
+        				-- nvim_buf_get_lines uses zero-based indexing -> subtract from last
+        				return vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
+        			end)
+        			if not ok then
+        				vim.notify("unable to format hunks due to error: " .. result)
+        				return
+        			end
+        			local last_hunk_line = result
         			local range = { start = { start, 0 }, ["end"] = { last - 1, last_hunk_line:len() } }
         			local args = { range = range, lsp_fallback = false }
-        			if on_format ~= nil then
-        				args["timeout_ms"] = 5
-        			end
-        			format(args, on_format)
+        			table.insert(format_args, args)
         		end
+        	end
+
+        	vim.notify("format_hunks")
+        	local format = require("conform").format
+        	for _, args in ipairs(format_args) do
+        		if on_format ~= nil then
+        			args["timeout_ms"] = 5
+        		end
+        		format(args, on_format)
         	end
         end
       '';
@@ -60,14 +73,16 @@
                 end
               end
 
-              local filetype = vim.bo[bufnr].filetype
-              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, filetype) then
-                format_hunks(on_format)
-              else
-                local use_lsp_fallback = use_lsp_fallback_filetypes[filetype] or true
-                return { timeout_ms = 200, lsp_fallback = use_lsp_fallback }, on_format
-              end
-            end
+                 local filetype = vim.bo[bufnr].filetype
+                 if vim.g.format_modifications_only and vim.b[bufnr].format_modifications_only and (not vim.tbl_contains(range_ignore_filetypes, filetype)) then
+                   vim.notify("calling format_hunks in format_on_save")
+                   format_hunks(on_format)
+                 else
+                   vim.notify("format_on_save")
+                   local use_lsp_fallback = use_lsp_fallback_filetypes[filetype] or true
+                   return { timeout_ms = 200, lsp_fallback = use_lsp_fallback }, on_format
+                 end
+               end
           '';
 
         format_after_save =
@@ -83,10 +98,12 @@
               end
 
               local filetype = vim.bo[bufnr].filetype
-              if (vim.g.format_modifications_only or vim.b[bufnr].format_modifications_only) and not vim.tbl_contains(range_ignore_filetypes, filetype) then
+              if vim.g.format_modifications_only and vim.b[bufnr].format_modifications_only and (not vim.tbl_contains(range_ignore_filetypes, filetype)) then
+                vim.notify("calling format_hunks in format_after_save")
                 format_hunks(nil)
               else
                 local use_lsp_fallback = use_lsp_fallback_filetypes[filetype] or true
+                vim.notify("format_after_save")
                 return { lsp_fallback = use_lsp_fallback }
               end
             end

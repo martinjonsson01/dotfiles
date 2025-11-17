@@ -25,12 +25,14 @@
         jsonls.enable = true;
         fish_lsp.enable = true;
         robotframework_ls = {
-          enable = true;
+          enable = false; # Doesn't work at the moment due to formatter conflict with conform
           package = null; # Installed externally, see below `extraPackages`.
           cmd = ["robotframework_ls"];
           filetypes = ["robot"];
           extraOptions = {
             settings.robot = {
+              formatting.provider = "none";
+              timeout.codeFormatting = 0; # Disable LSP formatting (conform uses robotidy already)
             };
           };
         };
@@ -227,6 +229,38 @@
   };
   extraPlugins = with pkgs.vimPlugins; [
     ansible-vim
+  ];
+
+  extraPackages = with pkgs; [
+    (python3.withPackages (ps:
+      with ps; [
+        psutil
+        pyyaml
+        (buildPythonPackage rec {
+          pname = "robotframework";
+          version = "6.1";
+
+          src = fetchFromGitHub {
+            owner = "robotframework";
+            repo = "robotframework";
+            tag = "v${version}";
+            sha256 = "sha256-l1VupBKi52UWqJMisT2CVnXph3fGxB63mBVvYdM1NWE=";
+          };
+
+          doCheck = false;
+        })
+        (buildPythonPackage rec {
+          pname = "robotframework_lsp";
+          version = "1.13.0";
+
+          src = fetchPypi {
+            inherit pname version;
+            sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
+          };
+
+          doCheck = false;
+        })
+      ]))
   ];
 
   extraConfigLua = ''
