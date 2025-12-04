@@ -16,7 +16,7 @@
         workspaces = [
           {
             id = 0;
-            name = "default0";
+            name = "mail+cal";
           }
         ];
       }
@@ -29,7 +29,7 @@
         workspaces = [
           {
             id = 1;
-            name = "default1";
+            name = "nixos";
           }
         ];
       }
