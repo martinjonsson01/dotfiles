@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib; let
@@ -24,6 +25,19 @@ in {
       configFile = ''
         Defaults timestamp_timeout=30
       '';
+    };
+
+    # Ensure numlock is enabled on boot.
+    systemd.services.numLockOnTty = {
+      wantedBy = ["multi-user.target"];
+      serviceConfig = {
+        # /run/current-system/sw/bin/setleds -D +num < "$tty";
+        ExecStart = lib.mkForce (pkgs.writeShellScript "numLockOnTty" ''
+          for tty in /dev/tty{1..6}; do
+              ${pkgs.kbd}/bin/setleds -D +num < "$tty";
+          done
+        '');
+      };
     };
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1"; # To enable wayland support in e.g. Slack
