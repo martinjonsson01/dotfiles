@@ -19,10 +19,29 @@ with lib; let
     text = ''
       # shellcheck disable=SC2050  # When building for a given host, this expression will be constant.
       if [ "${host}" = "Idea" ]; then 
-        pkill slack  # Kill slack so my status updates correctly.
+        # Get current weekday (1–7, Mon=1 … Sun=7)
+        weekday=$(date +%u)
+        # Get current time as HHMM integer
+        now=$(date +%H%M)
+        # Determine cutoff time
+        if [ "$weekday" -eq 5 ]; then
+            cutoff=1130   # Friday
+        else
+            cutoff=1350   # Other weekdays
+        fi
+
+        # Only kill Slack if after cutoff.
+        if [ "$now" -ge "$cutoff" ]; then
+          pkill slack  # Kill slack so my status updates correctly.
+        fi
+
         niri msg action power-off-monitors  # Can't use real suspend on this host, it just wakes up again.
         ${getExe config.programs.swaylock.package} 
-        slack & disown  # Restart slack, but don't kill it when the script finishes.
+
+        # After unlocking, relaunch Slack only if it's not already running
+        if ! pgrep slack >/dev/null 2>&1; then
+          slack & disown  # Start slack, but don't kill it when the script finishes.
+        fi
       else
         systemctl suspend
       fi
