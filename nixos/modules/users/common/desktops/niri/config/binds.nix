@@ -1,14 +1,12 @@
 {
   lib,
   config,
-  osConfig,
   pkgs,
 }:
 with lib; {
   binds = with config.lib.niri.actions; let
     niri = "${config.programs.niri.package}/bin/niri";
     swayosd-client = getExe' pkgs.swayosd "swayosd-client";
-    host = osConfig.networking.hostName;
   in {
     # Keys consist of modifiers separated by + signs, followed by an XKB key name
     # in the end. To find an XKB name for a particular key, you may use a program
@@ -27,11 +25,7 @@ with lib; {
     # Binds for running programs: terminal, app launcher, screen locker.
     "Mod+Return".action = spawn ["niri-launch-kitty-workspace-cwd.sh"];
     "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
-    "Mod+Alt+L".action = spawn (
-      if host == "Idea"
-      then ["bash" "-c" "${getExe config.programs.swaylock.package} --daemonize; sleep 4s; niri msg action power-off-monitors"]
-      else ["systemctl" "suspend"]
-    );
+    "Mod+Alt+L".action = spawn ["lock-script.sh"];
     "Mod+Alt+H".action = spawn "${getExe pkgs.fsearch}";
     "Mod+E".action = spawn ["${getExe pkgs.xfce.thunar}" "/home/martin/Downloads"];
     "Mod+P".action = spawn ["open-screenshot-dir.sh"];

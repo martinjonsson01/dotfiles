@@ -61,6 +61,7 @@
     ./scripts/search-github-nix.nix
     ./scripts/niri-rename-workspace.nix
     ./scripts/niri-launch-kitty-workspace-cwd.nix
+    ./scripts/lock-script.nix
 
     ./themes/tokyonight.nix
   ];

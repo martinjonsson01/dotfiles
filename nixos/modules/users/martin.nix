@@ -94,6 +94,7 @@ in {
       search-github-nix.enable = true;
       niri-rename-workspace.enable = true;
       niri-launch-kitty-workspace-cwd.enable = true;
+      lock-script.enable = true;
       satty.enable = true;
       gdb-dashboard.enable = true;
 

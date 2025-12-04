@@ -35,6 +35,6 @@ in {
     // (import ./layout.nix)
     // (import ./window-rules.nix {inherit config;})
     // (import ./layer-rules.nix)
-    // (import ./binds.nix {inherit pkgs lib config osConfig;})
+    // (import ./binds.nix {inherit pkgs lib config;})
     // (import ./workspaces.nix {inherit myHardware;});
 }
