@@ -80,6 +80,10 @@ with lib; let
       };
     };
 
+    tray = {
+      show-passive-items = true;
+    };
+
     "custom/power" = {
       format = "󰤆";
       tooltip = true;
