@@ -18,14 +18,14 @@ with lib; let
     ];
     text = ''
       # shellcheck disable=SC2050  # When building for a given host, this expression will be constant.
-      if [ "${host}" = "Idea" ]; then 
+      if [ "${host}" = "Idea" ]; then
         # Get current weekday (1–7, Mon=1 … Sun=7)
         weekday=$(date +%u)
         # Get current time as HHMM integer
         now=$(date +%H%M)
         # Determine cutoff time
         if [ "$weekday" -eq 5 ]; then
-            cutoff=1130   # Friday
+            cutoff=1115   # Friday
         else
             cutoff=1350   # Other weekdays
         fi
@@ -36,7 +36,7 @@ with lib; let
         fi
 
         niri msg action power-off-monitors  # Can't use real suspend on this host, it just wakes up again.
-        ${getExe config.programs.swaylock.package} 
+        ${getExe config.programs.swaylock.package}
 
         # After unlocking, relaunch Slack only if it's not already running
         if ! pgrep slack >/dev/null 2>&1; then
