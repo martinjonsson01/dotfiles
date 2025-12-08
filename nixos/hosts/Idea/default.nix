@@ -163,6 +163,11 @@ with lib; {
     cmake # For building
   ];
 
+  # Disable built-in motherboard bluetooth (it has crap range)
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="13d3", ATTR{idProduct}=="3558", ATTR{authorized}="0"
+  '';
+
   # Custom modules
   Eclipse = {
     stylix.enable = true;
