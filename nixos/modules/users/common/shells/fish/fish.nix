@@ -13,6 +13,7 @@ with lib; {
     home.packages = with pkgs; [
       grc # Generic text colouriser
       babelfish # Translate bash scripts to fish.
+      bat # Syntax-highlighted cat. Used by fzf file finder.
     ];
 
     home.file = {
@@ -100,6 +101,11 @@ with lib; {
           name = "z";
           src = pkgs.fishPlugins.z.src;
         }
+        # Ef-fish-ient fish keybindings for fzf
+        {
+          name = "fzf";
+          src = pkgs.fishPlugins.fzf.src;
+        }
       ];
 
       interactiveShellInit =
@@ -116,7 +122,14 @@ with lib; {
           set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
           set -gx FZF_ALT_C_COMMAND 'fd --type d .'
 
-          # Set Fish colors that aren't dependant the `$term_background`.
+          set -p fish_function_path ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_functions.d
+          set -p fish_complete_path ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_completions.d
+          source ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_conf.d/fzf.fish
+          if functions -q fzf_configure_bindings
+            fzf_configure_bindings --directory=\cf --git_log=\cg --history=\cr --variables=\cv
+          end
+
+          # Set Fish colors that aren't dependent the `$term_background`.
           set -g fish_color_quote        cyan      # color of commands
           set -g fish_color_redirection  brmagenta # color of IO redirections
           set -g fish_color_end          blue      # color of process separators like ';' and '&'
