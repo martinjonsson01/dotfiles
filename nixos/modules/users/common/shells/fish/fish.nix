@@ -125,6 +125,8 @@ with lib; {
           set -p fish_function_path ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_functions.d
           set -p fish_complete_path ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_completions.d
           source ${pkgs.fishPlugins.fzf-fish}/share/fish/vendor_conf.d/fzf.fish
+          # Ctrl-o will open the selected file/directory in your editor of choice.
+          set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
           if functions -q fzf_configure_bindings
             fzf_configure_bindings --directory=\cf --git_log=\cg --history=\cr --variables=\cv
           end
