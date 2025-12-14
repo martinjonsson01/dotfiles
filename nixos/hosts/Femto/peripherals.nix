@@ -49,6 +49,10 @@
             id = 4;
             name = "project";
           }
+          {
+            id = 5;
+            name = "hasskell";
+          }
         ];
       }
       {
