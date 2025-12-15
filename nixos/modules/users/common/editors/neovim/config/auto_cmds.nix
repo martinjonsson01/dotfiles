@@ -29,5 +29,15 @@
         '';
       };
     }
+    {
+      event = ["FileType"];
+      pattern = "resc";
+      command = "setlocal commentstring=#\\ %s";
+    }
+    {
+      event = ["FileType"];
+      pattern = "repl";
+      command = "setlocal commentstring=//\\ %s";
+    }
   ];
 }

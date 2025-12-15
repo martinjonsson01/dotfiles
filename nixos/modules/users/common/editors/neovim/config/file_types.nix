@@ -33,4 +33,32 @@
       command = "set ft=bicep";
     }
   ];
+
+  files."ftdetect/rescft.lua".autoCmd = [
+    {
+      group = "filetypes";
+      event = [
+        "BufRead"
+        "BufNewFile"
+      ];
+      pattern = [
+        "*.resc"
+      ];
+      command = "set ft=resc";
+    }
+  ];
+
+  files."ftdetect/replft.lua".autoCmd = [
+    {
+      group = "filetypes";
+      event = [
+        "BufRead"
+        "BufNewFile"
+      ];
+      pattern = [
+        "*.repl"
+      ];
+      command = "set ft=repl";
+    }
+  ];
 }
