@@ -62,7 +62,14 @@ with lib; {
   sops.age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [22];
+    settings.PasswordAuthentication = false;
+  };
+  users.users."martin".openssh.authorizedKeys.keyFiles = [
+    ./id_mjonsson.pub
+  ];
 
   # Needed for trash to work.
   services.gvfs.enable = true;
