@@ -126,6 +126,7 @@ in {
           ripgrep # Faster grep
           fd # More intuitive 'find'
           openssl_3 # Cryptography
+          mkvtoolnix # Mkv editing
 
           # Utility
           fsearch # Like Void Tools Everything but on linux (i.e. file search)
