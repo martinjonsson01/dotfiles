@@ -2,9 +2,16 @@
   pkgs,
   lib,
   config,
+  osConfig,
   ...
 }:
-with lib; {
+with lib; let
+  host = osConfig.networking.hostName;
+  workDir =
+    if host == "Idea"
+    then "Projects"
+    else "work";
+in {
   options = {
     git.enable = mkEnableOption "Enables git";
   };
@@ -16,8 +23,8 @@ with lib; {
       userEmail = "martinjonsson01@gmail.com";
       includes = [
         {
-          path = "${config.home.homeDirectory}/Projects/.gitconfig";
-          condition = "gitdir:${config.home.homeDirectory}/Projects/";
+          path = "${config.home.homeDirectory}/${workDir}/.gitconfig";
+          condition = "gitdir:${config.home.homeDirectory}/${workDir}/";
         }
       ];
       extraConfig = {
@@ -72,6 +79,12 @@ with lib; {
     ];
 
     xdg.configFile."git/ignore".source = ./ignore;
+
+    home.file."${workDir}/.gitconfig".text = ''
+      [user]
+          email = "mjonsson@antmicro.com"
+          name = "Martin Jonsson"
+    '';
 
     programs.lazygit = {
       enable = true;
