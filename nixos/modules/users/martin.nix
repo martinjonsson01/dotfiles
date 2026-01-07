@@ -127,6 +127,7 @@ in {
           fd # More intuitive 'find'
           openssl_3 # Cryptography
           mkvtoolnix # Mkv editing
+          websocat # Connect to websockets
 
           # Utility
           fsearch # Like Void Tools Everything but on linux (i.e. file search)
