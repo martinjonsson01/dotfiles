@@ -56,8 +56,20 @@
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     useDHCP = lib.mkDefault true;
-    interfaces = {
-      enp12s0.useDHCP = lib.mkDefault true;
+    interfaces.enp12s0 = {
+      useDHCP = lib.mkDefault true;
+      wakeOnLan = {
+        enable = true;
+        policy = [
+          "magic" # To wake on receipt of a magic packet
+          "unicast" # To wake on incoming SSH
+        ];
+      };
+    };
+    firewall = {
+      allowedUDPPorts = [
+        9 # Wake-on-LAN UDP Port
+      ];
     };
   };
 

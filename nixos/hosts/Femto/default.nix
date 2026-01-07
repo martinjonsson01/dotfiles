@@ -186,6 +186,7 @@ with lib; {
     alejandra # Nix formatter
     tree # Shows directory structures
     fastfetch # Shows system info
+    wakeonlan # Perl script for waking up computers via Wake-On-LAN magic packets
 
     # System
     libnotify # For notifications
