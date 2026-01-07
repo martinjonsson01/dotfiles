@@ -128,6 +128,7 @@ in {
           openssl_3 # Cryptography
           mkvtoolnix # Mkv editing
           websocat # Connect to websockets
+          ethtool # Utility for controlling network drivers and hardware
 
           # Utility
           fsearch # Like Void Tools Everything but on linux (i.e. file search)
