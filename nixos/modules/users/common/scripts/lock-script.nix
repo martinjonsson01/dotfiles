@@ -27,7 +27,7 @@ with lib; let
         if [ "$weekday" -eq 5 ]; then
             cutoff=1115   # Friday
         else
-            cutoff=1350   # Other weekdays
+            cutoff=1330   # Other weekdays
         fi
 
         # Only kill Slack if after cutoff.
