@@ -48,7 +48,6 @@ with lib; {
       # Fast cd command that learns your habits
       zoxide.enable = true;
       zoxide.enableFishIntegration = true;
-      zoxide.options = ["--cmd cd"];
       # Interactive directory tree view.
       broot.enable = true;
       broot.enableFishIntegration = true;
