@@ -5,6 +5,7 @@
   pkgs,
   lib,
   config,
+  osConfig,
   ...
 }:
 with lib; let
@@ -15,6 +16,11 @@ with lib; let
     url = "https://raw.githubusercontent.com/${repo}/${commit}/${file}";
     sha256 = "sha256-cLpH7t/oK8iFOfDnfnWw3oLGegYnNEb5vI8M7FGI7ic=";
   };
+  host = osConfig.networking.hostName;
+  workDir =
+    if host == "Idea"
+    then "Projects"
+    else "work";
 in {
   options = {
     gdb-dashboard.enable = mkEnableOption "Enables gdb-dashboard";
@@ -59,6 +65,9 @@ in {
 
       # Enable history expansion (like !n to repeat nth command)
       set history expansion on
+
+      # Path replacements
+      set substitute-path /mnt/host/source /home/martin/${workDir}/cros-latest
     '';
   };
 }
