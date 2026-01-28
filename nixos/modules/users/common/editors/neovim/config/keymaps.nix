@@ -524,5 +524,21 @@
         desc = "Visual paste without overwriting yank";
       };
     }
+    {
+      mode = "x";
+      key = "<";
+      action = "<gv";
+      options = {
+        desc = "Decrease indentation while preserving selection";
+      };
+    }
+    {
+      mode = "x";
+      key = ">";
+      action = ">gv";
+      options = {
+        desc = "Increase indentation while preserving selection";
+      };
+    }
   ];
 }
