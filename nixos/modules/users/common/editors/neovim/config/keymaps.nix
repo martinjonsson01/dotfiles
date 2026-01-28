@@ -516,5 +516,13 @@
         desc = "Replace selected text";
       };
     }
+    {
+      mode = "x";
+      key = "p";
+      action = "\"_dP";
+      options = {
+        desc = "Visual paste without overwriting yank";
+      };
+    }
   ];
 }
