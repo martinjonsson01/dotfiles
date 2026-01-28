@@ -105,6 +105,9 @@
       fillchars = {
         eob = " ";
       };
+
+      # Don't insert newlines at end of files.
+      fixendofline = false;
     };
   };
 }
