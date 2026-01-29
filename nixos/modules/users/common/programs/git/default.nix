@@ -51,18 +51,13 @@ in {
           excludesFile = ["~/.config/git/ignore"]; # Global .gitignore
         };
       };
-      delta = {
-        # Syntax-highlighting pager for git
-        enable = false;
-        options = {
-          navigate = true;
-          line-numbers = true;
-          hyperlinks = true;
-        };
-      };
-      difftastic = {
-        # Syntax-aware diff
-        enable = true;
+    };
+
+    # Syntax-aware diff
+    programs.difftastic = {
+      enable = true;
+      git.enable = true;
+      options = {
         enableAsDifftool = true;
         background = "dark";
       };

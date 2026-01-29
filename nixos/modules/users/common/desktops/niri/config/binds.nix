@@ -222,8 +222,8 @@ with lib; {
 
     "Ctrl+Print".action = spawn ["screenshot-region.sh"];
     "Ctrl+Shift+Print".action = spawn ["screenrecord-region.sh"];
-    "Print".action = screenshot;
-    "Alt+Print".action = screenshot-window;
+    "Print".action.screenshot = [];
+    "Alt+Print".action.screenshot-window = [];
 
     # Applications such as remote-desktop clients and software KVM switches may
     # request that niri stops processing the keyboard shortcuts defined here

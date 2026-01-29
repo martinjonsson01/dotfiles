@@ -13,6 +13,7 @@
   config = lib.mkIf config.ssh.enable {
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false; # Defaults will be removed in the future
       addKeysToAgent = "yes"; # Automatically add keys to ssh-agent as necessary
       matchBlocks = {
         "*" = {

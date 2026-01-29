@@ -43,8 +43,6 @@ in {
     environment.sessionVariables.NIXOS_OZONE_WL = "1"; # To enable wayland support in e.g. Slack
     environment.sessionVariables.EDITOR = "nvim";
 
-    programs.ssh.startAgent = true;
-
     home-manager.users.martin = {
     };
   };

@@ -111,7 +111,6 @@ with lib; {
         #fish
         ''
           ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-          ${pkgs.thefuck}/bin/thefuck --alias | source
 
           if test -e ${config.xdg.configHome}/fish/functions/fish_helpers.fish
             source ${config.xdg.configHome}/fish/functions/fish_helpers.fish
@@ -163,8 +162,8 @@ with lib; {
 
       # Other
       cat = "${bat}/bin/bat";
-      du = "${du-dust}/bin/dust";
-      g = "${gitAndTools.git}/bin/git";
+      du = "${dust}/bin/dust";
+      g = "${git}/bin/git";
       lg = "${pkgs.unstable.lazygit}/bin/lazygit";
       ls = "${lsd}/bin/lsd";
       kubectl = "kubecolor"; # Use colorized version of kubectl

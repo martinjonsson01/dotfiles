@@ -26,6 +26,7 @@
       programs.niri =
         {
           enable = true;
+          package = pkgs.niri-unstable;
         }
         // (import ./config {inherit config lib pkgs osConfig;});
     }

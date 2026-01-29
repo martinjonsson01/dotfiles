@@ -39,22 +39,22 @@
       };
     };
 
-    eventHandlers = {
-      file_moved =
+    settings.event_handlers = {
+      file_moved.__raw =
         #lua
         ''
           function(data)
           	Snacks.rename.on_rename_file(data.source, data.destination)
           end
         '';
-      file_renamed =
+      file_renamed.__raw =
         #lua
         ''
           function(data)
             Snacks.rename.on_rename_file(data.source, data.destination)
           end
         '';
-      file_opened =
+      file_opened.__raw =
         #lua
         ''
           function(file_path)
@@ -76,6 +76,6 @@
   ];
 
   extraConfigLua = ''
-
-  '';
+  
+'';
 }

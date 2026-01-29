@@ -120,7 +120,6 @@ in {
           fd # Simple, fast and user-friendly alternative to find
           bat # Cat(1) clone with syntax highlighting and Git integration
           dust # Disk usage utility written in Rust
-          thefuck # Fixes last run command
           jq # JSON parsing/querying
           yq # YAML parsing/querying
           ripgrep # Faster grep

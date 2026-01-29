@@ -2,12 +2,12 @@
   description = "Martin's system Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Nix-based user environment configurator.
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,14 +19,14 @@
 
     # Scrollable-tiling desktop environment.
     niri = {
-      url = "github:martinjonsson01/niri-flake/bdc23782b085a238339ba91882865a24fb49336a";
+      url = "github:sodiboo/niri-flake/e3d4bf00f7d40fca03fecab5c7a46277a6eb9fed";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-stable.url = "github:martinjonsson01/niri/26e793de0e81ee1b027b0bdf3e62f30a40e9a8e1";
+      inputs.niri-unstable.url = "github:martinjonsson01/niri/aa0a3a25db36e47083de3cf0780db34bd99f46c4";
     };
 
     # Universal styling
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:danth/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -38,7 +38,7 @@
 
     # A Neovim distribution built around Nix modules.
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.05";
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

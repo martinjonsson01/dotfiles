@@ -21,7 +21,7 @@
 
   plugins.treesitter-textobjects = {
     enable = true;
-    select = {
+    extraOptions.select = {
       enable = true;
       lookahead = true;
       keymaps = {
