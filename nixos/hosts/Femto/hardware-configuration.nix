@@ -62,7 +62,6 @@
         enable = true;
         policy = [
           "magic" # To wake on receipt of a magic packet
-          "unicast" # To wake on incoming SSH
         ];
       };
     };
