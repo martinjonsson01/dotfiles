@@ -53,6 +53,10 @@
             id = 5;
             name = "hasskell";
           }
+          {
+            id = 6;
+            name = "work";
+          }
         ];
       }
       {
