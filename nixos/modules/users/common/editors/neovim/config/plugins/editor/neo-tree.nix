@@ -39,28 +39,43 @@
       };
     };
 
-    settings.event_handlers = {
-      file_moved.__raw =
-        #lua
-        ''
-          function(data)
-          	Snacks.rename.on_rename_file(data.source, data.destination)
-          end
-        '';
-      file_renamed.__raw =
-        #lua
-        ''
-          function(data)
-            Snacks.rename.on_rename_file(data.source, data.destination)
-          end
-        '';
-      file_opened.__raw =
-        #lua
-        ''
-          function(file_path)
-            require("neo-tree").close_all()
-          end
-        '';
+    settings = {
+      close_if_last_window = true;
+      filesystem = {
+        filtered_items = {
+          visible = true;
+          hide_dotfiles = false;
+          hide_gitignored = false;
+          hide_hidden = false;
+        };
+        follow_current_file.enabled = true;
+      };
+      event_handlers = [
+        {
+          event = "file_moved";
+          handler.__raw = ''
+            function(data)
+              Snacks.rename.on_rename_file(data.source, data.destination)
+            end
+          '';
+        }
+        {
+          event = "file_renamed";
+          handler.__raw = ''
+            function(data)
+              Snacks.rename.on_rename_file(data.source, data.destination)
+            end
+          '';
+        }
+        {
+          event = "file_open_requested";
+          handler.__raw = ''
+            function(file_path)
+              require("neo-tree.command").execute({ action = "close" })
+            end
+          '';
+        }
+      ];
     };
   };
 
@@ -74,8 +89,4 @@
       };
     }
   ];
-
-  extraConfigLua = ''
-  
-'';
 }
