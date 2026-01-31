@@ -230,9 +230,9 @@ with lib; {
 
   # The widths that the switch-preset-column-width action (Mod+R) toggles between
   home-manager.users.martin.programs.niri.settings.layout.preset-column-widths = [
-    {proportion = 3.0 / 7.0 + 0.005;}
-    {proportion = 2.0 / 7.0 - 0.0025;}
     {proportion = 1.0 / 7.0 - 0.0025;}
+    {proportion = 2.0 / 7.0 - 0.0025;}
+    {proportion = 3.0 / 7.0 + 0.005;}
   ];
   # The default width of new windows.
   home-manager.users.martin.programs.niri.settings.layout.default-column-width = {proportion = 2.0 / 7.0 - 0.0025;};
