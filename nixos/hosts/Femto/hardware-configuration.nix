@@ -35,7 +35,7 @@
 
   fileSystems."/big-chungus" = {
     device = "/dev/disk/by-uuid/840091F50091EE84";
-    fsType = "ntfs-3g";
+    fsType = "ntfs3";
     options = [
       "rw"
       "uid=1000" # 1000 is id of 'martin'
