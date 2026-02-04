@@ -23,6 +23,7 @@
         "dev.antmicro.com" = {
           identityFile = ["~/.ssh/id_mjonsson"];
           identitiesOnly = true;
+          extraOptions.WarnWeakCrypto = "no";
         };
 
         "github.com" = {
