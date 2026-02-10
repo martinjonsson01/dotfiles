@@ -141,6 +141,12 @@ in {
           video-trimmer # For trimming video files
           dysk # Simple and easy to view disk usage
           songrec # Shazam song recognition
+          (pkgs.linkFarm "runghc" [
+            {
+              name = "bin/runghc";
+              path = "${pkgs.ihaskell}/bin/runghc";
+            }
+          ]) # Run Haskell scripts
         ]
         ++ (with pkgs.unstable; [
           (plexamp.overrideAttrs (old: {
