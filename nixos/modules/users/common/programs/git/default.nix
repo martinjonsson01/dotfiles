@@ -50,6 +50,7 @@ in {
         core = {
           excludesFile = ["~/.config/git/ignore"]; # Global .gitignore
         };
+        # TODO:reenable when updating to git 2.53.0 blame.ignoreRevsFile = ":(optional).git-blame-ignore-revs";
       };
     };
 
