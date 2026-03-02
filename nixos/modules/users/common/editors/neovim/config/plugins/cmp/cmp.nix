@@ -15,9 +15,11 @@
           fetchingTimeout = 200;
           maxViewEntries = 30;
         };
-        snippet = {
-          expand = "luasnip";
-        };
+        snippet.expand = ''
+          function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        '';
         formatting = {
           fields = [
             "kind"
@@ -54,9 +56,28 @@
         };
 
         mapping = {
-          "<C-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<C-j>" = "cmp.mapping.select_next_item()";
-          "<C-k>" = "cmp.mapping.select_prev_item()";
+          "<C-j>" = ''
+            cmp.mapping(function(fallback)
+              if luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
+              elseif cmp.visible() then
+                cmp.select_next_item()
+              else
+                fallback()
+              end
+            end, { "i", "s" })
+          '';
+          "<C-k>" = ''
+            cmp.mapping(function(fallback)
+              if luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+              elseif cmp.visible() then
+                cmp.select_prev_item()
+              else
+                fallback()
+              end
+            end, { "i", "s" })
+          '';
           "<C-e>" = "cmp.mapping.abort()";
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
