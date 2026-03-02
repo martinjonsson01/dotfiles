@@ -33,7 +33,10 @@ with lib; {
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
       download-buffer-size = 536870912; # (512 MiB) The size of Nix's internal download buffer during curl transfers.
     };
@@ -235,5 +238,7 @@ with lib; {
     {proportion = 3.0 / 7.0 + 0.005;}
   ];
   # The default width of new windows.
-  home-manager.users.martin.programs.niri.settings.layout.default-column-width = {proportion = 2.0 / 7.0 - 0.0025;};
+  home-manager.users.martin.programs.niri.settings.layout.default-column-width = {
+    proportion = 2.0 / 7.0 - 0.0025;
+  };
 }
