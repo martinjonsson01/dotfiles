@@ -231,6 +231,9 @@ with lib; {
     users.martin.enable = true;
   };
 
+  # Allow GDB to attach to processes.
+  boot.kernel.sysctl."kernel.yama.ptrace_scope" = lib.mkForce 0;
+
   # The widths that the switch-preset-column-width action (Mod+R) toggles between
   home-manager.users.martin.programs.niri.settings.layout.preset-column-widths = [
     {proportion = 1.0 / 7.0 - 0.0025;}
