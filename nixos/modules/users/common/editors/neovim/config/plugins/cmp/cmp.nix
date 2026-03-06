@@ -58,10 +58,10 @@
         mapping = {
           "<C-j>" = ''
             cmp.mapping(function(fallback)
-              if luasnip.expand_or_locally_jumpable() then
-                luasnip.expand_or_jump()
-              elseif cmp.visible() then
+              if cmp.visible() then
                 cmp.select_next_item()
+              elseif luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
               else
                 fallback()
               end
@@ -69,10 +69,10 @@
           '';
           "<C-k>" = ''
             cmp.mapping(function(fallback)
-              if luasnip.locally_jumpable(-1) then
-                luasnip.jump(-1)
-              elseif cmp.visible() then
+              if cmp.visible() then
                 cmp.select_prev_item()
+              elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
               else
                 fallback()
               end
