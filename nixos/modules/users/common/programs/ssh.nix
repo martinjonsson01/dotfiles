@@ -6,6 +6,8 @@
   config,
   ...
 }: {
+  imports = [../../../../secrets/ssh.nix];
+
   options = {
     ssh.enable = lib.mkEnableOption "Enables ssh";
   };
