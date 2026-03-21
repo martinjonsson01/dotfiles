@@ -511,9 +511,22 @@
     {
       mode = "x";
       key = "<C-r>";
-      action = "y:%s/<C-r>+//g<left><left>";
+      action.__raw = ''
+        function()
+          vim.cmd('normal! y')
+          local text = vim.fn.getreg('"')
+          text = vim.fn.escape(text, '/\\')
+          text = text:gsub('\n', '\\n')
+
+          local keys = vim.api.nvim_replace_termcodes(
+            ':%s/' .. text .. '//g<Left><Left>',
+            true, false, true
+          )
+          vim.api.nvim_feedkeys(keys, 'n', false)
+        end
+      '';
       options = {
-        desc = "Replace selected text";
+        desc = "Replace selected text (special chars escaped)";
       };
     }
     {
