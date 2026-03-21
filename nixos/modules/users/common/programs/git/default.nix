@@ -75,6 +75,7 @@ in {
     home.packages = with pkgs; [
       git-absorb # git commit --fixup, but automatic
       commitizen # Commit rules
+      git-crypt # For encrypting/decrypting files
     ];
 
     xdg.configFile."git/ignore".source = ./ignore;
