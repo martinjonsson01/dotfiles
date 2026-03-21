@@ -90,19 +90,21 @@
       sops-nix.nixosModules.sops
       stylix.nixosModules.stylix
       nix-index-database.nixosModules.nix-index
-      ({...}: {
-        programs.nix-index-database.comma.enable = true;
+      (
+        {...}: {
+          programs.nix-index-database.comma.enable = true;
 
-        nixpkgs.config = {
-          allowUnfree = true;
+          nixpkgs.config = {
+            allowUnfree = true;
 
-          # Fix collisions.
-          packageOverrides = pkgs: {
-            swaylock = pkgs.lowPrio pkgs.swaylock;
-            swaylock-effects = pkgs.hiPrio pkgs.swaylock-effects;
+            # Fix collisions.
+            packageOverrides = pkgs: {
+              swaylock = pkgs.lib.lowPrio pkgs.swaylock;
+              swaylock-effects = pkgs.lib.hiPrio pkgs.swaylock-effects;
+            };
           };
-        };
-      })
+        }
+      )
     ];
   in {
     nixosConfigurations = {

@@ -3,19 +3,21 @@
   plugins.lspsaga = {
     enable = true;
 
-    codeAction = {
-      onlyInCursor = false;
-      showServerName = true;
-      extendGitSigns = false; # this is noise
-    };
+    settings = {
+      codeAction = {
+        onlyInCursor = false;
+        showServerName = true;
+        extendGitSigns = false; # this is noise
+      };
 
-    outline = {
-      detail = true;
-      winWidth = 50;
-    };
+      outline = {
+        detail = true;
+        winWidth = 50;
+      };
 
-    ui.codeAction = "󰌶";
-    lightbulb.sign = false;
-    lightbulb.debounce = 200;
+      ui.codeAction = "󰌶";
+      lightbulb.sign = false;
+      lightbulb.debounce = 200;
+    };
   };
 }

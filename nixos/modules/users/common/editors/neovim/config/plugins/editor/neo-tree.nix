@@ -1,45 +1,35 @@
 {
   plugins.neo-tree = {
     enable = true;
-    sources = [
-      "filesystem"
-      "buffers"
-      "git_status"
-      "document_symbols"
-    ];
-    addBlankLineAtTop = false;
-
-    filesystem = {
-      bindToCwd = false;
-      followCurrentFile = {
-        enabled = true;
-      };
-    };
-
-    defaultComponentConfigs = {
-      indent = {
-        withExpanders = true;
-        expanderCollapsed = "󰅂";
-        expanderExpanded = "󰅀";
-        expanderHighlight = "NeoTreeExpander";
-      };
-
-      gitStatus = {
-        symbols = {
-          added = " ";
-          conflict = "󰩌 ";
-          deleted = "󱂥";
-          ignored = " ";
-          modified = " ";
-          renamed = "󰑕";
-          staged = "󰩍";
-          unstaged = "";
-          untracked = " ";
+    settings = {
+      sources = [
+        "filesystem"
+        "buffers"
+        "git_status"
+        "document_symbols"
+      ];
+      add_blank_line_at_top = false;
+      default_component_configs = {
+        indent = {
+          with_expanders = true;
+          expander_collapsed = "󰅂";
+          expander_expanded = "󰅀";
+          expander_highlight = "NeoTreeExpander";
+        };
+        git_status = {
+          symbols = {
+            added = " ";
+            conflict = "󰩌 ";
+            deleted = "󱂥";
+            ignored = " ";
+            modified = " ";
+            renamed = "󰑕";
+            staged = "󰩍";
+            unstaged = "";
+            untracked = " ";
+          };
         };
       };
-    };
-
-    settings = {
       close_if_last_window = true;
       filesystem = {
         filtered_items = {
@@ -78,7 +68,6 @@
       ];
     };
   };
-
   keymaps = [
     {
       mode = ["n"];

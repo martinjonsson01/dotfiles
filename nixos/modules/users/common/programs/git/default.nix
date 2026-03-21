@@ -20,15 +20,17 @@ in {
     programs.git = {
       enable = true;
       package = pkgs.unstable.git;
-      userName = "Martin";
-      userEmail = "martinjonsson01@gmail.com";
       includes = [
         {
           path = "${config.home.homeDirectory}/${workDir}/.gitconfig";
           condition = "gitdir:${config.home.homeDirectory}/${workDir}/";
         }
       ];
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Martin";
+          email = "martinjonsson01@gmail.com";
+        };
         pull = {
           rebase = true;
           ff = false;
