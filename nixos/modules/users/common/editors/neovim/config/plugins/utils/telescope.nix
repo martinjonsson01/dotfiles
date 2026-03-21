@@ -61,12 +61,6 @@ with lib; {
           desc = "Find project files";
         };
       };
-      "<leader>/" = {
-        action = "live_grep";
-        options = {
-          desc = "Grep (root dir)";
-        };
-      };
       "<leader>:" = {
         action = "command_history";
         options = {
@@ -202,14 +196,6 @@ with lib; {
     };
   };
   keymaps = [
-    {
-      mode = "n";
-      key = "<C-p>";
-      action = "<cmd>Telescope frecency workspace=CWD<cr>";
-      options = {
-        desc = "Search project files, ordered by recency";
-      };
-    }
     {
       mode = "n";
       key = "<leader>sd";
