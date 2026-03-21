@@ -61,6 +61,7 @@
 
     # Utils
     ./plugins/utils/telescope.nix
+    ./plugins/utils/fff.nix
     ./plugins/utils/whichkey.nix
     ./plugins/utils/extra_plugins.nix
     ./plugins/utils/mini.nix
