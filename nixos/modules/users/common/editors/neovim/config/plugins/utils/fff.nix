@@ -1,7 +1,8 @@
-{
+{pkgs-unstable, ...}: {
   plugins.fff = {
     enable = true;
     settings = {};
+    package = pkgs-unstable.vimPlugins.fff-nvim;
   };
   keymaps = [
     {

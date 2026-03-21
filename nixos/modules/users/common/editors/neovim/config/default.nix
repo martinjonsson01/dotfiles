@@ -5,6 +5,8 @@
   ...
 }: {
   imports = [
+    {_module.args.pkgs-unstable = pkgs.unstable;}
+
     # General Configuration
     ./settings.nix
     ./keymaps.nix
