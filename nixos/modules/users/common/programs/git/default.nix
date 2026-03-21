@@ -19,6 +19,7 @@ in {
   config = mkIf config.git.enable {
     programs.git = {
       enable = true;
+      package = pkgs.unstable.git;
       userName = "Martin";
       userEmail = "martinjonsson01@gmail.com";
       includes = [
@@ -50,7 +51,7 @@ in {
         core = {
           excludesFile = ["~/.config/git/ignore"]; # Global .gitignore
         };
-        # TODO:reenable when updating to git 2.53.0 blame.ignoreRevsFile = ":(optional).git-blame-ignore-revs";
+        blame.ignoreRevsFile = ":(optional).git-blame-ignore-revs";
       };
     };
 
