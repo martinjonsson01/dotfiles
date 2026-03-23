@@ -22,6 +22,10 @@ with lib; let
     then "Projects"
     else "work";
 in {
+  imports = [
+    (import ../../../../secrets/gdb.nix {inherit lib workDir;})
+  ];
+
   options = {
     gdb-dashboard.enable = mkEnableOption "Enables gdb-dashboard";
   };
