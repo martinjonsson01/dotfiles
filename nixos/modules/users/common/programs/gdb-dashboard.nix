@@ -65,9 +65,6 @@ in {
 
       # Enable history expansion (like !n to repeat nth command)
       set history expansion on
-
-      # Path replacements
-      set substitute-path /mnt/host/source /home/martin/${workDir}/cros-latest
     '';
   };
 }
