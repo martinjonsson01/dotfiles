@@ -11,7 +11,7 @@
     #[Sunsetr configuration]
 
     #[Backend]
-    backend = "auto"; # Backend to use: "auto", "hyprland", "hyprsunset" or "wayland"
+    backend = "wayland"; # Backend to use: "auto", "hyprland", "hyprsunset" or "wayland"
     transition_mode = "finish_by"; # Select: "geo", "finish_by", "start_at", "center", "static"
 
     #[Smoothing]
@@ -20,7 +20,6 @@
     shutdown_duration = 0.5; # Duration of smooth shutdown in seconds (0.1-60 | 0 = instant)
     adaptive_interval = 1; # Adaptive interval base for smooth transitions (1-1000)ms
 
-    start_hyprsunset = true; # Set true if you're not using hyprsunset.service
     night_temp = 3300; # Color temperature after sunset (1000-20000) Kelvin
     day_temp = 6500; # Color temperature during day (1000-20000) Kelvin
     night_gamma = 90; # Gamma percentage for night (0-100%)
@@ -68,6 +67,11 @@ in
             ExecStart = "${getExe pkgs.unstable.sunsetr}";
             Restart = "always";
             RestartSec = 30;
+            PassEnvironment = [
+              "WAYLAND_DISPLAY"
+              "XDG_RUNTIME_DIR"
+              "NIRI_SOCKET"
+            ];
           };
           Install = {
             WantedBy = ["graphical-session.target"];
