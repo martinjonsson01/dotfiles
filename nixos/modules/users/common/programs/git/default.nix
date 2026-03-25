@@ -94,6 +94,8 @@ in {
         };
 
         git = {
+          autoWrapCommitMessage = false;
+
           pagers = [
             {
               externalDiffCommand = "difft --color=always";
