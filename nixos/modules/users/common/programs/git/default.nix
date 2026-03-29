@@ -110,12 +110,18 @@ in {
         };
 
         gui = {
-          showDivergenceFromBaseBranch = "arrowAndNumber";
+          mouseEvents = false; # Allow text selection in the UI (disables mouse-clickable UI)
+          skipAmendWarning = true; # I amend all the time
+          skipRewordInEditorWarning = true; # When I want to edit using neovim I don't want warnings
+          nerdFontsVersion = "3"; # Enable icons
+          filterMode = "fuzzy"; # Use fuzzy search instead of strict substring match
+          switchTabsWithPanelJumpKeys = true; # Press panel number again to switch tab
         };
 
         quitOnTopLevelReturn = true;
         disableStartupPopups = true;
         promptToReturnFromSubprocess = false;
+        notARepository = "quit"; # Don't show the annoying popup menu when accidentally opening outside of a repo.
 
         customCommands = [
           {
