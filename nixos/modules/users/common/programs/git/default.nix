@@ -94,7 +94,7 @@ in {
         };
 
         git = {
-          autoWrapCommitMessage = false;
+          commit.autoWrapCommitMessage = false;
 
           pagers = [
             {
