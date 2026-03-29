@@ -21,14 +21,21 @@
         xwayland-satellite # X11 compatibility
       ];
 
-      xdg.mime.enable = true;
+      targets.genericLinux.enable = true;
 
       programs.niri =
         {
           enable = true;
           package = pkgs.niri-unstable;
         }
-        // (import ./config {inherit config lib pkgs osConfig;});
+        // (import ./config {
+          inherit
+            config
+            lib
+            pkgs
+            osConfig
+            ;
+        });
     }
     // (import ../default-applications.nix);
 }

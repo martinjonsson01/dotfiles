@@ -42,6 +42,10 @@ with lib; {
       };
     };
 
+    xdg.mimeApps.defaultApplications = {
+      "x-scheme-handler/terminal" = ["kitty.desktop"];
+    };
+
     home.shellAliases = {
       # When kitty is used to ssh into a remote that does not have its terminfo, various issues can occur. The solution is normally to copy over the terminfo. Kitty has an ssh kitten to automate exactly this.
       ssh = "kitty +kitten ssh";
