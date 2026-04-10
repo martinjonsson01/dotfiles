@@ -18,7 +18,25 @@
         nil_ls.enable = true;
         ts_ls.enable = true;
         marksman.enable = true;
-        pyright.enable = true;
+        pyright = {
+          enable = true;
+          extraOptions = {
+            before_init = {
+              __raw = ''
+                function(_, config)
+                  local venv = vim.fn.finddir(".venv", vim.fn.getcwd() .. ";")
+                  vim.notify("before_init fired, venv=" .. venv, vim.log.levels.INFO)
+                  if venv ~= "" then
+                    config.settings = config.settings or {}
+                    config.settings.python = config.settings.python or {}
+                    config.settings.python.pythonPath = vim.fn.fnamemodify(venv, ":p") .. "bin/python"
+                    config.settings.python.defaultInterpreterPath = vim.fn.fnamemodify(venv, ":p") .. "bin/python"
+                  end
+                end
+              '';
+            };
+          };
+        };
         gopls.enable = true;
         terraformls.enable = true;
         jsonls.enable = true;
@@ -231,47 +249,49 @@
   ];
 
   extraPackages = with pkgs; [
-    (python3.withPackages (ps:
-      with ps; let
-        robotframework61 = buildPythonPackage rec {
-          pname = "robotframework";
-          version = "6.1";
+    (python3.withPackages (
+      ps:
+        with ps; let
+          robotframework61 = buildPythonPackage rec {
+            pname = "robotframework";
+            version = "6.1";
 
-          src = fetchFromGitHub {
-            owner = "robotframework";
-            repo = "robotframework";
-            tag = "v${version}";
-            sha256 = "sha256-l1VupBKi52UWqJMisT2CVnXph3fGxB63mBVvYdM1NWE=";
+            src = fetchFromGitHub {
+              owner = "robotframework";
+              repo = "robotframework";
+              tag = "v${version}";
+              sha256 = "sha256-l1VupBKi52UWqJMisT2CVnXph3fGxB63mBVvYdM1NWE=";
+            };
+
+            pyproject = true;
+            build-system = [setuptools];
+
+            doCheck = false;
           };
+        in [
+          psutil
+          pyyaml
+          robotframework61
+          (buildPythonPackage rec {
+            pname = "robotframework_lsp";
+            version = "1.13.0";
 
-          pyproject = true;
-          build-system = [setuptools];
+            src = fetchPypi {
+              inherit pname version;
+              sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
+            };
 
-          doCheck = false;
-        };
-      in [
-        psutil
-        pyyaml
-        robotframework61
-        (buildPythonPackage rec {
-          pname = "robotframework_lsp";
-          version = "1.13.0";
+            pyproject = true;
+            build-system = [setuptools];
 
-          src = fetchPypi {
-            inherit pname version;
-            sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
-          };
+            propagatedBuildInputs = [
+              robotframework61
+            ];
 
-          pyproject = true;
-          build-system = [setuptools];
-
-          propagatedBuildInputs = [
-            robotframework61
-          ];
-
-          doCheck = false;
-        })
-      ]))
+            doCheck = false;
+          })
+        ]
+    ))
   ];
 
   extraConfigLua = ''
