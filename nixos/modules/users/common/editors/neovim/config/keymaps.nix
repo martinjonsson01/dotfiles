@@ -534,12 +534,11 @@
       key = "p";
       action.__raw = ''
         function()
-          -- In linewise visual mode, "_d leaves cursor on the line after the
-          -- deletion, so we need P (paste before) to land in the right place
+          -- We need P (paste before) to land in the right place
           if vim.fn.mode() == 'V' then
             return '"_dP'
           else
-            return '"_dp'
+            return '"_dP'
           end
         end
       '';
