@@ -19,6 +19,7 @@ in {
     kanata.enable = true;
     resilio.enable = true;
     polkit-gnome.enable = true;
+    programs.noisetorch.enable = true;
 
     security.sudo = {
       enable = true;
