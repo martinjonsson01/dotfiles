@@ -46,6 +46,21 @@ in {
     environment.sessionVariables.NIXOS_OZONE_WL = "1"; # To enable wayland support in e.g. Slack
     environment.sessionVariables.EDITOR = "nvim";
 
+    sops.secrets."gemini-api-key" = {
+      sopsFile = ./../../secrets/api.yaml;
+      owner = "martin";
+    };
+
+    sops.secrets."deepseek-api-key" = {
+      sopsFile = ./../../secrets/api.yaml;
+      owner = "martin";
+    };
+
+    sops.secrets."openrouter-api-key" = {
+      sopsFile = ./../../secrets/api.yaml;
+      owner = "martin";
+    };
+
     home-manager.users.martin = {
     };
   };

@@ -3,21 +3,25 @@ keys:
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
-    - age:
-      - *primary
+      - age:
+          - *primary
   - path_regex: secrets/rbw-setup.sh$
     key_groups:
-    - age:
-      - *primary
+      - age:
+          - *primary
   - path_regex: secrets/resilio-secret.txt$
     key_groups:
-    - age:
-      - *primary
+      - age:
+          - *primary
   - path_regex: secrets/kyltermometer.sh$
     key_groups:
-    - age:
-      - *primary
+      - age:
+          - *primary
   - path_regex: secrets/geo.toml$
     key_groups:
-    - age:
-      - *primary
+      - age:
+          - *primary
+  - path_regex: secrets/api.yaml$
+    key_groups:
+      - age:
+          - *primary
