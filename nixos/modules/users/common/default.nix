@@ -23,6 +23,8 @@
     ./programs/gdb-dashboard.nix
     ./programs/ssh.nix
     ./programs/yazi.nix
+    ./programs/ollama.nix
+    ./programs/open-webui.nix
 
     ./desktops/gnome
     ./desktops/hyprland

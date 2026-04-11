@@ -60,6 +60,10 @@ in {
 
       services.swayosd.enable = true;
 
+      # Local LLM
+      ollama.enable = true;
+      openWebui.enable = true;
+
       # Desktop add-ons
       gtk-theme.enable = true;
       waybar.enable = true;
