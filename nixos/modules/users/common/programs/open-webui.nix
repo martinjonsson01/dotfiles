@@ -13,7 +13,10 @@ with lib; {
   };
 
   config = mkIf config.openWebui.enable {
-    home.packages = [pkgs.unstable.open-webui];
+    home.packages = with pkgs; [
+      unstable.open-webui
+      gvisor # For code execution sandboxing
+    ];
 
     home.sessionVariables = {
       OLLAMA_BASE_URL = "http://localhost:11434";

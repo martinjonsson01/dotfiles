@@ -20,6 +20,7 @@ in {
     resilio.enable = true;
     polkit-gnome.enable = true;
     programs.noisetorch.enable = true;
+    searxng.enable = true;
 
     security.sudo = {
       enable = true;
