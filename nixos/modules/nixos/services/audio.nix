@@ -9,6 +9,11 @@
   };
 
   config = lib.mkIf config.audio.enable {
+    # Force-unmute Elgato Wave:3 hardware mute on USB connect (capacitive button desync workaround)
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="sound", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0070", RUN+="${pkgs.alsa-utils}/bin/amixer -c Wave3 sset 'Mic Capture Switch' on"
+    '';
+
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -63,6 +68,20 @@
                 }
               '')
               config.myHardware.audio.sinkPriorityMatches}
+            ]
+          '')
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-elgato-wave3.conf" ''
+            monitor.alsa.rules = [
+              {
+                matches = [
+                  { node.name = "~alsa_input.usb-Elgato_Systems_Elgato_Wave*" }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
             ]
           '')
         ];

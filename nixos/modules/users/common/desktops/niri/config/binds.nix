@@ -26,6 +26,14 @@ with lib;
       # Mod-? shows a list of important hotkeys.
       "Mod+Shift+plus".action = show-hotkey-overlay;
 
+      # Mic mute toggle button using macro key on keyboard.
+      "XF86Tools".action = spawn [
+        "${pkgs.wireplumber}/bin/wpctl"
+        "set-mute"
+        "@DEFAULT_SOURCE@"
+        "toggle"
+      ];
+
       # Binds for running programs: terminal, app launcher, screen locker.
       "Mod+Return".action = spawn [ "niri-launch-kitty-workspace-cwd.sh" ];
       "Mod+D".action = spawn "${getExe pkgs.fuzzel}";
