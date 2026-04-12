@@ -31,5 +31,19 @@ with lib; {
         WantedBy = ["default.target"];
       };
     };
+
+    systemd.user.services.noisetorch-resume = {
+      Unit = {
+        Description = "Restart NoiseTorch after suspend";
+        After = ["suspend.target"];
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.systemd}/bin/systemctl --user restart noisetorch";
+      };
+      Install = {
+        WantedBy = ["suspend.target"];
+      };
+    };
   };
 }

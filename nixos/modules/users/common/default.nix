@@ -26,6 +26,7 @@
     ./programs/ollama.nix
     ./programs/open-webui.nix
     ./programs/noisetorch.nix
+    ./programs/easyeffects
 
     ./desktops/gnome
     ./desktops/hyprland
