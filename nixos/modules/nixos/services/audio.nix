@@ -84,6 +84,20 @@
               }
             ]
           '')
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-noisetorch-no-suspend.conf" ''
+            monitor.alsa.rules = [
+              {
+                matches = [
+                  { node.name = "~NoiseTorch*" }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
+            ]
+          '')
         ];
       };
     };
