@@ -33,10 +33,12 @@ with lib; let
     "clock"
     "custom/recording"
     "privacy"
+    "custom/mic"
   ];
   primaryModules = [
     "tray"
     #"custom/power"
+    "wireplumber"
     "custom/swaync"
   ];
   rightModules =
@@ -243,14 +245,35 @@ with lib; let
           tooltip = true;
           tooltip-icon-size = 24;
         }
-        {
-          type = "audio-in";
-          tooltip = true;
-          tooltip-icon-size = 24;
-        }
       ];
       ignore-monitor = true;
       ignore = [];
+    };
+
+    # To show mic mute status.
+    "custom/mic" = {
+      exec = ''
+        print_status() {
+          apps=$(${pkgs.pulseaudio}/bin/pactl list source-outputs 2>/dev/null | grep "application.process.binary" | sed 's/.*= "//;s/"//' | sort -u | tr '\n' ', ' | sed 's/,$//')
+          if [ -z "$apps" ]; then
+            echo '{"text": "", "class": "inactive"}'
+            return
+          fi
+          vol=$(${pkgs.wireplumber}/bin/wpctl get-volume @DEFAULT_SOURCE@)
+          if echo "$vol" | grep -q MUTED; then
+            echo "{\"text\": \"󰍭\", \"class\": \"muted\", \"tooltip\": \"$apps\"}"
+          else
+            echo "{\"text\": \"󰍬\", \"class\": \"unmuted\", \"tooltip\": \"$apps\"}"
+          fi
+        }
+        print_status
+        ${pkgs.pulseaudio}/bin/pactl subscribe | grep --line-buffered "change" | while read -r _; do
+          print_status
+        done
+      '';
+      return-type = "json";
+      on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_SOURCE@ toggle";
+      restart-interval = 0;
     };
 
     # Sway notification center.
@@ -340,6 +363,15 @@ in {
           min-height: 0;
           border: none;
           font-weight: bold;
+        }
+
+        #custom-mic {
+          font-size: 48px;
+          color: red;
+        }
+
+        #custom-mic.muted {
+          color: green;
         }
 
         #workspaces{
