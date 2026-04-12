@@ -25,6 +25,7 @@
     ./programs/yazi.nix
     ./programs/ollama.nix
     ./programs/open-webui.nix
+    ./programs/noisetorch.nix
 
     ./desktops/gnome
     ./desktops/hyprland

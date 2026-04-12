@@ -57,6 +57,7 @@ in {
       lutris.enable = true;
       tokyonight.enable = true;
       ssh.enable = true;
+      noisetorch.enable = true;
 
       services.swayosd.enable = true;
 
