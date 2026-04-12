@@ -209,13 +209,15 @@ with lib; let
 
     # Shows an icon if the screen recorder is running.
     "custom/recording" = {
-      exec = "${getExe (pkgs.writers.writeBashBin "waybar-recording.sh" ''
-        if pgrep -x wf-recorder >/dev/null; then
-          printf '{"text": "  "}\n'
-        else
-          printf '{"text": ""}\n'
-        fi
-      '')}";
+      exec = "${getExe (
+        pkgs.writers.writeBashBin "waybar-recording.sh" ''
+          if pgrep -x wf-recorder >/dev/null; then
+            printf '{"text": "  "}\n'
+          else
+            printf '{"text": ""}\n'
+          fi
+        ''
+      )}";
       return-type = "json";
       signal = 3;
       interval = "once";
