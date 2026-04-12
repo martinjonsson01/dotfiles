@@ -59,7 +59,6 @@ in {
       ssh.enable = true;
 
       # Audio
-      noisetorch.enable = true;
       easyeffects.enable = true;
       mic-default-mute.enable = true;
 

@@ -66,10 +66,22 @@
             "threshold": -1.0
         },
         "plugins_order": [
+            "rnnoise#0",
             "stereo_tools#0",
             "compressor#0",
             "limiter#0"
         ],
+        "rnnoise#0": {
+            "bypass": false,
+            "enable-vad": false,
+            "input-gain": 0.0,
+            "model-name": "\"\"",
+            "output-gain": 0.0,
+            "release": 300.0,
+            "use-standard-model": true,
+            "vad-thres": 50.0,
+            "wet": 0.0
+        },
         "stereo_tools#0": {
             "balance-in": 0.0,
             "balance-out": 0.0,
