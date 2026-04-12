@@ -27,6 +27,7 @@
     ./programs/open-webui.nix
     ./programs/noisetorch.nix
     ./programs/easyeffects
+    ./programs/mic-default-mute.nix
 
     ./desktops/gnome
     ./desktops/hyprland

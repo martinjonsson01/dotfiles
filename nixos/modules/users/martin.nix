@@ -61,6 +61,7 @@ in {
       # Audio
       noisetorch.enable = true;
       easyeffects.enable = true;
+      mic-default-mute.enable = true;
 
       services.swayosd.enable = true;
 
