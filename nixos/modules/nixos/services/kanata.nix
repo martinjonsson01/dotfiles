@@ -14,6 +14,7 @@ with lib; {
   config = mkIf config.kanata.enable {
     services.kanata = {
       enable = true;
+      # Rebind caps lock to escape.
       keyboards.Caps2esc.config = ''
         (defsrc
           caps
