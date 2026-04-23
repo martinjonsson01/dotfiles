@@ -164,7 +164,7 @@
           c = ["clang_format"];
           cmake = ["cmake-format"];
           robot = ["robotidy"];
-          "_" = ["trim_whitespace"];
+          "*" = ["trim_whitespace"];
         };
 
         formatters = {
