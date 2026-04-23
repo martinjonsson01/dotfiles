@@ -134,7 +134,10 @@
             "black"
           ];
           lua = ["stylua"];
-          nix = ["alejandra" "injected"];
+          nix = [
+            "alejandra"
+            "injected"
+          ];
           markdown = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
@@ -177,7 +180,7 @@
           shellharden.command = "${lib.getExe pkgs.shellharden}";
           bicep.command = "${lib.getExe pkgs.bicep}";
           rustfmt.command = "${lib.getExe pkgs.rustfmt}";
-          clang_format.command = "${lib.getExe' pkgs.clang-tools ''clang-format''}";
+          clang_format.command = "${lib.getExe' pkgs.clang-tools "clang-format"}";
           cmake-format.command = "${lib.getExe pkgs.cmake-format}";
           robotidy = {
             command = "${lib.getExe pkgs.robotframework-tidy}";
