@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins = {
     lsp-lines.enable = true;
     lsp-format.enable = true;
@@ -10,7 +11,7 @@
         nixd = {
           enable = true;
           settings.settings = {
-            formatting.command = ["alejandra"];
+            formatting.command = [ "alejandra" ];
           };
         };
         html.enable = true;
@@ -44,8 +45,8 @@
         robotframework_ls = {
           enable = false; # Doesn't work at the moment due to formatter conflict with conform
           package = null; # Installed externally, see below `extraPackages`.
-          cmd = ["robotframework_ls"];
-          filetypes = ["robot"];
+          cmd = [ "robotframework_ls" ];
+          filetypes = [ "robot" ];
           extraOptions = {
             settings.robot = {
               formatting.provider = "none";
@@ -120,6 +121,7 @@
           extraOptions = {
             settings = {
               yaml = {
+                format.enable = false;
                 schemas = {
                   kubernetes = "'*.yaml";
                   "http://json.schemastore.org/github-workflow" = ".github/workflows/*";
@@ -129,8 +131,10 @@
                   "http://json.schemastore.org/ansible-playbook" = "*play*.{yml,yaml}";
                   "http://json.schemastore.org/chart" = "Chart.{yml,yaml}";
                   "https://json.schemastore.org/dependabot-v2" = ".github/dependabot.{yml,yaml}";
-                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" = "*docker-compose*.{yml,yaml}";
-                  "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json" = "*flow*.{yml,yaml}";
+                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" =
+                    "*docker-compose*.{yml,yaml}";
+                  "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json" =
+                    "*flow*.{yml,yaml}";
                 };
               };
             };
@@ -251,46 +255,48 @@
   extraPackages = with pkgs; [
     (python3.withPackages (
       ps:
-        with ps; let
-          robotframework61 = buildPythonPackage rec {
-            pname = "robotframework";
-            version = "6.1";
+      with ps;
+      let
+        robotframework61 = buildPythonPackage rec {
+          pname = "robotframework";
+          version = "6.1";
 
-            src = fetchFromGitHub {
-              owner = "robotframework";
-              repo = "robotframework";
-              tag = "v${version}";
-              sha256 = "sha256-l1VupBKi52UWqJMisT2CVnXph3fGxB63mBVvYdM1NWE=";
-            };
-
-            pyproject = true;
-            build-system = [setuptools];
-
-            doCheck = false;
+          src = fetchFromGitHub {
+            owner = "robotframework";
+            repo = "robotframework";
+            tag = "v${version}";
+            sha256 = "sha256-l1VupBKi52UWqJMisT2CVnXph3fGxB63mBVvYdM1NWE=";
           };
-        in [
-          psutil
-          pyyaml
-          robotframework61
-          (buildPythonPackage rec {
-            pname = "robotframework_lsp";
-            version = "1.13.0";
 
-            src = fetchPypi {
-              inherit pname version;
-              sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
-            };
+          pyproject = true;
+          build-system = [ setuptools ];
 
-            pyproject = true;
-            build-system = [setuptools];
+          doCheck = false;
+        };
+      in
+      [
+        psutil
+        pyyaml
+        robotframework61
+        (buildPythonPackage rec {
+          pname = "robotframework_lsp";
+          version = "1.13.0";
 
-            propagatedBuildInputs = [
-              robotframework61
-            ];
+          src = fetchPypi {
+            inherit pname version;
+            sha256 = "sha256-n1JG4x1b2/UrIEm1z6DMSX2Q34fjU6EPQZ0o9B0uGaM=";
+          };
 
-            doCheck = false;
-          })
-        ]
+          pyproject = true;
+          build-system = [ setuptools ];
+
+          propagatedBuildInputs = [
+            robotframework61
+          ];
+
+          doCheck = false;
+        })
+      ]
     ))
   ];
 
