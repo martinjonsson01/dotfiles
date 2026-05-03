@@ -67,6 +67,7 @@ in {
       # Local LLM
       ollama.enable = true;
       openWebui.enable = true;
+      handy.enable = true; # Dictation
 
       # Desktop add-ons
       gtk-theme.enable = true;
@@ -178,6 +179,8 @@ in {
           "wheel"
           "rslsync"
           "docker"
+          "input"
+          "uinput"
         ];
       };
 

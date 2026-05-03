@@ -47,6 +47,12 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Offline push-to-talk speech-to-tech program.
+    handy = {
+      url = "github:cjpais/Handy";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = inputs @ {
@@ -57,6 +63,7 @@
     niri,
     nixvim,
     nix-index-database,
+    handy,
     ...
   }: let
     # Shared modules and imports
@@ -105,6 +112,13 @@
           };
         }
       )
+      handy.nixosModules.default
+      {
+        programs.handy = {
+          enable = true;
+          package = inputs.handy.packages.x86_64-linux.default;
+        };
+      }
     ];
   in {
     nixosConfigurations = {

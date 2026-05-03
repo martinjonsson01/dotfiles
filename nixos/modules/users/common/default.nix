@@ -28,6 +28,7 @@
     ./programs/noisetorch.nix
     ./programs/easyeffects
     ./programs/mic-default-mute.nix
+    ./programs/handy.nix
 
     ./desktops/gnome
     ./desktops/hyprland
