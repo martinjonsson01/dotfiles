@@ -5,7 +5,7 @@
 }:
 with lib; {
   plugins.telescope = {
-    enable = true;
+    enable = false;
     extensions = {
       file-browser.enable = true;
       fzf-native.enable = true;
