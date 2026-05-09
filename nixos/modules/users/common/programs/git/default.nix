@@ -56,12 +56,12 @@ in {
       };
     };
 
-    # Syntax-aware diff
+    # Syntax-aware diff (used by lazygit via externalDiffCommand; not wired into
+    # git.diff.external so that plain `git diff` in the CLI works normally)
     programs.difftastic = {
       enable = true;
-      git.enable = true;
+      git.enable = false;
       options = {
-        enableAsDifftool = true;
         background = "dark";
       };
     };
