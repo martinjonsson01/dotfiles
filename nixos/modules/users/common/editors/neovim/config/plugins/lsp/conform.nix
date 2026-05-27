@@ -5,6 +5,9 @@
   ...
 }: {
   config = {
+    extraPackages = with pkgs; [
+      djlint
+    ];
     extraConfigLuaPre =
       # lua
       ''
@@ -110,6 +113,7 @@
           '';
         notify_on_error = true;
         formatters_by_ft = {
+          jinja = ["djlint"];
           html = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
@@ -190,6 +194,12 @@
               "$FILENAME"
             ];
             stdin = false; # robotidy wants to modify the file in-place
+          };
+          djlint = {
+            prepend_args = [
+              "--max-blank-lines"
+              "1"
+            ];
           };
           injected = {
             options = {

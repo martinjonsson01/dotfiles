@@ -61,4 +61,19 @@
       command = "set ft=repl";
     }
   ];
+
+  files."ftdetect/jinja2.lua".autoCmd = [
+    {
+      group = "filetypes";
+      event = [
+        "BufRead"
+        "BufNewFile"
+      ];
+      pattern = [
+        "*.html.jinja2"
+        "*.jinja2"
+      ];
+      command = "set ft=jinja";
+    }
+  ];
 }
