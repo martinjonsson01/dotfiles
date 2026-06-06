@@ -162,3 +162,7 @@ fabric.properties
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,direnv,jetbrains,visualstudiocode
+
+# Beads (personal task tracker)
+.beads/
+.beads-credential-key
