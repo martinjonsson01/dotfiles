@@ -27,7 +27,7 @@
     update_interval = 10; # Update frequency during transitions in seconds (10-300)
 
     #[Manual transitions]
-    sunset = "20:00:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
+    sunset = "20:15:00"; # Time to transition to night mode (HH:MM:SS) - ignored in geo mode
     sunrise = "05:00:00"; # Time to transition to day mode (HH:MM:SS) - ignored in geo mode
     transition_duration = 30; # Transition duration in minutes (5-120)
   };
