@@ -89,5 +89,17 @@
         relative-to = "bottom-right";
       };
     }
+
+    # Launch games in correct aspect ratio.
+    {
+      matches = [
+        {
+          app-id = "factorio";
+        }
+      ];
+      default-column-width = {
+        proportion = 4.0 / 7.0;
+      };
+    }
   ];
 }
