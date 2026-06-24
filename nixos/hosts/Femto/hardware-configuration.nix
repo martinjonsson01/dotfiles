@@ -7,16 +7,27 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}:
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = with config.boot.kernelPackages; [];
-  boot.supportedFilesystems = ["nfs" "ntfs"]; # For NTFS drive and NFS mount
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ ];
+  boot.supportedFilesystems = [
+    "nfs"
+    "ntfs"
+  ]; # For NTFS drive and NFS mount
   boot.kernelParams = [
     # Disable staggered spin-up, which serializes drive probing and slows down boot speed.
     "libahci.ignore_sss=1"
@@ -30,7 +41,10 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/8BF8-0506";
     fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
 
   fileSystems."/big-chungus" = {
@@ -40,6 +54,8 @@
       "rw"
       "uid=1000" # 1000 is id of 'martin'
       "gid=988" # 998 is id of 'rslsync'
+      "nofail" # don't fail the boot if this mount errors (may be due to Windows leaving it dirty due to fast boot)
+      "x-systemd.automount" # Only mount on-demand
     ];
   };
 
@@ -48,7 +64,7 @@
     fsType = "nfs";
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
   networking = {
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
