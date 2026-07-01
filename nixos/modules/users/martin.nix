@@ -50,6 +50,7 @@ in {
       #
 
       git.enable = true;
+      gh.enable = true;
       neovim.enable = true;
       fish.enable = true;
       niri.enable = true;
