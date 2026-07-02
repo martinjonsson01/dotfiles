@@ -1,33 +1,29 @@
 #!/usr/bin/env bash
 
-# Taken from https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
-
-# A rebuild script that commits on a successful build
+# Rebuild the flake host matching this machine's hostname.
 
 set -o errexit  # abort on nonzero exitstatus
 set -o nounset  # abort on unbound variable
 set -o pipefail # don't hide errors within pipes
 
-# cd to your config dir
 pushd ~/dotfiles/nixos/
 
-# Autoformat your nix files
-alejandra . &>/dev/null ||
-  (
-    alejandra .
-    echo "formatting failed!" && exit 1
-  )
+host=$(hostname)
+
+alejandra -q .
 
 # Shows your changes
 git --no-pager diff --unified=0 '*.nix' '*.fish' '*.sh' '*.json' '*.txt' '*.lua' '*.py'
 
-echo "NixOS Rebuilding..."
+echo "NixOS Rebuilding $host..."
 
-# Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake /home/martin/dotfiles/nixos#default |& tee nixos-switch.log || (grep --color -A 100 error <nixos-switch.log && exit 1)
+# Rebuild, output simplified errors, log tracebacks
+if ! sudo nixos-rebuild switch --flake ".#$host" |& tee nixos-switch.log; then
+  grep --color -A 100 error <nixos-switch.log
+  notify-send -e "NixOS Rebuild failed!" --icon=dialog-error
+  exit 1
+fi
 
-# Back to where you were
 popd
 
-# Notify all OK!
 notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
