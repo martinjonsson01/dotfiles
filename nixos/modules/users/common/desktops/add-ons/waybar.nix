@@ -13,12 +13,7 @@ with lib; let
 
   leftModules =
     (
-      if config.hyprland.enable
-      then [
-        "hyprland/workspaces"
-        "hyprland/submap"
-      ]
-      else if config.niri.enable
+      if config.niri.enable
       then [
         "niri/workspaces"
       ]
@@ -174,35 +169,6 @@ with lib; let
       hide-if-empty = true;
       tooltip = true;
       tooltip-spacing = 20;
-    };
-
-    "hyprland/workspaces" = {
-      format = "{name}";
-      on-click = "activate";
-      on-scroll-up =
-        if config.hyprland.enable
-        then "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1"
-        else "";
-      on-scroll-down =
-        if config.hyprland.enable
-        then "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1"
-        else "";
-      persistent-workspaces = {
-        "1" = [];
-        "2" = [];
-        "3" = [];
-        "4" = [];
-        "5" = [];
-        "6" = [];
-        "7" = [];
-        "8" = [];
-        "9" = [];
-      };
-    };
-
-    "hyprland/submap" = {
-      format = "󰔡 {}";
-      max-length = 100;
     };
 
     "niri/workspaces" = {

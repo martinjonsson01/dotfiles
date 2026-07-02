@@ -27,22 +27,12 @@ with lib; {
           # Execute timeout command if there is no activity for seconds.
           timeout = 60 * 30;
           command =
-            if config.hyprland.enable
-            then "${getExe pkgs.hyprland} dispatch dpms off"
-            else if config.niri.enable
+            if config.niri.enable
             then "${getExe pkgs.niri} msg action power-off-monitors"
-            else "";
-          # resume command will be run when there is activity again.
-          resumeCommand =
-            if config.hyprland.enable
-            then "${getExe pkgs.hyprland} dispatch dpms on"
             else "";
         }
       ];
-      systemdTarget =
-        if config.hyprland.enable
-        then "hyprland-session.target"
-        else "";
+      systemdTarget = "";
     };
     systemd.user.services.swayidle.Unit.WantedBy =
       if config.niri.enable
