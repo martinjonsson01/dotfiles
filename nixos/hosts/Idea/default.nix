@@ -49,7 +49,7 @@ with lib; {
     };
   };
 
-  auto-upgrade.enable = true;
+  eclipse.auto-upgrade.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {

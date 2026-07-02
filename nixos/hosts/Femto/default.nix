@@ -49,7 +49,7 @@ with lib; {
     };
   };
 
-  auto-upgrade.enable = true;
+  eclipse.auto-upgrade.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -152,7 +152,7 @@ with lib; {
     };
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  rtl8761bu-firmware.enable = true; # Necessary to replace the newest firmware which causes disconnects
+  eclipse.rtl8761bu-firmware.enable = true; # Necessary to replace the newest firmware which causes disconnects
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

@@ -4,11 +4,9 @@
   config,
   ...
 }: {
-  options = {
-    audio.enable = lib.mkEnableOption "Enables audio";
-  };
+  options.eclipse.audio.enable = lib.mkEnableOption "Enables audio";
 
-  config = lib.mkIf config.audio.enable {
+  config = lib.mkIf config.eclipse.audio.enable {
     # Force-unmute Elgato Wave:3 hardware mute on USB connect (capacitive button desync workaround)
     services.udev.extraRules = ''
       ACTION=="add", SUBSYSTEM=="sound", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0070", RUN+="${pkgs.alsa-utils}/bin/amixer -c Wave3 sset 'Mic Capture Switch' on"

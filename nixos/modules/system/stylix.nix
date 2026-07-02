@@ -60,11 +60,13 @@ with lib; {
       # It tries to use the deprecated "gnome" by default, so override it.
       targets.qt.platform = mkForce "qtct";
     };
-    # Manually configure kitty using builtin theming
-    home-manager.users.martin.stylix.targets.kitty.enable = false;
-    # Disable fish since it conflicts with kitty theming
-    home-manager.users.martin.stylix.targets.fish.enable = false;
-    # Overrides deprecated "gnome" platform theme name.
-    home-manager.users.martin.qt.platformTheme.name = mkForce "adwaita";
+    eclipse.hm = {
+      # Manually configure kitty using builtin theming
+      stylix.targets.kitty.enable = false;
+      # Disable fish since it conflicts with kitty theming
+      stylix.targets.fish.enable = false;
+      # Overrides deprecated "gnome" platform theme name.
+      qt.platformTheme.name = mkForce "adwaita";
+    };
   };
 }

@@ -8,13 +8,11 @@
   ...
 }:
 with lib; {
-  options = {
-    searxng.enable = mkEnableOption "Enables Searxng";
-  };
+  options.eclipse.searxng.enable = mkEnableOption "Enables Searxng";
 
-  config = mkIf config.searxng.enable {
+  config = mkIf config.eclipse.searxng.enable {
     sops.secrets."searx.env" = {
-      sopsFile = ./../../../secrets/searx.env;
+      sopsFile = ./../../secrets/searx.env;
       format = "binary";
       owner = "searx";
     };

@@ -8,11 +8,9 @@
   ...
 }:
 with lib; {
-  options = {
-    thunar.enable = mkEnableOption "Enables Thunar";
-  };
+  options.eclipse.thunar.enable = mkEnableOption "Enables Thunar";
 
-  config = mkIf config.thunar.enable {
+  config = mkIf config.eclipse.thunar.enable {
     environment.systemPackages = with pkgs; [
       kdePackages.xdg-desktop-portal-kde # For file pickers
     ];
@@ -31,23 +29,25 @@ with lib; {
     services.gvfs.enable = true; # Mount, trash, and other functionalities
     services.tumbler.enable = true; # Thumbnail support for images
 
-    home-manager.users.martin.programs.niri.settings.window-rules = mkIf config.eclipse.niri.enable [
-      {
-        matches = [
-          {
-            app-id = "^thunar$";
-            title = "^Rename \".*\"$";
-          }
-        ];
-        open-floating = true;
-      }
-    ];
+    eclipse.hm = {osConfig, ...}: {
+      programs.niri.settings.window-rules = mkIf osConfig.eclipse.niri.enable [
+        {
+          matches = [
+            {
+              app-id = "^thunar$";
+              title = "^Rename \".*\"$";
+            }
+          ];
+          open-floating = true;
+        }
+      ];
 
-    # Override which file manager is used by dbus.
-    home-manager.users.martin.xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
-      [D-BUS Service]
-      Name=org.freedesktop.FileManager1
-      Exec=${getExe pkgs.xfce.thunar}
-    '';
+      # Override which file manager is used by dbus.
+      xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
+        [D-BUS Service]
+        Name=org.freedesktop.FileManager1
+        Exec=${getExe pkgs.xfce.thunar}
+      '';
+    };
   };
 }

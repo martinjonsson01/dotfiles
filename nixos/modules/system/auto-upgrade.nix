@@ -15,11 +15,9 @@ with lib; let
   failureFlagDir = "/var/lib/auto-upgrade";
   failureFlag = "${failureFlagDir}/failed";
 in {
-  options = {
-    auto-upgrade.enable = mkEnableOption "Enables continuous automatic upgrades";
-  };
+  options.eclipse.auto-upgrade.enable = mkEnableOption "Enables continuous automatic upgrades";
 
-  config = mkIf config.auto-upgrade.enable {
+  config = mkIf config.eclipse.auto-upgrade.enable {
     system.autoUpgrade = {
       enable = true;
       flake = flakeDir;

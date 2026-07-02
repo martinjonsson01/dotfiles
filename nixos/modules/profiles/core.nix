@@ -10,16 +10,20 @@ in {
   options.eclipse.core.enable = mkEnableOption "Enables the core profile.";
 
   config = mkIf cfg.enable {
-    eclipse.fish.enable = true;
-    audio.enable = true;
-    eclipse.niri.enable = true;
-    thunar.enable = true;
-    ydotool.enable = true;
-    sunsetr.enable = true;
-    kanata.enable = true;
-    resilio.enable = true;
-    eclipse.polkit-gnome.enable = true;
-    searxng.enable = true;
+    eclipse = {
+      audio.enable = true;
+      fish.enable = true;
+      fonts.enable = true;
+      grub.enable = true;
+      kanata.enable = true;
+      niri.enable = true;
+      polkit-gnome.enable = true;
+      resilio.enable = true;
+      searxng.enable = true;
+      sunsetr.enable = true;
+      thunar.enable = true;
+      ydotool.enable = true;
+    };
 
     security.sudo = {
       enable = true;
@@ -59,9 +63,6 @@ in {
     sops.secrets."openrouter-api-key" = {
       sopsFile = ./../../secrets/api.yaml;
       owner = "martin";
-    };
-
-    home-manager.users.martin = {
     };
   };
 }

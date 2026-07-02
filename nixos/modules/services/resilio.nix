@@ -4,15 +4,13 @@
   config,
   ...
 }: {
-  options = {
-    resilio.enable = lib.mkEnableOption "Enables Resilio sync";
-  };
+  options.eclipse.resilio.enable = lib.mkEnableOption "Enables Resilio sync";
 
-  config = lib.mkIf config.resilio.enable {
+  config = lib.mkIf config.eclipse.resilio.enable {
     environment.systemPackages = with pkgs; [resilio-sync];
 
     sops.secrets."resilio-secret" = {
-      sopsFile = ./../../../secrets/resilio-secret.txt;
+      sopsFile = ./../../secrets/resilio-secret.txt;
       format = "binary";
     };
 

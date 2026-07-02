@@ -19,7 +19,9 @@ with lib; let
     (lists.head monitors)
     monitors;
 in {
-  config.boot = {
+  options.eclipse.grub.enable = mkEnableOption "Enables GRUB";
+
+  config.boot = mkIf config.eclipse.grub.enable {
     #
     # Enable "Silent Boot"
     #

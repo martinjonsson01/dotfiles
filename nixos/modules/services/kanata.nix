@@ -7,11 +7,9 @@
   ...
 }:
 with lib; {
-  options = {
-    kanata.enable = mkEnableOption "Enables Kanata";
-  };
+  options.eclipse.kanata.enable = mkEnableOption "Enables Kanata";
 
-  config = mkIf config.kanata.enable {
+  config = mkIf config.eclipse.kanata.enable {
     services.kanata = {
       enable = true;
       # Rebind caps lock to escape.

@@ -8,16 +8,14 @@
   ...
 }:
 with lib; {
-  options = {
-    ccache.enable = mkEnableOption "Enables ccache";
-  };
+  options.eclipse.ccache.enable = mkEnableOption "Enables ccache";
 
-  config = mkIf config.ccache.enable {
+  config = mkIf config.eclipse.ccache.enable {
     environment.systemPackages = with pkgs; [
       ccache
     ];
 
-    home-manager.users.martin.home.sessionVariables = {
+    eclipse.hm.home.sessionVariables = {
       CMAKE_CXX_COMPILER_LAUNCHER = "ccache";
       CMAKE_C_COMPILER_LAUNCHER = "ccache";
     };

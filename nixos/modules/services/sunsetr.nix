@@ -33,24 +33,22 @@
   };
 in
   with lib; {
-    options = {
-      sunsetr.enable = lib.mkEnableOption "Enables sunsetr";
-    };
+    options.eclipse.sunsetr.enable = lib.mkEnableOption "Enables sunsetr";
 
-    config = lib.mkIf config.sunsetr.enable {
+    config = lib.mkIf config.eclipse.sunsetr.enable {
       environment.systemPackages = with pkgs.unstable; [
         sunsetr
       ];
 
       sops.secrets."geo.toml" = {
-        sopsFile = ./../../../secrets/geo.toml;
+        sopsFile = ./../../secrets/geo.toml;
         format = "binary";
         mode = "444";
       };
 
-      home-manager.users.martin = {lib, ...}: {
+      eclipse.hm = {lib, ...}: {
         xdg.configFile."sunsetr/sunsetr.toml".source = pkgs.writers.writeTOML "sunsetr.toml" settings;
-        home.activation.placeResilioSecret = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        home.activation.placeSunsetrGeoSecret = lib.hm.dag.entryAfter ["writeBoundary"] ''
           mkdir -p $HOME/.config/sunsetr
           ln -sf ${config.sops.secrets."geo.toml".path} $HOME/.config/sunsetr/geo.toml
         '';

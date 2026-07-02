@@ -10,9 +10,6 @@ in {
   options.eclipse.dev.enable = mkEnableOption "Enables the dev profile.";
 
   config = mkIf cfg.enable {
-    ccache.enable = true;
-
-    home-manager.users.martin = {
-    };
+    eclipse.ccache.enable = true;
   };
 }

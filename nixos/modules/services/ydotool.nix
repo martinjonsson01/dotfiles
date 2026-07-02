@@ -11,15 +11,15 @@ with lib; let
   ydotool = pkgs.ydotool;
   socket = "/run/ydotoold/socket";
 in {
-  options = {
-    ydotool.enable = mkEnableOption "Enables ydotool";
-  };
+  options.eclipse.ydotool.enable = mkEnableOption "Enables ydotool";
 
-  config = mkIf config.ydotool.enable {
+  config = mkIf config.eclipse.ydotool.enable {
     environment.variables.YDOTOOL_SOCKET = socket;
 
     users.groups.ydotool = {};
-    users.users.martin.extraGroups = ["ydotool"];
+    users.users =
+      mapAttrs (_: _: {extraGroups = ["ydotool"];})
+      (filterAttrs (_: user: user.enable) config.eclipse.users);
 
     environment.systemPackages = [ydotool];
     systemd.services.ydotoold = {
