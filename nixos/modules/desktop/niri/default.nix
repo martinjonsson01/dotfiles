@@ -25,6 +25,14 @@ with lib; {
       };
     };
 
+    # niri-flake only runs the keyring as a user service; the system-level
+    # module is what wires PAM auto-unlock for greetd and D-Bus activation of
+    # the gcr unlock prompter.
+    services.gnome.gnome-keyring.enable = true;
+    services.gnome.gcr-ssh-agent.enable = true;
+
+    programs.ssh.askPassword = "${pkgs.gcr_4}/libexec/gcr4-ssh-askpass";
+
     eclipse.default-applications.enable = mkDefault true;
 
     eclipse.hm = {
@@ -45,6 +53,10 @@ with lib; {
       ];
 
       targets.genericLinux.enable = true;
+
+      # Niri's portals.conf routes the Access and Notification interfaces to
+      # the GTK portal; niri-flake only ships the GNOME one.
+      xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
       programs.niri =
         {
