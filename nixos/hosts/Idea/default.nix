@@ -167,27 +167,22 @@ with lib; {
 
   # Custom modules
   eclipse = {
-    stylix.enable = true;
+    # This is a work machine, so Steam has no business being here.
+    steam.enable = false;
 
     # Enable profiles
+    ai.enable = true;
     core.enable = true;
+    desktop.enable = true;
     dev.enable = true;
+    gaming.enable = true;
     media.enable = true;
     social.enable = true;
     util.enable = true;
+    work.enable = true;
   };
 
   eclipse.users.martin.enable = true;
-
-  # Work Git config
-  home-manager.users.martin.home.file."Projects/.gitconfig".text = ''
-    [user]
-      name = "Martin Jonsson"
-      email = "mjonsson@antmicro.com"
-
-    [url "git@github.com-antmicro"]
-      insteadOf = git@github.com
-  '';
 
   # Allow GDB to attach to processes.
   boot.kernel.sysctl."kernel.yama.ptrace_scope" = lib.mkForce 0;

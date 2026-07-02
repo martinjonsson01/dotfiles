@@ -11,18 +11,36 @@ in {
 
   config = mkIf cfg.enable {
     eclipse = {
-      audio.enable = true;
-      fish.enable = true;
-      fonts.enable = true;
-      grub.enable = true;
-      kanata.enable = true;
-      niri.enable = true;
-      polkit-gnome.enable = true;
-      resilio.enable = true;
-      searxng.enable = true;
-      sunsetr.enable = true;
-      thunar.enable = true;
-      ydotool.enable = true;
+      btop.enable = mkDefault true;
+      fish.enable = mkDefault true;
+      gh.enable = mkDefault true;
+      git.enable = mkDefault true;
+      grub.enable = mkDefault true;
+      kanata.enable = mkDefault true;
+      neovim.enable = mkDefault true;
+      resilio.enable = mkDefault true;
+      searxng.enable = mkDefault true;
+      ssh.enable = mkDefault true;
+      yazi.enable = mkDefault true;
+      ydotool.enable = mkDefault true;
+      zellij.enable = mkDefault true;
+
+      hm = {pkgs, ...}: {
+        home.packages = with pkgs; [
+          fd # Simple, fast and user-friendly alternative to find
+          bat # Cat(1) clone with syntax highlighting and Git integration
+          dust # Disk usage utility written in Rust
+          dysk # Simple and easy to view disk usage
+          jq # JSON parsing/querying
+          yq # YAML parsing/querying
+          ripgrep # Faster grep
+          openssl_3 # Cryptography
+          websocat # Connect to websockets
+          ethtool # Utility for controlling network drivers and hardware
+          curl # Command line tool for transferring files with URL syntax
+          wget # Tool for retrieving files using HTTP, HTTPS, and FTP
+        ];
+      };
     };
 
     security.sudo = {
@@ -47,22 +65,6 @@ in {
       };
     };
 
-    environment.sessionVariables.NIXOS_OZONE_WL = "1"; # To enable wayland support in e.g. Slack
     environment.sessionVariables.EDITOR = "nvim";
-
-    sops.secrets."gemini-api-key" = {
-      sopsFile = ./../../secrets/api.yaml;
-      owner = "martin";
-    };
-
-    sops.secrets."deepseek-api-key" = {
-      sopsFile = ./../../secrets/api.yaml;
-      owner = "martin";
-    };
-
-    sops.secrets."openrouter-api-key" = {
-      sopsFile = ./../../secrets/api.yaml;
-      owner = "martin";
-    };
   };
 }

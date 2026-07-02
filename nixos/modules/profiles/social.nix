@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -10,9 +9,16 @@ in {
   options.eclipse.social.enable = mkEnableOption "Enables the social profile.";
 
   config = mkIf cfg.enable {
-    home-manager.users.martin = {
-      home.packages = with pkgs; [
-      ];
+    eclipse = {
+      zoom.enable = mkDefault true;
+
+      hm = {pkgs, ...}: {
+        home.packages = with pkgs; [
+          discord
+          slack
+          hexchat # IRC Client
+        ];
+      };
     };
   };
 }

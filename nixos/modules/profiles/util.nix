@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -10,12 +9,15 @@ in {
   options.eclipse.util.enable = mkEnableOption "Enables the util profile.";
 
   config = mkIf cfg.enable {
-    home-manager.users.martin.home = {
-      packages = with pkgs;
-        [
-        ]
-        ++ (with pkgs.unstable; [
-          ]);
+    eclipse = {
+      qalculate.enable = mkDefault true;
+
+      hm = {pkgs, ...}: {
+        home.packages = with pkgs; [
+          fsearch # Like Void Tools Everything but on linux (i.e. file search)
+          gparted # Disk partition editing/viewing tool
+        ];
+      };
     };
   };
 }

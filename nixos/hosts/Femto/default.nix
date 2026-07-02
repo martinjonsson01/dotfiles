@@ -204,13 +204,14 @@ with lib; {
   # Custom modules
   eclipse = {
     nvidia.enable = true;
-    stylix.enable = true;
     teamviewer.enable = true;
-    steam.enable = true;
 
     # Enable profiles
+    ai.enable = true;
     core.enable = true;
+    desktop.enable = true;
     dev.enable = true;
+    gaming.enable = true;
     media.enable = true;
     social.enable = true;
     util.enable = true;
