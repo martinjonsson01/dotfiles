@@ -11,6 +11,7 @@ in {
 
   config = mkIf cfg.enable {
     eclipse = {
+      auto-upgrade.enable = mkDefault true;
       btop.enable = mkDefault true;
       fish.enable = mkDefault true;
       gh.enable = mkDefault true;

@@ -32,7 +32,7 @@ in {
     // (import ./input.nix)
     // (import ./outputs.nix {inherit lib hardware;})
     // (import ./spawn-at-startup.nix {inherit pkgs lib hardware;})
-    // (import ./layout.nix)
+    // (import ./layout.nix {inherit hardware;})
     // (import ./window-rules.nix {inherit config;})
     // (import ./layer-rules.nix)
     // (import ./binds.nix {inherit pkgs lib config;})

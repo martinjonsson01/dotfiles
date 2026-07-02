@@ -36,6 +36,11 @@ in {
             type = types.str;
             default = "/home/${name}/.ssh/id_ed25519";
           };
+          authorizedKeyFiles = mkOption {
+            description = "SSH public keys allowed to log in as this user.";
+            type = types.listOf types.path;
+            default = [];
+          };
           stateVersion = mkOption {
             description = "Home Manager state version, do not change after install.";
             type = types.str;
@@ -57,6 +62,7 @@ in {
         mapAttrs (name: user: {
           isNormalUser = true;
           inherit (user) description uid extraGroups;
+          openssh.authorizedKeys.keyFiles = user.authorizedKeyFiles;
         })
         enabledUsers;
 

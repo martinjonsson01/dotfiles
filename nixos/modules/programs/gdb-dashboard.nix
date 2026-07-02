@@ -10,6 +10,9 @@ with lib; {
   options.eclipse.gdb-dashboard.enable = mkEnableOption "Enables gdb-dashboard";
 
   config = mkIf config.eclipse.gdb-dashboard.enable {
+    # Allow GDB to attach to processes.
+    boot.kernel.sysctl."kernel.yama.ptrace_scope" = mkForce 0;
+
     eclipse.hm = {
       pkgs,
       osConfig,
@@ -22,11 +25,7 @@ with lib; {
         url = "https://raw.githubusercontent.com/${repo}/${commit}/${file}";
         sha256 = "sha256-cLpH7t/oK8iFOfDnfnWw3oLGegYnNEb5vI8M7FGI7ic=";
       };
-      host = osConfig.networking.hostName;
-      workDir =
-        if host == "Idea"
-        then "Projects"
-        else "work";
+      workDir = osConfig.eclipse.work.directory;
     in {
       imports = [
         (import ../../secrets/gdb.nix {inherit lib workDir;})

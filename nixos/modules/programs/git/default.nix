@@ -7,26 +7,9 @@ with lib; {
   options.eclipse.git.enable = mkEnableOption "Enables git";
 
   config = mkIf config.eclipse.git.enable {
-    eclipse.hm = {
-      pkgs,
-      config,
-      osConfig,
-      ...
-    }: let
-      host = osConfig.networking.hostName;
-      workDir =
-        if host == "Idea"
-        then "Projects"
-        else "work";
-    in {
+    eclipse.hm = {pkgs, ...}: {
       programs.git = {
         enable = true;
-        includes = [
-          {
-            path = "${config.home.homeDirectory}/${workDir}/.gitconfig";
-            condition = "gitdir:${config.home.homeDirectory}/${workDir}/";
-          }
-        ];
         settings = {
           user = {
             name = "Martin";
@@ -80,12 +63,6 @@ with lib; {
       ];
 
       xdg.configFile."git/ignore".source = ./ignore;
-
-      home.file."${workDir}/.gitconfig".text = ''
-        [user]
-            email = "mjonsson@antmicro.com"
-            name = "Martin Jonsson"
-      '';
 
       programs.lazygit = {
         enable = true;

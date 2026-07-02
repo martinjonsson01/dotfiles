@@ -91,5 +91,14 @@
         "node.name = \"alsa_output.usb-Generic_USB_Audio-00.HiFi__Speaker__sink\"" # Speakers plugged into motherboard
       ];
     };
+
+    niri = {
+      preset-column-widths = [
+        {proportion = 1.0 / 7.0 - 0.0025;}
+        {proportion = 2.0 / 7.0 - 0.0025;}
+        {proportion = 3.0 / 7.0 + 0.005;}
+      ];
+      default-column-width = {proportion = 2.0 / 7.0 - 0.0025;};
+    };
   };
 }

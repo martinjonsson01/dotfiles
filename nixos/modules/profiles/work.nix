@@ -6,17 +6,32 @@
 with lib; let
   cfg = config.eclipse.work;
 in {
-  options.eclipse.work.enable = mkEnableOption "Enables the work profile.";
+  options.eclipse.work = {
+    enable = mkEnableOption "Enables the work profile.";
+    directory = mkOption {
+      description = "Directory (relative to home) whose repositories use the work Git identity.";
+      type = types.str;
+      default = "work";
+    };
+  };
 
   config = mkIf cfg.enable {
-    # Overrides the personal Git identity for everything under ~/Projects.
-    eclipse.hm.home.file."Projects/.gitconfig".text = ''
-      [user]
-        name = "Martin Jonsson"
-        email = "mjonsson@antmicro.com"
+    eclipse.hm = {config, ...}: {
+      programs.git.includes = [
+        {
+          path = "${config.home.homeDirectory}/${cfg.directory}/.gitconfig";
+          condition = "gitdir:${config.home.homeDirectory}/${cfg.directory}/";
+        }
+      ];
 
-      [url "git@github.com-antmicro"]
-        insteadOf = git@github.com
-    '';
+      home.file."${cfg.directory}/.gitconfig".text = ''
+        [user]
+          name = "Martin Jonsson"
+          email = "mjonsson@antmicro.com"
+
+        [url "git@github.com-antmicro"]
+          insteadOf = git@github.com
+      '';
+    };
   };
 }

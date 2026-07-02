@@ -134,6 +134,31 @@ in {
         }
       );
     };
+
+    # Window sizing preferences, which depend on the monitors of the host.
+    niri = mkOption {
+      type = types.submodule (
+        {...}: {
+          options = {
+            # The widths that the switch-preset-column-width action (Mod+R) toggles between.
+            preset-column-widths = mkOption {
+              type = types.listOf types.attrs;
+              default = [
+                {proportion = 1.0 / 3.0;}
+                {proportion = 1.0 / 2.0;}
+                {proportion = 2.0 / 3.0;}
+              ];
+            };
+            # The default width of new windows.
+            default-column-width = mkOption {
+              type = types.attrs;
+              default = {proportion = 1.0 / 2.0;};
+            };
+          };
+        }
+      );
+      default = {};
+    };
   };
 
   config = {

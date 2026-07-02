@@ -10,6 +10,9 @@ with lib; {
   options.eclipse.swaylock.enable = mkEnableOption "Enables swaylock";
 
   config = mkIf config.eclipse.swaylock.enable {
+    # Necessary to make login using swaylock possible.
+    security.pam.services.swaylock = {};
+
     eclipse.hm = {pkgs, ...}: {
       programs.swaylock = {
         enable = true;

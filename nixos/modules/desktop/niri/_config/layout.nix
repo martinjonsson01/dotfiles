@@ -1,7 +1,9 @@
-let
+{hardware}: let
   gapWidth = 16;
 in {
   layout = {
+    inherit (hardware.niri) preset-column-widths default-column-width;
+
     # Spacing between windows.
     gaps = gapWidth;
 
