@@ -51,9 +51,6 @@ with lib; {
 
   auto-upgrade.enable = true;
 
-  # This will automatically import SSH keys as age keys.
-  sops.age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -217,9 +214,9 @@ with lib; {
     media.enable = true;
     social.enable = true;
     util.enable = true;
-
-    users.martin.enable = true;
   };
+
+  eclipse.users.martin.enable = true;
 
   # Allow GDB to attach to processes.
   boot.kernel.sysctl."kernel.yama.ptrace_scope" = lib.mkForce 0;
