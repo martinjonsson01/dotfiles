@@ -84,13 +84,11 @@
             backupFileExtension = "home-manager-backup";
 
             # Modules shared across all users
-            sharedModules =
-              [
-                niri.homeModules.niri
-                nixvim.homeModules.nixvim
-                sops-nix.homeManagerModule
-              ]
-              ++ (importTree ./modules/users/_common);
+            sharedModules = [
+              niri.homeModules.niri
+              nixvim.homeModules.nixvim
+              sops-nix.homeManagerModule
+            ];
           };
         }
         sops-nix.nixosModules.sops

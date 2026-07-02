@@ -59,6 +59,16 @@ with lib; {
       neovim.enable = true;
       tokyonight.enable = true;
 
+      # Scripts
+      screenrecord-region.enable = true;
+      screenshot-region.enable = true;
+      open-screenshot-dir.enable = true;
+      search-google.enable = true;
+      search-github-nix.enable = true;
+      niri-rename-workspace.enable = true;
+      niri-launch-kitty-workspace-cwd.enable = true;
+      lock-script.enable = true;
+
       # Desktop add-ons
       gtk-theme.enable = true;
       waybar.enable = true;
@@ -73,24 +83,7 @@ with lib; {
   ];
 
   home-manager.users.martin = mkIf config.eclipse.users.martin.enable {
-    #
-    # These should really be in the profiles, but I can't find a way to
-    # enable them from the profile module... :(
-    #
-
-    fish.enable = true;
-
     services.swayosd.enable = true;
-
-    # Scripts
-    screenrecord-region.enable = true;
-    screenshot-region.enable = true;
-    open-screenshot-dir.enable = true;
-    search-google.enable = true;
-    search-github-nix.enable = true;
-    niri-rename-workspace.enable = true;
-    niri-launch-kitty-workspace-cwd.enable = true;
-    lock-script.enable = true;
 
     home.packages = with pkgs;
       [

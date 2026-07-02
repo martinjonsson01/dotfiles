@@ -10,7 +10,7 @@ in {
   options.eclipse.core.enable = mkEnableOption "Enables the core profile.";
 
   config = mkIf cfg.enable {
-    fish.enable = true;
+    eclipse.fish.enable = true;
     audio.enable = true;
     eclipse.niri.enable = true;
     thunar.enable = true;
