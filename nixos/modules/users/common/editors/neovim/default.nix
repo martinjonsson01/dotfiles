@@ -16,6 +16,9 @@ with lib; {
     programs.nixvim =
       {
         enable = true;
+        # Use the host's nixpkgs instead of nixvim's own instance, so overlays
+        # like pkgs.unstable are visible inside nixvim modules.
+        nixpkgs.useGlobalPackages = true;
       }
       // (import ./config {inherit pkgs lib config;});
   };

@@ -1,4 +1,4 @@
-{pkgs-unstable, ...}: {
+{pkgs, ...}: {
   plugins.fff = {
     enable = true;
     settings = {
@@ -8,7 +8,7 @@
       max_threads = 4;
       logging.enabled = false;
     };
-    package = pkgs-unstable.vimPlugins.fff-nvim;
+    package = pkgs.unstable.vimPlugins.fff-nvim;
   };
   keymaps = [
     {

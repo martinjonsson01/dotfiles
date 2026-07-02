@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   plugins = {
     lsp-lines.enable = true;
     lsp-format.enable = true;
@@ -75,7 +71,7 @@
         };
         rust_analyzer = {
           enable = true;
-          package = pkgs-unstable.rust-analyzer;
+          package = pkgs.unstable.rust-analyzer;
           # Installed through per-project flakes instead.
           installCargo = false;
           installRustc = false;
