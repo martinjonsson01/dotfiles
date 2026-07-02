@@ -12,12 +12,12 @@ with lib; {
   config = mkIf config.eclipse.mpv.enable {
     eclipse.hm = {
       pkgs,
-      config,
+      osConfig,
       ...
     }: {
       home.packages = with pkgs; [mpv];
 
-      programs.niri.settings.window-rules = mkIf config.niri.enable [
+      programs.niri.settings.window-rules = mkIf osConfig.eclipse.niri.enable [
         #  Open as floating.
         {
           matches = [

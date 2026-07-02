@@ -12,12 +12,12 @@ with lib; {
   config = mkIf config.eclipse.loupe.enable {
     eclipse.hm = {
       pkgs,
-      config,
+      osConfig,
       ...
     }: {
       home.packages = with pkgs; [loupe];
 
-      programs.niri.settings.window-rules = mkIf config.niri.enable [
+      programs.niri.settings.window-rules = mkIf osConfig.eclipse.niri.enable [
         #  Open as floating.
         {
           matches = [

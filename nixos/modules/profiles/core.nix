@@ -12,13 +12,13 @@ in {
   config = mkIf cfg.enable {
     fish.enable = true;
     audio.enable = true;
-    niri.enable = true;
+    eclipse.niri.enable = true;
     thunar.enable = true;
     ydotool.enable = true;
     sunsetr.enable = true;
     kanata.enable = true;
     resilio.enable = true;
-    polkit-gnome.enable = true;
+    eclipse.polkit-gnome.enable = true;
     searxng.enable = true;
 
     security.sudo = {

@@ -55,6 +55,19 @@ with lib; {
       qalculate.enable = true;
       satty.enable = true;
       gdb-dashboard.enable = true;
+
+      tokyonight.enable = true;
+
+      # Desktop add-ons
+      gtk-theme.enable = true;
+      waybar.enable = true;
+      nwg-bar.enable = true;
+      swaync.enable = true;
+      blueman-applet.enable = true;
+      nm-applet.enable = true;
+      fuzzel.enable = true;
+      swayidle.enable = true;
+      copyq.enable = true;
     })
   ];
 
@@ -66,21 +79,8 @@ with lib; {
 
     neovim.enable = true;
     fish.enable = true;
-    niri.enable = true;
-    tokyonight.enable = true;
 
     services.swayosd.enable = true;
-
-    # Desktop add-ons
-    gtk-theme.enable = true;
-    waybar.enable = true;
-    nwg-bar.enable = true;
-    swaync.enable = true;
-    blueman-applet.enable = true;
-    nm-applet.enable = true;
-    fuzzel.enable = true;
-    swayidle.enable = true;
-    copyq.enable = true;
 
     # Scripts
     screenrecord-region.enable = true;

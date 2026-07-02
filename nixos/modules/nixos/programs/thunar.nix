@@ -31,7 +31,7 @@ with lib; {
     services.gvfs.enable = true; # Mount, trash, and other functionalities
     services.tumbler.enable = true; # Thumbnail support for images
 
-    home-manager.users.martin.programs.niri.settings.window-rules = mkIf config.niri.enable [
+    home-manager.users.martin.programs.niri.settings.window-rules = mkIf config.eclipse.niri.enable [
       {
         matches = [
           {

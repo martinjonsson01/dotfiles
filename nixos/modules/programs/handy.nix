@@ -13,7 +13,7 @@ with lib; {
   config = mkIf config.eclipse.handy.enable {
     eclipse.hm = {
       pkgs,
-      config,
+      osConfig,
       inputs,
       ...
     }: let
@@ -37,7 +37,7 @@ with lib; {
         "YDOTOOL_SOCKET=/run/ydotoold/socket"
       ];
 
-      programs.niri.settings = mkIf config.niri.enable {
+      programs.niri.settings = mkIf osConfig.eclipse.niri.enable {
         spawn-at-startup = [
           {command = ["${handy-pkg}/bin/handy"];}
         ];

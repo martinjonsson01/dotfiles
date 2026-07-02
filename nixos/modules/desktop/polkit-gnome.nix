@@ -6,12 +6,11 @@
   lib,
   pkgs,
   ...
-}: {
-  options = {
-    polkit-gnome.enable = lib.mkEnableOption "Enables GNOME Polkit";
-  };
+}:
+with lib; {
+  options.eclipse.polkit-gnome.enable = mkEnableOption "Enables GNOME Polkit";
 
-  config = lib.mkIf config.polkit-gnome.enable {
+  config = mkIf config.eclipse.polkit-gnome.enable {
     security.polkit.enable = true;
 
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
