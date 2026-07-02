@@ -30,12 +30,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # To build rust packages.
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay/dc221f842e9ddc8c0416beae8d77f2ea356b91ae";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # A Neovim distribution built around Nix modules.
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.11";
