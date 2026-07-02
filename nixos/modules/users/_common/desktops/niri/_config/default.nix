@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  myHardware = osConfig.myHardware;
+  hardware = osConfig.eclipse.hardware;
 in {
   settings =
     {
@@ -30,11 +30,11 @@ in {
       clipboard.disable-primary = true;
     }
     // (import ./input.nix)
-    // (import ./outputs.nix {inherit lib myHardware;})
-    // (import ./spawn-at-startup.nix {inherit pkgs lib myHardware;})
+    // (import ./outputs.nix {inherit lib hardware;})
+    // (import ./spawn-at-startup.nix {inherit pkgs lib hardware;})
     // (import ./layout.nix)
     // (import ./window-rules.nix {inherit config;})
     // (import ./layer-rules.nix)
     // (import ./binds.nix {inherit pkgs lib config;})
-    // (import ./workspaces.nix {inherit myHardware;});
+    // (import ./workspaces.nix {inherit hardware;});
 }

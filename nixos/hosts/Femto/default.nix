@@ -202,7 +202,7 @@ with lib; {
   ];
 
   # Custom modules
-  Eclipse = {
+  eclipse = {
     nvidia.enable = true;
     stylix.enable = true;
     teamviewer.enable = true;

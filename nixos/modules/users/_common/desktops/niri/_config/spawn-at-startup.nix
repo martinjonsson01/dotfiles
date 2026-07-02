@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  myHardware,
+  hardware,
 }:
 with lib; {
   spawn-at-startup = let
@@ -31,12 +31,12 @@ with lib; {
       ++ builtins.map (
         monitor: ["${getExe pkgs.swaybg}" "-o" "${monitor.connector}" "-i" "${monitor.wallpaper}"]
       ) (
-        builtins.filter (m: m.wallpaper != null) myHardware.monitors
+        builtins.filter (m: m.wallpaper != null) hardware.monitors
       )
       ++
       # Focus default workspace for reach monitor
       builtins.map (
         monitor: ["${getExe pkgs.niri}" "msg" "action" "focus-workspace" "${(head monitor.workspaces).name}"]
       )
-      myHardware.monitors);
+      hardware.monitors);
 }

@@ -9,7 +9,7 @@
   ...
 }:
 with lib; let
-  myHardware = osConfig.myHardware;
+  hardware = osConfig.eclipse.hardware;
 
   leftModules =
     (
@@ -42,7 +42,7 @@ with lib; let
       "temperature"
       "memory"
     ]
-    ++ (lib.optionals (myHardware.gpuDriver == "nvidia") [
+    ++ (lib.optionals (hardware.gpuDriver == "nvidia") [
       "custom/nvidia"
     ]);
 
@@ -91,7 +91,7 @@ with lib; let
     cpu = {
       interval = 1;
       format = let
-        cores = myHardware.cpu.numberOfCores;
+        cores = hardware.cpu.numberOfCores;
         width =
           if isVertical
           then 8
@@ -124,7 +124,7 @@ with lib; let
     temperature = {
       critical-threshold = 75;
       format = "⚙️ {temperatureC}°C";
-      hwmon-path = myHardware.cpu.temperatureHwmonPath;
+      hwmon-path = hardware.cpu.temperatureHwmonPath;
       on-click = "kitty btop";
     };
 
@@ -319,7 +319,7 @@ in {
             }
             // createModulesCfg (monitor.width > 5000)
         )
-        myHardware.monitors;
+        hardware.monitors;
 
       style = ''
         * {

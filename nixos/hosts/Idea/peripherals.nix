@@ -1,5 +1,5 @@
 {...}: {
-  myHardware = {
+  eclipse.hardware = {
     cpu = {
       brand = "amd";
       numberOfCores = 16;

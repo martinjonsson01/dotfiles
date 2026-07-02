@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.Eclipse.dev;
+  cfg = config.eclipse.dev;
 in {
-  options.Eclipse.dev.enable = mkEnableOption "Enables the dev profile.";
+  options.eclipse.dev.enable = mkEnableOption "Enables the dev profile.";
 
   config = mkIf cfg.enable {
     ccache.enable = true;

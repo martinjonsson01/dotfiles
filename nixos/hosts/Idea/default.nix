@@ -166,7 +166,7 @@ with lib; {
   '';
 
   # Custom modules
-  Eclipse = {
+  eclipse = {
     stylix.enable = true;
 
     # Enable profiles

@@ -5,7 +5,7 @@
 }: let
   inherit (lib) mkOption types;
 in {
-  options.myHardware = {
+  options.eclipse.hardware = {
     cpu = mkOption {
       type = types.submodule (
         {...}: {
@@ -140,12 +140,12 @@ in {
     assertions = [
       (
         let
-          monitors = config.myHardware.monitors;
+          monitors = config.eclipse.hardware.monitors;
           primary = builtins.filter (m: m.primary) monitors;
         in {
           assertion = monitors == [] || builtins.length primary == 1;
           message =
-            "Must have exactly one primary monitor in `config.myHardware.monitors` but found "
+            "Must have exactly one primary monitor in `config.eclipse.hardware.monitors` but found "
             + toString (builtins.length primary);
         }
       )

@@ -1,4 +1,4 @@
-{myHardware}: {
+{hardware}: {
   workspaces = builtins.listToAttrs (builtins.concatMap (
       monitor:
         builtins.map (
@@ -12,5 +12,5 @@
         )
         monitor.workspaces
     )
-    myHardware.monitors);
+    hardware.monitors);
 }

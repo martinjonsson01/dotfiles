@@ -12,7 +12,7 @@ with lib; let
     flavor = "mocha";
   };
 
-  monitors = config.myHardware.monitors;
+  monitors = config.eclipse.hardware.monitors;
   mainMonitor =
     lists.findSingle (monitor: monitor.primary)
     (lists.head monitors)

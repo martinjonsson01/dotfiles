@@ -7,9 +7,9 @@
   lib,
   ...
 }: {
-  options.Eclipse.teamviewer.enable = lib.mkEnableOption "Enables Teamviewer";
+  options.eclipse.teamviewer.enable = lib.mkEnableOption "Enables Teamviewer";
 
-  config = lib.mkIf config.Eclipse.teamviewer.enable {
+  config = lib.mkIf config.eclipse.teamviewer.enable {
     environment.systemPackages = with pkgs; [
       teamviewer
     ];

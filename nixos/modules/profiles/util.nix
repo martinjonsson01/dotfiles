@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.Eclipse.util;
+  cfg = config.eclipse.util;
 in {
-  options.Eclipse.util.enable = mkEnableOption "Enables the util profile.";
+  options.eclipse.util.enable = mkEnableOption "Enables the util profile.";
 
   config = mkIf cfg.enable {
     home-manager.users.martin.home = {

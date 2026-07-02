@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.Eclipse.social;
+  cfg = config.eclipse.social;
 in {
-  options.Eclipse.social.enable = mkEnableOption "Enables the social profile.";
+  options.eclipse.social.enable = mkEnableOption "Enables the social profile.";
 
   config = mkIf cfg.enable {
     home-manager.users.martin = {

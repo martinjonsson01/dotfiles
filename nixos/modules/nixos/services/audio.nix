@@ -41,7 +41,7 @@
               ${lib.strings.concatMapStrings (matchRule: ''
                 { ${matchRule} }
               '')
-              config.myHardware.audio.disabledMatches}
+              config.eclipse.hardware.audio.disabledMatches}
                 ]
                 actions = {
                   update-props = {
@@ -67,7 +67,7 @@
                   }
                 }
               '')
-              config.myHardware.audio.sinkPriorityMatches}
+              config.eclipse.hardware.audio.sinkPriorityMatches}
             ]
           '')
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-elgato-wave3.conf" ''

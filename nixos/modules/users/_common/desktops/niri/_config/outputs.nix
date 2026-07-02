@@ -1,6 +1,6 @@
 {
   lib,
-  myHardware,
+  hardware,
 }: let
   inherit
     (lib)
@@ -39,5 +39,5 @@ in {
         focus-at-startup = primary;
       };
     })
-    myHardware.monitors);
+    hardware.monitors);
 }

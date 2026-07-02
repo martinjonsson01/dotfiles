@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.Eclipse.core;
+  cfg = config.eclipse.core;
 in {
-  options.Eclipse.core.enable = mkEnableOption "Enables the core profile.";
+  options.eclipse.core.enable = mkEnableOption "Enables the core profile.";
 
   config = mkIf cfg.enable {
     fish.enable = true;

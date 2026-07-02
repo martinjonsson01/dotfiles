@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.Eclipse.media;
+  cfg = config.eclipse.media;
 in {
-  options.Eclipse.media.enable = mkEnableOption "Enables the media profile.";
+  options.eclipse.media.enable = mkEnableOption "Enables the media profile.";
 
   config = mkIf cfg.enable {
     home-manager.users.martin.home = {
