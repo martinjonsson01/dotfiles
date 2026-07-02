@@ -5,12 +5,19 @@
 {
   config,
   lib,
+  pkgs,
+  inputs,
   ...
 }:
 with lib; {
   options.eclipse.handy.enable = mkEnableOption "Enables Handy speech-to-text";
 
   config = mkIf config.eclipse.handy.enable {
+    programs.handy = {
+      enable = true;
+      package = inputs.handy.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
+
     eclipse.hm = {
       pkgs,
       osConfig,

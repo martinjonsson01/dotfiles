@@ -10,6 +10,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Run programs without installing them, e.g. `, cowsay hello`.
+  programs.nix-index-database.comma.enable = true;
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake

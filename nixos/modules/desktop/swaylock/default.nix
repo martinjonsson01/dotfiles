@@ -13,6 +13,12 @@ with lib; {
     # Necessary to make login using swaylock possible.
     security.pam.services.swaylock = {};
 
+    # Both swaylock and swaylock-effects provide bin/swaylock; let swaylock-effects win.
+    nixpkgs.config.packageOverrides = pkgs: {
+      swaylock = pkgs.lib.lowPrio pkgs.swaylock;
+      swaylock-effects = pkgs.lib.hiPrio pkgs.swaylock-effects;
+    };
+
     eclipse.hm = {pkgs, ...}: {
       programs.swaylock = {
         enable = true;
