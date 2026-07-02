@@ -49,17 +49,7 @@ with lib; {
     };
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L" # print build logs
-    ];
-    dates = "02:00";
-    randomizedDelaySec = "45min";
-  };
+  auto-upgrade.enable = true;
 
   # This will automatically import SSH keys as age keys.
   sops.age.sshKeyPaths = ["/home/martin/.ssh/id_ed25519"];
