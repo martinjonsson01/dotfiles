@@ -5,19 +5,58 @@
   ...
 }:
 with lib; {
-  eclipse.users.martin = {
-    description = "Martin";
-    uid = 1000;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "rslsync"
-      "docker"
-      "input"
-      "uinput"
-    ];
-    stateVersion = "24.11";
-  };
+  eclipse = mkMerge [
+    {
+      users.martin = {
+        description = "Martin";
+        uid = 1000;
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "rslsync"
+          "docker"
+          "input"
+          "uinput"
+        ];
+        stateVersion = "24.11";
+      };
+    }
+    (mkIf config.eclipse.users.martin.enable {
+      git.enable = true;
+      gh.enable = true;
+      kitty.enable = true;
+      lutris.enable = true;
+      ssh.enable = true;
+
+      # Audio
+      easyeffects.enable = true;
+      mic-default-mute.enable = true;
+
+      # Local LLM
+      ollama.enable = true;
+      open-webui.enable = true;
+      handy.enable = true; # Dictation
+
+      vscode.enable = true;
+      jetbrains.enable = true;
+      zellij.enable = true;
+      podman.enable = true;
+
+      plex-desktop.enable = true;
+      pinta.enable = true;
+      mpv.enable = true;
+      decibels.enable = true;
+      loupe.enable = true;
+
+      zoom.enable = true;
+
+      btop.enable = true;
+      yazi.enable = true;
+      qalculate.enable = true;
+      satty.enable = true;
+      gdb-dashboard.enable = true;
+    })
+  ];
 
   home-manager.users.martin = mkIf config.eclipse.users.martin.enable {
     #
@@ -25,26 +64,12 @@ with lib; {
     # enable them from the profile module... :(
     #
 
-    git.enable = true;
-    gh.enable = true;
     neovim.enable = true;
     fish.enable = true;
     niri.enable = true;
-    kitty.enable = true;
-    lutris.enable = true;
     tokyonight.enable = true;
-    ssh.enable = true;
-
-    # Audio
-    easyeffects.enable = true;
-    mic-default-mute.enable = true;
 
     services.swayosd.enable = true;
-
-    # Local LLM
-    ollama.enable = true;
-    openWebui.enable = true;
-    handy.enable = true; # Dictation
 
     # Desktop add-ons
     gtk-theme.enable = true;
@@ -57,22 +82,7 @@ with lib; {
     swayidle.enable = true;
     copyq.enable = true;
 
-    vscode.enable = true;
-    jetbrains.enable = true;
-    zellij.enable = true;
-    podman.enable = true;
-
-    plex-desktop.enable = true;
-    pinta.enable = true;
-    mpv.enable = true;
-    decibels.enable = true;
-    loupe.enable = true;
-
-    zoom.enable = true;
-
-    btop.enable = true;
-    yazi.enable = true;
-    qalculate.enable = true;
+    # Scripts
     screenrecord-region.enable = true;
     screenshot-region.enable = true;
     open-screenshot-dir.enable = true;
@@ -81,8 +91,6 @@ with lib; {
     niri-rename-workspace.enable = true;
     niri-launch-kitty-workspace-cwd.enable = true;
     lock-script.enable = true;
-    satty.enable = true;
-    gdb-dashboard.enable = true;
 
     home.packages = with pkgs;
       [
