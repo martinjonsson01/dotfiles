@@ -5,7 +5,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.stylix.enable = lib.mkEnableOption "Enables Stylix";
+  options.eclipse.stylix.enable = mkEnableOption "Enables Stylix";
 
   config = mkIf config.eclipse.stylix.enable {
     # https://stylix.danth.me/options/nixos.html

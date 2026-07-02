@@ -2,9 +2,8 @@
   lib,
   config,
   ...
-}: let
-  inherit (lib) mkOption types;
-in {
+}:
+with lib; {
   options.eclipse.hardware = {
     cpu = mkOption {
       type = types.submodule (

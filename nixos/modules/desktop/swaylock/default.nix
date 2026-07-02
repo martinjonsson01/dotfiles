@@ -15,8 +15,8 @@ with lib; {
 
     # Both swaylock and swaylock-effects provide bin/swaylock; let swaylock-effects win.
     nixpkgs.config.packageOverrides = pkgs: {
-      swaylock = pkgs.lib.lowPrio pkgs.swaylock;
-      swaylock-effects = pkgs.lib.hiPrio pkgs.swaylock-effects;
+      swaylock = lowPrio pkgs.swaylock;
+      swaylock-effects = hiPrio pkgs.swaylock-effects;
     };
 
     eclipse.hm = {pkgs, ...}: {

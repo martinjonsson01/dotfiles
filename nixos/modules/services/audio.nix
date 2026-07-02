@@ -3,10 +3,11 @@
   lib,
   config,
   ...
-}: {
-  options.eclipse.audio.enable = lib.mkEnableOption "Enables audio";
+}:
+with lib; {
+  options.eclipse.audio.enable = mkEnableOption "Enables audio";
 
-  config = lib.mkIf config.eclipse.audio.enable {
+  config = mkIf config.eclipse.audio.enable {
     # Force-unmute Elgato Wave:3 hardware mute on USB connect (capacitive button desync workaround)
     services.udev.extraRules = ''
       ACTION=="add", SUBSYSTEM=="sound", ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="0070", RUN+="${pkgs.alsa-utils}/bin/amixer -c Wave3 sset 'Mic Capture Switch' on"
@@ -36,7 +37,7 @@
             monitor.alsa.rules = [
               {
                 matches = [
-              ${lib.strings.concatMapStrings (matchRule: ''
+              ${concatMapStrings (matchRule: ''
                 { ${matchRule} }
               '')
               config.eclipse.hardware.audio.disabledMatches}
@@ -52,7 +53,7 @@
           '')
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-set-sink-priority.conf" ''
             monitor.alsa.rules = [
-              ${lib.strings.concatImapStringsSep "\n" (index: matchRule: ''
+              ${concatImapStringsSep "\n" (index: matchRule: ''
                 {
                   matches = [
                     { ${matchRule} }

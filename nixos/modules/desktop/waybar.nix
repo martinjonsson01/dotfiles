@@ -49,7 +49,7 @@ with lib; {
           "temperature"
           "memory"
         ]
-        ++ (lib.optionals (hardware.gpuDriver == "nvidia") [
+        ++ (optionals (hardware.gpuDriver == "nvidia") [
           "custom/nvidia"
         ]);
 

@@ -2,10 +2,11 @@
   lib,
   config,
   ...
-}: {
-  options.eclipse.nvidia.enable = lib.mkEnableOption "Enables nvidia drivers";
+}:
+with lib; {
+  options.eclipse.nvidia.enable = mkEnableOption "Enables nvidia drivers";
 
-  config = lib.mkIf config.eclipse.nvidia.enable {
+  config = mkIf config.eclipse.nvidia.enable {
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = ["nvidia"];
 

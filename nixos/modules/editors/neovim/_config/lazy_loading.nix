@@ -3,14 +3,15 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+with lib; {
   extraPlugins = with pkgs;
-    lib.mkIf config.plugins.lz-n.enable [
+    mkIf config.plugins.lz-n.enable [
       vimPlugins.lzn-auto-require
     ];
 
-  extraConfigLuaPost = lib.mkIf config.plugins.lz-n.enable (
-    lib.mkOrder 5000 ''
+  extraConfigLuaPost = mkIf config.plugins.lz-n.enable (
+    mkOrder 5000 ''
       require('lzn-auto-require').enable()
     ''
   );

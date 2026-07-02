@@ -3,10 +3,11 @@
   pkgs,
   config,
   ...
-}: {
-  options.eclipse.resilio.enable = lib.mkEnableOption "Enables Resilio sync";
+}:
+with lib; {
+  options.eclipse.resilio.enable = mkEnableOption "Enables Resilio sync";
 
-  config = lib.mkIf config.eclipse.resilio.enable {
+  config = mkIf config.eclipse.resilio.enable {
     environment.systemPackages = with pkgs; [resilio-sync];
 
     sops.secrets."resilio-secret" = {

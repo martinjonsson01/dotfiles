@@ -3,7 +3,8 @@
   pkgs,
   hmConfig,
   ...
-}: {
+}:
+with lib; {
   config = {
     extraPackages = with pkgs; [
       djlint
@@ -172,22 +173,22 @@
         };
 
         formatters = {
-          black.command = "${lib.getExe pkgs.black}";
-          isort.command = "${lib.getExe pkgs.isort}";
-          nixfmt-rfc-style.command = "${lib.getExe pkgs.nixfmt-rfc-style}";
-          alejandra.command = "${lib.getExe pkgs.alejandra}";
-          jq.command = "${lib.getExe pkgs.jq}";
-          prettierd.command = "${lib.getExe pkgs.prettierd}";
-          stylua.command = "${lib.getExe pkgs.stylua}";
-          shellcheck.command = "${lib.getExe pkgs.shellcheck}";
-          shfmt.command = "${lib.getExe pkgs.shfmt}";
-          shellharden.command = "${lib.getExe pkgs.shellharden}";
-          bicep.command = "${lib.getExe pkgs.bicep}";
-          rustfmt.command = "${lib.getExe pkgs.rustfmt}";
-          clang_format.command = "${lib.getExe' pkgs.clang-tools "clang-format"}";
-          cmake-format.command = "${lib.getExe pkgs.cmake-format}";
+          black.command = "${getExe pkgs.black}";
+          isort.command = "${getExe pkgs.isort}";
+          nixfmt-rfc-style.command = "${getExe pkgs.nixfmt-rfc-style}";
+          alejandra.command = "${getExe pkgs.alejandra}";
+          jq.command = "${getExe pkgs.jq}";
+          prettierd.command = "${getExe pkgs.prettierd}";
+          stylua.command = "${getExe pkgs.stylua}";
+          shellcheck.command = "${getExe pkgs.shellcheck}";
+          shfmt.command = "${getExe pkgs.shfmt}";
+          shellharden.command = "${getExe pkgs.shellharden}";
+          bicep.command = "${getExe pkgs.bicep}";
+          rustfmt.command = "${getExe pkgs.rustfmt}";
+          clang_format.command = "${getExe' pkgs.clang-tools "clang-format"}";
+          cmake-format.command = "${getExe pkgs.cmake-format}";
           robotidy = {
-            command = "${lib.getExe pkgs.robotframework-tidy}";
+            command = "${getExe pkgs.robotframework-tidy}";
             args = [
               "--config"
               "${hmConfig.xdg.configHome}/fish/functions/utils/robotidy-config.toml"
