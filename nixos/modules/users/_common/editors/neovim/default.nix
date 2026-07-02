@@ -20,6 +20,6 @@ with lib; {
         # like pkgs.unstable are visible inside nixvim modules.
         nixpkgs.useGlobalPackages = true;
       }
-      // (import ./config {inherit pkgs lib config;});
+      // (import ./_config {inherit pkgs lib config;});
   };
 }

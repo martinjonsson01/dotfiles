@@ -27,7 +27,7 @@
           enable = true;
           package = pkgs.niri-unstable;
         }
-        // (import ./config {
+        // (import ./_config {
           inherit
             config
             lib
@@ -36,5 +36,5 @@
             ;
         });
     }
-    // (import ../default-applications.nix));
+    // (import ../_default-applications.nix));
 }

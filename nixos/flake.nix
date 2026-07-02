@@ -60,60 +60,65 @@
     handy,
     ...
   }: let
+    importTree = import ./lib/importTree.nix;
+
     # Shared modules and imports
-    defaultModules = [
-      ./modules/autoimport.nix
-      ./overlays/unstable.nix
-      home-manager.nixosModules.home-manager
-      {
-        home-manager = {
-          extraSpecialArgs = {
-            inherit inputs;
-          };
-
-          /*
-          When running, Home Manager will use the global package cache.
-          It will also back up any files that it would otherwise overwrite.
-          The originals will have the extension shown below.
-          */
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          backupFileExtension = "home-manager-backup";
-
-          # Modules shared across all users
-          sharedModules = [
-            niri.homeModules.niri
-            nixvim.homeModules.nixvim
-            sops-nix.homeManagerModule
-          ];
-        };
-      }
-      sops-nix.nixosModules.sops
-      stylix.nixosModules.stylix
-      nix-index-database.nixosModules.nix-index
-      (
-        {...}: {
-          programs.nix-index-database.comma.enable = true;
-
-          nixpkgs.config = {
-            allowUnfree = true;
-
-            # Fix collisions.
-            packageOverrides = pkgs: {
-              swaylock = pkgs.lib.lowPrio pkgs.swaylock;
-              swaylock-effects = pkgs.lib.hiPrio pkgs.swaylock-effects;
+    defaultModules =
+      (importTree ./modules)
+      ++ [
+        ./overlays/unstable.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            extraSpecialArgs = {
+              inherit inputs;
             };
+
+            /*
+            When running, Home Manager will use the global package cache.
+            It will also back up any files that it would otherwise overwrite.
+            The originals will have the extension shown below.
+            */
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "home-manager-backup";
+
+            # Modules shared across all users
+            sharedModules =
+              [
+                niri.homeModules.niri
+                nixvim.homeModules.nixvim
+                sops-nix.homeManagerModule
+              ]
+              ++ (importTree ./modules/users/_common);
           };
         }
-      )
-      handy.nixosModules.default
-      {
-        programs.handy = {
-          enable = true;
-          package = inputs.handy.packages.x86_64-linux.default;
-        };
-      }
-    ];
+        sops-nix.nixosModules.sops
+        stylix.nixosModules.stylix
+        nix-index-database.nixosModules.nix-index
+        (
+          {...}: {
+            programs.nix-index-database.comma.enable = true;
+
+            nixpkgs.config = {
+              allowUnfree = true;
+
+              # Fix collisions.
+              packageOverrides = pkgs: {
+                swaylock = pkgs.lib.lowPrio pkgs.swaylock;
+                swaylock-effects = pkgs.lib.hiPrio pkgs.swaylock-effects;
+              };
+            };
+          }
+        )
+        handy.nixosModules.default
+        {
+          programs.handy = {
+            enable = true;
+            package = inputs.handy.packages.x86_64-linux.default;
+          };
+        }
+      ];
   in {
     nixosConfigurations = {
       Femto = nixpkgs.lib.nixosSystem {

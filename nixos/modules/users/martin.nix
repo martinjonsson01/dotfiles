@@ -11,10 +11,6 @@ in {
 
   config = mkIf cfg.enable {
     home-manager.users.martin = {
-      imports = [
-        ./common
-      ];
-
       home = {
         username = "martin";
         homeDirectory = "/home/martin";
