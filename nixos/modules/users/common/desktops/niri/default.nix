@@ -9,8 +9,7 @@
     niri.enable = lib.mkEnableOption "Enables Niri";
   };
 
-  config =
-    lib.mkIf config.niri.enable {
+  config = lib.mkIf config.niri.enable ({
       # Nix packages configure Chrome and Electron apps to run in native Wayland
       # mode if this environment variable is set.
       home.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -37,5 +36,5 @@
             ;
         });
     }
-    // (import ../default-applications.nix);
+    // (import ../default-applications.nix));
 }
