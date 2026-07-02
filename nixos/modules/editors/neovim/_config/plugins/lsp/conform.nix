@@ -1,7 +1,7 @@
 {
   lib,
   pkgs,
-  config,
+  hmConfig,
   ...
 }: {
   config = {
@@ -190,7 +190,7 @@
             command = "${lib.getExe pkgs.robotframework-tidy}";
             args = [
               "--config"
-              "${config.xdg.configHome}/fish/functions/utils/robotidy-config.toml"
+              "${hmConfig.xdg.configHome}/fish/functions/utils/robotidy-config.toml"
               "$FILENAME"
             ];
             stdin = false; # robotidy wants to modify the file in-place

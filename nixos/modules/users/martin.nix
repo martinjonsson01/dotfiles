@@ -56,6 +56,7 @@ with lib; {
       satty.enable = true;
       gdb-dashboard.enable = true;
 
+      neovim.enable = true;
       tokyonight.enable = true;
 
       # Desktop add-ons
@@ -77,7 +78,6 @@ with lib; {
     # enable them from the profile module... :(
     #
 
-    neovim.enable = true;
     fish.enable = true;
 
     services.swayosd.enable = true;
