@@ -30,6 +30,12 @@ in {
         watchers.awatcher.package = pkgs.unstable.awatcher;
       };
 
+      # The incognito-marker extension in _config is loaded unpacked into
+      # Chrome (with "Allow in incognito") directly from the repo checkout:
+      # Chrome canonicalizes the path on load, so a nix store symlink would
+      # pin a stale version.
+      xdg.configFile."awatcher/config.toml".source = ./_config/awatcher-config.toml;
+
       systemd.user.services =
         {
           # awatcher talks to the compositor, so it fails until the Wayland

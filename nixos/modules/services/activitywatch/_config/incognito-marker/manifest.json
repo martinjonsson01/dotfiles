@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Incognito Title Marker",
+  "version": "1.0",
+  "description": "Appends (Incognito) to window titles of incognito tabs so window-title trackers can redact them.",
+  "incognito": "spanning",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "match_about_blank": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Chrome exposes no incognito signal in window titles or app ids, so the
+# repo's incognito-marker extension appends " (Incognito)" to them; these
+# filters redact the marked titles before they reach the server.
+[[awatcher.filters]]
+match-app-id = "google-chrome"
+match-title = '.*\(Incognito\).*'
+replace-title = "Incognito"
+
+# The new-tab page is internal, so the extension can't mark it.
+[[awatcher.filters]]
+match-app-id = "google-chrome"
+match-title = "New Incognito Tab.*"
+replace-title = "Incognito"
