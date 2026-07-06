@@ -19,8 +19,8 @@ in {
       grub.enable = mkDefault true;
       kanata.enable = mkDefault true;
       neovim.enable = mkDefault true;
-      resilio.enable = mkDefault true;
       searxng.enable = mkDefault true;
+      syncthing.enable = mkDefault true;
       ssh.enable = mkDefault true;
       yazi.enable = mkDefault true;
       ydotool.enable = mkDefault true;

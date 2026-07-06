@@ -9,7 +9,7 @@ creation_rules:
     key_groups:
       - age:
           - *primary
-  - path_regex: secrets/resilio-secret.txt$
+  - path_regex: secrets/syncthing.yaml$
     key_groups:
       - age:
           - *primary

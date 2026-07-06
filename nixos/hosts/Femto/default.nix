@@ -19,6 +19,7 @@
     nvidia.enable = true;
     teamviewer.enable = true;
     activitywatch.syncDir = "/big-chungus/Drive/activity";
+    syncthing.driveDir = "/big-chungus/Drive";
 
     # Enable profiles
     ai.enable = true;
