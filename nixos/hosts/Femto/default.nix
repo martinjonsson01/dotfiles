@@ -18,6 +18,7 @@
   eclipse = {
     nvidia.enable = true;
     teamviewer.enable = true;
+    activitywatch.syncDir = "/big-chungus/Drive/activity";
 
     # Enable profiles
     ai.enable = true;

@@ -10,6 +10,7 @@ in {
 
   config = mkIf cfg.enable {
     eclipse = {
+      activitywatch.enable = mkDefault true;
       audio.enable = mkDefault true;
       blueman-applet.enable = mkDefault true;
       copyq.enable = mkDefault true;

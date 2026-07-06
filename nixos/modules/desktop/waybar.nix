@@ -37,12 +37,18 @@ with lib; {
         "privacy"
         "custom/mic"
       ];
-      primaryModules = [
-        "tray"
-        #"custom/power"
-        "wireplumber"
-        "custom/swaync"
-      ];
+      primaryModules =
+        [
+          "tray"
+          #"custom/power"
+          "wireplumber"
+        ]
+        ++ optionals osConfig.eclipse.activitywatch.enable [
+          "custom/activitywatch"
+        ]
+        ++ [
+          "custom/swaync"
+        ];
       rightModules =
         [
           "cpu"
@@ -249,6 +255,38 @@ with lib; {
           restart-interval = 0;
         };
 
+        # ActivityWatch: open dashboard, pause/resume tracking.
+        "custom/activitywatch" = let
+          systemctl = getExe' pkgs.systemd "systemctl";
+          # Pausing stops the whole target: the server must go down too,
+          # or the browser extension keeps reporting straight to it.
+          target = "activitywatch.target";
+        in {
+          exec = "${getExe (
+            pkgs.writers.writeBashBin "waybar-activitywatch.sh" ''
+              if ${systemctl} --user is-active --quiet ${target}; then
+                printf '{"text": "󰈈", "class": "tracking", "tooltip": "ActivityWatch: tracking\\nleft-click: dashboard, right-click: pause"}\n'
+              else
+                printf '{"text": "󰈉", "class": "paused", "tooltip": "ActivityWatch: paused (dashboard offline)\\nright-click: resume"}\n'
+              fi
+            ''
+          )}";
+          return-type = "json";
+          interval = 10;
+          signal = 4;
+          on-click = "${getExe' pkgs.xdg-utils "xdg-open"} 'http://localhost:5600/#/activity/${osConfig.networking.hostName}/view/'";
+          on-click-right = "${getExe (
+            pkgs.writers.writeBashBin "waybar-activitywatch-toggle.sh" ''
+              if ${systemctl} --user is-active --quiet ${target}; then
+                ${systemctl} --user stop ${target}
+              else
+                ${systemctl} --user start ${target}
+              fi
+              ${getExe' pkgs.procps "pkill"} -SIGRTMIN+4 waybar
+            ''
+          )}";
+        };
+
         # Sway notification center.
         "custom/swaync" = let
           swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
@@ -423,6 +461,14 @@ with lib; {
           }
           #window{
             background-color: #74c7ec;
+          }
+
+          #custom-activitywatch {
+              font-size: 20px;
+              color: #a6e3a1;
+          }
+          #custom-activitywatch.paused {
+              color: #f38ba8;
           }
 
           #custom-swaync {
