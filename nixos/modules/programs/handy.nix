@@ -39,16 +39,16 @@ with lib; {
         ydotool # Needed for Handy's built-in clipboard paste (Ctrl+V simulation)
       ];
 
-      # Handy's built-in clipboard paste needs these
-      systemd.user.services.handy.Service.Environment = [
-        "YDOTOOL_SOCKET=/run/ydotoold/socket"
-      ];
+      systemd.user.services.handy.Service = {
+        # Without --start-hidden the main window pops up on every service (re)start
+        ExecStart = mkForce "${handy-pkg}/bin/handy --start-hidden";
+        # Handy's built-in clipboard paste needs this
+        Environment = [
+          "YDOTOOL_SOCKET=/run/ydotoold/socket"
+        ];
+      };
 
       programs.niri.settings = mkIf osConfig.eclipse.niri.enable {
-        spawn-at-startup = [
-          {command = ["${handy-pkg}/bin/handy"];}
-        ];
-
         binds = {
           "Ctrl+Shift+Alt+C".action = {
             spawn = [
