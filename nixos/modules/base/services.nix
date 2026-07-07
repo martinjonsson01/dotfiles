@@ -1,7 +1,12 @@
 #
 # Baseline services and packages every host gets.
 #
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -58,7 +63,15 @@
 
   environment.systemPackages = with pkgs; [
     # Programs
-    google-chrome # Web browser
+    # Web browser. NVIDIA's EGL driver rejects DMA-BUF pixmap imports on
+    # Wayland (eglCreateImage EGL_BAD_MATCH), which turns the camera feed
+    # white when sites apply video effects; software compositing avoids
+    # that path.
+    (google-chrome.override {
+      commandLineArgs =
+        lib.optionalString config.eclipse.nvidia.enable
+        "--disable-gpu-compositing";
+    })
 
     # CLI
     wget # For downloading
