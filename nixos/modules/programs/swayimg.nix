@@ -32,6 +32,12 @@ with lib; {
         [list]
         all = yes
 
+        [info.viewer]
+        top_left = name
+        top_right = index
+        bottom_left = scale
+        bottom_right = none
+
         [keys.viewer]
         Left = prev_file
         Right = next_file
