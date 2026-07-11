@@ -15,6 +15,7 @@ in {
       mpv.enable = mkDefault true;
       pinta.enable = mkDefault true;
       plex-desktop.enable = mkDefault true;
+      swayimg.enable = mkDefault true;
 
       hm = {pkgs, ...}: {
         home.packages = with pkgs;
