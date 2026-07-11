@@ -15,6 +15,16 @@ with lib; {
         enable = true;
         mime.enable = true;
 
+        desktopEntries.nvim-kitty = {
+          name = "Neovim (Kitty)";
+          genericName = "Text Editor";
+          comment = "Edit text and code in Neovim inside a new Kitty window";
+          icon = "nvim";
+          exec = "kitty -- nvim %F";
+          terminal = false;
+          categories = ["Utility" "TextEditor" "Development"];
+        };
+
         configFile."mimeapps.list".force = true;
 
         mimeApps = {
@@ -76,17 +86,46 @@ with lib; {
             ];
             textTypes = [
               "application/json"
+              "application/toml"
               "application/xml"
+              "application/x-desktop"
+              "application/x-httpd-php"
+              "application/x-perl"
+              "application/x-ruby"
+              "application/x-shellscript"
+              "application/x-yaml"
               "text/csv"
+              "text/css"
+              "text/html"
+              "text/javascript"
               "text/markdown"
               "text/plain"
+              "text/rust"
+              "text/x-c"
+              "text/x-c++"
+              "text/x-c++hdr"
+              "text/x-c++src"
+              "text/x-chdr"
+              "text/x-cmake"
+              "text/x-csrc"
+              "text/x-go"
+              "text/x-java"
+              "text/x-lua"
+              "text/x-makefile"
+              "text/x-nix"
+              "text/x-python"
+              "text/x-ruby"
+              "text/x-rust"
+              "text/x-shellscript"
+              "text/x-tex"
+              "text/x-yaml"
               "text/xml"
             ];
           in
             genAttrs imageTypes (_: "swayimg.desktop")
             // genAttrs videoTypes (_: "mpv.desktop")
             // genAttrs audioTypes (_: "org.gnome.Decibels.desktop")
-            // genAttrs textTypes (_: "nvim.desktop")
+            // genAttrs textTypes (_: "nvim-kitty.desktop")
             // {
               "application/pdf" = "google-chrome.desktop";
               "x-scheme-handler/http" = "google-chrome.desktop";
@@ -94,8 +133,8 @@ with lib; {
               "application/x-email" = "google-chrome.desktop";
               "x-scheme-handler/mailto" = "google-chrome.desktop";
               "inode/directory" = "thunar.desktop";
-              "application/csv" = "nvim.desktop";
-              "application/vnd.ms-excel" = "nvim.desktop";
+              "application/csv" = "nvim-kitty.desktop";
+              "application/vnd.ms-excel" = "nvim-kitty.desktop";
             };
         };
       };
