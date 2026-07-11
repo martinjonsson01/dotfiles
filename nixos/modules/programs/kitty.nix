@@ -4,9 +4,46 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
-with lib; {
+with lib; let
+  scrollbackPagerConfig = pkgs.writeText "kitty-scrollback.lua" ''
+    local target_line = math.max(1, tonumber(vim.g.kitty_scrollback_line) or 1)
+    local buffer = vim.api.nvim_get_current_buf()
+    local window = vim.api.nvim_get_current_win()
+    local positioned = false
+
+    -- Terminal conversion is asynchronous, so position only after the target line exists.
+    vim.api.nvim_buf_attach(buffer, false, {
+      on_lines = function()
+        if positioned or vim.api.nvim_buf_line_count(buffer) < target_line then
+          return
+        end
+
+        positioned = true
+        vim.schedule(function()
+          if not vim.api.nvim_buf_is_valid(buffer) or not vim.api.nvim_win_is_valid(window) then
+            return
+          end
+
+          vim.api.nvim_win_set_cursor(window, { target_line, 0 })
+          vim.api.nvim_win_call(window, function()
+            vim.cmd("normal! zt")
+          end)
+        end)
+        return true
+      end,
+    })
+
+    vim.keymap.set("n", "q", "<Cmd>qall!<CR>", { buffer = buffer })
+    -- Retain as much Kitty history as Neovim's terminal buffer permits.
+    vim.bo[buffer].scrollback = 1000000
+    vim.api.nvim_open_term(buffer, {})
+    vim.bo[buffer].modified = false
+    vim.wo[window].list = false
+  '';
+in {
   options.eclipse.kitty.enable = mkEnableOption "Kitty";
 
   config = mkIf config.eclipse.kitty.enable {
@@ -21,6 +58,18 @@ with lib; {
 
         settings = {
           scrollback_lines = 10000;
+          scrollback_pager = escapeShellArgs [
+            (getExe pkgs.unstable.neovim)
+            "--clean"
+            "-n"
+            "--cmd"
+            "set eventignore=FileType"
+            "--cmd"
+            "let g:kitty_scrollback_line=INPUT_LINE_NUMBER"
+            "-S"
+            scrollbackPagerConfig
+            "-"
+          ];
           enable_audio_bell = false;
           update_check_interval = 0;
           strip_trailing_spaces = "smart";
