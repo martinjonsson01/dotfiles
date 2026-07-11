@@ -37,6 +37,7 @@ with lib; let
     })
 
     vim.keymap.set("n", "q", "<Cmd>qall!<CR>", { buffer = buffer })
+    vim.opt.clipboard = "unnamedplus"
     -- Retain as much Kitty history as Neovim's terminal buffer permits.
     vim.bo[buffer].scrollback = 1000000
     vim.api.nvim_open_term(buffer, {})
