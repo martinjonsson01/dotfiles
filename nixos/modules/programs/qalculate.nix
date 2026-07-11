@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.qalculate.enable = mkEnableOption "Enables Qalculate";
+  options.eclipse.qalculate.enable = mkEnableOption "Qalculate";
 
   config = mkIf config.eclipse.qalculate.enable {
     eclipse.hm = {pkgs, ...}: {

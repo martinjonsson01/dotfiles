@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.tokyonight.enable = mkEnableOption "Enables Tokyonight";
+  options.eclipse.tokyonight.enable = mkEnableOption "Tokyonight";
 
   config = mkIf config.eclipse.tokyonight.enable {
     eclipse.hm = let

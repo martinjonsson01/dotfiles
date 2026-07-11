@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.searxng.enable = mkEnableOption "Enables Searxng";
+  options.eclipse.searxng.enable = mkEnableOption "Searxng";
 
   config = mkIf config.eclipse.searxng.enable {
     sops.secrets."searx.env" = {

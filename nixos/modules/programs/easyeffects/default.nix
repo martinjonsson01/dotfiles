@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.easyeffects.enable = mkEnableOption "Enables easyeffects";
+  options.eclipse.easyeffects.enable = mkEnableOption "easyeffects";
 
   config = mkIf config.eclipse.easyeffects.enable {
     eclipse.hm = {

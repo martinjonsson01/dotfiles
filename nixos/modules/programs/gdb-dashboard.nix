@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.gdb-dashboard.enable = mkEnableOption "Enables gdb-dashboard";
+  options.eclipse.gdb-dashboard.enable = mkEnableOption "gdb-dashboard";
 
   config = mkIf config.eclipse.gdb-dashboard.enable {
     # Allow GDB to attach to processes.

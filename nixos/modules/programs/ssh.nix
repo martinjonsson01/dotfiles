@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.ssh.enable = mkEnableOption "Enables ssh";
+  options.eclipse.ssh.enable = mkEnableOption "ssh";
 
   config = mkIf config.eclipse.ssh.enable {
     eclipse.hm = {

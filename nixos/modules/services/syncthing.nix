@@ -14,7 +14,7 @@ with lib; let
   host = toLower config.networking.hostName;
 in {
   options.eclipse.syncthing = {
-    enable = mkEnableOption "Enables Syncthing continuous file sync";
+    enable = mkEnableOption "Syncthing continuous file sync";
 
     driveDir = mkOption {
       type = types.str;

@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.btop.enable = mkEnableOption "Enables btop";
+  options.eclipse.btop.enable = mkEnableOption "btop";
 
   config = mkIf config.eclipse.btop.enable {
     eclipse.hm = {pkgs, ...}: {

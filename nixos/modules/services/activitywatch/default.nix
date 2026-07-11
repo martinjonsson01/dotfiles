@@ -12,7 +12,7 @@ with lib; let
   cfg = config.eclipse.activitywatch;
 in {
   options.eclipse.activitywatch = {
-    enable = mkEnableOption "Enables ActivityWatch time tracking";
+    enable = mkEnableOption "ActivityWatch time tracking";
 
     syncDir = mkOption {
       type = types.nullOr types.str;

@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.ai;
 in {
-  options.eclipse.ai.enable = mkEnableOption "Enables the AI profile.";
+  options.eclipse.ai.enable = mkEnableOption "the AI profile";
 
   config = mkIf cfg.enable {
     eclipse = {

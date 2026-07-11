@@ -10,7 +10,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.handy.enable = mkEnableOption "Enables Handy speech-to-text";
+  options.eclipse.handy.enable = mkEnableOption "Handy speech-to-text";
 
   config = mkIf config.eclipse.handy.enable {
     programs.handy = {

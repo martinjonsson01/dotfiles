@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.satty.enable = mkEnableOption "Enables Satty";
+  options.eclipse.satty.enable = mkEnableOption "Satty";
 
   config = mkIf config.eclipse.satty.enable {
     eclipse.hm = {

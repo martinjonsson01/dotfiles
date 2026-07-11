@@ -9,7 +9,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.niri.enable = mkEnableOption "Enables Niri";
+  options.eclipse.niri.enable = mkEnableOption "Niri";
 
   config = mkIf config.eclipse.niri.enable {
     nixpkgs.overlays = [inputs.niri.overlays.niri];

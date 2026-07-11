@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.mpv.enable = mkEnableOption "Enables MPV";
+  options.eclipse.mpv.enable = mkEnableOption "MPV";
 
   config = mkIf config.eclipse.mpv.enable {
     eclipse.hm = {

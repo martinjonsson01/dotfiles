@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.lock-script.enable = mkEnableOption "Enables lock script";
+  options.eclipse.lock-script.enable = mkEnableOption "lock script";
 
   config = mkIf config.eclipse.lock-script.enable {
     eclipse.hm = {

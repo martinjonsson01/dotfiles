@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.nm-applet.enable = mkEnableOption "Enables NetworkManager Gnome applet";
+  options.eclipse.nm-applet.enable = mkEnableOption "NetworkManager Gnome applet";
 
   config = mkIf config.eclipse.nm-applet.enable {
     eclipse.hm = {

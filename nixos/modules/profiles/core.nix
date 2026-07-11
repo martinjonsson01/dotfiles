@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.eclipse.core;
 in {
-  options.eclipse.core.enable = mkEnableOption "Enables the core profile.";
+  options.eclipse.core.enable = mkEnableOption "the core profile";
 
   config = mkIf cfg.enable {
     eclipse = {

@@ -9,7 +9,7 @@
 with lib; let
   importTree = import ../../../lib/importTree.nix;
 in {
-  options.eclipse.neovim.enable = mkEnableOption "Enables Neovim";
+  options.eclipse.neovim.enable = mkEnableOption "Neovim";
 
   config = mkIf config.eclipse.neovim.enable {
     eclipse.hm = {config, ...}: {

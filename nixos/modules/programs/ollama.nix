@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.ollama.enable = mkEnableOption "Enables Ollama";
+  options.eclipse.ollama.enable = mkEnableOption "Ollama";
 
   config = mkIf config.eclipse.ollama.enable {
     eclipse.hm = {pkgs, ...}: {

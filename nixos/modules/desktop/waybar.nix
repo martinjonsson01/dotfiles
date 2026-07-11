@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.waybar.enable = mkEnableOption "Enables Waybar";
+  options.eclipse.waybar.enable = mkEnableOption "Waybar";
 
   config = mkIf config.eclipse.waybar.enable {
     eclipse.hm = {

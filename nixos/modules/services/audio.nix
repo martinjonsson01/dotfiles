@@ -5,7 +5,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.audio.enable = mkEnableOption "Enables audio";
+  options.eclipse.audio.enable = mkEnableOption "audio";
 
   config = mkIf config.eclipse.audio.enable {
     # Force-unmute Elgato Wave:3 hardware mute on USB connect (capacitive button desync workaround)

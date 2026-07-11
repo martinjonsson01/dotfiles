@@ -14,7 +14,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.swayidle.enable = mkEnableOption "Enables swayidle";
+  options.eclipse.swayidle.enable = mkEnableOption "swayidle";
 
   config = mkIf config.eclipse.swayidle.enable {
     eclipse.hm = {

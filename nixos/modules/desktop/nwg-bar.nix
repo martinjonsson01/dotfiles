@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.nwg-bar.enable = mkEnableOption "Enables nwg-bar";
+  options.eclipse.nwg-bar.enable = mkEnableOption "nwg-bar";
 
   config = mkIf config.eclipse.nwg-bar.enable {
     eclipse.swaylock.enable = true;

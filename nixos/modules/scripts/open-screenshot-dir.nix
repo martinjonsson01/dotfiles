@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.open-screenshot-dir.enable = mkEnableOption "Enables open-screenshot-dir";
+  options.eclipse.open-screenshot-dir.enable = mkEnableOption "open-screenshot-dir";
 
   config = mkIf config.eclipse.open-screenshot-dir.enable {
     eclipse.hm = {pkgs, ...}: let

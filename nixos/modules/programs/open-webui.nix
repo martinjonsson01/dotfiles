@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.open-webui.enable = mkEnableOption "Enables Open WebUI";
+  options.eclipse.open-webui.enable = mkEnableOption "Open WebUI";
 
   config = mkIf config.eclipse.open-webui.enable {
     eclipse.hm = {

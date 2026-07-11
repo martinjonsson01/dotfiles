@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.fonts.enable = mkEnableOption "Enables fonts";
+  options.eclipse.fonts.enable = mkEnableOption "fonts";
 
   config = mkIf config.eclipse.fonts.enable {
     fonts.packages = with pkgs; [

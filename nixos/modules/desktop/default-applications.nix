@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.default-applications.enable = mkEnableOption "Enables default application associations";
+  options.eclipse.default-applications.enable = mkEnableOption "default application associations";
 
   config = mkIf config.eclipse.default-applications.enable {
     eclipse.hm = {

@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.kanata.enable = mkEnableOption "Enables Kanata";
+  options.eclipse.kanata.enable = mkEnableOption "Kanata";
 
   config = mkIf config.eclipse.kanata.enable {
     services.kanata = {

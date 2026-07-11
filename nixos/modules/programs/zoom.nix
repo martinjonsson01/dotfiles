@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.zoom.enable = mkEnableOption "Enables Zoom";
+  options.eclipse.zoom.enable = mkEnableOption "Zoom";
 
   config = mkIf config.eclipse.zoom.enable {
     eclipse.hm = {pkgs, ...}: {

@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.fish.enable = mkEnableOption "Enables fish";
+  options.eclipse.fish.enable = mkEnableOption "fish";
 
   config = mkIf config.eclipse.fish.enable {
     # Enable vendor fish completions provided by Nixpkgs

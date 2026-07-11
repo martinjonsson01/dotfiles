@@ -4,7 +4,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.git.enable = mkEnableOption "Enables git";
+  options.eclipse.git.enable = mkEnableOption "git";
 
   config = mkIf config.eclipse.git.enable {
     eclipse.hm = {pkgs, ...}: {

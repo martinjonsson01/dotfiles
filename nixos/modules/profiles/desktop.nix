@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.desktop;
 in {
-  options.eclipse.desktop.enable = mkEnableOption "Enables the desktop profile.";
+  options.eclipse.desktop.enable = mkEnableOption "the desktop profile";
 
   config = mkIf cfg.enable {
     eclipse = {

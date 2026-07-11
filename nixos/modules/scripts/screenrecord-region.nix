@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.screenrecord-region.enable = mkEnableOption "Enables screenrecord-region";
+  options.eclipse.screenrecord-region.enable = mkEnableOption "screenrecord-region";
 
   config = mkIf config.eclipse.screenrecord-region.enable {
     eclipse.hm = {pkgs, ...}: let

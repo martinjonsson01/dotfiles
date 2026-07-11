@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.dev;
 in {
-  options.eclipse.dev.enable = mkEnableOption "Enables the dev profile.";
+  options.eclipse.dev.enable = mkEnableOption "the dev profile";
 
   config = mkIf cfg.enable {
     eclipse = {

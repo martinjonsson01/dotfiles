@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.swaync.enable = mkEnableOption "Enables sway notification center";
+  options.eclipse.swaync.enable = mkEnableOption "sway notification center";
 
   config = mkIf config.eclipse.swaync.enable {
     eclipse.hm = {pkgs, ...}: let

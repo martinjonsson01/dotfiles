@@ -9,7 +9,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.decibels.enable = mkEnableOption "Enables Decibels";
+  options.eclipse.decibels.enable = mkEnableOption "Decibels";
 
   config = mkIf config.eclipse.decibels.enable {
     eclipse.hm = {

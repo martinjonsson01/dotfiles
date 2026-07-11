@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.copyq.enable = mkEnableOption "Enables CopyQ";
+  options.eclipse.copyq.enable = mkEnableOption "CopyQ";
 
   config = mkIf config.eclipse.copyq.enable {
     eclipse.hm = {

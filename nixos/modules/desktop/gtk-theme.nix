@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.gtk-theme.enable = mkEnableOption "Enables GTK theme";
+  options.eclipse.gtk-theme.enable = mkEnableOption "GTK theme";
 
   config = mkIf config.eclipse.gtk-theme.enable {
     eclipse.hm = {

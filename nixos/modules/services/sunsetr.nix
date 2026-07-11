@@ -33,7 +33,7 @@
   };
 in
   with lib; {
-    options.eclipse.sunsetr.enable = mkEnableOption "Enables sunsetr";
+    options.eclipse.sunsetr.enable = mkEnableOption "sunsetr";
 
     config = mkIf config.eclipse.sunsetr.enable {
       environment.systemPackages = with pkgs.unstable; [

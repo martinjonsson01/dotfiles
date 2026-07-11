@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.polkit-gnome.enable = mkEnableOption "Enables GNOME Polkit";
+  options.eclipse.polkit-gnome.enable = mkEnableOption "GNOME Polkit";
 
   config = mkIf config.eclipse.polkit-gnome.enable {
     security.polkit.enable = true;

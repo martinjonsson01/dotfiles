@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.social;
 in {
-  options.eclipse.social.enable = mkEnableOption "Enables the social profile.";
+  options.eclipse.social.enable = mkEnableOption "the social profile";
 
   config = mkIf cfg.enable {
     eclipse = {

@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.loupe.enable = mkEnableOption "Enables Loupe";
+  options.eclipse.loupe.enable = mkEnableOption "Loupe";
 
   config = mkIf config.eclipse.loupe.enable {
     eclipse.hm = {

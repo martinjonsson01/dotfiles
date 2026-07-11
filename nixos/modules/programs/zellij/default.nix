@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.zellij.enable = mkEnableOption "Enables zellij";
+  options.eclipse.zellij.enable = mkEnableOption "zellij";
 
   config = mkIf config.eclipse.zellij.enable {
     eclipse.hm = {pkgs, ...}: let

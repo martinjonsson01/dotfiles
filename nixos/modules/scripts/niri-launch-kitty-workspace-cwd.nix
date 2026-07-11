@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.niri-launch-kitty-workspace-cwd.enable = mkEnableOption "Enables niri-launch-kitty-workspace-cwd";
+  options.eclipse.niri-launch-kitty-workspace-cwd.enable = mkEnableOption "niri-launch-kitty-workspace-cwd";
 
   config = mkIf config.eclipse.niri-launch-kitty-workspace-cwd.enable {
     eclipse.hm = {pkgs, ...}: let

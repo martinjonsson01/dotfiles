@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.search-github-nix.enable = mkEnableOption "Enables search-github-nix";
+  options.eclipse.search-github-nix.enable = mkEnableOption "search-github-nix";
 
   config = mkIf config.eclipse.search-github-nix.enable {
     eclipse.hm = {pkgs, ...}: let

@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.screenshot-region.enable = mkEnableOption "Enables screenshot-region";
+  options.eclipse.screenshot-region.enable = mkEnableOption "screenshot-region";
 
   config = mkIf config.eclipse.screenshot-region.enable {
     eclipse.hm = {pkgs, ...}: let

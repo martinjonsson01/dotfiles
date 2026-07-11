@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.lutris.enable = mkEnableOption "Enables lutris";
+  options.eclipse.lutris.enable = mkEnableOption "lutris";
 
   config = mkIf config.eclipse.lutris.enable {
     eclipse.hm = {pkgs, ...}: {

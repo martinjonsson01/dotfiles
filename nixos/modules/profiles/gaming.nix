@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.gaming;
 in {
-  options.eclipse.gaming.enable = mkEnableOption "Enables the gaming profile.";
+  options.eclipse.gaming.enable = mkEnableOption "the gaming profile";
 
   config = mkIf cfg.enable {
     eclipse = {

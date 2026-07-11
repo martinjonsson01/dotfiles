@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.steam.enable = mkEnableOption "Enables Steam";
+  options.eclipse.steam.enable = mkEnableOption "Steam";
 
   config = mkIf config.eclipse.steam.enable {
     environment.systemPackages = with pkgs; [

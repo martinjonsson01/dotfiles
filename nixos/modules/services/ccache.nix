@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.ccache.enable = mkEnableOption "Enables ccache";
+  options.eclipse.ccache.enable = mkEnableOption "ccache";
 
   config = mkIf config.eclipse.ccache.enable {
     environment.systemPackages = with pkgs; [

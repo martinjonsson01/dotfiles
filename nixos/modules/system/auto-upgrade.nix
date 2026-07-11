@@ -15,7 +15,7 @@ with lib; let
   failureFlagDir = "/var/lib/auto-upgrade";
   failureFlag = "${failureFlagDir}/failed";
 in {
-  options.eclipse.auto-upgrade.enable = mkEnableOption "Enables continuous automatic upgrades";
+  options.eclipse.auto-upgrade.enable = mkEnableOption "continuous automatic upgrades";
 
   config = mkIf config.eclipse.auto-upgrade.enable {
     system.autoUpgrade = {

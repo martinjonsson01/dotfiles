@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.pinta.enable = mkEnableOption "Enables Pinta";
+  options.eclipse.pinta.enable = mkEnableOption "Pinta";
 
   config = mkIf config.eclipse.pinta.enable {
     eclipse.hm = {pkgs, ...}: {

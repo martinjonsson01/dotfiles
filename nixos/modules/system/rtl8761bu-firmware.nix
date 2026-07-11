@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.rtl8761bu-firmware.enable = mkEnableOption "Enables RTL8761BU firmware";
+  options.eclipse.rtl8761bu-firmware.enable = mkEnableOption "RTL8761BU firmware";
 
   config = mkIf config.eclipse.rtl8761bu-firmware.enable {
     hardware.firmware = [

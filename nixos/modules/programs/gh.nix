@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.gh.enable = mkEnableOption "Enables the GitHub CLI (gh)";
+  options.eclipse.gh.enable = mkEnableOption "the GitHub CLI (gh)";
 
   config = mkIf config.eclipse.gh.enable {
     eclipse.hm = {

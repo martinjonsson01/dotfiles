@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.fuzzel.enable = mkEnableOption "Enables fuzzel";
+  options.eclipse.fuzzel.enable = mkEnableOption "fuzzel";
 
   config = mkIf config.eclipse.fuzzel.enable {
     eclipse.hm = {

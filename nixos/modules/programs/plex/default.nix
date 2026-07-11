@@ -4,7 +4,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.plex-desktop.enable = mkEnableOption "Enables Plex Desktop";
+  options.eclipse.plex-desktop.enable = mkEnableOption "Plex Desktop";
 
   config = mkIf config.eclipse.plex-desktop.enable {
     eclipse.hm = {pkgs, ...}: {

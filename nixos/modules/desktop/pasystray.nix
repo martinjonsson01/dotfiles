@@ -9,7 +9,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.pasystray.enable = mkEnableOption "Enables PulseAudio System Tray";
+  options.eclipse.pasystray.enable = mkEnableOption "PulseAudio System Tray";
 
   config = mkIf config.eclipse.pasystray.enable {
     eclipse.hm = {

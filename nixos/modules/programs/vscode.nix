@@ -4,7 +4,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.vscode.enable = mkEnableOption "Enables Visual Studio Code";
+  options.eclipse.vscode.enable = mkEnableOption "Visual Studio Code";
 
   config = mkIf config.eclipse.vscode.enable {
     eclipse.hm = {

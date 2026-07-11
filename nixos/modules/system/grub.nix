@@ -19,7 +19,7 @@ with lib; let
     (lists.head monitors)
     monitors;
 in {
-  options.eclipse.grub.enable = mkEnableOption "Enables GRUB";
+  options.eclipse.grub.enable = mkEnableOption "GRUB";
 
   config.boot = mkIf config.eclipse.grub.enable {
     #

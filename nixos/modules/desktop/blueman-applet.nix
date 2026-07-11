@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.blueman-applet.enable = mkEnableOption "Enables Blueman Applet";
+  options.eclipse.blueman-applet.enable = mkEnableOption "Blueman Applet";
 
   config = mkIf config.eclipse.blueman-applet.enable {
     eclipse.hm = {

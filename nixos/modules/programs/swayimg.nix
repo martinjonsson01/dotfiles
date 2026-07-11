@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.swayimg.enable = mkEnableOption "Enables swayimg";
+  options.eclipse.swayimg.enable = mkEnableOption "swayimg";
 
   config = mkIf config.eclipse.swayimg.enable {
     eclipse.hm = {

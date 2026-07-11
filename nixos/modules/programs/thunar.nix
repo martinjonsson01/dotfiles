@@ -8,7 +8,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.thunar.enable = mkEnableOption "Enables Thunar";
+  options.eclipse.thunar.enable = mkEnableOption "Thunar";
 
   config = mkIf config.eclipse.thunar.enable {
     environment.systemPackages = with pkgs; [

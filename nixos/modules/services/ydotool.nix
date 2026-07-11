@@ -11,7 +11,7 @@ with lib; let
   ydotool = pkgs.ydotool;
   socket = "/run/ydotoold/socket";
 in {
-  options.eclipse.ydotool.enable = mkEnableOption "Enables ydotool";
+  options.eclipse.ydotool.enable = mkEnableOption "ydotool";
 
   config = mkIf config.eclipse.ydotool.enable {
     environment.variables.YDOTOOL_SOCKET = socket;

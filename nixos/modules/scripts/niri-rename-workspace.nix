@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.niri-rename-workspace.enable = mkEnableOption "Enables niri-rename-workspace";
+  options.eclipse.niri-rename-workspace.enable = mkEnableOption "niri-rename-workspace";
 
   config = mkIf config.eclipse.niri-rename-workspace.enable {
     eclipse.hm = {pkgs, ...}: let

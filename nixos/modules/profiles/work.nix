@@ -7,7 +7,7 @@ with lib; let
   cfg = config.eclipse.work;
 in {
   options.eclipse.work = {
-    enable = mkEnableOption "Enables the work profile.";
+    enable = mkEnableOption "the work profile";
     directory = mkOption {
       description = "Directory (relative to home) whose repositories use the work Git identity.";
       type = types.str;

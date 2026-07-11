@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.yazi.enable = mkEnableOption "Enables Yazi";
+  options.eclipse.yazi.enable = mkEnableOption "Yazi";
 
   config = mkIf config.eclipse.yazi.enable {
     eclipse.hm = {pkgs, ...}: let

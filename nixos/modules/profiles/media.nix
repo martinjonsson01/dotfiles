@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.media;
 in {
-  options.eclipse.media.enable = mkEnableOption "Enables the media profile.";
+  options.eclipse.media.enable = mkEnableOption "the media profile";
 
   config = mkIf cfg.enable {
     eclipse = {

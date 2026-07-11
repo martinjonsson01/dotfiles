@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.cliphist.enable = mkEnableOption "Enables Cliphist";
+  options.eclipse.cliphist.enable = mkEnableOption "Cliphist";
 
   config = mkIf config.eclipse.cliphist.enable {
     eclipse.hm = {pkgs, ...}: let

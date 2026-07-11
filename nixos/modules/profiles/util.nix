@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.eclipse.util;
 in {
-  options.eclipse.util.enable = mkEnableOption "Enables the util profile.";
+  options.eclipse.util.enable = mkEnableOption "the util profile";
 
   config = mkIf cfg.enable {
     eclipse = {

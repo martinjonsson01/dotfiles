@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.search-google.enable = mkEnableOption "Enables search-google";
+  options.eclipse.search-google.enable = mkEnableOption "search-google";
 
   config = mkIf config.eclipse.search-google.enable {
     eclipse.hm = {pkgs, ...}: let

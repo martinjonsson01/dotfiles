@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.jetbrains.enable = mkEnableOption "Enables JetBrains";
+  options.eclipse.jetbrains.enable = mkEnableOption "JetBrains";
 
   config = mkIf config.eclipse.jetbrains.enable {
     eclipse.hm = {pkgs, ...}: let

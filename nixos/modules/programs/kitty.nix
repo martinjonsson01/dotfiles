@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.kitty.enable = mkEnableOption "Enables Kitty";
+  options.eclipse.kitty.enable = mkEnableOption "Kitty";
 
   config = mkIf config.eclipse.kitty.enable {
     eclipse.hm = {config, ...}: {

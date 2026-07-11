@@ -7,7 +7,7 @@
   ...
 }:
 with lib; {
-  options.eclipse.podman.enable = mkEnableOption "Enables podman";
+  options.eclipse.podman.enable = mkEnableOption "podman";
 
   config = mkIf config.eclipse.podman.enable {
     eclipse.hm = {
