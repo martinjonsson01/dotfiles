@@ -127,7 +127,7 @@ with lib; {
             // genAttrs audioTypes (_: "org.gnome.Decibels.desktop")
             // genAttrs textTypes (_: "nvim-kitty.desktop")
             // {
-              "application/pdf" = "google-chrome.desktop";
+              "application/pdf" = "org.kde.okular.desktop";
               "x-scheme-handler/http" = "google-chrome.desktop";
               "x-scheme-handler/https" = "google-chrome.desktop";
               "application/x-email" = "google-chrome.desktop";
