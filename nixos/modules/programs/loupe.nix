@@ -15,7 +15,9 @@ with lib; {
       osConfig,
       ...
     }: {
-      home.packages = with pkgs; [loupe];
+      # unstable: 49.1 can abort opening the crop editor (panic while
+      # rooting the edit view); 49.2 reworked that root-window handling.
+      home.packages = with pkgs; [unstable.loupe];
 
       programs.niri.settings.window-rules = mkIf osConfig.eclipse.niri.enable [
         #  Open as floating.
