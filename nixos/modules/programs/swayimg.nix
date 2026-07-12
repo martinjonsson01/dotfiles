@@ -23,10 +23,25 @@ with lib; {
         ${getExe pkgs.niri} msg action center-window
       '';
       # Open at 150% zoom: window sized to 1.5x the image, image fit to window.
+      # Capped to the screen (with margin) keeping aspect, so oversized images
+      # shrink instead of getting letterboxed by niri clamping the window.
       swayimg-zoomed = pkgs.writers.writeBashBin "swayimg-zoomed" ''
         set -eu
         read -r w h <<<"$(${getExe pkgs.imagemagick} identify -ping -format '%w %h' "$1"'[0]')"
-        exec ${getExe pkgs.swayimg} --size=$((w * 3 / 2)),$((h * 3 / 2)) --scale=fit "$@"
+        read -r max_w max_h <<<"$(${getExe pkgs.niri} msg --json focused-output \
+          | ${getExe pkgs.jq} -r '.logical | "\(.width - 100) \(.height - 100)"')"
+        w=$((w * 3 / 2))
+        h=$((h * 3 / 2))
+        if ((w > max_w || h > max_h)); then
+          if ((w * max_h > h * max_w)); then
+            h=$((h * max_w / w))
+            w=$max_w
+          else
+            w=$((w * max_h / h))
+            h=$max_h
+          fi
+        fi
+        exec ${getExe pkgs.swayimg} --size=$w,$h --scale=fit "$@"
       '';
     in {
       home.packages = with pkgs; [swayimg img-fit-window swayimg-zoomed];
