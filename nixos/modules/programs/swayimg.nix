@@ -32,6 +32,9 @@ with lib; {
         [list]
         all = yes
 
+        [info]
+        show = no
+
         [info.viewer]
         top_left = name
         top_right = index
