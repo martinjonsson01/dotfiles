@@ -18,6 +18,7 @@ with lib; {
           # Normalize loudness to a constant level (EBU R128) regardless of source.
           af = "loudnorm=I=-18:TP=-1.5:LRA=11";
         };
+        bindings.ESC = "quit";
       };
 
       programs.niri.settings.window-rules = mkIf osConfig.eclipse.niri.enable [
