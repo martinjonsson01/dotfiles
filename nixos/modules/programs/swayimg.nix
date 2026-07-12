@@ -22,8 +22,24 @@ with lib; {
         ${getExe pkgs.niri} msg action set-window-height "$h"
         ${getExe pkgs.niri} msg action center-window
       '';
+      # Open at 150% zoom: window sized to 1.5x the image, image fit to window.
+      swayimg-zoomed = pkgs.writers.writeBashBin "swayimg-zoomed" ''
+        set -eu
+        read -r w h <<<"$(${getExe pkgs.imagemagick} identify -ping -format '%w %h' "$1"'[0]')"
+        exec ${getExe pkgs.swayimg} --size=$((w * 3 / 2)),$((h * 3 / 2)) --scale=fit "$@"
+      '';
     in {
-      home.packages = with pkgs; [swayimg img-fit-window];
+      home.packages = with pkgs; [swayimg img-fit-window swayimg-zoomed];
+
+      # Shadows the package's desktop entry so file managers open the zoomed wrapper.
+      xdg.desktopEntries.swayimg = {
+        name = "Swayimg";
+        exec = "${swayimg-zoomed}/bin/swayimg-zoomed %F";
+        icon = "swayimg";
+        terminal = false;
+        categories = ["Graphics" "Viewer"];
+        mimeType = ["image/*"];
+      };
 
       xdg.configFile."swayimg/config".text = ''
         [general]
