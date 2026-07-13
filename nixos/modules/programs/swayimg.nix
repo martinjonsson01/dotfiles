@@ -70,11 +70,12 @@ with lib; {
         top_left = name
         top_right = index
         bottom_left = scale
-        bottom_right = none
+        bottom_right = imagesize
 
         [keys.viewer]
         Left = prev_file
         Right = next_file
+        i = info
         e = exec ${getExe' pkgs.util-linux "setsid"} -f ${getExe pkgs.loupe} '%'
         Delete = exec ${getExe' pkgs.glib "gio"} trash '%'; skip_file
         MouseRight = zoom real; exec ${img-fit-window}/bin/img-fit-window '%'
