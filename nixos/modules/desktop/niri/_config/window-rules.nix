@@ -38,7 +38,7 @@
         {app-id = "^fsearch$";}
         {app-id = "^org.gnome.NautilusPreviewer$";}
         {app-id = "^org.gnome.Nautilus$";}
-        {title = "^Bitwarden$";}
+        {app-id = "^chrome-nngceckbapebfimnlniiiahkandclblb-.*$";}
         {app-id = "^songrec$";}
         {title = "^$";} # Vscode tabs
         {app-id = "^vlc$";}
