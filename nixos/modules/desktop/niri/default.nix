@@ -56,7 +56,10 @@ with lib; {
 
       # Niri's portals.conf routes the Access and Notification interfaces to
       # the GTK portal; niri-flake only ships the GNOME one.
-      xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      xdg.portal = {
+        extraPortals = [pkgs.xdg-desktop-portal-gtk];
+        xdgOpenUsePortal = true;
+      };
 
       programs.niri =
         {
