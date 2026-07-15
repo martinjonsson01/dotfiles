@@ -62,8 +62,6 @@
   eclipse.rtl8761bu-firmware.enable = true; # Necessary to replace the newest firmware which causes disconnects
 
   services.udev.extraRules = ''
-    # Disable built-in MSI b650i motherboard bluetooth (it has crap range)
-    SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="0616", ATTR{authorized}="0"
     # Keep the Razer Kiyo Pro fully powered; USB autosuspend can crash it off the bus
     SUBSYSTEM=="usb", ATTR{idVendor}=="1532", ATTR{idProduct}=="0e05", ATTR{power/control}="on"
   '';
