@@ -47,11 +47,11 @@
           }
           {
             id = 4;
-            name = "project";
+            name = "hasskell";
           }
           {
             id = 5;
-            name = "hasskell";
+            name = "project";
           }
           {
             id = 6;
