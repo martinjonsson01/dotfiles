@@ -44,6 +44,36 @@ with lib; let
     vim.bo[buffer].modified = false
     vim.wo[window].list = false
   '';
+
+  # Extracts the last "❯ command" line and its output from the
+  # scrollback and copies them to the clipboard.
+  copyLastCommand = pkgs.writers.writeBashBin "kitty-copy-last-command" ''
+    set -euo pipefail
+
+    text=$(${getExe pkgs.gawk} '
+      # Kitty pads lines with trailing spaces up to the window width.
+      { sub(/[[:space:]]+$/, "") }
+      /^❯ [^[:space:]]/ { start = NR }
+      { lines[NR] = $0 }
+      END {
+        if (!start) exit 1
+        end = NR
+        while (end > start && lines[end] == "") end--
+        # Drop the fresh prompt at the bottom: the bare ❯ and the
+        # starship info line above it.
+        if (lines[end] == "❯") {
+          end--
+          if (end > start) end--
+        }
+        while (end > start && lines[end] == "") end--
+        for (i = start; i <= end; i++) print lines[i]
+      }
+    ')
+
+    printf '%s\n' "$text" | ${getExe' pkgs.wl-clipboard "wl-copy"}
+    ${getExe' pkgs.libnotify "notify-send"} --transient --expire-time=1500 \
+      "Copied" "''${text%%$'\n'*}"
+  '';
 in {
   options.eclipse.kitty.enable = mkEnableOption "Kitty";
 
@@ -89,6 +119,7 @@ in {
         keybindings = {
           "ctrl+c" = "copy_and_clear_or_interrupt";
           "ctrl+v" = "paste_from_clipboard";
+          "ctrl+shift+y" = "launch --type=background --stdin-source=@screen_scrollback ${copyLastCommand}/bin/kitty-copy-last-command";
         };
       };
 
