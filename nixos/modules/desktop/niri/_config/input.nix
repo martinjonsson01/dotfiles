@@ -1,6 +1,7 @@
 {
   input = {
     keyboard = {
+      numlock = true;
       xkb.layout = "se";
     };
 
