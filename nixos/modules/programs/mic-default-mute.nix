@@ -14,15 +14,17 @@ with lib; {
       systemd.user.services.mic-default-mute = {
         Unit = {
           Description = "Mute microphone on login";
-          After = ["pipewire.service"];
-          Requires = ["pipewire.service"];
+          After = ["wireplumber.service"];
+          Requires = ["wireplumber.service"];
         };
         Service = {
           Type = "oneshot";
           ExecStart = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_SOURCE@ 1";
+          Restart = "on-failure";
+          RestartSec = 1;
         };
         Install = {
-          WantedBy = ["default.target"];
+          WantedBy = ["graphical-session.target"];
         };
       };
     };
