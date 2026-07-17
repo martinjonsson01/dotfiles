@@ -25,6 +25,14 @@ with lib; {
           categories = ["Utility" "TextEditor" "Development"];
         };
 
+        # Chrome ships both google-chrome.desktop and com.google.Chrome.desktop;
+        # hide the legacy one so portals don't offer duplicate browser entries.
+        desktopEntries.google-chrome = {
+          name = "Google Chrome";
+          exec = "false";
+          settings.Hidden = "true";
+        };
+
         configFile."mimeapps.list".force = true;
 
         mimeApps = {
@@ -96,7 +104,6 @@ with lib; {
               "application/x-yaml"
               "text/csv"
               "text/css"
-              "text/html"
               "text/javascript"
               "text/markdown"
               "text/plain"
@@ -128,10 +135,11 @@ with lib; {
             // genAttrs textTypes (_: "nvim-kitty.desktop")
             // {
               "application/pdf" = "org.kde.okular.desktop";
-              "x-scheme-handler/http" = "google-chrome.desktop";
-              "x-scheme-handler/https" = "google-chrome.desktop";
-              "application/x-email" = "google-chrome.desktop";
-              "x-scheme-handler/mailto" = "google-chrome.desktop";
+              "text/html" = "com.google.Chrome.desktop";
+              "x-scheme-handler/http" = "com.google.Chrome.desktop";
+              "x-scheme-handler/https" = "com.google.Chrome.desktop";
+              "application/x-email" = "com.google.Chrome.desktop";
+              "x-scheme-handler/mailto" = "com.google.Chrome.desktop";
               "inode/directory" = "thunar.desktop";
               "application/csv" = "nvim-kitty.desktop";
               "application/vnd.ms-excel" = "nvim-kitty.desktop";
