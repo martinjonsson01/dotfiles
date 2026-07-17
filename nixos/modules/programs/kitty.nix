@@ -61,7 +61,7 @@ in {
           scrollback_lines = 10000;
           scrollback_pager_history_size = 32;
           scrollback_pager = escapeShellArgs [
-            (getExe pkgs.unstable.neovim)
+            (getExe pkgs.neovim)
             "--clean"
             "-n"
             "--cmd"

@@ -22,7 +22,7 @@ with lib; {
         mkdir -p $HOME/Pictures/Screenshots/$YEAR
         mkdir -p $DIR
 
-        ${getExe pkgs.xfce.thunar} "$DIR"
+        ${getExe pkgs.thunar} "$DIR"
       '';
     in {
       home.packages = [

@@ -22,7 +22,7 @@ in {
           sops # Secrets management
           pre-commit # Hooks that run before committing
           gcc # GNU Compiler Collection
-          python310 # Scripting
+          python3 # Scripting
           (pkgs.linkFarm "runghc" [
             {
               name = "bin/runghc";

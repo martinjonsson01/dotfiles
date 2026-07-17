@@ -36,7 +36,7 @@ in
     options.eclipse.sunsetr.enable = mkEnableOption "sunsetr";
 
     config = mkIf config.eclipse.sunsetr.enable {
-      environment.systemPackages = with pkgs.unstable; [
+      environment.systemPackages = with pkgs; [
         sunsetr
       ];
 
@@ -62,7 +62,7 @@ in
           };
           Service = {
             Type = "simple";
-            ExecStart = "${getExe pkgs.unstable.sunsetr}";
+            ExecStart = "${getExe pkgs.sunsetr}";
             Restart = "always";
             RestartSec = 30;
             PassEnvironment = [

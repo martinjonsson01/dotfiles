@@ -175,7 +175,7 @@ with lib; {
         formatters = {
           black.command = "${getExe pkgs.black}";
           isort.command = "${getExe pkgs.isort}";
-          nixfmt-rfc-style.command = "${getExe pkgs.nixfmt-rfc-style}";
+          nixfmt-rfc-style.command = "${getExe pkgs.nixfmt}";
           alejandra.command = "${getExe pkgs.alejandra}";
           jq.command = "${getExe pkgs.jq}";
           prettierd.command = "${getExe pkgs.prettierd}";

@@ -13,19 +13,22 @@ with lib; {
     services.kanata = {
       enable = true;
       # Rebind caps lock to escape.
-      keyboards.Caps2esc.config = ''
-        (defsrc
-          caps
-        )
+      keyboards.Caps2esc = {
+        extraDefCfg = "process-unmapped-keys no";
+        config = ''
+          (defsrc
+            caps
+          )
 
-        (defalias
-          escctrl (tap-hold 250 250 esc lctrl)
-        )
+          (defalias
+            escctrl (tap-hold 250 250 esc lctrl)
+          )
 
-        (deflayer base
-          @escctrl
-        )
-      '';
+          (deflayer base
+            @escctrl
+          )
+        '';
+      };
     };
   };
 }

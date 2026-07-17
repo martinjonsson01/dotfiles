@@ -33,6 +33,7 @@ with lib; {
       programs.yazi = {
         enable = true;
         enableFishIntegration = true; # Change directory when exiting Yazi
+        shellWrapperName = "yy";
 
         settings = {
           mgr = {

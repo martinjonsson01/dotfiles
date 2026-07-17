@@ -18,7 +18,7 @@ with lib; {
     programs = {
       thunar = {
         enable = true;
-        plugins = with pkgs.xfce; [
+        plugins = with pkgs; [
           thunar-archive-plugin # Provides file context menus for archives.
           thunar-volman # Provides automatic management of removable drives and media.
         ];
@@ -46,7 +46,7 @@ with lib; {
       xdg.dataFile."dbus-1/services/org.freedesktop.FileManager1.service".text = ''
         [D-BUS Service]
         Name=org.freedesktop.FileManager1
-        Exec=${getExe pkgs.xfce.thunar}
+        Exec=${getExe pkgs.thunar}
       '';
     };
   };

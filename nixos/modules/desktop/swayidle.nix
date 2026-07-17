@@ -34,7 +34,7 @@ with lib; {
               else "";
           }
         ];
-        systemdTarget = "";
+        systemdTargets = [];
       };
       systemd.user.services.swayidle.Unit.WantedBy =
         if osConfig.eclipse.niri.enable

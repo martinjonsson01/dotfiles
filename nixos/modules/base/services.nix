@@ -55,10 +55,10 @@
     fontconfig
     wayland
     libGL
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXext
-    xorg.libXi
+    libx11
+    libxcursor
+    libxext
+    libxi
   ];
 
   environment.systemPackages = with pkgs; [

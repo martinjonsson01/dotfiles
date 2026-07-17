@@ -16,27 +16,27 @@ with lib; {
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false; # Defaults will be removed in the future
-        matchBlocks = {
+        settings = {
           "*" = {
-            identityFile = ["~/.ssh/id_ed25519"];
-            addKeysToAgent = "yes"; # Automatically add keys to ssh-agent as necessary
+            IdentityFile = ["~/.ssh/id_ed25519"];
+            AddKeysToAgent = "yes"; # Automatically add keys to ssh-agent as necessary
           };
 
           "dev.antmicro.com" = {
-            identityFile = ["~/.ssh/id_mjonsson"];
-            identitiesOnly = true;
-            extraOptions.WarnWeakCrypto = "no";
+            IdentityFile = ["~/.ssh/id_mjonsson"];
+            IdentitiesOnly = true;
+            WarnWeakCrypto = "no";
           };
 
           "github.com" = {
-            user = "git";
-            hostname = "github.com";
+            User = "git";
+            HostName = "github.com";
           };
 
           "github.com-antmicro" = {
-            identityFile = ["~/.ssh/id_mjonsson"];
-            identitiesOnly = true;
-            hostname = "github.com";
+            IdentityFile = ["~/.ssh/id_mjonsson"];
+            IdentitiesOnly = true;
+            HostName = "github.com";
           };
         };
       };

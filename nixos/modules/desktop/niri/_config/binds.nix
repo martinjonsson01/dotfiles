@@ -36,7 +36,7 @@ with lib; {
     "Mod+Alt+L".action = spawn ["lock-script.sh"];
     "Mod+Alt+H".action = spawn "${getExe pkgs.fsearch}";
     "Mod+E".action = spawn [
-      "${getExe pkgs.xfce.thunar}"
+      "${getExe pkgs.thunar}"
       "/home/martin/Downloads"
     ];
     "Mod+P".action = spawn ["open-screenshot-dir.sh"];

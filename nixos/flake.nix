@@ -2,12 +2,12 @@
   description = "Martin's system Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Nix-based user environment configurator.
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,13 +26,13 @@
 
     # Universal styling
     stylix = {
-      url = "github:danth/stylix/release-25.11";
+      url = "github:danth/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # A Neovim distribution built around Nix modules.
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
+      url = "github:nix-community/nixvim/nixos-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -46,6 +46,7 @@
     handy = {
       url = "github:cjpais/Handy";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.bun2nix.inputs.systems.url = "github:nix-systems/default-linux";
     };
   };
 

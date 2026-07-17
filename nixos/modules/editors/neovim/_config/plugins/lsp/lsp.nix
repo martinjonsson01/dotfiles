@@ -71,7 +71,7 @@
         };
         rust_analyzer = {
           enable = true;
-          package = pkgs.unstable.rust-analyzer;
+          package = pkgs.rust-analyzer;
           # Installed through per-project flakes instead.
           installCargo = false;
           installRustc = false;

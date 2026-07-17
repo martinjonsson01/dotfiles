@@ -27,7 +27,7 @@ in {
         enable = true;
         package = pkgs.aw-server-rust;
         # Single watcher covering both window titles and AFK detection on Wayland.
-        watchers.awatcher.package = pkgs.unstable.awatcher;
+        watchers.awatcher.package = pkgs.awatcher;
       };
 
       # The incognito-marker extension in _config is loaded unpacked into
