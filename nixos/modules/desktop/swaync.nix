@@ -11,6 +11,8 @@ with lib; {
 
   config = mkIf config.eclipse.swaync.enable {
     eclipse.hm = {pkgs, ...}: {
+      stylix.targets.swaync.enable = false;
+
       ## How to execute scripts with SwayNC
       # "scripts": {
       #   "example-action-script": {
