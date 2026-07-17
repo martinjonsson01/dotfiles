@@ -23,6 +23,11 @@ in {
 
   config = mkIf cfg.enable {
     eclipse.hm = {
+      config,
+      osConfig,
+      pkgs,
+      ...
+    }: {
       services.activitywatch = {
         enable = true;
         package = pkgs.aw-server-rust;
@@ -46,6 +51,21 @@ in {
               Restart = "on-failure";
               RestartSec = 10;
             };
+          };
+        }
+        // optionalAttrs osConfig.eclipse.niri.enable {
+          activitywatch-watcher-niri-workspace = {
+            Unit = {
+              Description = "ActivityWatch watcher for the focused Niri workspace";
+              After = ["graphical-session.target" "activitywatch.service"];
+              BindsTo = ["activitywatch.target"];
+            };
+            Service = {
+              ExecStart = "${pkgs.python3.interpreter} ${./_config/aw-watcher-niri-workspace.py} ${getExe config.programs.niri.package}";
+              Restart = "on-failure";
+              RestartSec = 10;
+            };
+            Install.WantedBy = ["activitywatch.target"];
           };
         }
         // optionalAttrs (cfg.syncDir != null) {
