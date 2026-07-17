@@ -1,6 +1,6 @@
 {
-    "device": "NoiseTorch Microphone for Elgato Wave:3",
-    "device-description": "NoiseTorch Microphone for Elgato Wave:3 Source",
-    "device-profile": "",
-    "preset-name": "voice-chat"
+  "device": "NoiseTorch Microphone for Elgato Wave:3",
+  "device-description": "NoiseTorch Microphone for Elgato Wave:3 Source",
+  "device-profile": "",
+  "preset-name": "voice-chat"
 }

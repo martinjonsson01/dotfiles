@@ -42,6 +42,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # One formatter entry point for the whole tree.
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Offline push-to-talk speech-to-tech program.
     handy = {
       url = "github:cjpais/Handy";
@@ -53,9 +59,19 @@
   outputs = inputs @ {nixpkgs, ...}: let
     importTree = import ./lib/importTree.nix;
 
+    system = "x86_64-linux";
+    treefmtEval = inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} {
+      projectRootFile = "flake.nix";
+      programs.alejandra.enable = true;
+      programs.shfmt.enable = true;
+      programs.prettier.enable = true;
+      programs.ruff-format.enable = true;
+      settings.global.excludes = ["secrets/*"];
+    };
+
     mkHost = host:
       nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {inherit inputs;};
         modules =
           (importTree ./modules)
@@ -74,5 +90,8 @@
       Femto = mkHost "Femto";
       Idea = mkHost "Idea";
     };
+
+    formatter.${system} = treefmtEval.config.build.wrapper;
+    checks.${system}.formatting = treefmtEval.config.build.check inputs.self;
   };
 }
