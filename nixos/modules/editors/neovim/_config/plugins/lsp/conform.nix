@@ -136,7 +136,8 @@ with lib; {
             stop_after_first = true;
           };
           python = [
-            "black"
+            "ruff_organize_imports"
+            "ruff_format"
           ];
           lua = ["stylua"];
           nix = [
@@ -173,8 +174,8 @@ with lib; {
         };
 
         formatters = {
-          black.command = "${getExe pkgs.black}";
-          isort.command = "${getExe pkgs.isort}";
+          ruff_format.command = "${getExe pkgs.ruff}";
+          ruff_organize_imports.command = "${getExe pkgs.ruff}";
           nixfmt-rfc-style.command = "${getExe pkgs.nixfmt}";
           alejandra.command = "${getExe pkgs.alejandra}";
           jq.command = "${getExe pkgs.jq}";
