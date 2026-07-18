@@ -10,7 +10,7 @@ with lib; {
   options.eclipse.default-applications.enable = mkEnableOption "default application associations";
 
   config = mkIf config.eclipse.default-applications.enable {
-    eclipse.hm = {
+    eclipse.hm = {pkgs, ...}: {
       xdg = {
         enable = true;
         mime.enable = true;
@@ -25,12 +25,13 @@ with lib; {
           categories = ["Utility" "TextEditor" "Development"];
         };
 
-        # Chrome ships both google-chrome.desktop and com.google.Chrome.desktop;
-        # hide the legacy one so portals don't offer duplicate browser entries.
         desktopEntries.google-chrome = {
           name = "Google Chrome";
-          exec = "false";
-          settings.Hidden = "true";
+          genericName = "Web Browser";
+          icon = "google-chrome";
+          exec = "${getExe pkgs.google-chrome} %U";
+          terminal = false;
+          categories = ["Network" "WebBrowser"];
         };
 
         configFile."mimeapps.list".force = true;
