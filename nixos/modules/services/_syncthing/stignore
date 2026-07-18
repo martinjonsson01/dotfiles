@@ -122,7 +122,6 @@ rebar3.crashdump
 *.pdb
 
 // Archives (was in the old list via the Java template)
-*.zip
 *.tar.gz
 *.rar
 *.tgz
