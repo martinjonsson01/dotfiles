@@ -98,5 +98,14 @@
         proportion = 4.0 / 7.0;
       };
     }
+    {
+      matches = [
+        {app-id = "^GT: New Horizons";}
+        {app-id = "^Minecraft";}
+      ];
+      default-column-width = {
+        proportion = 1.0 / 2.0;
+      };
+    }
   ];
 }
