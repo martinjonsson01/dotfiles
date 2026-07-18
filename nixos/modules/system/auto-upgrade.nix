@@ -26,6 +26,13 @@ in {
       randomizedDelaySec = "45min";
     };
 
+    # Root's nix uses libgit2, which refuses to open the user-owned repo
+    # without this ownership exemption.
+    environment.etc.gitconfig.text = ''
+      [safe]
+        directory = ${dirOf flakeDir}
+    '';
+
     # Group-writable so the user's notify service can clear the flag.
     systemd.tmpfiles.rules = ["d ${failureFlagDir} 0775 root users -"];
 
