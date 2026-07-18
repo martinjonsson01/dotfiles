@@ -16,22 +16,20 @@
 
   # Custom modules
   eclipse = {
-    # This is a work machine, so Steam has no business being here.
-    steam.enable = false;
-
     # All projects live in the same directory on this machine.
     work.directory = "Projects";
 
     # Enable profiles
-    ai.enable = true;
     core.enable = true;
     desktop.enable = true;
     dev.enable = true;
-    gaming.enable = true;
-    media.enable = true;
-    social.enable = true;
     util.enable = true;
     work.enable = true;
+
+    # This is a work machine, so instead of the whole social profile only Slack is needed.
+    hm = {pkgs, ...}: {
+      home.packages = [pkgs.slack];
+    };
   };
 
   eclipse.users.martin = {
