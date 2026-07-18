@@ -11,6 +11,7 @@ in {
   config = mkIf cfg.enable {
     eclipse = {
       lutris.enable = mkDefault true;
+      prismlauncher.enable = mkDefault true;
       steam.enable = mkDefault true;
     };
   };
