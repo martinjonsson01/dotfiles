@@ -39,6 +39,7 @@ in {
           websocat # Connect to websockets
           ethtool # Utility for controlling network drivers and hardware
           curl # Command line tool for transferring files with URL syntax
+          ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
           wget # Tool for retrieving files using HTTP, HTTPS, and FTP
         ];
       };

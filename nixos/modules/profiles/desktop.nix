@@ -14,12 +14,14 @@ in {
       audio.enable = mkDefault true;
       blueman-applet.enable = mkDefault true;
       copyq.enable = mkDefault true;
+      decibels.enable = mkDefault true;
       easyeffects.enable = mkDefault true;
       fonts.enable = mkDefault true;
       fuzzel.enable = mkDefault true;
       gtk-theme.enable = mkDefault true;
       kitty.enable = mkDefault true;
       mic-default-mute.enable = mkDefault true;
+      mpv.enable = mkDefault true;
       niri.enable = mkDefault true;
       nm-applet.enable = mkDefault true;
       nwg-bar.enable = mkDefault true;
@@ -28,6 +30,7 @@ in {
       stylix.enable = mkDefault true;
       sunsetr.enable = mkDefault true;
       swayidle.enable = mkDefault true;
+      swayimg.enable = mkDefault true;
       swaync.enable = mkDefault true;
       thunar.enable = mkDefault true;
       tokyonight.enable = mkDefault true;
@@ -47,6 +50,7 @@ in {
         services.swayosd.enable = true;
 
         home.packages = with pkgs; [
+          kdePackages.okular # KDE document viewer
           nerd-fonts.jetbrains-mono # Font with icons
           nautilus # Necessary for file pickers, even if not used as primary file explorer.
           swappy # Necessary for screenshot script
