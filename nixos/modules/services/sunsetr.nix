@@ -36,7 +36,9 @@ in
     options.eclipse.sunsetr.enable = mkEnableOption "sunsetr";
 
     config = mkIf config.eclipse.sunsetr.enable {
-      environment.systemPackages = with pkgs; [
+      # Stable's 0.12.2 leaves the screen at the wrong temperature after
+      # resume from sleep; fixed upstream in 0.12.3.
+      environment.systemPackages = with pkgs.unstable; [
         sunsetr
       ];
 
@@ -62,7 +64,7 @@ in
           };
           Service = {
             Type = "simple";
-            ExecStart = "${getExe pkgs.sunsetr}";
+            ExecStart = "${getExe pkgs.unstable.sunsetr}";
             Restart = "always";
             RestartSec = 30;
             PassEnvironment = [
